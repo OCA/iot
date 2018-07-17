@@ -27,5 +27,5 @@ class IoTSystemAction(models.Model):
             buff = StringIO()
             traceback.print_exc(file=buff)
             error = buff.getvalue()
-            _logger.error(error)
+            _logger.warning(error)
             return 'failed', error
