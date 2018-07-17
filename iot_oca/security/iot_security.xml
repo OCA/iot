@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="ir_module_category_iot" model="ir.module.category">
+        <field name="name">IoT</field>
+    </record>
+
+    <record id="group_iot_user" model="res.groups">
+        <field name="name">IoT User</field>
+        <field name="comment">Module user.</field>
+        <field name="category_id" ref="ir_module_category_iot"/>
+    </record>
+
+    <record id="group_iot_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="comment">Module administrator, able to modify configuration data.</field>
+        <field name="category_id" ref="ir_module_category_iot"/>
+        <field name="implied_ids" eval="[(4, ref('group_iot_user'))]"/>
+        <field name="users" eval="[(6,0,[ref('base.user_root')])]"/>
+    </record>
+
+</odoo>
