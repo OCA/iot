@@ -28,7 +28,7 @@
                     </div>
                     <group>
                         <group>
-                            <field name="system_id" attrs="{'readonly': [('action_count','>', 0)]}"/>
+                            <field name="system_id" attrs="{'readonly': [('action_count','>', 0)]}" widget="selection"/>
                             <field name="action_count" invisible="1"/>
                         </group>
                         <group>
