@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="iot_sonoff_system" model="iot.system">
+        <field name="name">SonOff</field>
+    </record>
+    <record id="iot_sonoff_action_on" model="iot.system.action">
+        <field name="name">On</field>
+        <field name="system_id" ref="iot_sonoff_system"/>
+    </record>
+    <record id="iot_sonoff_action_off" model="iot.system.action">
+        <field name="name">Off</field>
+        <field name="system_id" ref="iot_sonoff_system"/>
+    </record>
+</odoo>
