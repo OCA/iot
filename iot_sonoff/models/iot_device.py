@@ -17,7 +17,7 @@ class IoTDevice(models.Model):
     def _compute_is_sonoff(self):
         sonoff = self.env.ref('iot_sonoff.iot_sonoff_system')
         for rec in self:
-            rec.is_sonoff = (rec.system_id == sonoff)
+            rec.is_sonoff = rec.system_id == sonoff
 
 
 class IoTDeviceAction(models.Model):

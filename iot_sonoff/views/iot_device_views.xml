@@ -8,11 +8,11 @@
         <field name="arch" type="xml">
             <header position="inside">
                 <button name="device_run_action" type="object" string="On"
-                        attrs="{'invisible': ['|', ('is_sonoff', '!=', True), ('state', '=', 'sonoff-off')]}"
+                        attrs="{'invisible': ['|', ('is_sonoff', '=', False), ('state', '=', 'sonoff-off')]}"
                         context="{'iot_system_action_id': %(iot_sonoff.iot_sonoff_action_on)d}"
                 />
                 <button name="device_run_action" type="object" string="Off"
-                        attrs="{'invisible': ['|', ('is_sonoff', '!=', True), ('state', '=', 'sonoff-off')]}"
+                        attrs="{'invisible': ['|', ('is_sonoff', '=', False), ('state', '=', 'sonoff-off')]}"
                         context="{'iot_system_action_id': %(iot_sonoff.iot_sonoff_action_off)d}"
                 />
             </header>
