@@ -9,7 +9,7 @@
               "Odoo Community Association (OCA)",
     'license': 'AGPL-3',
     'installable': True,
-    'application': False,
+    'application': True,
     'summary': 'IoT base module',
     'depends': [
         'base',

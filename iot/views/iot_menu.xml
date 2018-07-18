@@ -4,6 +4,7 @@
     <menuitem name="IoT"
               id="iot_root_menu"
               groups="group_iot_user"
+              web_icon="iot,static/description/icon.png"
     />
 
 </odoo>

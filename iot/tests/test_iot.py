@@ -36,7 +36,7 @@ class TestIoT(TransactionCase):
 
     def test_correct_action(self):
         self.assertEqual(self.device.action_count, 0)
-        with patch('odoo.addons.iot_base.models.iot_system_action.'
+        with patch('odoo.addons.iot.models.iot_system_action.'
                    'IoTSystemAction._run', return_value=('ok', '')):
             self.device.with_context(
                 iot_system_action_id=self.action.id).device_run_action()
