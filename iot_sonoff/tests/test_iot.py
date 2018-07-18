@@ -2,7 +2,6 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from mock import patch
 from odoo.tests.common import TransactionCase
-from odoo.exceptions import ValidationError
 
 
 class TestingResultOk(object):
@@ -47,5 +46,3 @@ class TestIoT(TransactionCase):
                 iot_system_action_id=self.off.id).device_run_action()
         self.assertEqual(self.device.state, 'sonoff-off')
         self.assertEqual(self.device.action_count, 2)
-
-
