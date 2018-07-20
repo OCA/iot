@@ -4,8 +4,15 @@ from mock import patch
 from odoo.tests.common import TransactionCase
 
 
-class TestingResultOk(object):
-    text = 'ok'
+class TestingResultOn(object):
+    text = '{"status" : "on"}'
+
+    def raise_for_status(self):
+        return
+
+
+class TestingResultOff(object):
+    text = '{"status" : "off"}'
 
     def raise_for_status(self):
         return
@@ -17,6 +24,7 @@ class TestIoT(TransactionCase):
         self.system = self.browse_ref('iot_sonoff.iot_sonoff_system')
         self.on = self.browse_ref('iot_sonoff.iot_sonoff_action_on')
         self.off = self.browse_ref('iot_sonoff.iot_sonoff_action_off')
+        self.check = self.browse_ref('iot_sonoff.iot_sonoff_action_status')
         self.device = self.env['iot.device'].create({
             'name': 'Device',
             'system_id': self.system.id,
@@ -36,13 +44,18 @@ class TestIoT(TransactionCase):
 
     def test_correct_action(self):
         self.assertEqual(self.device.action_count, 0)
-        with patch('requests.get', return_value=TestingResultOk()):
+        with patch('requests.get', return_value=TestingResultOn()):
             self.device.with_context(
                 iot_system_action_id=self.on.id).device_run_action()
         self.assertEqual(self.device.state, 'sonoff-on')
         self.assertEqual(self.device.action_count, 1)
-        with patch('requests.get', return_value=TestingResultOk()):
+        with patch('requests.get', return_value=TestingResultOff()):
             self.device.with_context(
                 iot_system_action_id=self.off.id).device_run_action()
         self.assertEqual(self.device.state, 'sonoff-off')
         self.assertEqual(self.device.action_count, 2)
+        with patch('requests.get', return_value=TestingResultOff()):
+            self.device.with_context(
+                iot_system_action_id=self.check.id).device_run_action()
+        self.assertEqual(self.device.state, 'sonoff-off')
+        self.assertEqual(self.device.action_count, 3)

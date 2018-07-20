@@ -11,4 +11,8 @@
         <field name="name">Off</field>
         <field name="system_id" ref="iot_sonoff_system"/>
     </record>
+    <record id="iot_sonoff_action_status" model="iot.system.action">
+        <field name="name">Status</field>
+        <field name="system_id" ref="iot_sonoff_system"/>
+    </record>
 </odoo>

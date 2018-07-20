@@ -7,9 +7,9 @@ import requests
 class IoTSystemAction(models.Model):
     _inherit = 'iot.system.action'
 
-    def _run_sonoff(self, device_action, action):
+    def _run_sonoff(self, device_action, action=False):
         request = requests.get(
-            'http://%s/%s' % (device_action.device_id.ip, action)
+            'http://%s/%s' % (device_action.device_id.ip, action or '')
         )
         request.raise_for_status()
         return request.text
@@ -19,4 +19,6 @@ class IoTSystemAction(models.Model):
             return self._run_sonoff(device_action, 'on')
         if self == self.env.ref('iot_sonoff.iot_sonoff_action_off'):
             return self._run_sonoff(device_action, 'off')
+        if self == self.env.ref('iot_sonoff.iot_sonoff_action_status'):
+            return self._run_sonoff(device_action)
         return super()._run(device_action)

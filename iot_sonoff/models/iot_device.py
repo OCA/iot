@@ -1,5 +1,6 @@
 # Copyright (C) 2018 Creu Blanca
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+import json
 from odoo import api, fields, models
 
 
@@ -15,7 +16,8 @@ class IoTDevice(models.Model):
     @api.multi
     @api.depends('system_id')
     def _compute_is_sonoff(self):
-        sonoff = self.env.ref('iot_sonoff.iot_sonoff_system')
+        sonoff = self.env.ref('iot_sonoff.iot_sonoff_system',
+                              raise_if_not_found=False)
         for rec in self:
             rec.is_sonoff = rec.system_id == sonoff
 
@@ -25,10 +27,8 @@ class IoTDeviceAction(models.Model):
 
     def run_extra_actions(self, status, result):
         res = super().run_extra_actions(status, result)
-        sonoff_on = self.env.ref('iot_sonoff.iot_sonoff_action_on')
-        sonoff_off = self.env.ref('iot_sonoff.iot_sonoff_action_off')
-        if status == 'ok' and self.system_action_id == sonoff_on:
-            self.device_id.state = 'sonoff-on'
-        if status == 'ok' and self.system_action_id == sonoff_off:
-            self.device_id.state = 'sonoff-off'
+        sonoff_system = self.env.ref('iot_sonoff.iot_sonoff_system')
+        if status == 'ok' and self.device_id.system_id == sonoff_system:
+            json_result = json.loads(result)
+            self.device_id.state = 'sonoff-%s' % json_result['status']
         return res
