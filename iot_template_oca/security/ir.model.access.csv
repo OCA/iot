@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_iot_template,access_iot_template,model_iot_template,iot.group_iot_user,1,0,0,0
+manage_iot_template,access_iot_template,model_iot_template,iot.group_iot_manager,1,1,1,1
+access_iot_template_input,access_iot_template_input,model_iot_template_input,iot.group_iot_user,1,0,0,0
+manage_iot_template_input,access_iot_template_input,model_iot_template_input,iot.group_iot_manager,1,1,1,1
+access_iot_template_output,access_iot_template_output,model_iot_template_output,iot.group_iot_user,1,0,0,0
+manage_iot_template_output,access_iot_template_output,model_iot_template_output,iot.group_iot_manager,1,1,1,1
+access_iot_template_key,access_iot_template_key,model_iot_template_key,iot.group_iot_user,1,0,0,0
+manage_iot_template_key,access_iot_template_key,model_iot_template_key,iot.group_iot_manager,1,1,1,1
