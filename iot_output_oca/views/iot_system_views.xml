@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="iot_system_tree" model="ir.ui.view">
+        <field name="name">iot.system.tree</field>
+        <field name="model">iot.system</field>
+        <field name="arch" type="xml">
+            <tree create="0" delete="0">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="iot_system_form" model="ir.ui.view">
+        <field name="name">iot.system.form</field>
+        <field name="model">iot.system</field>
+        <field name="arch" type="xml">
+            <form create="0" delete="0" edit="0">
+                <header/>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <notebook>
+                        <page string="Outputs" id="output">
+                            <field name="output_ids" readonly="True"/>
+                        </page>
+                        <page string="Actions" id="actions">
+                            <field name="system_action_ids" readonly="True"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="iot_system_action_tree" model="ir.ui.view">
+        <field name="name">iot.system.action.tree</field>
+        <field name="model">iot.system.action</field>
+        <field name="arch" type="xml">
+            <tree create="0" delete="0">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="iot_system_action">
+        <field name="name">IoT System</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">iot.system</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Systems"
+              sequence="90"
+              id="iot_system_menu"
+              action="iot_system_action"
+              parent="iot_root_menu"
+              groups="group_iot_manager"
+    />
+</odoo>

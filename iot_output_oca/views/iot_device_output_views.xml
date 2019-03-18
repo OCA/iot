@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="iot_device_output_tree" model="ir.ui.view">
+        <field name="name">iot.device.output.tree</field>
+        <field name="model">iot.device.output</field>
+        <field name="arch" type="xml">
+            <tree delete="0">
+                <field name="name"/>
+                <field name="system_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="iot_device_output_form" model="ir.ui.view">
+        <field name="name">iot.device.output.form</field>
+        <field name="model">iot.device.output</field>
+        <field name="arch" type="xml">
+            <form>
+                <header/>
+                <sheet>
+                    <div class="oe_button_box" name="button_box"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="system_id" domain="[('applies_to', '=', 'output')]"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="iot_device_output_action">
+        <field name="name">IoT Outputs</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">iot.device.output</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <record id="iot_device_output_action_tree" model="ir.ui.view">
+        <field name="name">iot.device.output.action.tree</field>
+        <field name="model">iot.device.output.action</field>
+        <field name="arch" type="xml">
+            <tree create="0" delete="0">
+                <field name="status"/>
+                <field name="result"/>
+                <field name="date_ok"/>
+                <button name="run" type="object" string="Run"
+                        attrs="{'invisible': [('status', '=', 'ok')]}"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>
