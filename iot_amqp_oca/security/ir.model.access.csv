@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_iot_amqp_host,access_iot_amqp_host,model_iot_amqp_host,iot.group_iot_user,1,0,0,0
+manage_iot_amqp_host,manage_iot_amqp_host,model_iot_amqp_host,iot.group_iot_manager,1,1,1,0
