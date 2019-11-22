@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="iot_device_output_form" model="ir.ui.view">
+        <field name="name">iot.device.output.form</field>
+        <field name="model">iot.device.output</field>
+        <field name="inherit_id" ref="iot_output.iot_device_output_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='system_id']/../.." position="after">
+                <group string="AMQP configuration" name="amqp_config"
+                       attrs="{'invisible': [('system_id', '!=', %(iot_amqp.amqp_system)s)]}">
+                    <field name="amqp_host_id"
+                           attrs="{'required': [('system_id', '=', %(iot_amqp.amqp_system)s)]}"/>
+                    <field name="amqp_exchange"
+                           attrs="{'required': [('system_id', '=', %(iot_amqp.amqp_system)s)]}"/>
+                    <field name="amqp_routing_key"
+                           attrs="{'required': [('system_id', '=', %(iot_amqp.amqp_system)s)]}"/>
+                    <field name="amqp_payload"/>
+                </group>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="device_run_action" type="object"
+                        context="{'iot_system_action_id': %(iot_amqp.amqp_action)s}"
+                        icon="fa-cogs" string="Run"
+                         attrs="{'invisible': [('system_id', '!=', %(iot_amqp.amqp_system)s)]}"
+                />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
