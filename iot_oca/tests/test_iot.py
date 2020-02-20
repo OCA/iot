@@ -3,6 +3,7 @@
 from mock import patch
 from odoo.tests.common import TransactionCase
 from odoo.exceptions import ValidationError
+from odoo.tools import mute_logger
 
 
 class TestIoT(TransactionCase):
@@ -29,8 +30,9 @@ class TestIoT(TransactionCase):
 
     def test_action(self):
         self.assertEqual(self.device.action_count, 0)
-        self.device.with_context(
-            iot_system_action_id=self.action.id).device_run_action()
+        with mute_logger('odoo.addons.iot.models.iot_system_action'):
+            self.device.with_context(
+                iot_system_action_id=self.action.id).device_run_action()
         self.assertEqual(self.device.action_count, 1)
         self.assertEqual(self.device.action_ids.status, 'failed')
 
