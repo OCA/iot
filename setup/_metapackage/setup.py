@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo12-addon-iot',
+        'odoo12-addon-iot_output',
     ],
     classifiers=[
         'Programming Language :: Python',
