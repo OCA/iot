@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from mock import patch
 from odoo.tests.common import TransactionCase
+from odoo.tools import mute_logger
 from odoo.exceptions import ValidationError
 
 
@@ -40,8 +41,9 @@ class TestIoT(TransactionCase):
 
     def test_action(self):
         self.assertEqual(self.output.action_count, 0)
-        self.output.with_context(
-            iot_system_action_id=self.action.id).device_run_action()
+        with mute_logger('odoo.addons.iot.models.iot_system_action'):
+            self.output.with_context(
+                iot_system_action_id=self.action.id).device_run_action()
         self.assertEqual(self.output.action_count, 1)
         self.assertEqual(self.output.action_ids.status, 'failed')
 
