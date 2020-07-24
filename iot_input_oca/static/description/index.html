@@ -395,6 +395,10 @@ password, it is handled by odoo devices.</p>
 </div>
 <div class="section" id="usage">
 <h1><a class="toc-backref" href="#id1">Usage</a></h1>
+<p>There are two endpoints you can use:
+Endpoint 1: /iot/&lt;serial&gt;/action</p>
+<p>Takes <cite>application/x-www-form-urlencoded</cite> parameters:
+passphase, value (where value is a JSON object)</p>
 <ol class="arabic simple">
 <li>Create a Device on <cite>IoT &gt; Config Devices</cite></li>
 <li>Access the Inputs section of the device</li>
@@ -408,6 +412,31 @@ password, it is handled by odoo devices.</p>
 </pre>
 <p>Where <cite>key</cite> is the input string send by the device and the result must be a dictionary
 that will be responded to the device as a JSON.</p>
+<p>Endpoint 2: /iot/&lt;device_identification&gt;/multi_input
+It can be used to send values with multiple data in one POST request such as:
+- Values for inputs of the same device with different address (multi input)
+- Values for inputs of the same device with same address, different values (multi event)
+- Mix of the above (multi input, multi event)</p>
+<p>Takes <cite>application/x-www-form-urlencoded</cite> parameters:
+passphase, values (a JSON array of JSON objects)</p>
+<p>It is called using device_identification and passing two POST parameters: device passphrase and
+a JSON string containing and array of values for input</p>
+<p>It requires the function that the system will call must be of the following kind:</p>
+<pre class="literal-block">
+&#64;api.model
+    def call_function(self, key):
+    'do something
+    if err:
+        return {'status': 'error', 'message': 'The error message you want to send to the device'}
+    return {'status': 'ok', 'message': 'Optional success message'}
+</pre>
+<p>Where <cite>key</cite> is a dict send by the device having at least value for keys: ‘address’, ‘value’</p>
+<p>The function must always return a JSON with status and message. If value contains a value
+with ‘uuid’ as key, it is return along with the object for the IoT device to identify
+success/failure per record.</p>
+<p>It has full error reporting and the return value is a JSON array of dicts containing at
+least status and message. Error message respose is at some points generic, though
+extended logging is done in Odoo server logs.</p>
 </div>
 <div class="section" id="bug-tracker">
 <h1><a class="toc-backref" href="#id2">Bug Tracker</a></h1>
@@ -429,6 +458,7 @@ If you spotted it first, help us smashing it by providing a detailed and welcome
 <h2><a class="toc-backref" href="#id5">Contributors</a></h2>
 <ul class="simple">
 <li>Enric Tobella &lt;<a class="reference external" href="mailto:etobella&#64;creublanca.es">etobella&#64;creublanca.es</a>&gt;</li>
+<li>Dimitrios Tanis &lt;<a class="reference external" href="mailto:dtanis&#64;tanisfood.gr">dtanis&#64;tanisfood.gr</a>&gt;</li>
 </ul>
 </div>
 <div class="section" id="maintainers">
