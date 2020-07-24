@@ -1,3 +1,4 @@
+import json
 from odoo.tests.common import TransactionCase
 
 
@@ -18,10 +19,12 @@ class TestIotIn(TransactionCase):
             'call_function': 'test_input_device'
         })
         iot = self.env['iot.device.input']
-        self.assertFalse(
-            iot.get_device(serial=serial + serial, passphrase=passphrase))
-        self.assertFalse(
-            iot.get_device(serial=serial, passphrase=passphrase + passphrase))
+        json_response = json.loads(iot.get_device(serial=serial + serial, passphrase=passphrase))
+        self.assertTrue(json_response['status'] == 'error')
+
+        json_response2 = json.loads(iot.get_device(serial=serial, passphrase=passphrase + passphrase))
+        self.assertTrue(json_response2['status'] == 'error')
+
         iot = iot.get_device(
             serial=serial, passphrase=passphrase)
         self.assertEqual(iot, input)

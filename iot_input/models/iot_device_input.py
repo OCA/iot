@@ -1,5 +1,4 @@
 from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError, Warning
 
 
 class IotDeviceInput(models.Model):
@@ -48,14 +47,14 @@ class IotDeviceInput(models.Model):
 
     def parse_args(self, serial, passphrase):
         if not serial or not passphrase:
-            raise ValidationError(_('Serial and passphrase are required'))
+            return {'status': 'error', 'message': _('Serial and passphrase are required')}
         return [('serial', '=', serial), ('passphrase', '=', passphrase)]
 
     @api.model
     def get_device(self, serial, passphrase):
         device_input = self.search(self.parse_args(serial, passphrase), limit=1)
         if not device_input.active:
-            raise Warning(_("Input is inactive"))
+            return {'status': 'error', 'message': _('Input is inactive')}
         return device_input
 
     @api.model
