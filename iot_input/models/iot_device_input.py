@@ -1,5 +1,5 @@
 from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError
+from odoo.exceptions import ValidationError, Warning
 
 
 class IotDeviceInput(models.Model):
@@ -10,6 +10,7 @@ class IotDeviceInput(models.Model):
     device_id = fields.Many2one('iot.device', required=True, readonly=True)
     call_model_id = fields.Many2one('ir.model')
     call_function = fields.Char(required=True)
+    active = fields.Boolean(default=True)
     serial = fields.Char()
     passphrase = fields.Char()
     action_ids = fields.One2many(
@@ -20,6 +21,12 @@ class IotDeviceInput(models.Model):
         selection=lambda self: self.env['res.lang'].get_installed(),
         string='Language',
     )
+
+    _sql_constraints = [(
+        'serial_unique',
+        'unique(device_id, serial)',
+        'This serial is already used by another input for this device!'
+        )]
 
     @api.depends('action_ids')
     def _compute_action_count(self):
@@ -46,7 +53,10 @@ class IotDeviceInput(models.Model):
 
     @api.model
     def get_device(self, serial, passphrase):
-        return self.search(self.parse_args(serial, passphrase), limit=1)
+        device_input = self.search(self.parse_args(serial, passphrase), limit=1)
+        if not device_input.active:
+            raise Warning(_("Input is inactive"))
+        return device_input
 
     @api.model
     def get_auth_device(self, serial):

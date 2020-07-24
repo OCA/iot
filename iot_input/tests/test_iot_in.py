@@ -11,6 +11,7 @@ class TestIotIn(TransactionCase):
         input = self.env['iot.device.input'].create({
             'name': 'Input',
             'device_id': device.id,
+            'active': True,
             'serial': serial,
             'passphrase': passphrase,
             'call_model_id': self.ref('iot_input.model_iot_device_input'),
