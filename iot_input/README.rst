@@ -56,7 +56,10 @@ The function that the system will call must be of the following kind::
 
     @api.model
         def call_function(self, key):
-        return {}
+        'do something
+        if err:
+            return {'status': 'error', 'message': 'The error message you want to send to the device'}
+        return {'status': 'ok', 'message': 'Optional success message'}
 
 Where `key` is the input string send by the device and the result must be a dictionary
 that will be responded to the device as a JSON.

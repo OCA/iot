@@ -13,10 +13,18 @@ class IoTDevice(models.Model):
         'iot.device.action',
         inverse_name='device_id'
     )
+    active = fields.Boolean(default=True)
+    serial = fields.Char()
     state = fields.Selection([], readonly=True)
     model = fields.Char()
     ip = fields.Char()
     action_count = fields.Integer(compute='_compute_action_count')
+
+    _sql_constraints = [(
+        'serial_unique',
+        'unique(serial)',
+        'This serial is already used by another device!'
+        )]
 
     @api.multi
     @api.depends('action_ids')
