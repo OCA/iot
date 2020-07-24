@@ -13,6 +13,9 @@ class IoTDevice(models.Model):
         'iot.device.action',
         inverse_name='device_id'
     )
+    active = fields.Boolean(default=True)
+    device_identification = fields.Char()
+    passphrase = fields.Char()
     state = fields.Selection([], readonly=True)
     model = fields.Char()
     ip = fields.Char()

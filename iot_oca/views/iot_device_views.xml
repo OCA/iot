@@ -7,6 +7,7 @@
         <field name="arch" type="xml">
             <tree delete="0">
                 <field name="name"/>
+                <field name="device_identification"/>
                 <field name="system_id"/>
                 <field name="model"/>
                 <field name="ip"/>
@@ -21,7 +22,13 @@
             <form>
                 <header/>
                 <sheet>
-                    <div class="oe_button_box" name="button_box"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object"
+                                class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"
+                                options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
                     <div class="oe_title">
                         <h1>
                             <field name="name"/>
@@ -29,6 +36,8 @@
                     </div>
                     <group>
                         <group>
+                            <field name="device_identification"/>
+                            <field name="passphrase" widget="password"/>
                             <field name="system_id" attrs="{'readonly': [('action_count','>', 0)]}" widget="selection"/>
                             <field name="action_count" invisible="1"/>
                         </group>
@@ -92,6 +101,17 @@
         </field>
     </record>
 
+    <record id="iot_device_search" model="ir.ui.view">
+        <field name="name">iot.device.search</field>
+        <field name="model">iot.device</field>
+        <field name="arch" type="xml">
+        <search string="IoT Device Search">
+            <filter name="active" string="Active" domain="[('active','=',True)]" help="Active"/>
+            <filter name="inactive" string="Inactive" domain="[('active','=',False)]" help="Inactive"/>
+            <separator/>
+        </search>
+        </field>
+    </record>
 
     <record model="ir.actions.act_window" id="iot_device_config_action">
         <field name="name">IoT Devices</field>

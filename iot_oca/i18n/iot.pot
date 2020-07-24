@@ -36,6 +36,12 @@ msgid "Actions"
 msgstr ""
 
 #. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__active
+#: model_terms:ir.ui.view,arch_db:iot.iot_device_search
+msgid "Active"
+msgstr ""
+
+#. module: iot
 #: model:ir.ui.menu,name:iot.iot_config_device_menu
 msgid "Config Devices"
 msgstr ""
@@ -60,6 +66,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot.field_iot_device_action__device_id
 #: model:ir.model.fields,field_description:iot.field_iot_system__device_ids
 msgid "Device"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__device_identification
+msgid "Device Identification"
 msgstr ""
 
 #. module: iot
@@ -96,6 +107,11 @@ msgid "ID"
 msgstr ""
 
 #. module: iot
+#: model_terms:ir.ui.view,arch_db:iot.iot_device_search
+msgid "Inactive"
+msgstr ""
+
+#. module: iot
 #: model:ir.module.category,name:iot.ir_module_category_iot
 #: model:ir.ui.menu,name:iot.iot_root_menu
 msgid "IoT"
@@ -109,6 +125,11 @@ msgstr ""
 #. module: iot
 #: model:ir.model,name:iot.model_iot_device
 msgid "IoT Device"
+msgstr ""
+
+#. module: iot
+#: model_terms:ir.ui.view,arch_db:iot.iot_device_search
+msgid "IoT Device Search"
 msgstr ""
 
 #. module: iot
@@ -197,6 +218,11 @@ msgstr ""
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device_action__date_ok
 msgid "Ok date"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__passphrase
+msgid "Passphrase"
 msgstr ""
 
 #. module: iot
