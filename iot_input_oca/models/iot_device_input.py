@@ -10,7 +10,9 @@ class IotDeviceInput(models.Model):
     device_id = fields.Many2one('iot.device', required=True, readonly=True)
     call_model_id = fields.Many2one('ir.model')
     call_function = fields.Char(required=True)
+    active = fields.Boolean(default=True)
     serial = fields.Char()
+    address = fields.Char()
     passphrase = fields.Char()
     action_ids = fields.One2many(
         'iot.device.input.action', inverse_name='input_id', readonly=True,
@@ -72,6 +74,11 @@ class IotDeviceInput(models.Model):
 
     def test_input_device(self, value):
         return {'value': value}
+
+    def test_model_function(self, value):
+        return {'status': 'ok',
+                'message': value
+                }
 
 
 class IoTDeviceAction(models.Model):
