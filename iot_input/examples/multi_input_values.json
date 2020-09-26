@@ -1,0 +1,19 @@
+[
+    {
+        "address": "ZMPT101B_1",
+        "value": 230
+    },
+    {
+        "address": 1,
+        "value": true
+    },
+    {
+        "address": 2,
+        "value": "Door opened",
+        "uuid": "abcde"
+    },
+    {
+        "address": 10,
+        "value": -18.5
+    }
+]
