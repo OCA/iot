@@ -77,7 +77,13 @@ Takes `application/x-www-form-urlencoded` parameters:
 passphase, values (a JSON array of JSON objects)
 
 It is called using device_identification and passing two POST parameters: device passphrase and
-a JSON string containing and array of values for input
+a JSON string containing an array of values for input
+- The value for the `address` key can be a string or a numeric (to conserve bytes in memory
+restricted devices when creating the JSON object) and is converted to string when parsing.
+- The value for the `value` key can either be string, number or boolean according to
+JSON specs.
+You can see an example of a valid JSON input object in the examples folder, using a few
+combinations.
 
 It requires the function that the system will call must be of the following kind::
 
@@ -91,7 +97,7 @@ It requires the function that the system will call must be of the following kind
 Where `key` is a dict send by the device having at least value for keys: 'address', 'value'
 
 The function must always return a JSON with status and message. If value contains a value
-with 'uuid' as key, it is return along with the object for the IoT device to identify
+with 'uuid' as key, it is returned along with the object for the IoT device to identify
 success/failure per record.
 
 It has full error reporting and the return value is a JSON array of dicts containing at
