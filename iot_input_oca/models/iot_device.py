@@ -63,7 +63,8 @@ class IotDevice(models.Model):
                 msg['uuid'] = value['uuid']
             return msg
 
-        device_input = self.input_ids.filtered(lambda i: i.address == value['address'])
+        device_input = self.input_ids.filtered(
+            lambda i: i.address == str(value['address']))
         if len(device_input) == 1:
             res = device_input._call_device(value)
             self.env['iot.device.input.action'].create(

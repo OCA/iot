@@ -101,7 +101,7 @@ msgid "Display Name"
 msgstr ""
 
 #. module: iot_input
-#: code:addons/iot_input/models/iot_device.py:126
+#: code:addons/iot_input/models/iot_device.py:127
 #, python-format
 msgid "Empty values array"
 msgstr ""
@@ -215,10 +215,10 @@ msgid "Server Error"
 msgstr ""
 
 #. module: iot_input
-#: code:addons/iot_input/models/iot_device.py:77
-#: code:addons/iot_input/models/iot_device.py:107
-#: code:addons/iot_input/models/iot_device.py:113
-#: code:addons/iot_input/models/iot_device.py:119
+#: code:addons/iot_input/models/iot_device.py:78
+#: code:addons/iot_input/models/iot_device.py:108
+#: code:addons/iot_input/models/iot_device.py:114
+#: code:addons/iot_input/models/iot_device.py:120
 #, python-format
 msgid "Server Error. Check server logs"
 msgstr ""
