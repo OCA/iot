@@ -134,6 +134,20 @@ class TestIotIn(TransactionCase):
                 [x for x in response_with_uuid if x['uuid'] == response['uuid']][0]
             )
 
+        # Test for address passed as number
+        address_3 = 3
+        self.env['iot.device.input'].create({
+            'name': 'Input 1',
+            'device_id': device.id,
+            'address': address_3,
+            'call_model_id': self.ref('iot_input.model_iot_device_input'),
+            'call_function': 'test_model_function'
+        })
+        for response in device.parse_multi_input(
+            device_identification, passphrase,
+                [{'address': address_3, 'value': 12.3}]):
+            self.assertEqual(response['status'], 'ok')
+
         device.active = False
         self.assertEqual(device.parse_multi_input(
             device_identification, passphrase,
