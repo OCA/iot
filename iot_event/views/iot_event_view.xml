@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 Dimitrios Tanis <dtanis@tanisfood.gr>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+<record id="iot_event_form" model="ir.ui.view">
+    <field name="name">iot.event.form</field>
+    <field name="model">iot.event</field>
+    <field name="arch" type="xml">
+        <form>
+            <header/>
+            <sheet>
+                <div class="oe_button_box" name="button_box"/>
+                <div class="oe_title">
+                    <h1>
+                        <div>
+                            <field name="device_id" class="oe_inline" attrs="{'readonly': 1}"/>/
+                            <field name="device_input_id" class="oe_inline" attrs="{'readonly': 1}"/>:
+                            <field name="value_str" class="oe_inline" attrs="{'invisible': [('field_type', '!=', 'str')]}"/>
+                            <field name="value_int" class="oe_inline" attrs="{'invisible': [('field_type', '!=', 'int')]}"/>
+                            <field name="value_float" class="oe_inline" attrs="{'invisible': [('field_type', '!=', 'float')]}"/>
+                            <field name="value_bool" class="oe_inline" attrs="{'invisible': [('field_type', '!=', 'bool')]}"/>
+                        </div>
+                    </h1>
+                </div>
+                <group>
+                    <group>
+                        <field name="field_type"/>
+                        <field name="minimum" attrs="{'invisible': [('field_type', '=', 'bool')]}"/>
+                        <field name="maximum" attrs="{'invisible': [('field_type', '=', 'bool')]}"/>
+                        <field name="out_of_min_limit" attrs="{'invisible': [('field_type', '=', 'bool')]}"/>
+                        <field name="out_of_max_limit" attrs="{'invisible': [('field_type', '=', 'bool')]}"/>
+                    </group>
+                    <group>
+                        <field name="datetime_taken"/>
+                        <field name="datetaken"/>
+                        <field name="timetaken"/>
+                    </group>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="iot_event_tree" model="ir.ui.view">
+    <field name="name">iot.event.tree</field>
+    <field name="model">iot.event</field>
+    <field name="arch" type="xml">
+        <tree create="0">
+            <field name="device_id" attrs="{'readonly': 1}"/>
+            <field name="device_input_id" attrs="{'readonly': 1}"/>
+            <field name="datetime_taken"/>
+            <field name="datetaken"/>
+            <field name="timetaken" widget="float_time"/>
+            <field name="value"/>
+            <field name="field_type"/>
+        </tree>
+    </field>
+</record>
+
+<record id="view_iot_event_graph" model="ir.ui.view">
+    <field name="name">iot.event.graph</field>
+    <field name="model">iot.event</field>
+    <field name="arch" type="xml">
+        <graph string="Events" type="line">
+            <field name="timetaken" widget="float_time"/>
+            <field name="device_input_id"/>
+            <field name="value" type="measure"/>
+            <field name="value_int" type="measure"/>
+            <field name="value_float" type="measure"/>
+            <field name="value_bool" type="measure"/>
+        </graph>
+    </field>
+</record>
+
+<record id="view_iot_event_pivot" model="ir.ui.view">
+    <field name="name">iot.event.pivot</field>
+    <field name="model">iot.event</field>
+    <field name="arch" type="xml">
+        <pivot string="Events" disable_linking="True">
+            <field name="timetaken" type="row"/>
+            <field name="device_input_id" type="col"/>
+            <field name="value" type="measure"/>
+            <field name="value_int" type="measure"/>
+            <field name="value_float" type="measure"/>
+            <field name="value_bool" type="measure"/>
+        </pivot>
+    </field>
+</record>
+
+<record id="iot_event_search" model="ir.ui.view">
+    <field name="name">iot.event.filter</field>
+    <field name="model">iot.event</field>
+    <field name="arch" type="xml">
+        <search string="Search Iot Events">
+            <field name="device_input_id" string="Iot Input"/>
+            <field name="device_id" string="Iot Device"/>
+            <field name="value" string="Value"/>
+            <separator/>
+            <field name="datetaken" string="At Date" filter_domain="[('datetaken','=', self)]"/>
+            <field name="datetaken" string="From Date" filter_domain="[('datetaken','&gt;=', self)]"/>
+            <field name="datetaken" string="To Date" filter_domain="[('datetaken','&lt;=', self)]"/>
+            <field name="timetaken" string="From Time" filter_domain="[('timetaken','&gt;=', self)]"/>
+            <field name="timetaken" string="To Time" filter_domain="[('timetaken','&lt;=', self)]"/>
+            <separator/>
+            <filter name="today" string="Today" domain="[('datetime_taken','&gt;=', datetime.datetime.combine(context_today(), datetime.time(0,0,0))), ('datetime_taken','&lt;=', datetime.datetime.combine(context_today(), datetime.time(23,59,59)))]" help="Events logged today."/>
+            <filter name="datetime_taken" string="Date" date="datetime_taken"/>
+            <separator/>
+            <filter name="min_limit_exceeded" string="Out of Min Limit" domain="[('out_of_min_limit','=', 1)]"
+                help="Temperatures out of Minimum Limit."/>
+            <filter name="max_limit_exceeded" string="Out of Max Limit" domain="[('out_of_max_limit','=', 1)]"
+                help="Temperatures out of Maximum Limit."/>
+            <separator/>
+            <filter name="float" string="Decimal Values" domain="[('field_type','=', 'float')]"
+                help="Values with Decimal type event values."/>
+            <filter name="int" string="Whole Number Values" domain="[('field_type','=', 'int')]"
+                help="Values with Integer type event values."/>
+            <filter name="bool" string="On/Off Values" domain="[('field_type','=', 'bool')]"
+                help="Values with Boolean type event values."/>
+
+            <group expand="0" string="Group By...">
+                <filter name="input" string="Iot Input" domain="[]" context="{'group_by':'device_input_id'}"/>
+<!--                 <filter name="device" string="Iot Device" domain="[]" context="{'group_by':'device_id'}"/> -->
+                <filter name="day" string="Day" domain="[]" context="{'group_by':'datetaken'}"/>
+                <filter name="time" string="Time" domain="[]" context="{'group_by':'timetaken'}"/>
+            </group>
+       </search>
+    </field>
+</record>
+
+<record id="iot_event_action" model="ir.actions.act_window">
+    <field name="name">IoT Events</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">iot.event</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form,pivot,graph</field>
+</record>
+
+<menuitem id="iot_event_menu"
+          name="Events"
+          sequence="1"
+          action="iot_event_action"
+          parent="iot.iot_root_menu"
+/>
+
+</odoo>

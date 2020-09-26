@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 Dimitrios Tanis <dtanis@tanisfood.gr>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+    <data noupdate="1">
+        <record forcecreate="True" id="iot_event_uom" model="decimal.precision">
+            <field name="name">IoT Event Value Presision</field>
+            <field name="digits" eval="2"/>
+        </record>
+    </data>
+</odoo>

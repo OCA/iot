@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2020 Dimitrios Tanis <dtanis@tanisfood.gr>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="iot_device_form" model="ir.ui.view">
+        <field name="name">iot.device.form</field>
+        <field name="model">iot.device</field>
+        <field name="inherit_id" ref="iot_input.iot_device_form"/>
+        <field name="arch" type="xml">
+            <field name="ip" position="after">
+                <field name="time_source"  widget="selection"/>
+                <field name="tz" widget="timezone_mismatch"
+                    options="{'tz_offset_field': 'tz_offset'}"
+                    attrs="{'invisible': [('time_source', '!=', 'device')]}"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

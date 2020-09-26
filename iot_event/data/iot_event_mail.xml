@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 Dimitrios Tanis <dtanis@tanisfood.gr>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+    <data noupdate="1">
+        <record id="iot_event_alarm_email_template" model="mail.template">
+            <field name="name">IoT Event Alarm Email Template</field>
+            <field name="subject">${object.display_name} is out of limits</field>
+            <field name="email_to">${object.device_input_id.user_ids.email}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="iot_event.model_iot_event"/>
+            <field name="body_html">
+                <![CDATA[<p><b>${object.display_name}</b> is out of limits:<br>
+Timestamp: <b>${format_tz(object.datetime_taken)}</b><br>
+Value: <b>${(object.value)}</b><br>
+<br>
+Last ${object.device_input_id.alarm_n} values:<br>
+% for event in object.search([('device_input_id', '=', object.device_input_id.id)], limit=object.device_input_id.alarm_n, order='datetime_taken DESC'):
+    ${format_tz(event.datetime_taken)} &nbsp; <b>${event.value}</b> <br>
+% endfor
+<br>
+Minimum Limit: ${object.minimum}<br>
+Maximum Limit: ${object.maximum}<br>
+Alarm n: ${object.device_input_id.alarm_n}<br>
+Alarm c: ${object.device_input_id.alarm_c}<br>
+</p>]]>
+            </field>
+        </record>
+    </data>
+</odoo>
