@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="iot_device_form" model="ir.ui.view">
+        <field name="name">iot.device.form</field>
+        <field name="model">iot.device</field>
+        <field name="inherit_id" ref="iot.iot_device_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_show_output"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-terminal">
+                    <field string="Outputs" name="output_count"
+                           widget="statinfo"/>
+                </button>
+            </xpath>
+            <field name="system_id" position="attributes">
+                <attribute name="domain">[('applies_to', '=', 'device')]</attribute>
+            </field>
+            <page id="actions" position="attributes">
+                <attribute name="attrs">{'invisible': [('system_id', '=', False)]}</attribute>
+            </page>
+        </field>
+
+    </record>
+
+</odoo>
