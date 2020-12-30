@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from odoo import api, exceptions, fields, models, _
 from odoo.tools.safe_eval import safe_eval
+from uuid import uuid4
 from jinja2.sandbox import SandboxedEnvironment
 from uuid import uuid4
 
@@ -83,11 +84,15 @@ class IotTemplateInput(models.Model):
             'call_function': self.call_function,
             'call_model_id': self.call_model_id.id,
             'template_input_id': self.id,
+            'serial': uuid4(),
+            'passphrase': uuid4(),
         }
         vals = safe_eval(self.params)
         for key in vals:
             vals[key] = mako_template_env.from_string(vals[key]).render(keys)
         real_vals.update(vals)
+        print(real_vals)
+        print(vals)
         return self.env['iot.device.input'].create(real_vals)
 
 
@@ -105,6 +110,8 @@ class IotTemplateOutput(models.Model):
             'device_id': device.id,
             'name': self.name,
             'system_id': self.system_id.id,
+            'key_serial': uuid4(),
+            'passphrase': uuid4(),
         }
         vals = safe_eval(self.params)
         for key in vals:
