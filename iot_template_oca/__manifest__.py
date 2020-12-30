@@ -17,4 +17,8 @@
         'wizards/iot_device_configure.xml',
         'views/iot_template_views.xml',
     ],
+    'demo': [
+        'demo/iot_template.xml',
+    ]
+
 }
