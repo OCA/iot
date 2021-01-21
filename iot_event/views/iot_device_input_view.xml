@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 Dimitrios Tanis <dtanis@tanisfood.gr>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+<record id="iot_device_input_form" model="ir.ui.view">
+    <field name="name">iot.device.input.form</field>
+    <field name="model">iot.device.input</field>
+    <field name="inherit_id" ref="iot_input.iot_device_input_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//div[@name='button_box']" position="inside">
+            <button name="action_show_events"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-clipboard"
+                    attrs="{'invisible': [('action_type', '!=', 'event')]}">
+                <field string="Logged Events" name="event_count"
+                       widget="statinfo"/>
+            </button>
+        </xpath>
+
+        <field name="call_model_id" position="before">
+            <field name="device_id" invisible="1"/>
+            <field name="action_type"/>
+        </field>
+
+        <field name="call_model_id" position="attributes">
+            <attribute name="attrs">{'invisible': [('action_type', '=', 'event')]}</attribute>
+        </field>
+        <field name="call_function" position="attributes">
+            <attribute name="attrs">{'invisible': [('action_type', '=', 'event')]}</attribute>
+        </field>
+        
+        <xpath expr="//notebook" position="attributes">
+            <attribute name="invisible">0</attribute>
+        </xpath>
+        <notebook position="inside">
+            <page string="Event" attrs="{'invisible': [('action_type', '!=', 'event')]}">
+                <group>
+                    <group>
+                        <field name="field_type"  widget="selection"/>
+                    </group>
+                    <group name="grp_limits" string="Limits">
+                        <field name="limit_check"/>
+                        <field name="default_value" attrs="{'invisible': [('field_type', '=', 'bool')]}"/>
+                        <field name="minimum" attrs="{'invisible': [('field_type', '=', 'bool')]}"/>
+                        <field name="maximum" attrs="{'invisible': [('field_type', '=', 'bool')]}"/>
+                    </group>
+                    <group name="grp_alarms" string="Alarms">
+                        <field name="notify_alarm"/>
+                        <field name="alarm_type"/>
+                        <field name="alarm_n"/>
+                        <field name="alarm_c"/>
+                        <field name="user_ids" widget="many2many_tags"/>
+                    </group>
+                </group>
+            </page>
+            <page string="Description">
+                <field name="description" nolabel="1"/>
+            </page>
+        </notebook>
+    </field>
+</record>
+
+</odoo>

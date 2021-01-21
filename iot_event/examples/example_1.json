@@ -1,0 +1,342 @@
+// +Additional bytes for strings duplication
+//416+159= 575
+[
+    {
+        "address": "conf",
+        "timestamp": 1600620859,
+        "value": "TanisFood IoT:5.3"
+    },
+    {
+        "address": "status",
+        "timestamp": 1600620859,
+        "value": true
+    },
+    {
+        "address": "ZMPT101B_1",
+        "timestamp": 1600620859,
+        "value": 230
+    },
+    {
+        "address": "ZMPT101B_2",
+        "timestamp": 1600620859,
+        "value": 231
+    },
+    {
+        "address": "ZMPT101B_3",
+        "timestamp": 1600620859,
+        "value": 232
+    },    
+    {
+        "address": "DS1631_1",
+        "timestamp": 1600620860,
+        "value": -18
+    },
+    {
+        "address": "DS1631_2",
+        "timestamp": 1600620865,
+        "value": -18.5
+    },
+    {
+        "address": "DS1631_3",
+        "timestamp": 1600620865,
+        "value": -17.5
+    },
+        {
+        "address": "DS1631_4",
+        "timestamp": 1600620860,
+        "value": -18
+    },
+    {
+        "address": "DS1631_5",
+        "timestamp": 1600620865,
+        "value": -18.5
+    },
+    {
+        "address": "DS1631_6",
+        "timestamp": 1600620865,
+        "value": -17.5
+    },
+        {
+        "address": "DS1631_7",
+        "timestamp": 1600620860,
+        "value": -18
+    },
+    {
+        "address": "DS1631_8",
+        "timestamp": 1600620865,
+        "value": -18.5
+    }
+]
+
+
+//Numerical addresses
+// +Additional bytes for strings duplication
+//416+42= 458
+[
+    {
+        "address": 0,
+        "timestamp": 1600620859,
+        "value": "TanisFood IoT:5.3"
+    },
+    {
+        "address": 1,
+        "timestamp": 1600620859,
+        "value": true
+    },
+    
+    {
+        "address": 10,
+        "timestamp": 1600620859,
+        "value": 230
+    },
+    {
+        "address": 11,
+        "timestamp": 1600620859,
+        "value": 231
+    },
+    {
+        "address": 12,
+        "timestamp": 1600620859,
+        "value": 232
+    },
+    {
+        "address": 20,
+        "timestamp": 1600620860,
+        "value": -18
+    },
+    {
+        "address": 21,
+        "timestamp": 1600620865,
+        "value": -18.5
+    },
+    {
+        "address": 22,
+        "timestamp": 1600620865,
+        "value": -17.5
+    },
+        {
+        "address": 23,
+        "timestamp": 1600620860,
+        "value": -18
+    },
+    {
+        "address": 24,
+        "timestamp": 1600620865,
+        "value": -18.5
+    },
+    {
+        "address": 25,
+        "timestamp": 1600620865,
+        "value": -17.5
+    },
+        {
+        "address": 26,
+        "timestamp": 1600620860,
+        "value": -18
+    },
+    {
+        "address": 27,
+        "timestamp": 1600620865,
+        "value": -18.5
+    }
+]
+
+//Numerical addresses, single byte keys
+// +Additional bytes for strings duplication
+//416+24= 440
+[
+    {
+        "a": 0,
+        "t": 1600620859,
+        "v": "TanisFood IoT:5.3"
+    },
+    {
+        "a": 1,
+        "t": 1600620859,
+        "v": true
+    },
+    
+    {
+        "a": 10,
+        "t": 1600620859,
+        "v": 230
+    },
+    {
+        "a": 11,
+        "t": 1600620859,
+        "v": 231
+    },
+    {
+        "a": 12,
+        "t": 1600620859,
+        "v": 232
+    },
+    {
+        "a": 20,
+        "t": 1600620860,
+        "v": -18
+    },
+    {
+        "a": 21,
+        "t": 1600620865,
+        "v": -18.5
+    },
+    {
+        "a": 22,
+        "t": 1600620865,
+        "v": -17.5
+    },
+        {
+        "a": 23,
+        "t": 1600620860,
+        "v": -18
+    },
+    {
+        "a": 24,
+        "t": 1600620865,
+        "v": -18.5
+    },
+    {
+        "a": 25,
+        "t": 1600620865,
+        "v": -17.5
+    },
+        {
+        "a": 26,
+        "t": 1600620860,
+        "v": -18
+    },
+    {
+        "a": 27,
+        "t": 1600620865,
+        "v": -18.5
+    }
+]
+
+//Numerical addresses, single timestamp, values array with two objects
+// +Additional bytes for strings duplication
+//328+49= 377
+{
+    "timestamp": 1600620859,
+	"values": [
+        {
+            "address": 0,
+            "value": "TanisFood IoT:5.3"
+        },
+        {
+            "address": 1,
+            "value": true
+        },
+        {
+            "address": 10,
+            "value": 230
+        },
+        {
+            "address": 11,
+            "value": 231
+        },
+        {
+            "address": 12,
+            "value": 232
+        },
+        {
+            "address": 20,
+            "value": -18
+        },
+        {
+            "address": 21,
+            "value": -18.5
+        },
+        {
+            "address": 22,
+            "value": -17.5
+        },
+            {
+            "address": 23,
+            "value": -18
+        },
+        {
+            "address": 24,
+            "value": -18.5
+        },
+        {
+            "address": 25,
+            "value": -17.5
+        },
+            {
+            "address": 26,
+            "value": -18
+        },
+        {
+            "address": 27,
+            "value": -18.5
+        }
+    ]
+}
+
+
+//Numerical addresses, single timestamp, values ARRAY with ONE object key:value -> address->value
+// +Additional bytes for strings duplication
+//224+72= 296
+{
+    "timestamp": 1600620859,
+    "values":[
+        {"0": "TanisFood IoT:5.3"},
+        {"1": true},
+        {"10": 230},
+        {"11": 231},
+        {"12": 232},
+        {"20": -18},
+        {"21": -18.5},
+        {"22": -17.5},
+        {"23": -18},
+        {"24": -18.5},
+        {"25": -17.5},
+        {"26": -18},
+        {"27": -18.5}
+    ]
+}
+
+//Numerical addresses, single timestamp, values object with ONE object key:value -> address->value
+// +Additional bytes for strings duplication
+//128+72= 200
+[{
+    "timestamp": 1600620859,
+    "values": {
+        "0": "TanisFood IoT:5.3",
+        "1": true,
+        "10": 230,
+        "11": 231,
+        "12": 232,
+        "20": -18,
+        "21": -18.5,
+        "22": -17.5,
+        "23": -18,
+        "24": -18.5,
+        "25": -17.5,
+        "26": -18,
+        "27": -18.5
+    }
+}]
+
+//Numerical addresses, single timestamp, values object with ONE object key:value -> address->value
+// +Additional bytes for strings duplication
+//120+72= 192
+{
+    "timestamp": 1600620859,
+    "values": {
+        "0": "TanisFood IoT:5.3",
+        "1": true,
+        "10": 230,
+        "11": 231,
+        "12": 232,
+        "20": -18,
+        "21": -18.5,
+        "22": -17.5,
+        "23": -18,
+        "24": -18.5,
+        "25": -17.5,
+        "26": -18,
+        "27": -18.5
+    }
+}
