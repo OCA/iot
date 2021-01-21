@@ -53,7 +53,7 @@
             <field name="datetime_taken"/>
             <field name="datetaken"/>
             <field name="timetaken" widget="float_time"/>
-            <field name="value"/>
+            <field name="value" class="o_list_number"/>
             <field name="field_type"/>
         </tree>
     </field>
