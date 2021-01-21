@@ -5,6 +5,7 @@ from odoo.exceptions import ValidationError
 class IotDeviceInput(models.Model):
     _name = 'iot.device.input'
     _description = "Device input"
+    _order = 'name'
 
     name = fields.Char(required=True)
     device_id = fields.Many2one('iot.device', required=True, readonly=True)

@@ -6,6 +6,7 @@ from odoo import api, fields, models
 class IoTDevice(models.Model):
     _name = 'iot.device'
     _description = 'IoT Device'
+    _order = 'name'
 
     name = fields.Char(required=True)
     system_id = fields.Many2one('iot.system', required=True)
