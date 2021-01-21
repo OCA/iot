@@ -66,6 +66,15 @@ class IotDevice(models.Model):
         device_input = self.input_ids.filtered(
             lambda i: i.address == str(value['address']))
         if len(device_input) == 1:
+            if not device_input.active:
+                _logger.warning(
+                    'Input with address %s is inactive, no data will be logged',
+                    device_input.address)
+                msg = {'status': 'error',
+                       'message': _('Server Error. Check server logs')}
+                if 'uuid' in value:
+                    msg['uuid'] = value['uuid']
+                return msg
             res = device_input._call_device(value)
             self.env['iot.device.input.action'].create(
                 device_input._add_action_vals(value, res))
