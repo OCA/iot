@@ -84,7 +84,7 @@ msgid "Device"
 msgstr ""
 
 #. module: iot_input
-#: code:addons/iot_input/models/iot_device_input.py:60
+#: code:addons/iot_input/models/iot_device_input.py:61
 #, python-format
 msgid "Device cannot be found"
 msgstr ""
@@ -101,7 +101,7 @@ msgid "Display Name"
 msgstr ""
 
 #. module: iot_input
-#: code:addons/iot_input/models/iot_device.py:127
+#: code:addons/iot_input/models/iot_device.py:136
 #, python-format
 msgid "Empty values array"
 msgstr ""
@@ -203,7 +203,7 @@ msgid "Serial"
 msgstr ""
 
 #. module: iot_input
-#: code:addons/iot_input/models/iot_device_input.py:46
+#: code:addons/iot_input/models/iot_device_input.py:47
 #, python-format
 msgid "Serial and passphrase are required"
 msgstr ""
@@ -215,10 +215,11 @@ msgid "Server Error"
 msgstr ""
 
 #. module: iot_input
-#: code:addons/iot_input/models/iot_device.py:78
-#: code:addons/iot_input/models/iot_device.py:108
-#: code:addons/iot_input/models/iot_device.py:114
-#: code:addons/iot_input/models/iot_device.py:120
+#: code:addons/iot_input/models/iot_device.py:74
+#: code:addons/iot_input/models/iot_device.py:87
+#: code:addons/iot_input/models/iot_device.py:117
+#: code:addons/iot_input/models/iot_device.py:123
+#: code:addons/iot_input/models/iot_device.py:129
 #, python-format
 msgid "Server Error. Check server logs"
 msgstr ""
