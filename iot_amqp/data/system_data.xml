@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="amqp_system" model="iot.system">
+        <field name="name">AMQP</field>
+        <field name="applies_to">output</field>
+    </record>
+
+    <record id="amqp_action" model="iot.system.action">
+        <field name="system_id" ref="amqp_system"/>
+        <field name="name">amqp</field>
+    </record>
+</odoo>
