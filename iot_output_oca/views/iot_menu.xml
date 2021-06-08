@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-
-    <menuitem name="IoT"
-              id="iot_root_menu"
-              groups="group_iot_user"
-              web_icon="iot,static/description/icon.png"
+    <menuitem
+        name="IoT"
+        id="iot_root_menu"
+        groups="group_iot_user"
+        web_icon="iot,static/description/icon.png"
     />
-
 </odoo>
