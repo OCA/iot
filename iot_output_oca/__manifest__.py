@@ -3,14 +3,15 @@
 
 {
     "name": "IoT Output",
-    "version": "12.0.1.0.0",
+    "version": "13.0.1.0.1",
     "category": "IoT",
     "author": "Creu Blanca, " "Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "installable": True,
     "application": True,
     "summary": "IoT allow multiple outputs",
-    "depends": ["iot",],
+    "website": "https://github.com/OCA/iot",
+    "depends": ["iot_oca"],
     "data": [
         "security/ir.model.access.csv",
         "views/iot_device_output_views.xml",
