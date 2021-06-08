@@ -16,7 +16,6 @@ class IoTDevice(models.Model):
     ip = fields.Char()
     action_count = fields.Integer(compute="_compute_action_count")
 
-    @api.multi
     @api.depends("action_ids")
     def _compute_action_count(self):
         for record in self:
@@ -28,7 +27,6 @@ class IoTDevice(models.Model):
             "system_action_id": system_action.id,
         }
 
-    @api.multi
     def device_run_action(self):
         system_action = self.env["iot.system.action"].browse(
             self.env.context.get("iot_system_action_id")

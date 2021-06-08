@@ -10,15 +10,15 @@ from odoo.tools import mute_logger
 class TestIoT(TransactionCase):
     def setUp(self):
         super().setUp()
-        self.system = self.env["iot.system"].create({"name": "Testing",})
-        self.system_2 = self.env["iot.system"].create({"name": "Testing 02",})
+        self.system = self.env["iot.system"].create({"name": "Testing"})
+        self.system_2 = self.env["iot.system"].create({"name": "Testing 02"})
         self.action = self.env["iot.system.action"].create(
-            {"name": "test", "system_id": self.system.id,}
+            {"name": "test", "system_id": self.system.id}
         )
         self.action_2 = self.env["iot.system.action"].create(
-            {"name": "test 02", "system_id": self.system_2.id,}
+            {"name": "test 02", "system_id": self.system_2.id}
         )
-        self.device = self.env["iot.device"].create({"name": "Device",})
+        self.device = self.env["iot.device"].create({"name": "Device"})
         self.assertEqual(self.device.output_count, 0)
         self.output = self.env["iot.device.output"].create(
             {
@@ -35,7 +35,7 @@ class TestIoT(TransactionCase):
 
     def test_action(self):
         self.assertEqual(self.output.action_count, 0)
-        with mute_logger("odoo.addons.iot.models.iot_system_action"):
+        with mute_logger("odoo.addons.iot_oca.models.iot_system_action"):
             self.output.with_context(
                 iot_system_action_id=self.action.id
             ).device_run_action()
@@ -45,7 +45,7 @@ class TestIoT(TransactionCase):
     def test_correct_action(self):
         self.assertEqual(self.output.action_count, 0)
         with patch(
-            "odoo.addons.iot.models.iot_system_action." "IoTSystemAction._run",
+            "odoo.addons.iot_oca.models.iot_system_action." "IoTSystemAction._run",
             return_value=("ok", ""),
         ):
             self.output.with_context(
