@@ -10,16 +10,14 @@ class IoTDevice(models.Model):
     output_count = fields.Integer(compute="_compute_output_count")
     system_id = fields.Many2one(required=False)
 
-    @api.multi
     @api.depends("output_ids")
     def _compute_output_count(self):
         for record in self:
             record.output_count = len(record.output_ids)
 
-    @api.multi
     def action_show_output(self):
         self.ensure_one()
-        action = self.env.ref("iot_output.iot_device_output_action")
+        action = self.env.ref("iot_output_oca.iot_device_output_action")
         result = action.read()[0]
 
         result["context"] = {
