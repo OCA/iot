@@ -1,0 +1,188 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* iot_output_oca
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__action_ids
+msgid "Action"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__action_count
+msgid "Action Count"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_system__applies_to
+msgid "Applies To"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__create_uid
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__create_date
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__device_id
+#: model:ir.model.fields.selection,name:iot_output_oca.selection__iot_system__applies_to__device
+msgid "Device"
+msgstr ""
+
+#. module: iot_output_oca
+#: code:addons/iot_output_oca/models/iot_device_output_action.py:0
+#, python-format
+msgid "Device and action must be of the same system"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__display_name
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields.selection,name:iot_output_oca.selection__iot_device_output_action__status__failed
+msgid "Failed"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__id
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__id
+msgid "ID"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model,name:iot_output_oca.model_iot_device_output_action
+msgid "IoT Action"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model,name:iot_output_oca.model_iot_device
+#: model:ir.model,name:iot_output_oca.model_iot_device_output
+msgid "IoT Device"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.actions.act_window,name:iot_output_oca.iot_device_output_action
+msgid "IoT Outputs"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model,name:iot_output_oca.model_iot_system
+msgid "IoT System"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__ip
+msgid "Ip"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output____last_update
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__write_uid
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__write_date
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__model
+msgid "Model"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__name
+msgid "Name"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields.selection,name:iot_output_oca.selection__iot_device_output_action__status__ok
+msgid "Ok"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__date_ok
+msgid "Ok date"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device__output_ids
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__output_id
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_system__output_ids
+#: model:ir.model.fields.selection,name:iot_output_oca.selection__iot_system__applies_to__output
+msgid "Output"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device__output_count
+msgid "Output Count"
+msgstr ""
+
+#. module: iot_output_oca
+#: model_terms:ir.ui.view,arch_db:iot_output_oca.iot_device_form
+msgid "Outputs"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields.selection,name:iot_output_oca.selection__iot_device_output_action__status__pending
+msgid "Pending"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__result
+msgid "Result"
+msgstr ""
+
+#. module: iot_output_oca
+#: model_terms:ir.ui.view,arch_db:iot_output_oca.iot_device_output_action_tree
+msgid "Run"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__state
+msgid "State"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__status
+msgid "Status"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device__system_id
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__system_id
+msgid "System"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__system_action_id
+msgid "System Action"
+msgstr ""
