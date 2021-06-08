@@ -19,7 +19,6 @@ class IoTDeviceOutputAction(models.Model):
     result = fields.Text()
     date_ok = fields.Datetime(readonly=True, string="Ok date")
 
-    @api.multi
     @api.constrains("output_id", "system_action_id")
     def _check_system(self):
         if self.filtered(
@@ -30,7 +29,6 @@ class IoTDeviceOutputAction(models.Model):
     def run_extra_actions(self, status, result):
         return
 
-    @api.multi
     def run(self):
         self.ensure_one()
         if self.status != "ok":
