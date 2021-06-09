@@ -45,8 +45,8 @@ class TestAmqp(TransactionCase):
         self.host = self.env["iot.amqp.host"].create(
             {"name": "Host", "connection": "amqp://demo_connection"}
         )
-        self.device = self.env["iot.device"].create({"name": "Device",})
-        self.system = self.env.ref("iot_amqp.amqp_system")
+        self.device = self.env["iot.device"].create({"name": "Device"})
+        self.system = self.env.ref("iot_amqp_oca.amqp_system")
         self.output = self.env["iot.device.output"].create(
             {
                 "system_id": self.system.id,
@@ -73,10 +73,11 @@ class TestAmqp(TransactionCase):
 
     def test_amqp(self):
         with patch(
-            "odoo.addons.iot_amqp.models.iot_device_output_action." "BlockingConnection"
+            "odoo.addons.iot_amqp_oca.models."
+            "iot_device_output_action.BlockingConnection"
         ) as mock:
             mock.return_value = TestBlockingConnection(self, self.output)
             self.output.with_context(
-                iot_system_action_id=self.system.id,
+                iot_system_action_id=self.system.id
             ).device_run_action()
             mock.assert_called()
