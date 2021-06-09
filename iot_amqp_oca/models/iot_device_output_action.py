@@ -1,8 +1,10 @@
 # Copyright 2020 Creu Blanca
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import models
 import logging
+
+from odoo import models
+
 _logger = logging.getLogger(__name__)
 try:
     from pika import BlockingConnection, URLParameters, spec
@@ -11,7 +13,7 @@ except (ImportError, IOError) as err:
 
 
 class IotDeviceOutputAction(models.Model):
-    _inherit = 'iot.device.output.action'
+    _inherit = "iot.device.output.action"
 
     def _run_amqp(self):
         url = self.output_id.amqp_host_id.connection
@@ -23,9 +25,9 @@ class IotDeviceOutputAction(models.Model):
 
     def _generate_amqp_data(self):
         return {
-            'exchange': self.output_id.amqp_exchange,
-            'routing_key': self.output_id.amqp_routing_key,
-            'body': self.output_id.amqp_payload,
-            'properties': spec.BasicProperties(),
-            'mandatory': False
+            "exchange": self.output_id.amqp_exchange,
+            "routing_key": self.output_id.amqp_routing_key,
+            "body": self.output_id.amqp_payload,
+            "properties": spec.BasicProperties(),
+            "mandatory": False,
         }
