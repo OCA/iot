@@ -51,11 +51,6 @@ class IotDeviceInput(models.Model):
     def get_device(self, serial, passphrase):
         return self.search(self.parse_args(serial, passphrase), limit=1)
 
-    @api.model
-    def get_auth_device(self, serial):
-        return self.search([('serial', '=', serial)], limit=1)
-
-    @api.multi
     def call_device(self, value):
         if not self:
             return {'status': 'error', 'message': _('Device cannot be found')}
