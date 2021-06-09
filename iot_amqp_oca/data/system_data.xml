@@ -4,9 +4,8 @@
         <field name="name">AMQP</field>
         <field name="applies_to">output</field>
     </record>
-
     <record id="amqp_action" model="iot.system.action">
-        <field name="system_id" ref="amqp_system"/>
+        <field name="system_id" ref="amqp_system" />
         <field name="name">amqp</field>
     </record>
 </odoo>
