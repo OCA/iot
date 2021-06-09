@@ -1,30 +1,29 @@
-from odoo import api, fields, models, _
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
 class IotDeviceInput(models.Model):
-    _name = 'iot.device.input'
+    _name = "iot.device.input"
     _description = "Device input"
-    _order = 'name'
+    _order = "name"
 
     name = fields.Char(required=True)
-    device_id = fields.Many2one('iot.device', required=True, readonly=True)
-    call_model_id = fields.Many2one('ir.model')
+    device_id = fields.Many2one("iot.device", required=True, readonly=True)
+    call_model_id = fields.Many2one("ir.model")
     call_function = fields.Char(required=True)
     active = fields.Boolean(default=True)
     serial = fields.Char()
     address = fields.Char()
     passphrase = fields.Char()
     action_ids = fields.One2many(
-        'iot.device.input.action', inverse_name='input_id', readonly=True,
+        "iot.device.input.action", inverse_name="input_id", readonly=True,
     )
-    action_count = fields.Integer(compute='_compute_action_count')
+    action_count = fields.Integer(compute="_compute_action_count")
     lang = fields.Selection(
-        selection=lambda self: self.env['res.lang'].get_installed(),
-        string='Language',
+        selection=lambda self: self.env["res.lang"].get_installed(), string="Language",
     )
 
-    @api.depends('action_ids')
+    @api.depends("action_ids")
     def _compute_action_count(self):
         for r in self:
             r.action_count = len(r.action_ids)
@@ -44,8 +43,8 @@ class IotDeviceInput(models.Model):
 
     def parse_args(self, serial, passphrase):
         if not serial or not passphrase:
-            raise ValidationError(_('Serial and passphrase are required'))
-        return [('serial', '=', serial), ('passphrase', '=', passphrase)]
+            raise ValidationError(_("Serial and passphrase are required"))
+        return [("serial", "=", serial), ("passphrase", "=", passphrase)]
 
     @api.model
     def get_device(self, serial, passphrase):
@@ -53,39 +52,36 @@ class IotDeviceInput(models.Model):
 
     @api.model
     def get_auth_device(self, serial):
-        return self.search([('serial', '=', serial)], limit=1)
+        return self.search([("serial", "=", serial)], limit=1)
 
     @api.multi
     def call_device(self, value):
         if not self:
-            return {'status': 'error', 'message': _('Device cannot be found')}
+            return {"status": "error", "message": _("Device cannot be found")}
         else:
             res = self._call_device(value)
-            res['status'] = 'ok'
-        self.env['iot.device.input.action'].create(
-            self._add_action_vals(value, res))
+            res["status"] = "ok"
+        self.env["iot.device.input.action"].create(self._add_action_vals(value, res))
         return res
 
     def _add_action_vals(self, value, res):
         return {
-            'input_id': self.id,
-            'args': str(value),
-            'res': str(res),
+            "input_id": self.id,
+            "args": str(value),
+            "res": str(res),
         }
 
     def test_input_device(self, value):
-        return {'value': value}
+        return {"value": value}
 
     def test_model_function(self, value):
-        return {'status': 'ok',
-                'message': value
-                }
+        return {"status": "ok", "message": value}
 
 
 class IoTDeviceAction(models.Model):
-    _name = 'iot.device.input.action'
-    _description = 'Action of device inputs'
+    _name = "iot.device.input.action"
+    _description = "Action of device inputs"
 
-    input_id = fields.Many2one('iot.device.input')
+    input_id = fields.Many2one("iot.device.input")
     args = fields.Char()
     res = fields.Char()
