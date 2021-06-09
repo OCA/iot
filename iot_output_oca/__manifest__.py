@@ -16,5 +16,4 @@
         "views/iot_device_output_views.xml",
         "views/iot_device_views.xml",
     ],
-    "external_dependencies": {"python": ["pyserial>=3"]},
 }
