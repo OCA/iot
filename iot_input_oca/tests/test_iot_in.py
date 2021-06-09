@@ -1,191 +1,95 @@
-from odoo.tests.common import TransactionCase
+from odoo.exceptions import ValidationError
+from odoo.tests.common import SavepointCase
 
 
-class TestIotIn(TransactionCase):
-    def test_device(self):
-        serial = "testingdeviceserial"
-        passphrase = "password"
-        device = self.env["iot.device"].create({"name": "Device",})
-        device_input = self.env["iot.device.input"].create(
+class TestIotIn(SavepointCase):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.serial = "testingdeviceserial"
+        cls.passphrase = "password"
+        cls.device = cls.env["iot.device"].create({"name": "Device"})
+        cls.device_input = cls.env["iot.device.input"].create(
             {
                 "name": "Input",
-                "device_id": device.id,
+                "device_id": cls.device.id,
                 "active": True,
-                "serial": serial,
-                "passphrase": passphrase,
-                "call_model_id": self.ref("iot_input.model_iot_device_input"),
+                "serial": cls.serial,
+                "passphrase": cls.passphrase,
+                "call_model_id": cls.env.ref("iot_input_oca.model_iot_device_input").id,
                 "call_function": "test_input_device",
             }
         )
-        iot = self.env["iot.device.input"]
-        self.assertFalse(iot.get_device(serial=serial + serial, passphrase=passphrase))
-        self.assertFalse(
-            iot.get_device(serial=serial, passphrase=passphrase + passphrase)
+        cls.iot = cls.env["iot.device.input"]
+
+    def test_device_action_count_ids(self):
+        self.assertEqual(self.device.input_count, 1)
+
+    def _get_devices(self):
+        action = self.device.action_show_input()
+        devices = self.env[action["res_model"]]
+        if action["res_id"]:
+            devices = devices.browse(action["res_id"])
+        else:
+            devices = devices.search(action["domain"])
+        return devices
+
+    def test_device_action(self):
+        devices = self._get_devices()
+        self.assertEqual(devices, self.device_input)
+        device_input_02 = self.env["iot.device.input"].create(
+            {
+                "name": "Input",
+                "device_id": self.device.id,
+                "active": True,
+                "serial": self.serial + self.serial,
+                "passphrase": self.passphrase,
+                "call_model_id": self.env.ref(
+                    "iot_input_oca.model_iot_device_input"
+                ).id,
+                "call_function": "test_input_device",
+            }
         )
-        iot = iot.get_device(serial=serial, passphrase=passphrase)
-        self.assertEqual(iot, device_input)
+        devices = self._get_devices()
+        self.assertIn(self.device_input, devices)
+        self.assertIn(device_input_02, devices)
+
+    def test_device_error_wrong_serial(self):
+        self.assertFalse(
+            self.iot.get_device(
+                serial=self.serial + self.serial, passphrase=self.passphrase
+            )
+        )
+
+    def test_device_error_wrong_passphrase(self):
+        self.assertFalse(
+            self.iot.get_device(
+                serial=self.serial, passphrase=self.passphrase + self.passphrase
+            )
+        )
+
+    def test_device_error_archived(self):
+        self.device_input.active = False
+        self.assertFalse(
+            self.iot.get_device(serial=self.serial, passphrase=self.passphrase)
+        )
+
+    def test_device_error_missing_data(self):
+        with self.assertRaises(ValidationError):
+            self.iot.get_device(serial=False, passphrase=self.passphrase)
+
+    def test_error_execution_without_device(self):
+        res = self.iot.call_device("hello")
+        self.assertEqual(res["status"], "error")
+
+    def test_device_input_calling(self):
+        iot = self.iot.get_device(serial=self.serial, passphrase=self.passphrase)
+        self.assertEqual(iot, self.device_input)
+        self.assertEqual(0, self.device_input.action_count)
         args = "hello"
         res = iot.call_device(args)
         self.assertEqual(res, {"status": "ok", "value": args})
-        self.assertTrue(device_input.action_ids)
-        self.assertEqual(device_input.action_ids.args, str(args))
-        self.assertEqual(device_input.action_ids.res, str(res))
-
-    def test_multi_input(self):
-        device_identification = "test_device_name"
-        passphrase = "password"
-        device = self.env["iot.device"].create(
-            {
-                "name": "Device",
-                "device_identification": device_identification,
-                "passphrase": passphrase,
-            }
-        )
-        address_1 = "I0"
-        self.env["iot.device.input"].create(
-            {
-                "name": "Input 1",
-                "device_id": device.id,
-                "address": address_1,
-                "call_model_id": self.ref("iot_input.model_iot_device_input"),
-                "call_function": "test_model_function",
-            }
-        )
-        address_2 = "I1"
-        self.env["iot.device.input"].create(
-            {
-                "name": "Input 2",
-                "device_id": device.id,
-                "address": address_2,
-                "call_model_id": self.ref("iot_input.model_iot_device_input"),
-                "call_function": "test_model_function",
-            }
-        )
-        single_input_values = [{"input": address_1, "value": "test"}]
-        self.assertEqual(
-            device.parse_multi_input(
-                device_identification + device_identification,
-                passphrase,
-                single_input_values,
-            )["status"],
-            "error",
-        )
-        self.assertEqual(
-            device.parse_multi_input(
-                device_identification, passphrase + passphrase, single_input_values
-            )["status"],
-            "error",
-        )
-        self.assertEqual(
-            device.parse_multi_input(device_identification, passphrase, False)[
-                "status"
-            ],
-            "error",
-        )
-
-        for response in device.parse_multi_input(
-            device_identification, passphrase, [{"address": address_1}]
-        ):
-            self.assertEqual(response["status"], "error")
-        for response in device.parse_multi_input(
-            device_identification, passphrase, [{"address": address_1, "uuid": "abc"}]
-        ):
-            self.assertEqual(response["status"], "error")
-            self.assertTrue("uuid" in response)
-
-        for response in device.parse_multi_input(
-            device_identification, passphrase, [{"value": "test value"}]
-        ):
-            self.assertEqual(response["status"], "error")
-        for response in device.parse_multi_input(
-            device_identification, passphrase, [{"value": "test value", "uuid": "abc"}]
-        ):
-            self.assertEqual(response["status"], "error")
-            self.assertTrue("uuid" in response)
-
-        non_existing_address = "I3"
-        for response in device.parse_multi_input(
-            device_identification,
-            passphrase,
-            [{"address": non_existing_address, "value": "test value 1"}],
-        ):
-            self.assertEqual(response["status"], "error")
-        for response in device.parse_multi_input(
-            device_identification,
-            passphrase,
-            [{"address": non_existing_address, "value": "test value 1", "uuid": "abc"}],
-        ):
-            self.assertEqual(response["status"], "error")
-            self.assertTrue("uuid" in response)
-
-        for response in device.parse_multi_input(
-            device_identification, passphrase, [{"address": address_1, "value": "test"}]
-        ):
-            self.assertEqual(response["status"], "ok")
-        for response in device.parse_multi_input(
-            device_identification,
-            passphrase,
-            [
-                {"address": address_1, "value": "test value 1"},
-                {"address": address_1, "value": "test value 2"},
-            ],
-        ):
-            self.assertEqual(response["status"], "ok")
-        for response in device.parse_multi_input(
-            device_identification,
-            passphrase,
-            [
-                {"address": address_1, "value": "test value 1"},
-                {"address": address_2, "value": "test value 2"},
-            ],
-        ):
-            self.assertEqual(response["status"], "ok")
-        for response in device.parse_multi_input(
-            device_identification,
-            passphrase,
-            [
-                {"address": address_1, "value": "test value 1"},
-                {"address": address_1, "value": "test value 2"},
-                {"address": address_2, "value": "test value 3"},
-            ],
-        ):
-            self.assertEqual(response["status"], "ok")
-        response_with_uuid = [
-            {"address": address_1, "value": "test value 1", "uuid": "abc"},
-            {"address": address_1, "value": "test value 2", "uuid": "def"},
-            {"address": address_2, "value": "test value 3", "uuid": "ghi"},
-        ]
-        for response in device.parse_multi_input(
-            device_identification, passphrase, response_with_uuid
-        ):
-            self.assertTrue(response["uuid"])
-            self.assertEqual(
-                response["message"],
-                [x for x in response_with_uuid if x["uuid"] == response["uuid"]][0],
-            )
-
-        # Test for address passed as number
-        address_3 = 3
-        self.env["iot.device.input"].create(
-            {
-                "name": "Input 1",
-                "device_id": device.id,
-                "address": address_3,
-                "call_model_id": self.ref("iot_input.model_iot_device_input"),
-                "call_function": "test_model_function",
-            }
-        )
-        for response in device.parse_multi_input(
-            device_identification, passphrase, [{"address": address_3, "value": 12.3}]
-        ):
-            self.assertEqual(response["status"], "ok")
-
-        device.active = False
-        self.assertEqual(
-            device.parse_multi_input(
-                device_identification,
-                passphrase,
-                [{"address": address_1, "value": "test"}],
-            )["status"],
-            "error",
-        )
+        self.assertTrue(self.device_input.action_ids)
+        self.assertEqual(self.device_input.action_ids.args, str(args))
+        self.assertEqual(self.device_input.action_ids.res, str(res))
+        self.assertEqual(1, self.device_input.action_count)
