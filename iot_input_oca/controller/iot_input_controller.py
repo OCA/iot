@@ -11,7 +11,7 @@ _logger = logging.getLogger(__name__)
 
 class CallIot(http.Controller):
     @http.route(
-        ["/iot/<serial>/action",],
+        ["/iot/<serial>/action"],
         type="http",
         auth="none",
         methods=["POST"],
@@ -29,7 +29,7 @@ class CallIot(http.Controller):
         )
 
     @http.route(
-        ["/iot/<device_identification>/multi_input",],
+        ["/iot/<device_identification>/multi_input"],
         type="http",
         auth="none",
         methods=["POST"],
@@ -82,7 +82,7 @@ class CallIot(http.Controller):
         )
 
     @http.route(
-        ["/iot/<serial>/check",], type="http", auth="none", methods=["POST"], csrf=False
+        ["/iot/<serial>/check"], type="http", auth="none", methods=["POST"], csrf=False
     )
     def check_unauthorized_iot(self, serial, *args, **kwargs):
         request = http.request
