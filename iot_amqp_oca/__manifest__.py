@@ -2,13 +2,13 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
     "name": "IoT AMQP",
-    "version": "12.0.1.0.0",
+    "version": "13.0.1.0.0",
     "category": "IoT",
-    "author": "Creu Blanca, " "Odoo Community Association (OCA)",
+    "author": "Creu Blanca, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "installable": True,
     "summary": "Integrate Iot Outputs with AMQP",
-    "depends": ["iot_output"],
+    "depends": ["iot_output_oca"],
     "external_dependencies": {"python": ["pika"]},
     "data": [
         "security/ir.model.access.csv",

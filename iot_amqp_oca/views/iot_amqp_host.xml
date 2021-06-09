@@ -48,7 +48,7 @@
         sequence="80"
         id="iot_amqp_host_menu"
         action="iot_amqp_host_act_window"
-        parent="iot.iot_root_menu"
-        groups="iot.group_iot_manager"
+        parent="iot_oca.iot_root_menu"
+        groups="iot_oca.group_iot_manager"
     />
 </odoo>
