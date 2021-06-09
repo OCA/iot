@@ -5,8 +5,8 @@ from odoo import fields, models
 
 
 class IotAmqpHost(models.Model):
-    _name = 'iot.amqp.host'
-    _description = 'Amqp Host'
+    _name = "iot.amqp.host"
+    _description = "Amqp Host"
 
     name = fields.Char(required=True)
     connection = fields.Char()

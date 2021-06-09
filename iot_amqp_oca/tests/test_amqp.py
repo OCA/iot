@@ -1,9 +1,10 @@
 # Copyright 2020 Creu Blanca
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.tests.common import TransactionCase
-from odoo.exceptions import ValidationError
 from mock import patch
+
+from odoo.exceptions import ValidationError
+from odoo.tests.common import TransactionCase
 
 
 class TestChannel:
@@ -39,26 +40,24 @@ class TestBlockingConnection:
 
 
 class TestAmqp(TransactionCase):
-
     def setUp(self):
         super().setUp()
-        self.host = self.env['iot.amqp.host'].create({
-            'name': 'Host',
-            'connection': 'amqp://demo_connection'
-        })
-        self.device = self.env['iot.device'].create({
-            'name': 'Device',
-        })
-        self.system = self.env.ref('iot_amqp.amqp_system')
-        self.output = self.env['iot.device.output'].create({
-            'system_id': self.system.id,
-            'device_id': self.device.id,
-            'name': 'Output',
-            'amqp_exchange': 'EXCHANGE',
-            'amqp_routing_key': 'ROUTING_KEY',
-            'amqp_host_id': self.host.id,
-            'amqp_payload': "PAYLOAD",
-        })
+        self.host = self.env["iot.amqp.host"].create(
+            {"name": "Host", "connection": "amqp://demo_connection"}
+        )
+        self.device = self.env["iot.device"].create({"name": "Device",})
+        self.system = self.env.ref("iot_amqp.amqp_system")
+        self.output = self.env["iot.device.output"].create(
+            {
+                "system_id": self.system.id,
+                "device_id": self.device.id,
+                "name": "Output",
+                "amqp_exchange": "EXCHANGE",
+                "amqp_routing_key": "ROUTING_KEY",
+                "amqp_host_id": self.host.id,
+                "amqp_payload": "PAYLOAD",
+            }
+        )
 
     def test_constrain_01(self):
         with self.assertRaises(ValidationError):
@@ -74,8 +73,7 @@ class TestAmqp(TransactionCase):
 
     def test_amqp(self):
         with patch(
-            'odoo.addons.iot_amqp.models.iot_device_output_action.'
-            'BlockingConnection'
+            "odoo.addons.iot_amqp.models.iot_device_output_action." "BlockingConnection"
         ) as mock:
             mock.return_value = TestBlockingConnection(self, self.output)
             self.output.with_context(
