@@ -4,7 +4,7 @@ from uuid import uuid4
 
 from jinja2.sandbox import SandboxedEnvironment
 
-from odoo import _, api, exceptions, fields, models
+from odoo import fields, models
 from odoo.tools.safe_eval import safe_eval
 
 mako_template_env = SandboxedEnvironment(
@@ -35,7 +35,6 @@ class IotTemplate(models.Model):
     key_ids = fields.One2many("iot.template.key", inverse_name="template_id")
     parent_id = fields.Many2one("iot.template", ondelete="restrict")
 
-    @api.multi
     def _get_keys(self, serial):
         if self.parent_id:
             keys = self.parent_id._get_keys(serial)
@@ -44,15 +43,6 @@ class IotTemplate(models.Model):
         keys.update({key.key: key._generate_value() for key in self.key_ids})
         return keys
 
-    @api.multi
-    @api.constrains("parent_id")
-    def _check_recursion_parent_id(self):
-        if not self._check_recursion():
-            raise exceptions.ValidationError(
-                _("Error! You are attempting to create a recursive template.")
-            )
-
-    @api.multi
     def apply_template(self, device, keys):
         self.ensure_one()
         for element in self.input_ids:
@@ -87,8 +77,6 @@ class IotTemplateInput(models.Model):
         for key in vals:
             vals[key] = mako_template_env.from_string(vals[key]).render(keys)
         real_vals.update(vals)
-        print(real_vals)
-        print(vals)
         return self.env["iot.device.input"].create(real_vals)
 
 
@@ -106,10 +94,9 @@ class IotTemplateOutput(models.Model):
             "device_id": device.id,
             "name": self.name,
             "system_id": self.system_id.id,
-            "key_serial": uuid4(),
-            "passphrase": uuid4(),
+            "template_output_id": self.id,
         }
-        vals = safe_eval(self.params)
+        vals = safe_eval(self.params or "{}")
         for key in vals:
             vals[key] = mako_template_env.from_string(vals[key]).render(keys)
         real_vals.update(vals)
