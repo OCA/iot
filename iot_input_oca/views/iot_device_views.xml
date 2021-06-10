@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="iot_device_form" model="ir.ui.view">
+        <field name="name">iot.device.form</field>
+        <field name="model">iot.device</field>
+        <field name="inherit_id" ref="iot_oca.iot_device_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button
+                    name="action_show_input"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-keyboard-o"
+                >
+                    <field string="Inputs" name="input_count" widget="statinfo" />
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

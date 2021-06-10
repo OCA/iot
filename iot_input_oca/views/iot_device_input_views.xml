@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="iot_device_input_tree" model="ir.ui.view">
+        <field name="name">iot.device.input.tree</field>
+        <field name="model">iot.device.input</field>
+        <field name="arch" type="xml">
+            <tree delete="0">
+                <field name="name" />
+                <field name="address" />
+                <field name="serial" />
+            </tree>
+        </field>
+    </record>
+    <record id="iot_device_input_form" model="ir.ui.view">
+        <field name="name">iot.device.input.form</field>
+        <field name="model">iot.device.input</field>
+        <field name="arch" type="xml">
+            <form>
+                <header />
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        text="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                    <field name="active" invisible="1" />
+                    <div class="oe_button_box" name="button_box" />
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="address" />
+                            <field name="serial" />
+                            <field name="passphrase" widget="password" />
+                        </group>
+                        <group>
+                            <field name="call_model_id" options="{'no_create':True}" />
+                            <field name="call_function" />
+                            <field name="lang" />
+                        </group>
+                    </group>
+                    <notebook invisible="1" />
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="iot_device_input_search" model="ir.ui.view">
+        <field name="name">iot.device.input.search</field>
+        <field name="model">iot.device.input</field>
+        <field name="arch" type="xml">
+            <search string="IoT Device Input Search">
+                <filter
+                    name="active"
+                    string="Active"
+                    domain="[('active','=',True)]"
+                    help="Active"
+                />
+                <filter
+                    name="inactive"
+                    string="Inactive"
+                    domain="[('active','=',False)]"
+                    help="Inactive"
+                />
+                <separator />
+            </search>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="iot_device_input_action">
+        <field name="name">IoT Inputs</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">iot.device.input</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
