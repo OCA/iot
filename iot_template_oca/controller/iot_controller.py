@@ -2,17 +2,23 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import json
+
 from odoo import http
 
 
 class CallIot(http.Controller):
-    @http.route([
-        '/iot/<serial>/configure',
-        ], type='http', auth="none", methods=['POST'], csrf=False)
+    @http.route(
+        ["/iot/<serial>/configure",],
+        type="http",
+        auth="none",
+        methods=["POST"],
+        csrf=False,
+    )
     def configure_iot(self, serial, *args, **kwargs):
         request = http.request
-        template = kwargs.get('template', False)
+        template = kwargs.get("template", False)
         if not request.env:
             return json.dumps(False)
-        return json.dumps(request.env['iot.device.configure'].sudo().configure(
-            serial, template))
+        return json.dumps(
+            request.env["iot.device.configure"].sudo().configure(serial, template)
+        )

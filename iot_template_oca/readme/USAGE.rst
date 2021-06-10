@@ -4,4 +4,3 @@
 4. Copy the URL
 5. Access the device and send it the configuration url
 6. The device will contact odoo and automatically configure itself.
-
