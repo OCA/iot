@@ -8,7 +8,7 @@ from odoo import http
 
 class CallIot(http.Controller):
     @http.route(
-        ["/iot/<serial>/configure",],
+        ["/iot/<serial>/configure"],
         type="http",
         auth="none",
         methods=["POST"],

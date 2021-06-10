@@ -1,12 +1,11 @@
 # Copyright 2020 Creu Blanca
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from odoo import api, models
+from odoo import models
 
 
 class IotDevice(models.Model):
     _inherit = "iot.device"
 
-    @api.multi
     def get_iot_configuration(self):
         self.ensure_one()
         return {
