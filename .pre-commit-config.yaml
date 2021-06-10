@@ -14,19 +14,19 @@ default_language_version:
   python: python3
   node: "14.13.0"
 repos:
+  - repo: https://github.com/myint/autoflake
+    rev: v1.4
+    hooks:
+      - id: autoflake
+        args: ["-i", "--ignore-init-module-imports"]
   - repo: https://github.com/psf/black
     rev: 19.10b0
     hooks:
       - id: black
-  - repo: https://github.com/prettier/pre-commit
-    rev: "v1.19.1"
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v1.19.1
     hooks:
       - id: prettier
-  # TODO Avoid awebdeveloper/pre-commit-prettier if possible
-  # HACK https://github.com/prettier/prettier/issues/7407
-  - repo: https://github.com/awebdeveloper/pre-commit-prettier
-    rev: v0.0.1
-    hooks:
       - id: prettier
         name: prettier xml plugin
         additional_dependencies:
@@ -88,16 +88,23 @@ repos:
         args: ["--rcfile=.pylintrc-mandatory"]
         additional_dependencies: ["pylint-odoo==3.5.0"]
   - repo: https://github.com/asottile/pyupgrade
-    rev: v1.26.2
+    rev: v2.7.4
     hooks:
       - id: pyupgrade
   - repo: https://github.com/pre-commit/mirrors-isort
-    rev: v4.3.21
+    rev: v5.6.4
     hooks:
       - id: isort
         name: isort except __init__.py
         exclude: /__init__\.py$
   - repo: https://github.com/acsone/setuptools-odoo
-    rev: 2.5.2
+    rev: 2.6.0
     hooks:
       - id: setuptools-odoo-make-default
+      - id: setuptools-odoo-get-requirements
+        name: Generate requirements.txt for an addons directory
+        entry: setuptools-odoo-get-requirements
+        args: ["--addons-dir=.", "--output=requirements.txt"]
+        language: python
+        pass_filenames: false
+        files: (__manifest__\.py|__openerp__\.py|__terp__\.py|setup\.py)$
