@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="iot_template_form" model="ir.ui.view">
+        <field name="name">iot.template.form</field>
+        <field name="model">iot.template</field>
+        <field name="arch" type="xml">
+            <form create="0">
+                <header />
+                <sheet>
+                    <div class="oe_button_box" name="button_box" />
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <notebook>
+                        <page string="Keys" id="key">
+                            <field name="key_ids" />
+                        </page>
+                        <page string="Inputs" id="input">
+                            <field name="input_ids" />
+                        </page>
+                        <page string="Outputs" id="output">
+                            <field name="output_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="iot_template_tree" model="ir.ui.view">
+        <field name="name">iot.template.form</field>
+        <field name="model">iot.template</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="iot_template_action">
+        <field name="name">IoT Templates</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">iot.template</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        name="Templates"
+        sequence="90"
+        id="iot_template_menu"
+        action="iot_template_action"
+        parent="iot_oca.iot_root_menu"
+        groups="iot_oca.group_iot_manager"
+    />
+</odoo>

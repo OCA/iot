@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+-->
+<odoo>
+    <record model="ir.ui.view" id="configure_form">
+        <field name="name">iot.device.configure</field>
+        <field name="model">iot.device.configure</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Apply template">
+                <group>
+                    <field name="generated" invisible="1" />
+                    <field
+                        name="url"
+                        attrs="{'invisible': [('generated', '=', False)]}"
+                    />
+                </group>
+                <footer>
+                    <button
+                        string="Apply"
+                        name="run"
+                        attrs="{'invisible': [('generated', '=', True)]}"
+                        type="object"
+                        default_focus="1"
+                        class="btn-primary"
+                    />
+                    <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <act_window
+        id="configure_action"
+        name="Apply template"
+        res_model="iot.device.configure"
+        view_mode="form"
+        target="new"
+    />
+    <menuitem
+        name="Config Device"
+        sequence="80"
+        id="iot_device_configuration_menu"
+        action="configure_action"
+        parent="iot_oca.iot_root_menu"
+        groups="iot_oca.group_iot_manager"
+    />
+</odoo>
