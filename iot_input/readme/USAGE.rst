@@ -53,3 +53,6 @@ success/failure per record.
 It has full error reporting and the return value is a JSON array of dicts containing at
 least status and message. Error message respose is at some points generic, though
 extended logging is done in Odoo server logs.
+
+There is a cron action (that is disabled by default) to clean up the iot.device.input.action
+table every 7 days. That table holds all data sent-received and can usually be purged.
