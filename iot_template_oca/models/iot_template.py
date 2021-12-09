@@ -34,6 +34,8 @@ class IotTemplate(models.Model):
     output_ids = fields.One2many("iot.template.output", inverse_name="template_id",)
     key_ids = fields.One2many("iot.template.key", inverse_name="template_id")
     parent_id = fields.Many2one("iot.template", ondelete="restrict")
+    tag_ids = fields.Many2many("iot.device.tag")
+    group_id = fields.Many2one("iot.device.group")
 
     def _get_keys(self, serial):
         if self.parent_id:
@@ -45,6 +47,13 @@ class IotTemplate(models.Model):
 
     def apply_template(self, device, keys):
         self.ensure_one()
+        new_vals = {}
+        if self.group_id and not device.group_id:
+            new_vals["group_id"] = self.group_id.id
+        if self.tag_ids:
+            new_vals["tag_ids"] = [(4, tag_id) for tag_id in self.tag_ids.ids]
+        if new_vals:
+            device.write(new_vals)
         for element in self.input_ids:
             element._apply_template(device, keys)
         for element in self.output_ids:

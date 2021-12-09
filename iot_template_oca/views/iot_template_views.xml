@@ -13,15 +13,61 @@
                             <field name="name" />
                         </h1>
                     </div>
+                    <group>
+                        <field name="group_id"/>
+                        <field name="tag_ids" widget="many2many_tags"  options="{'color_field': 'color'}"/>
+                    </group>
                     <notebook>
                         <page string="Keys" id="key">
-                            <field name="key_ids" />
+                            <field name="key_ids" >
+                                <tree editable="bottom">
+                                    <field name="key"/>
+                                </tree>
+                                <form>
+                                    <sheet>
+                                        <group>
+                                            <field name="key" />
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
                         </page>
                         <page string="Inputs" id="input">
-                            <field name="input_ids" />
+                            <field name="input_ids" >
+
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="call_model_id"/>
+                                    <field name="call_function"/>
+                                </tree>
+                                <form>
+                                    <sheet>
+                                        <group>
+                                            <field name="name" />
+                                            <field name="call_model_id"/>
+                                            <field name="call_function"/>
+                                            <field name="params"/>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
                         </page>
                         <page string="Outputs" id="output">
-                            <field name="output_ids" />
+                            <field name="output_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="system_id"/>
+                                </tree>
+                                <form>
+                                    <sheet>
+                                        <group>
+                                            <field name="name" />
+                                            <field name="system_id"/>
+                                            <field name="params"/>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
                         </page>
                     </notebook>
                 </sheet>
@@ -48,7 +94,6 @@
         sequence="90"
         id="iot_template_menu"
         action="iot_template_action"
-        parent="iot_oca.iot_root_menu"
-        groups="iot_oca.group_iot_manager"
+        parent="iot_oca.iot_configuration_menu"
     />
 </odoo>
