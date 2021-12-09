@@ -17,10 +17,15 @@ class IoTDevice(models.Model):
     active = fields.Boolean(default=True)
     device_identification = fields.Char()
     passphrase = fields.Char()
+    # TODO: On 14 remove passpharse and device_identification.
+    #  Create a multiparameter input in order to manage this
     state = fields.Selection([], readonly=True)
     model = fields.Char()
     ip = fields.Char()
     action_count = fields.Integer(compute='_compute_action_count')
+    group_id = fields.Many2one("iot.device.group")
+    tag_ids = fields.Many2many("iot.device.tag")
+    color = fields.Integer()
 
     @api.multi
     @api.depends('action_ids')

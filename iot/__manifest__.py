@@ -18,6 +18,8 @@
         'security/iot_security.xml',
         'security/ir.model.access.csv',
         'views/iot_menu.xml',
+        "views/iot_device_tag.xml",
+        "views/iot_device_group.xml",
         'views/iot_system_views.xml',
         'views/iot_device_views.xml',
     ],
