@@ -14,12 +14,16 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: iot_template_oca
-#: model_terms:ir.ui.view,arch_db:iot_template_oca.configure_form
-msgid "Apply"
+#: model:ir.ui.menu,name:iot_template_oca.iot_device_configuration_menu
+msgid "Add a new Device"
 msgstr ""
 
 #. module: iot_template_oca
-#: model:ir.actions.act_window,name:iot_template_oca.configure_action
+#: model:ir.actions.server,name:iot_template_oca.configure_action
+msgid "Apply Template"
+msgstr ""
+
+#. module: iot_template_oca
 #: model_terms:ir.ui.view,arch_db:iot_template_oca.configure_form
 msgid "Apply template"
 msgstr ""
@@ -36,23 +40,12 @@ msgstr ""
 
 #. module: iot_template_oca
 #: model_terms:ir.ui.view,arch_db:iot_template_oca.configure_form
-msgid "Cancel"
-msgstr ""
-
-#. module: iot_template_oca
-#: model:ir.ui.menu,name:iot_template_oca.iot_device_configuration_menu
-msgid "Config Device"
+msgid "Close"
 msgstr ""
 
 #. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_device_configure
 msgid "Configure a IoT device"
-msgstr ""
-
-#. module: iot_template_oca
-#: code:addons/iot_template_oca/wizards/iot_device_configure.py:0
-#, python-format
-msgid "Configure device"
 msgstr ""
 
 #. module: iot_template_oca
@@ -88,8 +81,8 @@ msgid "Display Name"
 msgstr ""
 
 #. module: iot_template_oca
-#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__generated
-msgid "Generated"
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__group_id
+msgid "Group"
 msgstr ""
 
 #. module: iot_template_oca
@@ -224,6 +217,11 @@ msgid "System"
 msgstr ""
 
 #. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__tag_ids
+msgid "Tag"
+msgstr ""
+
+#. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__template_id
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__template_id
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__template_id
@@ -248,4 +246,9 @@ msgstr ""
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__url
 msgid "Url"
+msgstr ""
+
+#. module: iot_template_oca
+#: model_terms:ir.ui.view,arch_db:iot_template_oca.configure_form
+msgid "Use this URL on your device configuration"
 msgstr ""
