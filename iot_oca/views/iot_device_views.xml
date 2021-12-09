@@ -35,6 +35,12 @@
                     </div>
                     <group>
                         <group>
+                            <field name="group_id" />
+                            <field
+                                name="tag_ids"
+                                widget="many2many_tags"
+                                options="{'color_field': 'color'}"
+                            />
                             <field name="device_identification" />
                             <field name="passphrase" widget="password" />
                             <field
@@ -63,7 +69,7 @@
         <field name="name">iot.device.action.tree</field>
         <field name="model">iot.device.action</field>
         <field name="arch" type="xml">
-            <tree create="0" delete="0">
+            <tree>
                 <field name="status" />
                 <field name="result" />
                 <field name="date_ok" />
@@ -80,27 +86,78 @@
         <field name="name">iot.device.kanban</field>
         <field name="model">iot.device</field>
         <field name="arch" type="xml">
-            <kanban create="false" class="o_kanban_dashboard">
+            <kanban class="o_kanban_dashboard">
                 <field name="name" />
                 <field name="state" />
                 <field name="system_id" />
+                <field name="group_id" />
+                <field name="color" />
                 <templates>
                     <t t-name="kanban-box">
-                        <div>
-                            <div class="o_kanban_card_header">
-                                <div class="o_kanban_card_header_title mb16">
-                                    <div class="o_primary">
-                                        <t t-esc="record.name.value" />
-                                    </div>
+                        <div
+                            t-attf-class="{{!selection_mode ? 'oe_kanban_color_' + kanban_getcolor(record.color.raw_value) : ''}} oe_kanban_card oe_kanban_global_click oe_semantic_html_override"
+                        >
+                            <div class="o_dropdown_kanban dropdown">
+                                <a
+                                    role="button"
+                                    class="dropdown-toggle o-no-caret btn"
+                                    data-toggle="dropdown"
+                                    data-display="static"
+                                    href="#"
+                                    aria-label="Dropdown menu"
+                                    title="Dropdown menu"
+                                >
+                                    <span class="fa fa-ellipsis-v" />
+                                </a>
+                                <div class="dropdown-menu" role="menu">
+                                    <t t-if="widget.editable">
+                                        <a
+                                            role="menuitem"
+                                            type="edit"
+                                            class="dropdown-item"
+                                        >Edit...</a>
+                                    </t>
+                                    <t t-if="widget.deletable">
+                                        <a
+                                            role="menuitem"
+                                            type="delete"
+                                            class="dropdown-item"
+                                        >Delete</a>
+                                    </t>
+                                    <ul
+                                        class="oe_kanban_colorpicker"
+                                        data-field="color"
+                                    />
                                 </div>
                             </div>
-                            <div class="container o_kanban_card_content">
-                                <div class="row">
-                                    <div
-                                        class="col-xs-6 o_kanban_primary_left"
-                                        id="actions"
-                                    >
+                            <div class="oe_kanban_content">
+                                <div class="o_kanban_record_top">
+                                    <b class="o_kanban_record_title">
+                                        <field name="name" />
+                                    </b>
+                                </div>
+                                <div class="o_kanban_record_body">
+                                    <div t-if="record.group_id.raw_value">
+                                        <field name="group_id" />
                                     </div>
+                                    <div t-if="record.group_id.raw_value">IP: <field
+                                            name="ip"
+                                        /></div>
+                                    <field
+                                        name="tag_ids"
+                                        widget="many2many_tags"
+                                        options="{'color_field': 'color'}"
+                                    />
+                                    <div class="row">
+                                        <div
+                                            class="col-xs-6 o_kanban_primary_left"
+                                            id="actions"
+                                        >
+                                            <!-- TODO: Delete this on 14, actions should go to dropdown menu -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="o_kanban_record_bottom">
                                 </div>
                             </div>
                         </div>
@@ -114,6 +171,12 @@
         <field name="model">iot.device</field>
         <field name="arch" type="xml">
             <search string="IoT Device Search">
+                <field name="name" />
+                <field name="device_identification" />
+                <field name="group_id" />
+                <field name="model" />
+                <field name="ip" />
+                <separator />
                 <filter
                     name="active"
                     string="Active"
@@ -127,20 +190,22 @@
                     help="Inactive"
                 />
                 <separator />
+                <group expand="0" string="Group By">
+                    <filter
+                        name="group_group"
+                        string="Group"
+                        domain="[]"
+                        context="{'group_by':'group_id'}"
+                    />
+                </group>
             </search>
         </field>
-    </record>
-    <record model="ir.actions.act_window" id="iot_device_config_action">
-        <field name="name">IoT Devices</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">iot.device</field>
-        <field name="view_mode">tree,form</field>
     </record>
     <record model="ir.actions.act_window" id="iot_device_action">
         <field name="name">IoT Devices</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">iot.device</field>
-        <field name="view_mode">kanban</field>
+        <field name="view_mode">kanban,tree,form</field>
     </record>
     <menuitem
         name="Devices"
@@ -148,13 +213,5 @@
         id="iot_device_menu"
         action="iot_device_action"
         parent="iot_root_menu"
-    />
-    <menuitem
-        name="Config Devices"
-        sequence="80"
-        id="iot_config_device_menu"
-        action="iot_device_config_action"
-        parent="iot_root_menu"
-        groups="group_iot_manager"
     />
 </odoo>
