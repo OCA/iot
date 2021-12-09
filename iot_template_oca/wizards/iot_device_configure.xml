@@ -40,11 +40,11 @@
         target="new"
     />
     <menuitem
-        name="Config Device"
-        sequence="80"
+        name="Add a new Device"
+        sequence="1"
         id="iot_device_configuration_menu"
         action="configure_action"
-        parent="iot_oca.iot_root_menu"
+        parent="iot_oca.iot_configuration_menu"
         groups="iot_oca.group_iot_manager"
     />
 </odoo>
