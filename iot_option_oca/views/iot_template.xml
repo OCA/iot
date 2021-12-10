@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 Creu Blanca
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="iot_template_form_view">
+        <field name="name">iot.template.form (in iot_custom_field_oca)</field>
+        <field name="model">iot.template</field>
+        <field name="inherit_id" ref="iot_template_oca.iot_template_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]" position="after">
+                <group>
+                    <field name="property_ids" widget="many2many_tags" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
