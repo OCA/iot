@@ -53,7 +53,7 @@
         sequence="90"
         id="iot_system_menu"
         action="iot_system_action"
-        parent="iot_root_menu"
+        parent="iot_configuration_menu"
         groups="group_iot_manager"
     />
 </odoo>

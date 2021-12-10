@@ -11,40 +11,35 @@
         <field name="type">form</field>
         <field name="arch" type="xml">
             <form string="Apply template">
+                <div>
+                    Use this URL on your device configuration
+                </div>
                 <group>
-                    <field name="generated" invisible="1" />
                     <field
                         name="url"
-                        attrs="{'invisible': [('generated', '=', False)]}"
+                        widget="CopyClipboardChar"
+                        label="Configuration URL"
                     />
                 </group>
                 <footer>
-                    <button
-                        string="Apply"
-                        name="run"
-                        attrs="{'invisible': [('generated', '=', True)]}"
-                        type="object"
-                        default_focus="1"
-                        class="btn-primary"
-                    />
-                    <button string="Cancel" class="btn-default" special="cancel" />
+                    <button string="Close" class="btn-default" special="cancel" />
                 </footer>
             </form>
         </field>
     </record>
-    <act_window
-        id="configure_action"
-        name="Apply template"
-        res_model="iot.device.configure"
-        view_mode="form"
-        target="new"
-    />
+    <record id="configure_action" model="ir.actions.server">
+        <field name="name">Apply Template</field>
+        <field name="model_id" ref="model_iot_device_configure" />
+        <field name="state">code</field>
+        <field name="code">action = model.create({}).get_formview_action()
+action["target"] = "new"</field>
+    </record>
     <menuitem
-        name="Config Device"
-        sequence="80"
+        name="Add a new Device"
+        sequence="1"
         id="iot_device_configuration_menu"
         action="configure_action"
-        parent="iot_oca.iot_root_menu"
+        parent="iot_oca.iot_configuration_menu"
         groups="iot_oca.group_iot_manager"
     />
 </odoo>
