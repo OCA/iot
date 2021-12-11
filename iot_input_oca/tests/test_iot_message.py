@@ -38,7 +38,7 @@ class TestIotInputMessage(SavepointCase):
 
     def test_message(self):
         original_messages = self.partner.message_ids
-        res = self.device_input.call_device(self.partner.id)
+        res = self.device_input.call_device(value=self.partner.id)
         self.assertEqual("ok", res["status"])
         new_message = self.partner.message_ids - original_messages
         self.assertTrue(new_message)

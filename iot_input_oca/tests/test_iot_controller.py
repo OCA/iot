@@ -93,10 +93,11 @@ class TestIotController(HttpCase):
 
     def test_multi_input_controller(self):
         res = self.url_open(
-            "/iot/%s/multi_input" % self.device_identification,
+            "/iot/%s/multi_input" % self.device.device_identification,
             data={"passphrase": self.passphrase, "values": self.values},
         )
-        for response in res.json():
+        result = res.json()
+        for response in result:
             self.assertEqual(response["status"], "ok")
 
     def test_multi_input_controller_unauthorized_iot_exists(self):
