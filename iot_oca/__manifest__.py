@@ -10,6 +10,7 @@
     "installable": True,
     "application": True,
     "summary": "IoT base module",
+    "website": "https://github.com/OCA/iot",
     "depends": ["base"],
     "data": [
         "security/iot_security.xml",
