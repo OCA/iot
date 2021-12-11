@@ -9,6 +9,8 @@
                 <field name="device_identification" />
                 <field name="system_id" />
                 <field name="model" />
+                <field name="last_contact_date" />
+                <field name="group_id" />
                 <field name="ip" />
             </tree>
         </field>
@@ -54,6 +56,7 @@
                             <field name="model" />
                             <field name="ip" />
                             <field name="state" />
+                            <field name="last_contact_date" />
                         </group>
                     </group>
                     <notebook>
@@ -140,8 +143,11 @@
                                     <div t-if="record.group_id.raw_value">
                                         <field name="group_id" />
                                     </div>
-                                    <div t-if="record.group_id.raw_value">IP: <field
-                                            name="ip"
+                                    <div t-if="record.ip">IP: <field name="ip" /></div>
+                                    <div
+                                        t-if="record.last_contact_date"
+                                    >Last contact: <field
+                                            name="last_contact_date"
                                         /></div>
                                     <field
                                         name="tag_ids"
