@@ -1,4 +1,5 @@
 from odoo.tests.common import SavepointCase
+from odoo.tools import mute_logger
 
 
 class TestIotIn(SavepointCase):
@@ -73,19 +74,21 @@ class TestIotIn(SavepointCase):
         ):
             self.assertEqual(response["status"], "error")
 
+    @mute_logger("odoo.addons.iot_input_oca.models.iot_device_input")
     def test_error_missing_parameter(self):
         for response in self.env["iot.device"].parse_multi_input(
             self.device_identification, self.passphrase, [{"address": self.address_1}]
         ):
-            self.assertEqual(response["status"], "error")
+            self.assertEqual(response["status"], "ko")
 
+    @mute_logger("odoo.addons.iot_input_oca.models.iot_device_input")
     def test_error_with_extra_args(self):
         for response in self.env["iot.device"].parse_multi_input(
             self.device_identification,
             self.passphrase,
             [{"address": self.address_1, "uuid": "abc"}],
         ):
-            self.assertEqual(response["status"], "error")
+            self.assertEqual(response["status"], "ko")
             self.assertTrue("uuid" in response)
 
     def test_error_no_address_with_extra_args(self):
@@ -136,7 +139,9 @@ class TestIotIn(SavepointCase):
             self.assertTrue(response["uuid"])
             self.assertEqual(
                 response["message"],
-                [x for x in response_with_uuid if x["uuid"] == response["uuid"]][0],
+                [x for x in response_with_uuid if x["uuid"] == response["uuid"]][0][
+                    "value"
+                ],
             )
 
     def test_error_archived_device(self):
