@@ -1,5 +1,11 @@
+import logging
+import traceback
+from io import StringIO
+
 from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
+from odoo.exceptions import UserError, ValidationError
+
+_logger = logging.getLogger(__name__)
 
 
 class IotDeviceInput(models.Model):
@@ -28,7 +34,7 @@ class IotDeviceInput(models.Model):
         for r in self:
             r.action_count = len(r.action_ids)
 
-    def _call_device(self, value):
+    def _call_device(self, *args, **kwargs):
         self.ensure_one()
         obj = self
         if self.call_model_id:
@@ -39,7 +45,7 @@ class IotDeviceInput(models.Model):
             )
         if self.lang:
             obj = obj.with_context(lang=self.lang)
-        return getattr(obj, self.call_function)(value)
+        return getattr(obj, self.call_function)(*args, **kwargs)
 
     def parse_args(self, serial, passphrase):
         if not serial or not passphrase:
@@ -50,19 +56,43 @@ class IotDeviceInput(models.Model):
     def get_device(self, serial, passphrase):
         return self.search(self.parse_args(serial, passphrase), limit=1)
 
-    def call_device(self, value):
+    def call_device(self, **kwargs):
         if not self:
             return {"status": "error", "message": _("Device cannot be found")}
-        else:
-            res = self._call_device(value)
-            res["status"] = "ok"
-        self.env["iot.device.input.action"].create(self._add_action_vals(value, res))
+        new_kwargs = kwargs.copy()
+        args = []
+        if "value" in new_kwargs and len(new_kwargs) == 1:
+            args.append(new_kwargs.pop("value"))
+        try:
+            # We want to control that if an error happens,
+            # everything will return to normal but we can process it properly
+            with self.env.cr.savepoint():
+                res = self._call_device(*args, **new_kwargs)
+                res["status"] = "ok"
+                error = False
+        except self._swallable_exceptions():
+            buff = StringIO()
+            traceback.print_exc(file=buff)
+            error = buff.getvalue()
+            _logger.error(error)
+            res = {"status": "ko"}
+        self.device_id.last_contact_date = fields.Datetime.now()
+        self.env["iot.device.input.action"].create(
+            self._add_action_vals(res, error, args, new_kwargs)
+        )
         return res
 
-    def _add_action_vals(self, value, res):
+    def _swallable_exceptions(self):
+        # TODO: improve this list
+        return (UserError, ValidationError, AttributeError, TypeError)
+
+    def _add_action_vals(self, res, error, args, kwargs):
+        new_res = res.copy()
+        if error:
+            new_res["error"] = error
         return {
             "input_id": self.id,
-            "args": str(value),
+            "args": str(args or kwargs),
             "res": str(res),
         }
 
@@ -79,4 +109,5 @@ class IoTDeviceAction(models.Model):
 
     input_id = fields.Many2one("iot.device.input")
     args = fields.Char()
+    kwargs = fields.Char()
     res = fields.Char()
