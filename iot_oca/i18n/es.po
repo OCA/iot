@@ -229,6 +229,11 @@ msgid "Ip"
 msgstr "Ip"
 
 #. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__last_contact_date
+msgid "Last Contact Date"
+msgstr ""
+
+#. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device____last_update
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device_action____last_update
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device_group____last_update
@@ -257,6 +262,11 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:iot_oca.field_iot_system_action__write_date
 msgid "Last Updated on"
 msgstr "Última actualización en"
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
+msgid "Last contact:"
+msgstr ""
 
 #. module: iot_oca
 #: model:res.groups,name:iot_oca.group_iot_manager

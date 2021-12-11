@@ -22,6 +22,7 @@ class IoTDevice(models.Model):
     group_id = fields.Many2one("iot.device.group")
     tag_ids = fields.Many2many("iot.device.tag")
     color = fields.Integer()
+    last_contact_date = fields.Datetime(readonly=True)
 
     @api.depends("action_ids")
     def _compute_action_count(self):
