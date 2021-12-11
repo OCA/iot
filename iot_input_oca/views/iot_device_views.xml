@@ -17,4 +17,22 @@
             </xpath>
         </field>
     </record>
+    <record id="iot_device_kanban" model="ir.ui.view">
+        <field name="name">iot.device.kanban</field>
+        <field name="model">iot.device</field>
+        <field name="inherit_id" ref="iot_oca.iot_device_kanban" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@role='menu']/*[1]" position="before">
+                <a
+                    type="object"
+                    name="action_show_input"
+                    role="menuitem"
+                    class="dropdown-item"
+                >
+                    <i class="fa fa-keyboard-o" />
+                    Inputs
+                </a>
+            </xpath>
+        </field>
+    </record>
 </odoo>
