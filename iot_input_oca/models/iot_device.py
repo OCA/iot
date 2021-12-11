@@ -30,7 +30,7 @@ class IotDevice(models.Model):
             result["res_id"] = self.input_ids.id
         return result
 
-    def parse_single_input(self, value):
+    def parse_single_input(self, uuid=False, address=False, **kwargs):
         """Handle single input for device
 
         :param dict value:
@@ -43,22 +43,15 @@ class IotDevice(models.Model):
         :rtype: dict
         """
         msg = {}
-        if "uuid" in value:
-            msg["uuid"] = value["uuid"]
-        if "address" not in value.keys():
+        if uuid:
+            msg["uuid"] = uuid
+        if not address:
             _logger.warning("Address for Input is required")
             msg.update(
                 {"status": "error", "message": _("Address for Input is required")}
             )
             return msg
-        if "value" not in value.keys():
-            _logger.warning("Value for Input is required")
-            msg.update({"status": "error", "message": _("Value for Input is required")})
-            return msg
-
-        device_input = self.input_ids.filtered(
-            lambda i: i.address == str(value["address"])
-        )
+        device_input = self.input_ids.filtered(lambda i: i.address == str(address))
         if len(device_input) == 1:
             if not device_input.active:
                 _logger.warning(
@@ -72,15 +65,12 @@ class IotDevice(models.Model):
                     }
                 )
                 return msg
-            res = device_input._call_device(value)
-            self.env["iot.device.input.action"].create(
-                device_input._add_action_vals(value, res)
-            )
-            if "uuid" in value:
-                res["uuid"] = value["uuid"]
+            res = device_input.call_device(**kwargs)
+            if uuid:
+                res["uuid"] = uuid
             return res
         else:
-            _logger.warning("Input with address %s not found", value["address"])
+            _logger.warning("Input with address %s not found", address)
             msg.update(
                 {"status": "error", "message": _("Server Error. Check server logs")}
             )
@@ -132,5 +122,5 @@ class IotDevice(models.Model):
             return {"status": "error", "message": _("Empty values array")}
         res = []
         for d in values:
-            res.append(device.parse_single_input(d))
+            res.append(device.parse_single_input(**d))
         return res

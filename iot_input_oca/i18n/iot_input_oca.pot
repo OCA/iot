@@ -14,6 +14,13 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: iot_input_oca
+#: model_terms:ir.ui.view,arch_db:iot_input_oca.iot_device_kanban
+msgid ""
+"<i class=\"fa fa-keyboard-o\"/>\n"
+"                    Inputs"
+msgstr ""
+
+#. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__action_ids
 msgid "Action"
 msgstr ""
@@ -149,6 +156,11 @@ msgid "IoT Inputs"
 msgstr ""
 
 #. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__kwargs
+msgid "Kwargs"
+msgstr ""
+
+#. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__lang
 msgid "Language"
 msgstr ""
@@ -222,12 +234,6 @@ msgstr ""
 #: code:addons/iot_input_oca/models/iot_device.py:0
 #, python-format
 msgid "Server Error. Check server logs"
-msgstr ""
-
-#. module: iot_input_oca
-#: code:addons/iot_input_oca/models/iot_device.py:0
-#, python-format
-msgid "Value for Input is required"
 msgstr ""
 
 #. module: iot_input_oca

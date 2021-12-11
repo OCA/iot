@@ -17,15 +17,15 @@ class CallIot(http.Controller):
         methods=["POST"],
         csrf=False,
     )
-    def call_unauthorized_iot(self, serial, *args, **kwargs):
+    def call_unauthorized_iot(self, serial, passphrase=False, *args, **kwargs):
         request = http.request
         if not request.env:
             return json.dumps(False)
         return json.dumps(
             request.env["iot.device.input"]
             .sudo()
-            .get_device(serial, kwargs["passphrase"])
-            .call_device(kwargs["value"])
+            .get_device(serial, passphrase)
+            .call_device(**kwargs)
         )
 
     @http.route(
@@ -35,7 +35,9 @@ class CallIot(http.Controller):
         methods=["POST"],
         csrf=False,
     )
-    def call_unauthorized_iot_multi_input(self, device_identification, *args, **kwargs):
+    def call_unauthorized_iot_multi_input(
+        self, device_identification, passphrase=False, values=False, *args, **kwargs
+    ):
         """Controller to write multiple input data to device inputs
 
         :param string passphrase:
@@ -48,17 +50,18 @@ class CallIot(http.Controller):
         if not request.env:
             _logger.warning("env not set")
             return json.dumps({"status": "error", "message": _("Server Error")})
-        if "passphrase" not in kwargs:
+        if not passphrase:
             _logger.warning("Passphrase is required")
             return json.dumps(
                 {"status": "error", "message": _("Passphrase is required")}
             )
-        if "values" not in kwargs:
+        if not values:
             _logger.warning("Values is required")
             return json.dumps({"status": "error", "message": _("Values is required")})
         # Decode JSON object here and use pure python objects in further calls
         try:
-            values = json.loads(kwargs["values"])
+            if isinstance(values, str):
+                values = json.loads(values)
             if not isinstance(values, list):
                 raise SyntaxError
         except json.decoder.JSONDecodeError:
@@ -78,7 +81,7 @@ class CallIot(http.Controller):
         return json.dumps(
             request.env["iot.device"]
             .sudo()
-            .parse_multi_input(device_identification, kwargs["passphrase"], values)
+            .parse_multi_input(device_identification, passphrase, values)
         )
 
     @http.route(

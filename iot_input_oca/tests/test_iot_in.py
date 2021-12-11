@@ -79,7 +79,7 @@ class TestIotIn(SavepointCase):
             self.iot.get_device(serial=False, passphrase=self.passphrase)
 
     def test_error_execution_without_device(self):
-        res = self.iot.call_device("hello")
+        res = self.iot.call_device(value="hello")
         self.assertEqual(res["status"], "error")
 
     def test_device_input_calling(self):
@@ -87,9 +87,9 @@ class TestIotIn(SavepointCase):
         self.assertEqual(iot, self.device_input)
         self.assertEqual(0, self.device_input.action_count)
         args = "hello"
-        res = iot.call_device(args)
+        res = iot.call_device(value=args)
         self.assertEqual(res, {"status": "ok", "value": args})
         self.assertTrue(self.device_input.action_ids)
-        self.assertEqual(self.device_input.action_ids.args, str(args))
+        self.assertEqual(self.device_input.action_ids.args, str([args]))
         self.assertEqual(self.device_input.action_ids.res, str(res))
         self.assertEqual(1, self.device_input.action_count)
