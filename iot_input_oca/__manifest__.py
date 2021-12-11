@@ -9,6 +9,7 @@
     "installable": True,
     "summary": "IoT Input module",
     "depends": ["iot_output_oca", "mail"],
+    "website": "https://github.com/OCA/iot",
     "maintainers": ["etobella"],
     "data": [
         "security/ir.model.access.csv",

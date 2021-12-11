@@ -10,6 +10,7 @@
     "summary": "Integrate Iot Outputs with AMQP",
     "depends": ["iot_output_oca"],
     "external_dependencies": {"python": ["pika"]},
+    "website": "https://github.com/OCA/iot",
     "data": [
         "security/ir.model.access.csv",
         "views/iot_amqp_host.xml",
