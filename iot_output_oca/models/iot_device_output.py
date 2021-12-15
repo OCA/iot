@@ -36,3 +36,4 @@ class IoTDevice(models.Model):
                 rec._system_action_vals(system_action)
             )
             action.run()
+            self.device_id.last_contact_date = fields.Datetime.now()
