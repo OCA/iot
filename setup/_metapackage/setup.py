@@ -11,6 +11,7 @@ setuptools.setup(
         'odoo13-addon-iot_amqp_oca',
         'odoo13-addon-iot_input_oca',
         'odoo13-addon-iot_oca',
+        'odoo13-addon-iot_option_oca',
         'odoo13-addon-iot_output_oca',
         'odoo13-addon-iot_template_oca',
     ],
