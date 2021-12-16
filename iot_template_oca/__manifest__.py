@@ -7,7 +7,7 @@
     "author": "Creu Blanca, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "installable": True,
-    "summary": "IoT base module",
+    "summary": "IoT module for managing templates",
     "depends": ["iot_input_oca"],
     "website": "https://github.com/OCA/iot",
     "data": [
