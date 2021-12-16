@@ -42,6 +42,15 @@ class TestIoT(TransactionCase):
         self.assertEqual(self.output.action_count, 1)
         self.assertEqual(self.output.action_ids.status, "failed")
 
+    def test_action_archived_device(self):
+        self.assertEqual(self.output.action_count, 0)
+        self.device.active = False
+        with mute_logger("odoo.addons.iot_oca.models.iot_system_action"):
+            self.output.with_context(
+                iot_system_action_id=self.action.id
+            ).device_run_action()
+        self.assertEqual(self.output.action_count, 0)
+
     def test_correct_action(self):
         self.assertEqual(self.output.action_count, 0)
         with patch(
