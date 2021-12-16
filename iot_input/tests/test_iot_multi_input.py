@@ -74,14 +74,14 @@ class TestIotIn(SavepointCase):
         ):
             self.assertEqual(response["status"], "error")
 
-    @mute_logger("odoo.addons.iot_input_oca.models.iot_device_input")
+    @mute_logger("odoo.addons.iot_input.models.iot_device_input")
     def test_error_missing_parameter(self):
         for response in self.env["iot.device"].parse_multi_input(
             self.device_identification, self.passphrase, [{"address": self.address_1}]
         ):
             self.assertEqual(response["status"], "ko")
 
-    @mute_logger("odoo.addons.iot_input_oca.models.iot_device_input")
+    @mute_logger("odoo.addons.iot_input.models.iot_device_input")
     def test_error_with_extra_args(self):
         for response in self.env["iot.device"].parse_multi_input(
             self.device_identification,

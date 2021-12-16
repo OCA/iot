@@ -14,7 +14,9 @@ class IotDeviceInput(models.Model):
     _order = 'name'
 
     name = fields.Char(required=True)
-    device_id = fields.Many2one('iot.device', required=True, readonly=True)
+    device_id = fields.Many2one(
+        'iot.device', required=True, readonly=True, auto_join=True
+    )
     call_model_id = fields.Many2one('ir.model')
     call_function = fields.Char(required=True)
     active = fields.Boolean(default=True)
@@ -51,7 +53,11 @@ class IotDeviceInput(models.Model):
     def parse_args(self, serial, passphrase):
         if not serial or not passphrase:
             raise ValidationError(_('Serial and passphrase are required'))
-        return [('serial', '=', serial), ('passphrase', '=', passphrase)]
+        return [
+            ('serial', '=', serial),
+            ('passphrase', '=', passphrase),
+            ("device_id.active", "=", True),
+        ]
 
     @api.model
     def get_device(self, serial, passphrase):
