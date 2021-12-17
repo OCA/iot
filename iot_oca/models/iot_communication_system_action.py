@@ -11,11 +11,11 @@ _logger = logging.getLogger(__name__)
 
 
 class IoTSystemAction(models.Model):
-    _name = "iot.system.action"
-    _description = "IoT System.action"
+    _name = "iot.communication.system.action"
+    _description = "IoT Communication System action"
 
     name = fields.Char(required=True)
-    system_id = fields.Many2one("iot.system", required=True)
+    communication_system_id = fields.Many2one("iot.communication.system", required=True)
 
     def _run(self, device_action):
         raise ValidationError(_("Action cannot be processed"))
