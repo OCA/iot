@@ -167,8 +167,43 @@ msgid "ID"
 msgstr "ID"
 
 #. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__ip
+msgid "IP"
+msgstr ""
+
+#. module: iot_oca
 #: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
 msgid "IP:"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__icon
+msgid "Icon"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__image_1920
+msgid "Image"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__image_1024
+msgid "Image 1024"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__image_128
+msgid "Image 128"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__image_256
+msgid "Image 256"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__image_512
+msgid "Image 512"
 msgstr ""
 
 #. module: iot_oca
@@ -222,11 +257,6 @@ msgstr "Usuario IoT"
 #: model:ir.model,name:iot_oca.model_iot_device_group
 msgid "Iot Group"
 msgstr ""
-
-#. module: iot_oca
-#: model:ir.model.fields,field_description:iot_oca.field_iot_device__ip
-msgid "Ip"
-msgstr "Ip"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__last_contact_date
@@ -358,6 +388,44 @@ msgstr "Sistemas"
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__tag_ids
 msgid "Tag"
 msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields.selection,name:iot_oca.selection__iot_device__icon__fa_fa-archive_fa-4x
+msgid "archive"
+msgstr ""
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
+msgid "default_image"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields.selection,name:iot_oca.selection__iot_device__icon__fa_fa-desktop_fa-4x
+msgid "desktop"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields.selection,name:iot_oca.selection__iot_device__icon__fa_fa-laptop_fa-4x
+msgid "laptop"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields.selection,name:iot_oca.selection__iot_device__icon__fa_fa-mobile_fa-6x
+msgid "mobile"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields.selection,name:iot_oca.selection__iot_device__icon__fa_fa-television_fa-4x
+msgid "television"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields.selection,name:iot_oca.selection__iot_device__icon__fa_fa-wifi_fa-4x
+msgid "wifi"
+msgstr ""
+
+#~ msgid "Ip"
+#~ msgstr "Ip"
 
 #~ msgid "Config Devices"
 #~ msgstr "Configurar Dispositivos"
