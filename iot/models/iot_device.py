@@ -39,12 +39,23 @@ class IoTDevice(models.Model):
     #  Create a multiparameter input in order to manage this
     state = fields.Selection([], readonly=True)
     model = fields.Char()
-    ip = fields.Char()
+    ip = fields.Char(string="IP")
     action_count = fields.Integer(compute='_compute_action_count')
     group_id = fields.Many2one("iot.device.group")
     tag_ids = fields.Many2many("iot.device.tag")
     color = fields.Integer()
     last_contact_date = fields.Datetime(readonly=True)
+    icon = fields.Selection(
+        [
+            ("fa fa-television fa-4x", "television"),
+            ("fa fa-wifi fa-4x", "wifi"),
+            ("fa fa-laptop fa-4x", "laptop"),
+            ("fa fa-desktop fa-4x", "desktop"),
+            ("fa fa-archive fa-4x", "archive"),
+            ("fa fa-mobile fa-6x", "mobile"),
+        ],
+        "Icon",
+    )
 
     @api.multi
     @api.depends('action_ids')
