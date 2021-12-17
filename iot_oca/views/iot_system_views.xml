@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="iot_system_tree" model="ir.ui.view">
-        <field name="name">iot.system.tree</field>
-        <field name="model">iot.system</field>
+        <field name="name">iot.communication.system.tree</field>
+        <field name="model">iot.communication.system</field>
         <field name="arch" type="xml">
             <tree create="0" delete="0">
                 <field name="name" />
@@ -10,8 +10,8 @@
         </field>
     </record>
     <record id="iot_system_form" model="ir.ui.view">
-        <field name="name">iot.system.form</field>
-        <field name="model">iot.system</field>
+        <field name="name">iot.communication.system.form</field>
+        <field name="model">iot.communication.system</field>
         <field name="arch" type="xml">
             <form create="0" delete="0" edit="0">
                 <header />
@@ -26,7 +26,10 @@
                             <field name="device_ids" readonly="True" />
                         </page>
                         <page string="Actions" id="actions">
-                            <field name="system_action_ids" readonly="True" />
+                            <field
+                                name="communication_system_action_ids"
+                                readonly="True"
+                            />
                         </page>
                     </notebook>
                 </sheet>
@@ -34,8 +37,8 @@
         </field>
     </record>
     <record id="iot_system_action_tree" model="ir.ui.view">
-        <field name="name">iot.system.action.tree</field>
-        <field name="model">iot.system.action</field>
+        <field name="name">iot.communication.system.action.tree</field>
+        <field name="model">iot.communication.system.action</field>
         <field name="arch" type="xml">
             <tree create="0" delete="0">
                 <field name="name" />
@@ -45,7 +48,7 @@
     <record model="ir.actions.act_window" id="iot_system_action">
         <field name="name">IoT System</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">iot.system</field>
+        <field name="res_model">iot.communication.system</field>
         <field name="view_mode">tree,form</field>
     </record>
     <menuitem
