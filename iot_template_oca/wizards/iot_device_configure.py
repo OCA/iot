@@ -23,12 +23,12 @@ class IotDeviceConfigure(models.TransientModel):
             )
 
     @api.model
-    def configure(self, serial, template_id):
+    def configure(self, serial, template_id, ip=False, **kwargs):
         config = self.search([("serial", "=", serial)])
         if not config:
             return {}
         config.unlink()
-        device = self.env["iot.device"].create({"name": serial})
+        device = self.env["iot.device"].create({"name": serial, "ip": ip})
         template = self.env["iot.template"].search([("name", "=", template_id)])
         if template:
             template.apply_template(device, template._get_keys(serial))
