@@ -7,7 +7,7 @@
 
 # iot
 
-TODO: add repo description.
+Internet Of Thing modules
 
 <!-- /!\ do not modify below this line -->
 
