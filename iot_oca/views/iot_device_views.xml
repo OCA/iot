@@ -50,6 +50,7 @@
                                 options="{'color_field': 'color'}"
                             />
                             <field name="device_identification" />
+                            <field name="icon" />
                             <field name="passphrase" widget="password" />
                             <field
                                 name="system_id"
@@ -102,6 +103,8 @@
                 <field name="group_id" />
                 <field name="color" />
                 <field name="id" />
+                <field name="image_128" />
+                <field name="icon" />
                 <templates>
                     <t t-name="kanban-box">
                         <div
@@ -145,6 +148,15 @@
                                     <img
                                         t-att-src="kanban_image('iot.device', 'image_128', record.id.raw_value)"
                                         alt="default_image"
+                                        t-if="record.image_128.raw_value"
+                                    />
+                                    <i
+                                        t-attf-class="{{record.icon.raw_value}}"
+                                        t-if="!record.image_128.raw_value and record.icon.raw_value"
+                                    />
+                                    <i
+                                        t-attf-class="fa fa-question fa-6x"
+                                        t-if="!record.image_128.raw_value and !record.icon.raw_value"
                                     />
                                 </div>
                                 <div class="o_kanban_details">
