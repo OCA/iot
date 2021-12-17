@@ -24,7 +24,7 @@ addon | version | maintainers | summary
 [iot_oca](iot_oca/) | 13.0.1.2.0 |  | IoT base module
 [iot_option_oca](iot_option_oca/) | 13.0.1.0.0 |  | Allow to define custom field for IoT
 [iot_output_oca](iot_output_oca/) | 13.0.1.1.0 |  | IoT allow multiple outputs
-[iot_template_oca](iot_template_oca/) | 13.0.1.1.0 |  | IoT base module
+[iot_template_oca](iot_template_oca/) | 13.0.1.1.0 |  | IoT module for managing templates
 
 [//]: # (end addons)
 
