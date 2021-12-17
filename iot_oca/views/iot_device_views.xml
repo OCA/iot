@@ -6,8 +6,7 @@
         <field name="arch" type="xml">
             <tree delete="0">
                 <field name="name" />
-                <field name="device_identification" />
-                <field name="system_id" />
+                <field name="communication_system_id" />
                 <field name="model" />
                 <field name="last_contact_date" />
                 <field name="group_id" />
@@ -49,11 +48,9 @@
                                 widget="many2many_tags"
                                 options="{'color_field': 'color'}"
                             />
-                            <field name="device_identification" />
                             <field name="icon" />
-                            <field name="passphrase" widget="password" />
                             <field
-                                name="system_id"
+                                name="communication_system_id"
                                 attrs="{'readonly': [('action_count','>', 0)]}"
                                 widget="selection"
                             />
@@ -99,7 +96,7 @@
             <kanban class="o_kanban_dashboard">
                 <field name="name" />
                 <field name="state" />
-                <field name="system_id" />
+                <field name="communication_system_id" />
                 <field name="group_id" />
                 <field name="color" />
                 <field name="id" />
@@ -156,6 +153,7 @@
                                     />
                                     <i
                                         t-attf-class="fa fa-question fa-6x"
+                                        title="Unknown device"
                                         t-if="!record.image_128.raw_value and !record.icon.raw_value"
                                     />
                                 </div>
@@ -207,7 +205,6 @@
         <field name="arch" type="xml">
             <search string="IoT Device Search">
                 <field name="name" />
-                <field name="device_identification" />
                 <field name="group_id" />
                 <field name="model" />
                 <field name="ip" />
