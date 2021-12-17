@@ -14,11 +14,12 @@ class CallIot(http.Controller):
         methods=["POST"],
         csrf=False,
     )
-    def configure_iot(self, serial, *args, **kwargs):
+    def configure_iot(self, serial, template, **kwargs):
         request = http.request
-        template = kwargs.get("template", False)
         if not request.env:
             return json.dumps(False)
         return json.dumps(
-            request.env["iot.device.configure"].sudo().configure(serial, template)
+            request.env["iot.device.configure"]
+            .sudo()
+            .configure(serial, template, **kwargs)
         )

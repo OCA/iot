@@ -37,6 +37,9 @@ class IotTemplate(models.Model):
     parent_id = fields.Many2one("iot.template", ondelete="restrict")
     tag_ids = fields.Many2many("iot.device.tag")
     group_id = fields.Many2one("iot.device.group")
+    icon = fields.Selection(
+        selection=lambda r: r.env["iot.device"]._fields["icon"].selection
+    )
 
     def _get_keys(self, serial):
         if self.parent_id:
@@ -55,6 +58,8 @@ class IotTemplate(models.Model):
             new_vals["tag_ids"] = [(4, tag_id) for tag_id in self.tag_ids.ids]
         if self.image_1920 and not device.image_1920:
             new_vals["image_1920"] = self.image_1920
+        if self.icon and not device.icon:
+            new_vals["icon"] = self.icon
         if new_vals:
             device.write(new_vals)
         for element in self.input_ids:
