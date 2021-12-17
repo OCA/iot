@@ -95,6 +95,36 @@ msgid "ID"
 msgstr ""
 
 #. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__icon
+msgid "Icon"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_1920
+msgid "Image"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_1024
+msgid "Image 1024"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_128
+msgid "Image 128"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_256
+msgid "Image 256"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_512
+msgid "Image 512"
+msgstr ""
+
+#. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__input_ids
 msgid "Input"
 msgstr ""
