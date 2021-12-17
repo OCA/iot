@@ -22,14 +22,20 @@
             <form>
                 <header />
                 <sheet>
+                    <field name="active" invisible="1" />
+                    <div class="oe_button_box" name="button_box" />
                     <widget
                         name="web_ribbon"
                         text="Archived"
                         bg_color="bg-danger"
                         attrs="{'invisible': [('active', '=', True)]}"
                     />
-                    <field name="active" invisible="1" />
-                    <div class="oe_button_box" name="button_box" />
+                    <field
+                        name="image_1920"
+                        widget='image'
+                        class="oe_avatar"
+                        options='{"preview_image": "image_128"}'
+                    />
                     <div class="oe_title">
                         <h1>
                             <field name="name" />
@@ -44,6 +50,7 @@
                                 options="{'color_field': 'color'}"
                             />
                             <field name="device_identification" />
+                            <field name="icon" />
                             <field name="passphrase" widget="password" />
                             <field
                                 name="system_id"
@@ -95,10 +102,13 @@
                 <field name="system_id" />
                 <field name="group_id" />
                 <field name="color" />
+                <field name="id" />
+                <field name="image_128" />
+                <field name="icon" />
                 <templates>
                     <t t-name="kanban-box">
                         <div
-                            t-attf-class="{{!selection_mode ? 'oe_kanban_color_' + kanban_getcolor(record.color.raw_value) : ''}} oe_kanban_card oe_kanban_global_click oe_semantic_html_override"
+                            t-attf-class="{{!selection_mode ? 'oe_kanban_color_' + kanban_getcolor(record.color.raw_value) : ''}} oe_kanban_global_click"
                         >
                             <div class="o_dropdown_kanban dropdown">
                                 <a
@@ -134,36 +144,55 @@
                                 </div>
                             </div>
                             <div class="oe_kanban_content">
-                                <div class="o_kanban_record_top">
-                                    <b class="o_kanban_record_title">
-                                        <field name="name" />
-                                    </b>
-                                </div>
-                                <div class="o_kanban_record_body">
-                                    <div t-if="record.group_id.raw_value">
-                                        <field name="group_id" />
-                                    </div>
-                                    <div t-if="record.ip">IP: <field name="ip" /></div>
-                                    <div
-                                        t-if="record.last_contact_date"
-                                    >Last contact: <field
-                                            name="last_contact_date"
-                                        /></div>
-                                    <field
-                                        name="tag_ids"
-                                        widget="many2many_tags"
-                                        options="{'color_field': 'color'}"
+                                <div class="o_kanban_image">
+                                    <img
+                                        t-att-src="kanban_image('iot.device', 'image_128', record.id.raw_value)"
+                                        alt="default_image"
+                                        t-if="record.image_128.raw_value"
                                     />
-                                    <div class="row">
+                                    <i
+                                        t-attf-class="{{record.icon.raw_value}}"
+                                        t-if="!record.image_128.raw_value and record.icon.raw_value"
+                                    />
+                                    <i
+                                        t-attf-class="fa fa-question fa-6x"
+                                        t-if="!record.image_128.raw_value and !record.icon.raw_value"
+                                    />
+                                </div>
+                                <div class="o_kanban_details">
+                                    <div class="o_kanban_record_top">
+                                        <b class="o_kanban_record_title">
+                                            <field name="name" />
+                                        </b>
+                                    </div>
+                                    <div class="o_kanban_record_body">
+                                        <div t-if="record.group_id.raw_value">
+                                            <field name="group_id" />
+                                        </div>
+                                        <div t-if="record.ip">IP: <field
+                                                name="ip"
+                                            /></div>
                                         <div
-                                            class="col-xs-6 o_kanban_primary_left"
-                                            id="actions"
-                                        >
+                                            t-if="record.last_contact_date"
+                                        >Last contact: <field
+                                                name="last_contact_date"
+                                            /></div>
+                                        <field
+                                            name="tag_ids"
+                                            widget="many2many_tags"
+                                            options="{'color_field': 'color'}"
+                                        />
+                                        <div class="row">
+                                            <div
+                                                class="col-xs-6 o_kanban_primary_left"
+                                                id="actions"
+                                            >
                                             <!-- TODO: Delete this on 14, actions should go to dropdown menu -->
                                         </div>
+                                        </div>
                                     </div>
+                                    <div class="o_kanban_record_bottom">
                                 </div>
-                                <div class="o_kanban_record_bottom">
                                 </div>
                             </div>
                         </div>
