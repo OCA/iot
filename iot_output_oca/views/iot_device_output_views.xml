@@ -6,7 +6,7 @@
         <field name="arch" type="xml">
             <tree delete="0">
                 <field name="name" />
-                <field name="system_id" />
+                <field name="communication_system_id" />
             </tree>
         </field>
     </record>
@@ -26,7 +26,7 @@
                     <group>
                         <group>
                             <field
-                                name="system_id"
+                                name="communication_system_id"
                                 domain="[('applies_to', '=', 'output')]"
                             />
                         </group>

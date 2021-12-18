@@ -8,7 +8,7 @@ class IoTDevice(models.Model):
 
     output_ids = fields.One2many("iot.device.output", inverse_name="device_id")
     output_count = fields.Integer(compute="_compute_output_count")
-    system_id = fields.Many2one(required=False)
+    communication_system_id = fields.Many2one(required=False)
 
     @api.depends("output_ids")
     def _compute_output_count(self):
