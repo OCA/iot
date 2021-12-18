@@ -11,7 +11,7 @@ class IoTDevice(models.Model):
     device_id = fields.Many2one(
         "iot.device", required=True, readonly=True, auto_join=True
     )
-    system_id = fields.Many2one("iot.system", required=True)
+    communication_system_id = fields.Many2one("iot.communication.system", required=True)
     action_ids = fields.One2many("iot.device.output.action", inverse_name="output_id")
     state = fields.Selection([], readonly=True)
     model = fields.Char()
@@ -26,12 +26,12 @@ class IoTDevice(models.Model):
     def _system_action_vals(self, system_action):
         return {
             "output_id": self.id,
-            "system_action_id": system_action.id,
+            "communication_system_action_id": system_action.id,
         }
 
     def device_run_action(self):
-        system_action = self.env["iot.system.action"].browse(
-            self.env.context.get("iot_system_action_id")
+        system_action = self.env["iot.communication.system.action"].browse(
+            self.env.context.get("iot_communication_system_action_id")
         )
         for rec in self:
             if not self.device_id.active:

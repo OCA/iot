@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0\n"
+"Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -12,6 +12,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: iot_output_oca
+#: model_terms:ir.ui.view,arch_db:iot_output_oca.iot_device_kanban
+msgid ""
+"<i class=\"fa fa-terminal\"/>\n"
+"                    Outputs"
+msgstr ""
 
 #. module: iot_output_oca
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__action_ids
@@ -24,8 +31,19 @@ msgid "Action Count"
 msgstr ""
 
 #. module: iot_output_oca
-#: model:ir.model.fields,field_description:iot_output_oca.field_iot_system__applies_to
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_communication_system__applies_to
 msgid "Applies To"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device__communication_system_id
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__communication_system_id
+msgid "Communication System"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__communication_system_action_id
+msgid "Communication System Action"
 msgstr ""
 
 #. module: iot_output_oca
@@ -42,7 +60,7 @@ msgstr ""
 
 #. module: iot_output_oca
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__device_id
-#: model:ir.model.fields.selection,name:iot_output_oca.selection__iot_system__applies_to__device
+#: model:ir.model.fields.selection,name:iot_output_oca.selection__iot_communication_system__applies_to__device
 msgid "Device"
 msgstr ""
 
@@ -53,6 +71,8 @@ msgid "Device and action must be of the same system"
 msgstr ""
 
 #. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_communication_system__display_name
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device__display_name
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__display_name
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__display_name
 msgid "Display Name"
@@ -64,6 +84,8 @@ msgid "Failed"
 msgstr ""
 
 #. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_communication_system__id
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device__id
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__id
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__id
 msgid "ID"
@@ -72,6 +94,11 @@ msgstr ""
 #. module: iot_output_oca
 #: model:ir.model,name:iot_output_oca.model_iot_device_output_action
 msgid "IoT Action"
+msgstr ""
+
+#. module: iot_output_oca
+#: model:ir.model,name:iot_output_oca.model_iot_communication_system
+msgid "IoT Communication System"
 msgstr ""
 
 #. module: iot_output_oca
@@ -86,16 +113,13 @@ msgid "IoT Outputs"
 msgstr ""
 
 #. module: iot_output_oca
-#: model:ir.model,name:iot_output_oca.model_iot_system
-msgid "IoT System"
-msgstr ""
-
-#. module: iot_output_oca
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__ip
 msgid "Ip"
 msgstr ""
 
 #. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_communication_system____last_update
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device____last_update
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output____last_update
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action____last_update
 msgid "Last Modified on"
@@ -134,10 +158,10 @@ msgid "Ok date"
 msgstr ""
 
 #. module: iot_output_oca
+#: model:ir.model.fields,field_description:iot_output_oca.field_iot_communication_system__output_ids
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device__output_ids
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__output_id
-#: model:ir.model.fields,field_description:iot_output_oca.field_iot_system__output_ids
-#: model:ir.model.fields.selection,name:iot_output_oca.selection__iot_system__applies_to__output
+#: model:ir.model.fields.selection,name:iot_output_oca.selection__iot_communication_system__applies_to__output
 msgid "Output"
 msgstr ""
 
@@ -174,15 +198,4 @@ msgstr ""
 #. module: iot_output_oca
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__status
 msgid "Status"
-msgstr ""
-
-#. module: iot_output_oca
-#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device__system_id
-#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__system_id
-msgid "System"
-msgstr ""
-
-#. module: iot_output_oca
-#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__system_action_id
-msgid "System Action"
 msgstr ""
