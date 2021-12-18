@@ -15,14 +15,33 @@
                     <field string="Outputs" name="output_count" widget="statinfo" />
                 </button>
             </xpath>
-            <field name="system_id" position="attributes">
+            <field name="communication_system_id" position="attributes">
                 <attribute name="domain">[('applies_to', '=', 'device')]</attribute>
             </field>
             <page id="actions" position="attributes">
                 <attribute
                     name="attrs"
-                >{'invisible': [('system_id', '=', False)]}</attribute>
+                >{'invisible': [('communication_system_id', '=', False)]}</attribute>
             </page>
+        </field>
+    </record>
+
+    <record id="iot_device_kanban" model="ir.ui.view">
+        <field name="name">iot.device.kanban</field>
+        <field name="model">iot.device</field>
+        <field name="inherit_id" ref="iot_oca.iot_device_kanban" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@role='menu']/*[1]" position="before">
+                <a
+                    type="object"
+                    name="action_show_output"
+                    role="menuitem"
+                    class="dropdown-item"
+                >
+                    <i class="fa fa-terminal" />
+                    Outputs
+                </a>
+            </xpath>
         </field>
     </record>
 </odoo>
