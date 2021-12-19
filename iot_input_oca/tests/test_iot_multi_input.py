@@ -163,7 +163,8 @@ class TestIotIn(SavepointCase):
             [{"address": self.address_1, "value": "test"}],
         ):
             self.assertEqual(
-                result["status"], "error",
+                result["status"],
+                "error",
             )
 
     def test_error_archived_device_input_extra_args(self):
@@ -174,6 +175,7 @@ class TestIotIn(SavepointCase):
             [{"address": self.address_1, "value": "test", "uuid": "ghi"}],
         ):
             self.assertEqual(
-                result["status"], "error",
+                result["status"],
+                "error",
             )
             self.assertEqual(result["uuid"], "ghi")
