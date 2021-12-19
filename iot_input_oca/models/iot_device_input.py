@@ -24,11 +24,14 @@ class IotDeviceInput(models.Model):
     address = fields.Char()
     passphrase = fields.Char()
     action_ids = fields.One2many(
-        "iot.device.input.action", inverse_name="input_id", readonly=True,
+        "iot.device.input.action",
+        inverse_name="input_id",
+        readonly=True,
     )
     action_count = fields.Integer(compute="_compute_action_count")
     lang = fields.Selection(
-        selection=lambda self: self.env["res.lang"].get_installed(), string="Language",
+        selection=lambda self: self.env["res.lang"].get_installed(),
+        string="Language",
     )
 
     @api.depends("action_ids")
