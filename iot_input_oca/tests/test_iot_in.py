@@ -8,7 +8,10 @@ class TestIotIn(SavepointCase):
         super().setUpClass()
         cls.serial = "testingdeviceserial"
         cls.passphrase = "password"
-        cls.device = cls.env["iot.device"].create({"name": "Device"})
+        cls.system = cls.env["iot.communication.system"].create({"name": "Demo system"})
+        cls.device = cls.env["iot.device"].create(
+            {"name": "Device", "communication_system_id": cls.system.id}
+        )
         cls.device_input = cls.env["iot.device.input"].create(
             {
                 "name": "Input",
