@@ -53,6 +53,7 @@
         <field name="model">iot.device.input</field>
         <field name="arch" type="xml">
             <search string="IoT Device Input Search">
+                <field name="name" />
                 <filter
                     name="active"
                     string="Active"
