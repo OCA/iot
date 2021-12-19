@@ -8,11 +8,12 @@ class TestIotIn(SavepointCase):
         super().setUpClass()
         cls.device_identification = "test_device_name"
         cls.passphrase = "password"
+
+        cls.system = cls.env["iot.communication.system"].create({"name": "Demo system"})
         cls.device = cls.env["iot.device"].create(
             {
                 "name": "Device",
-                "device_identification": cls.device_identification,
-                "passphrase": cls.passphrase,
+                "communication_system_id": cls.system.id,
             }
         )
         cls.address_1 = "I0"
@@ -35,88 +36,97 @@ class TestIotIn(SavepointCase):
                 "call_function": "test_model_function",
             }
         )
-        cls.single_input_values = [{"input": cls.address_1, "value": "test"}]
-
-    def test_multi_input_error_wrong_identification(self):
-        self.assertEqual(
-            self.env["iot.device"].parse_multi_input(
-                self.device_identification + self.device_identification,
-                self.passphrase,
-                self.single_input_values,
-            )["status"],
-            "error",
+        cls.env["iot.device.input"].create(
+            {
+                "name": "Multi Input",
+                "device_id": cls.device.id,
+                "serial": cls.device_identification,
+                "passphrase": cls.passphrase,
+                "call_function": "parse_multi_input",
+            }
         )
+        cls.single_input_values = [{"input": cls.address_1, "value": "test"}]
+        cls.iot = cls.env["iot.device.input"]
 
-    def test_multi_input_error_wrong_passphrase(self):
+    def remove_test_multi_input_error_wrong_identification(self):
+        iot = self.iot.get_device(
+            serial=self.device_identification + self.device_identification,
+            passphrase=self.passphrase,
+        )
         self.assertEqual(
-            self.env["iot.device"].parse_multi_input(
-                self.device_identification,
-                self.passphrase + self.passphrase,
-                self.single_input_values,
-            )["status"],
-            "error",
+            iot.call_device(values=self.single_input_values)["status"],
+            "ko",
         )
 
     def test_multi_input_error_no_inputs(self):
+        iot = self.iot.get_device(
+            serial=self.device_identification, passphrase=self.passphrase
+        )
         self.assertEqual(
-            self.env["iot.device"].parse_multi_input(
-                self.device_identification, self.passphrase, False
-            )["status"],
-            "error",
+            iot.call_device(values=[])["status"],
+            "ko",
         )
 
     def test_multi_input_non_existing_address(self):
         non_existing_address = "I3"
-        for response in self.env["iot.device"].parse_multi_input(
-            self.device_identification,
-            self.passphrase,
-            [{"address": non_existing_address, "value": "test value 1"}],
-        ):
+        iot = self.iot.get_device(
+            serial=self.device_identification, passphrase=self.passphrase
+        )
+        for response in iot.call_device(
+            values=[{"address": non_existing_address, "value": "test value 1"}],
+        )["result"]:
             self.assertEqual(response["status"], "error")
 
     @mute_logger("odoo.addons.iot_input_oca.models.iot_device_input")
     def test_error_missing_parameter(self):
-        for response in self.env["iot.device"].parse_multi_input(
-            self.device_identification, self.passphrase, [{"address": self.address_1}]
-        ):
+        iot = self.iot.get_device(
+            serial=self.device_identification, passphrase=self.passphrase
+        )
+        for response in iot.call_device(values=[{"address": self.address_1}])["result"]:
             self.assertEqual(response["status"], "ko")
 
     @mute_logger("odoo.addons.iot_input_oca.models.iot_device_input")
     def test_error_with_extra_args(self):
-        for response in self.env["iot.device"].parse_multi_input(
-            self.device_identification,
-            self.passphrase,
-            [{"address": self.address_1, "uuid": "abc"}],
-        ):
+
+        iot = self.iot.get_device(
+            serial=self.device_identification, passphrase=self.passphrase
+        )
+        for response in iot.call_device(
+            values=[{"address": self.address_1, "uuid": "abc"}],
+        )["result"]:
             self.assertEqual(response["status"], "ko")
             self.assertTrue("uuid" in response)
 
     def test_error_no_address_with_extra_args(self):
-        for response in self.env["iot.device"].parse_multi_input(
-            self.device_identification, self.passphrase, [{"uuid": "abc"}]
-        ):
+        iot = self.iot.get_device(
+            serial=self.device_identification, passphrase=self.passphrase
+        )
+        for response in iot.call_device(values=[{"uuid": "abc"}])["result"]:
             self.assertEqual(response["status"], "error")
             self.assertTrue("uuid" in response)
 
     def test_error_no_address(self):
-        for response in self.env["iot.device"].parse_multi_input(
-            self.device_identification, self.passphrase, [{"value": "test value"}]
-        ):
+        iot = self.iot.get_device(
+            serial=self.device_identification, passphrase=self.passphrase
+        )
+        for response in iot.call_device(values=[{"value": "test value"}])["result"]:
             self.assertEqual(response["status"], "error")
 
     def test_correct_one_input(self):
-        for response in self.env["iot.device"].parse_multi_input(
-            self.device_identification,
-            self.passphrase,
-            [{"address": self.address_1, "value": "test"}],
-        ):
+        iot = self.iot.get_device(
+            serial=self.device_identification, passphrase=self.passphrase
+        )
+        for response in iot.call_device(
+            values=[{"address": self.address_1, "value": "test"}],
+        )["result"]:
             self.assertEqual(response["status"], "ok")
 
     def test_correct_two_inputs(self):
-        for response in self.env["iot.device"].parse_multi_input(
-            self.device_identification,
-            self.passphrase,
-            [
+        iot = self.iot.get_device(
+            serial=self.device_identification, passphrase=self.passphrase
+        )
+        for response in iot.call_device(
+            values=[
                 {"address": self.address_1, "value": "test value 1"},
                 {
                     "address": self.address_1,
@@ -124,18 +134,19 @@ class TestIotIn(SavepointCase):
                 },  # Checking that nothing wrong happens with a non string
                 {"address": self.address_2, "value": "test value 3"},
             ],
-        ):
+        )["result"]:
             self.assertEqual(response["status"], "ok")
 
     def test_correct_with_extra_args(self):
+        iot = self.iot.get_device(
+            serial=self.device_identification, passphrase=self.passphrase
+        )
         response_with_uuid = [
             {"address": self.address_1, "value": "test value 1", "uuid": "abc"},
             {"address": self.address_1, "value": "test value 2", "uuid": "def"},
             {"address": self.address_2, "value": "test value 3", "uuid": "ghi"},
         ]
-        for response in self.env["iot.device"].parse_multi_input(
-            self.device_identification, self.passphrase, response_with_uuid
-        ):
+        for response in iot.call_device(values=response_with_uuid)["result"]:
             self.assertTrue(response["uuid"])
             self.assertEqual(
                 response["message"],
@@ -146,22 +157,24 @@ class TestIotIn(SavepointCase):
 
     def test_error_archived_device(self):
         self.device.active = False
+        iot = self.iot.get_device(
+            serial=self.device_identification, passphrase=self.passphrase
+        )
         self.assertEqual(
-            self.env["iot.device"].parse_multi_input(
-                self.device_identification,
-                self.passphrase,
-                [{"address": self.address_1, "value": "test"}],
+            iot.call_device(
+                values=[{"address": self.address_1, "value": "test"}],
             )["status"],
             "error",
         )
 
     def test_error_archived_device_input(self):
         self.device_input_1.active = False
-        for result in self.env["iot.device"].parse_multi_input(
-            self.device_identification,
-            self.passphrase,
-            [{"address": self.address_1, "value": "test"}],
-        ):
+        iot = self.iot.get_device(
+            serial=self.device_identification, passphrase=self.passphrase
+        )
+        for result in iot.call_device(
+            values=[{"address": self.address_1, "value": "test"}],
+        )["result"]:
             self.assertEqual(
                 result["status"],
                 "error",
@@ -169,11 +182,12 @@ class TestIotIn(SavepointCase):
 
     def test_error_archived_device_input_extra_args(self):
         self.device_input_1.active = False
-        for result in self.env["iot.device"].parse_multi_input(
-            self.device_identification,
-            self.passphrase,
-            [{"address": self.address_1, "value": "test", "uuid": "ghi"}],
-        ):
+        iot = self.iot.get_device(
+            serial=self.device_identification, passphrase=self.passphrase
+        )
+        for result in iot.call_device(
+            values=[{"address": self.address_1, "value": "test", "uuid": "ghi"}],
+        )["result"]:
             self.assertEqual(
                 result["status"],
                 "error",

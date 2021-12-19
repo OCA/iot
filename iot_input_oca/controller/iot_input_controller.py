@@ -29,14 +29,14 @@ class CallIot(http.Controller):
         )
 
     @http.route(
-        ["/iot/<device_identification>/multi_input"],
+        ["/iot/<serial>/multi_input"],
         type="http",
         auth="none",
         methods=["POST"],
         csrf=False,
     )
     def call_unauthorized_iot_multi_input(
-        self, device_identification, passphrase=False, values=False, *args, **kwargs
+        self, serial, passphrase=False, values=False, *args, **kwargs
     ):
         """Controller to write multiple input data to device inputs
 
@@ -78,11 +78,15 @@ class CallIot(http.Controller):
                 }
             )
         # Encode response to JSON and return
-        return json.dumps(
-            request.env["iot.device"]
+        result = (
+            request.env["iot.device.input"]
             .sudo()
-            .parse_multi_input(device_identification, passphrase, values)
+            .get_device(serial, passphrase)
+            .call_device(values=values)
         )
+        if result["status"] != "ok":
+            return json.dumps({"status": result["status"]})
+        return json.dumps(result["result"])
 
     @http.route(
         ["/iot/<serial>/check"], type="http", auth="none", methods=["POST"], csrf=False

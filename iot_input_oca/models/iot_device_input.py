@@ -77,7 +77,8 @@ class IotDeviceInput(models.Model):
             # everything will return to normal but we can process it properly
             with self.env.cr.savepoint():
                 res = self._call_device(*args, **new_kwargs)
-                res["status"] = "ok"
+                if not res.get("status"):
+                    res["status"] = "ok"
                 error = False
         except self._swallable_exceptions():
             buff = StringIO()
@@ -110,6 +111,29 @@ class IotDeviceInput(models.Model):
 
     def test_model_function(self, value):
         return {"status": "ok", "message": value}
+
+    def parse_multi_input(self, values):
+        """Handle multiple inputs for device
+        :param list values:
+            Values is a list of dicts with at least values for keys 'address', 'value'
+            Each dict in the list can have:
+             - Different address (multi input)
+             - Same address, different values (multi event)
+             - Mix of the above (multi input, multi event)
+        :returns: JSON encodable list of dicts
+        :rtype: list
+        """
+        device = self.device_id
+        if not values:
+            _logger.warning(
+                "Empty values array for input with identification %s",
+                self.serial,
+            )
+            return {"status": "ko"}
+        res = []
+        for d in values:
+            res.append(device.parse_single_input(**d))
+        return {"result": res}
 
 
 class IoTDeviceAction(models.Model):

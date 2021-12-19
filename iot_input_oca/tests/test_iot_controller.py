@@ -9,11 +9,13 @@ class TestIotController(HttpCase):
         super().setUp()
         self.device_identification = "test_device_name"
         self.passphrase = "password"
+        self.system = self.env["iot.communication.system"].create(
+            {"name": "Demo system"}
+        )
         self.device = self.env["iot.device"].create(
             {
                 "name": "Device",
-                "device_identification": self.device_identification,
-                "passphrase": self.passphrase,
+                "communication_system_id": self.system.id,
             }
         )
         self.address_1 = "I0"
@@ -42,6 +44,15 @@ class TestIotController(HttpCase):
                     "iot_input_oca.model_iot_device_input"
                 ).id,
                 "call_function": "test_model_function",
+            }
+        )
+        self.env["iot.device.input"].create(
+            {
+                "name": "Multi Input",
+                "device_id": self.device.id,
+                "serial": self.device_identification,
+                "passphrase": self.passphrase,
+                "call_function": "parse_multi_input",
             }
         )
         self.single_input_values = [{"input": self.address_1, "value": "test"}]
@@ -101,7 +112,7 @@ class TestIotController(HttpCase):
 
     def test_multi_input_controller(self):
         res = self.url_open(
-            "/iot/%s/multi_input" % self.device.device_identification,
+            "/iot/%s/multi_input" % self.device_identification,
             data={"passphrase": self.passphrase, "values": self.values},
         )
         result = res.json()
