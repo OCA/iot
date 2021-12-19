@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo14-addon-iot_oca',
+        'odoo14-addon-iot_output_oca',
     ],
     classifiers=[
         'Programming Language :: Python',
