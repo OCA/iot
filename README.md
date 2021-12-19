@@ -20,6 +20,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [iot_oca](iot_oca/) | 14.0.1.0.0 |  | IoT base module
+[iot_output_oca](iot_output_oca/) | 14.0.1.0.0 |  | IoT allow multiple outputs
 
 [//]: # (end addons)
 
