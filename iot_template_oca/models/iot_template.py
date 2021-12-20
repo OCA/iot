@@ -31,8 +31,14 @@ class IotTemplate(models.Model):
 
     parent_path = fields.Char(index=True)
     name = fields.Char(required=True)
-    input_ids = fields.One2many("iot.template.input", inverse_name="template_id",)
-    output_ids = fields.One2many("iot.template.output", inverse_name="template_id",)
+    input_ids = fields.One2many(
+        "iot.template.input",
+        inverse_name="template_id",
+    )
+    output_ids = fields.One2many(
+        "iot.template.output",
+        inverse_name="template_id",
+    )
     key_ids = fields.One2many("iot.template.key", inverse_name="template_id")
     parent_id = fields.Many2one("iot.template", ondelete="restrict")
     tag_ids = fields.Many2many("iot.device.tag")
