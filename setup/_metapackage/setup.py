@@ -11,6 +11,7 @@ setuptools.setup(
         'odoo14-addon-iot_input_oca',
         'odoo14-addon-iot_oca',
         'odoo14-addon-iot_output_oca',
+        'odoo14-addon-iot_template_oca',
     ],
     classifiers=[
         'Programming Language :: Python',
