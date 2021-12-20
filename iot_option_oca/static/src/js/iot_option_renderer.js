@@ -1,4 +1,4 @@
-odoo.define("iot_option.IotOptionRenderer", function(require) {
+odoo.define("iot_option.IotOptionRenderer", function (require) {
     "use strict";
 
     var BasicRenderer = require("web.BasicRenderer");
@@ -7,7 +7,7 @@ odoo.define("iot_option.IotOptionRenderer", function(require) {
     var qweb = core.qweb;
 
     var IotOptionRenderer = BasicRenderer.extend({
-        init: function(parent, state, params) {
+        init: function (parent, state, params) {
             params = _.defaults({}, params, {
                 viewType: "iot_option",
             });
@@ -21,7 +21,7 @@ odoo.define("iot_option.IotOptionRenderer", function(require) {
             }
             this.recordWidgets = [];
         },
-        _getWidgetOptions: function(data) {
+        _getWidgetOptions: function (data) {
             var mode = this.mode;
             if (data.data.readonly) {
                 mode = "readonly";
@@ -43,14 +43,14 @@ odoo.define("iot_option.IotOptionRenderer", function(require) {
             }
             return options;
         },
-        _renderView: function() {
+        _renderView: function () {
             var self = this;
             var $table = $(qweb.render("iot_option.table"));
             var $body = $table.find("tbody");
             this.$el.empty();
             this.recordWidgets = [];
             $table.appendTo(this.$el);
-            _.each(this.state.data, function(data) {
+            _.each(this.state.data, function (data) {
                 var element = $(
                     qweb.render("iot_option.item", {
                         widget: self,
@@ -65,7 +65,7 @@ odoo.define("iot_option.IotOptionRenderer", function(require) {
             });
             return this._super();
         },
-        _renderIotOptionWidget: function(Widget, element, data) {
+        _renderIotOptionWidget: function (Widget, element, data) {
             var options = this._getWidgetOptions(data);
             var widget = new Widget(
                 this,
@@ -78,7 +78,7 @@ odoo.define("iot_option.IotOptionRenderer", function(require) {
             var node = element.find(".result_data");
             widget.appendTo(node);
         },
-        _onNavigationMove: function(ev) {
+        _onNavigationMove: function (ev) {
             var currentIndex = -1;
             if (ev.data.direction === "next") {
                 currentIndex = this.recordWidgets.indexOf(ev.data.target || ev.target);
@@ -96,7 +96,7 @@ odoo.define("iot_option.IotOptionRenderer", function(require) {
                 this._activatePreviousIotOptionWidget(currentIndex);
             }
         },
-        _activateNextIotOptionWidget: function(currentIndex) {
+        _activateNextIotOptionWidget: function (currentIndex) {
             currentIndex = (currentIndex + 1) % (this.recordWidgets || []).length;
             var activatedIndex = this._activateIotOptionWidget(currentIndex, {inc: 1});
             if (activatedIndex === -1) {
@@ -108,13 +108,13 @@ odoo.define("iot_option.IotOptionRenderer", function(require) {
             }
             return this.lastActivatedFieldIndex;
         },
-        _activatePreviousIotOptionWidget: function(currentIndex) {
+        _activatePreviousIotOptionWidget: function (currentIndex) {
             currentIndex = currentIndex
                 ? currentIndex - 1
                 : (this.recordWidgets || []).length - 1;
             return this._activateIotOptionWidget(currentIndex, {inc: -1});
         },
-        _activateIotOptionWidget: function(currentIndex, options) {
+        _activateIotOptionWidget: function (currentIndex, options) {
             options = options || {};
             _.defaults(options, {inc: 1, wrap: false});
             currentIndex = Math.max(0, currentIndex); // Do not allow negative currentIndex

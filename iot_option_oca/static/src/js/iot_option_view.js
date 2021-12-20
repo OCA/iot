@@ -1,4 +1,4 @@
-odoo.define("iot_option.IotOptionView", function(require) {
+odoo.define("iot_option.IotOptionView", function (require) {
     "use strict";
 
     var BasicView = require("web.BasicView");

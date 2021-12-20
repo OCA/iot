@@ -39,7 +39,11 @@ class TestIotTemplate(HttpCase):
                     )
                 ],
                 "output_ids": [
-                    (0, 0, {"name": "OUTPUT 1", "system_id": self.system.id},)
+                    (
+                        0,
+                        0,
+                        {"name": "OUTPUT 1", "system_id": self.system.id},
+                    )
                 ],
             }
         )
@@ -68,7 +72,8 @@ class TestIotTemplate(HttpCase):
         )
         self.assertTrue(input1)
         res = self.url_open(
-            "/iot/%s/action" % input1.serial, data={"passphrase": input1.passphrase},
+            "/iot/%s/action" % input1.serial,
+            data={"passphrase": input1.passphrase},
         )
         json_res = res.json()
         self.assertEqual(json_res["status"], "ok")
@@ -80,14 +85,16 @@ class TestIotTemplate(HttpCase):
         self.assertTrue(option)
         option.value = True
         res = self.url_open(
-            "/iot/%s/action" % input1.serial, data={"passphrase": input1.passphrase},
+            "/iot/%s/action" % input1.serial,
+            data={"passphrase": input1.passphrase},
         )
         json_res = res.json()
         self.assertEqual(json_res["status"], "ok")
         self.assertEqual(json_res["prop_2"], True)
         self.assertEqual(json_res["prop_1"], "Hello")
         res = self.url_open(
-            "/iot/%s/action" % input1.serial, data={"passphrase": input1.passphrase},
+            "/iot/%s/action" % input1.serial,
+            data={"passphrase": input1.passphrase},
         )
         json_res = res.json()
         self.assertEqual(json_res["status"], "ok")
