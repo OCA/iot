@@ -242,7 +242,7 @@ msgid "Serial"
 msgstr ""
 
 #. module: iot_template_oca
-#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__system_id
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__communication_system_id
 msgid "System"
 msgstr ""
 
