@@ -109,14 +109,14 @@ class IotTemplateOutput(models.Model):
 
     template_id = fields.Many2one("iot.template", required=True)
     name = fields.Char(required=True)
-    system_id = fields.Many2one("iot.system", required=True)
+    communication_system_id = fields.Many2one("iot.communication.system", required=True)
     params = fields.Text()
 
     def _apply_template(self, device, keys):
         real_vals = {
             "device_id": device.id,
             "name": self.name,
-            "system_id": self.system_id.id,
+            "communication_system_id": self.communication_system_id.id,
             "template_output_id": self.id,
         }
         vals = safe_eval(self.params or "{}")
