@@ -28,7 +28,11 @@ class TestIotTemplate(HttpCase):
                     )
                 ],
                 "output_ids": [
-                    (0, 0, {"name": "OUTPUT 1", "system_id": self.system.id},)
+                    (
+                        0,
+                        0,
+                        {"name": "OUTPUT 1", "system_id": self.system.id},
+                    )
                 ],
             }
         )
