@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0\n"
+"Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -44,6 +44,11 @@ msgid "Close"
 msgstr ""
 
 #. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__communication_system_id
+msgid "Communication System"
+msgstr ""
+
+#. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_device_configure
 msgid "Configure a IoT device"
 msgstr ""
@@ -72,7 +77,10 @@ msgid "Device input"
 msgstr ""
 
 #. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device__display_name
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__display_name
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_input__display_name
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_output__display_name
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__display_name
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__display_name
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__display_name
@@ -86,7 +94,10 @@ msgid "Group"
 msgstr ""
 
 #. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device__id
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__id
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_input__id
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_output__id
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__id
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__id
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__id
@@ -172,7 +183,10 @@ msgid "Keys"
 msgstr ""
 
 #. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device____last_update
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure____last_update
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_input____last_update
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_output____last_update
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template____last_update
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input____last_update
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key____last_update
@@ -239,11 +253,6 @@ msgstr ""
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__serial
 msgid "Serial"
-msgstr ""
-
-#. module: iot_template_oca
-#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__communication_system_id
-msgid "System"
 msgstr ""
 
 #. module: iot_template_oca
