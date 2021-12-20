@@ -8,8 +8,10 @@ from odoo.tests.common import HttpCase
 class TestIotTemplate(HttpCase):
     def setUp(self):
         super(TestIotTemplate, self).setUp()
-        self.system = self.env["iot.system"].create({"name": "Testing"})
-        self.system_2 = self.env["iot.system"].create({"name": "Testing 2"})
+        self.system = self.env["iot.communication.system"].create({"name": "Testing"})
+        self.system_2 = self.env["iot.communication.system"].create(
+            {"name": "Testing 2"}
+        )
         self.parent_template = self.env["iot.template"].create(
             {
                 "name": "Parent template",
@@ -31,7 +33,7 @@ class TestIotTemplate(HttpCase):
                     (
                         0,
                         0,
-                        {"name": "OUTPUT 1", "system_id": self.system.id},
+                        {"name": "OUTPUT 1", "communication_system_id": self.system.id},
                     )
                 ],
             }
@@ -60,7 +62,7 @@ class TestIotTemplate(HttpCase):
                         0,
                         {
                             "name": "OUTPUT 2",
-                            "system_id": self.system_2.id,
+                            "communication_system_id": self.system_2.id,
                             "params": "{'ip': '1234'}",
                         },
                     )
@@ -108,9 +110,9 @@ class TestIotTemplate(HttpCase):
         )
         self.assertTrue(output2)
         self.assertNotEqual(output1, output2)
-        self.assertEqual(output1.system_id, self.system)
+        self.assertEqual(output1.communication_system_id, self.system)
         self.assertFalse(output1.ip)
-        self.assertEqual(output2.system_id, self.system_2)
+        self.assertEqual(output2.communication_system_id, self.system_2)
         self.assertEqual(output2.ip, "1234")
 
     def test_missing_configuration(self):

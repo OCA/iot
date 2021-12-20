@@ -8,7 +8,7 @@
     "license": "AGPL-3",
     "installable": True,
     "summary": "IoT module for managing templates",
-    "depends": ["iot_input_oca"],
+    "depends": ["iot_input_oca", "iot_output_oca"],
     "website": "https://github.com/OCA/iot",
     "data": [
         "security/ir.model.access.csv",

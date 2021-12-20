@@ -66,13 +66,13 @@
                             <field name="output_ids">
                                 <tree>
                                     <field name="name" />
-                                    <field name="system_id" />
+                                    <field name="communication_system_id" />
                                 </tree>
                                 <form>
                                     <sheet>
                                         <group>
                                             <field name="name" />
-                                            <field name="system_id" />
+                                            <field name="communication_system_id" />
                                             <field name="params" />
                                         </group>
                                     </sheet>
