@@ -7,8 +7,10 @@ from odoo.tests.common import HttpCase
 class TestIotTemplate(HttpCase):
     def setUp(self):
         super(TestIotTemplate, self).setUp()
-        self.system = self.env["iot.system"].create({"name": "Testing"})
-        self.system_2 = self.env["iot.system"].create({"name": "Testing 2"})
+        self.system = self.env["iot.communication.system"].create({"name": "Testing"})
+        self.system_2 = self.env["iot.communication.system"].create(
+            {"name": "Testing 2"}
+        )
         self.property = self.env["iot.device.property"].create(
             {"name": "Prop1", "tech_name": "prop_1", "widget": "char"}
         )
@@ -42,7 +44,7 @@ class TestIotTemplate(HttpCase):
                     (
                         0,
                         0,
-                        {"name": "OUTPUT 1", "system_id": self.system.id},
+                        {"name": "OUTPUT 1", "communication_system_id": self.system.id},
                     )
                 ],
             }
