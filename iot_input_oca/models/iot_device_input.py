@@ -1,5 +1,6 @@
 import logging
 import traceback
+from datetime import datetime, timedelta
 from io import StringIO
 
 from odoo import _, api, fields, models
@@ -144,3 +145,14 @@ class IoTDeviceAction(models.Model):
     args = fields.Char()
     kwargs = fields.Char()
     res = fields.Char()
+
+    def autovacuum(self, **kwargs):
+        """Delete data older than ``days``.
+        Called from a cron.
+        """
+        deadline = datetime.now() - timedelta(**kwargs)
+        records = self.search([("create_date", "<=", deadline)])
+        nb_records = len(records)
+        records.unlink()
+        _logger.info("AUTOVACUUM - %s '%s' records deleted", nb_records, self._name)
+        return True

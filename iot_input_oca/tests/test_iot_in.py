@@ -96,3 +96,17 @@ class TestIotIn(SavepointCase):
         self.assertEqual(self.device_input.action_ids.args, str([args]))
         self.assertEqual(self.device_input.action_ids.res, str(res))
         self.assertEqual(1, self.device_input.action_count)
+
+    def test_cron(self):
+        iot = self.iot.get_device(serial=self.serial, passphrase=self.passphrase)
+        self.assertEqual(self.device_input.action_count, 0)
+        args = "hello"
+        res = iot.call_device(value=args)
+        self.assertEqual(res, {"status": "ok", "value": args})
+        self.assertEqual(self.device_input.action_count, 1)
+        self.env["iot.device.input.action"].autovacuum(days=1)
+        self.device_input.refresh()
+        self.assertEqual(self.device_input.action_count, 1)
+        self.env["iot.device.input.action"].autovacuum(days=0)
+        self.device_input.refresh()
+        self.assertEqual(self.device_input.action_count, 0)
