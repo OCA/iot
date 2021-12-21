@@ -51,3 +51,21 @@ class TestIoT(TransactionCase):
             self.device.with_context(
                 iot_communication_system_action_id=self.action_2.id
             ).device_run_action()
+
+    def test_cron(self):
+        self.assertEqual(self.device.action_count, 0)
+        with patch(
+            "odoo.addons.iot_oca.models.iot_communication_system_action."
+            "IoTSystemAction._run",
+            return_value=("ok", ""),
+        ):
+            self.device.with_context(
+                iot_communication_system_action_id=self.action.id
+            ).device_run_action()
+        self.assertEqual(self.device.action_count, 1)
+        self.env["iot.device.action"].autovacuum(days=1)
+        self.device.refresh()
+        self.assertEqual(self.device.action_count, 1)
+        self.env["iot.device.action"].autovacuum(days=0)
+        self.device.refresh()
+        self.assertEqual(self.device.action_count, 0)

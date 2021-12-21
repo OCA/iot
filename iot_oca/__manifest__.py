@@ -20,5 +20,6 @@
         "views/iot_device_group.xml",
         "views/iot_system_views.xml",
         "views/iot_device_views.xml",
+        "data/ir_cron.xml",
     ],
 }
