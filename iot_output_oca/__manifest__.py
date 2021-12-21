@@ -16,5 +16,6 @@
         "security/ir.model.access.csv",
         "views/iot_device_output_views.xml",
         "views/iot_device_views.xml",
+        "data/ir_cron.xml",
     ],
 }
