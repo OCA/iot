@@ -47,9 +47,10 @@ class TestAmqp(TransactionCase):
         )
         self.device = self.env["iot.device"].create({"name": "Device"})
         self.system = self.env.ref("iot_amqp_oca.amqp_system")
+        self.action = self.env.ref("iot_amqp_oca.amqp_action")
         self.output = self.env["iot.device.output"].create(
             {
-                "system_id": self.system.id,
+                "communication_system_id": self.system.id,
                 "device_id": self.device.id,
                 "name": "Output",
                 "amqp_exchange": "EXCHANGE",
@@ -78,6 +79,6 @@ class TestAmqp(TransactionCase):
         ) as mock:
             mock.return_value = TestBlockingConnection(self, self.output)
             self.output.with_context(
-                iot_system_action_id=self.system.id
+                iot_communication_system_action_id=self.action.id
             ).device_run_action()
             mock.assert_called()
