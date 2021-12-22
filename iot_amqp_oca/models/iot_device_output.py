@@ -8,7 +8,9 @@ class IotDeviceOutput(models.Model):
     amqp_exchange = fields.Char()
     amqp_routing_key = fields.Char()
     amqp_payload = fields.Char()
-    amqp_host_id = fields.Many2one("iot.amqp.host",)
+    amqp_host_id = fields.Many2one(
+        "iot.amqp.host",
+    )
 
     @api.constrains("amqp_exchange", "amqp_routing_key", "amqp_host_id", "system_id")
     def _check_amqp(self):
