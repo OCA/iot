@@ -1,8 +1,8 @@
 from odoo import models
 
 
-class IoTSystemAction(models.Model):
-    _inherit = "iot.system.action"
+class IoTCommunicationSystemAction(models.Model):
+    _inherit = "iot.communication.system.action"
 
     def _run(self, device_action):
         if self != self.env.ref("iot_amqp_oca.amqp_action"):

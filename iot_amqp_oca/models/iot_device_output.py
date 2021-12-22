@@ -12,11 +12,13 @@ class IotDeviceOutput(models.Model):
         "iot.amqp.host",
     )
 
-    @api.constrains("amqp_exchange", "amqp_routing_key", "amqp_host_id", "system_id")
+    @api.constrains(
+        "amqp_exchange", "amqp_routing_key", "amqp_host_id", "communication_system_id"
+    )
     def _check_amqp(self):
         amqp_system = self.env.ref("iot_amqp_oca.amqp_system")
         for rec in self:
-            if rec.system_id == amqp_system:
+            if rec.communication_system_id == amqp_system:
                 if not rec.amqp_exchange:
                     raise ValidationError(_("Exchange is required"))
                 if not rec.amqp_routing_key:
