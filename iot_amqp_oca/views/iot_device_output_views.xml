@@ -5,23 +5,26 @@
         <field name="model">iot.device.output</field>
         <field name="inherit_id" ref="iot_output_oca.iot_device_output_form" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='system_id']/../.." position="after">
+            <xpath
+                expr="//field[@name='communication_system_id']/../.."
+                position="after"
+            >
                 <group
                     string="AMQP configuration"
                     name="amqp_config"
-                    attrs="{'invisible': [('system_id', '!=', %(iot_amqp_oca.amqp_system)s)]}"
+                    attrs="{'invisible': [('communication_system_id', '!=', %(iot_amqp_oca.amqp_system)s)]}"
                 >
                     <field
                         name="amqp_host_id"
-                        attrs="{'required': [('system_id', '=', %(iot_amqp_oca.amqp_system)s)]}"
+                        attrs="{'required': [('communication_system_id', '=', %(iot_amqp_oca.amqp_system)s)]}"
                     />
                     <field
                         name="amqp_exchange"
-                        attrs="{'required': [('system_id', '=', %(iot_amqp_oca.amqp_system)s)]}"
+                        attrs="{'required': [('communication_system_id', '=', %(iot_amqp_oca.amqp_system)s)]}"
                     />
                     <field
                         name="amqp_routing_key"
-                        attrs="{'required': [('system_id', '=', %(iot_amqp_oca.amqp_system)s)]}"
+                        attrs="{'required': [('communication_system_id', '=', %(iot_amqp_oca.amqp_system)s)]}"
                     />
                     <field name="amqp_payload" />
                 </group>
@@ -33,7 +36,7 @@
                     context="{'iot_system_action_id': %(iot_amqp_oca.amqp_action)s}"
                     icon="fa-cogs"
                     string="Run"
-                    attrs="{'invisible': [('system_id', '!=', %(iot_amqp_oca.amqp_system)s)]}"
+                    attrs="{'invisible': [('communication_system_id', '!=', %(iot_amqp_oca.amqp_system)s)]}"
                 />
             </xpath>
         </field>
