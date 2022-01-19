@@ -13,6 +13,5 @@
     "depends": ["iot_input_oca"],
     "website": "https://github.com/OCA/iot",
     "data": [
-        "security/ir.model.access.csv",
     ],
 }
