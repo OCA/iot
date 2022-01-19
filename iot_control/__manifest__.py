@@ -12,6 +12,4 @@
     "summary": "IoT module for managing Control over IoT Devices",
     "depends": ["iot_input_oca"],
     "website": "https://github.com/OCA/iot",
-    "data": [
-    ],
 }
