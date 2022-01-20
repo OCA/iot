@@ -14,5 +14,8 @@ class IotControl(models.Model):
     name = fields.Char(required=True)
 
     partner_control_ids = fields.Many2many(
-        "res.partner", column1="iot_control_id", column2="partner_id", string="Partners"
+        "iot.partner",
+        column1="iot_control_id",
+        column2="iot_partner_id",
+        string="Partners",
     )
