@@ -11,13 +11,14 @@ class PartnerControl(models.Model):
     _inherit = "res.partner"
 
     _sql_constraints = [
-        (
-            "rfid_code_uniq",
-            "UNIQUE(rfid_code)",
-            "The rfid code should be unique.",
-        )
+        ("rfid_code_uniq", "UNIQUE(rfid_code)", "The rfid code should be unique.",)
     ]
 
     rfid_code = fields.Char("RFID Card Code", copy=False)
 
-    # control_ids = fields
+    control_ids = fields.Many2many(
+        "iot.control",
+        column1="partner_id",
+        column2="iot_control_id",
+        string="Device Control Rules",
+    )

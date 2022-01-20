@@ -10,6 +10,6 @@
     "license": "AGPL-3",
     "installable": True,
     "summary": "IoT module for managing Control over IoT Devices",
-    "depends": ["iot_input_oca"],
+    "depends": ["iot_template_oca"],
     "website": "https://github.com/OCA/iot",
 }
