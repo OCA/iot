@@ -3,3 +3,5 @@ access_iot_control,access_iot_control,model_iot_control,iot_oca.group_iot_user,1
 manage_iot_control,access_iot_control,model_iot_control,iot_oca.group_iot_manager,1,1,1,1
 access_iot_partner,access_iot_partner,model_iot_partner,iot_oca.group_iot_user,1,1,1,0
 manage_iot_partner,access_iot_partner,model_iot_partner,iot_oca.group_iot_manager,1,1,1,1
+access_iot_partner_group,access_iot_partner_group,model_iot_partner_group,iot_oca.group_iot_user,1,1,1,0
+manage_iot_partner_group,access_iot_partner_group,model_iot_partner_group,iot_oca.group_iot_manager,1,1,1,1

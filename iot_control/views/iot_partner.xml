@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 thingsintouch.com, Creu Blanca, ForgeFlow
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="iot_partner_form" model="ir.ui.view">
+        <field name="name">iot.partner.form</field>
+        <field name="model">iot.partner</field>
+        <field name="arch" type="xml">
+            <form string="Person (IoT)">
+                <sheet>
+                    <group col="4">
+                        <field name="name" />
+                        <field name="partner_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="iot_partner_tree" model="ir.ui.view">
+        <field name="name">iot.partner.tree</field>
+        <field name="model">iot.partner</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+</odoo>

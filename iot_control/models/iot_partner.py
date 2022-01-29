@@ -8,7 +8,7 @@ from odoo import fields, models
 
 class PartnerIoT(models.Model):
     _name = "iot.partner"
-    _description = "Persons with Control on IoT Devices"
+    _description = "Person with Control on IoT Devices"
 
     _sql_constraints = [
         ("rfid_code_uniq", "UNIQUE(rfid_code)", "The rfid code should be unique.",)
@@ -18,11 +18,13 @@ class PartnerIoT(models.Model):
         "res.partner", "Control Holder", ondelete="cascade", required=True
     )
 
-    rfid_code = fields.Char("RFID Card Code", copy=False)
+    name = fields.Char(required=True, related="partner_id.name")
 
-    control_ids = fields.Many2many(
-        "iot.control",
+    # rfid_code = fields.Char("RFID Card Code", copy=False, compute=)
+
+    group_id = fields.Many2many(
+        "iot.partner.group",
         column1="iot_partner_id",
-        column2="iot_control_id",
-        string="Device Control Rules",
+        column2="iot_partner_group_id",
+        string="Partner Group Definition",
     )

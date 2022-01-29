@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 thingsintouch.com, Creu Blanca, ForgeFlow
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="iot_control_form" model="ir.ui.view">
+        <field name="name">iot.control.form</field>
+        <field name="model">iot.control</field>
+        <field name="arch" type="xml">
+            <form string="Define an IoT Rule">
+                <sheet>
+                    <group col="4">
+                        <field name="name" />
+                        <field name="partner_group_ids">
+                            <tree string="IoT Groups of Persons">
+                                <field name="name" />
+                            </tree>
+                        </field>
+                        <field name="device_group_ids">
+                            <tree string="IoT Groups of Devices">
+                                <field name="name" />
+                            </tree>
+                        </field>
+                        <field name="control_type_ids">
+                            <tree string="Control Types given">
+                                <field name="code" />
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="iot_control_tree" model="ir.ui.view">
+        <field name="name">iot.control.tree</field>
+        <field name="model">iot.control</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="iot_control_action">
+        <field name="name">IoT Control Rules</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">iot.control</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        name="Control Rules"
+        sequence="10"
+        id="iot_control_menu"
+        action="iot_control_action"
+        parent="iot_oca.iot_configuration_menu"
+    />
+</odoo>

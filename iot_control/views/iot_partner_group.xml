@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 thingsintouch.com, Creu Blanca, ForgeFlow
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="iot_partner_group_form" model="ir.ui.view">
+        <field name="name">iot.partner.group.form</field>
+        <field name="model">iot.partner.group</field>
+        <field name="arch" type="xml">
+            <form string="Define an IoT Group of Persons">
+                <sheet>
+                    <group col="4">
+                        <field name="name" />
+                        <field name="iot_partner_ids">
+                            <tree string="IoT Persons">
+                                <field name="name" />
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="iot_partner_group_tree" model="ir.ui.view">
+        <field name="name">iot.partner.group.tree</field>
+        <field name="model">iot.partner.group</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="iot_partner_group_action">
+        <field name="name">IoT Person Groups</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">iot.partner.group</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        name="Persons Groups"
+        sequence="10"
+        id="iot_partner_group_menu"
+        action="iot_partner_group_action"
+        parent="iot_oca.iot_configuration_menu"
+    />
+</odoo>

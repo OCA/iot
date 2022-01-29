@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 thingsintouch.com, Creu Blanca, ForgeFlow
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="iot_device_group_form_view">
+        <field name="name">iot.device.group.form</field>
+        <field name="model">iot.device.group</field>
+        <field name="inherit_id" ref="iot_oca.iot_device_group_form_view" />
+        <field name="arch" type="xml">
+
+            <field name="name" position="after">
+                <field name="control_ids">
+                    <tree string="Control Rules">
+                        <field name="name"/>
+                        <field name="partner_group_ids" widget="many2many_tags">
+                            <!-- <tree string="Group of Persons">
+                                <field name="name"/>
+                            </tree> -->
+                        </field>
+                        <field name="control_type_ids" widget="many2many_tags">
+                            <!-- <tree string="Control-Types given">
+                                <field name="code"/>
+                            </tree> -->
+                        </field>
+                    </tree>
+                </field>
+
+            </field>
+
+        </field>
+    </record>
+    <record model="ir.ui.view" id="iot_device_group_tree_view">
+        <field name="name">iot.device.group.tree</field>
+        <field name="model">iot.device.group</field>
+        <field name="inherit_id" ref="iot_oca.iot_device_group_tree_view" />
+        <field name="arch" type="xml">
+            <tree position="attributes">
+                <attribute name="editable"></attribute>
+            </tree>
+        </field>
+    </record>
+</odoo>

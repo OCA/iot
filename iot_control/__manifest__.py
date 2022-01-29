@@ -12,5 +12,11 @@
     "summary": "IoT module for managing Control over IoT Devices",
     "depends": ["iot_template_oca"],
     "website": "https://github.com/OCA/iot",
-    "data": ["security/ir.model.access.csv",],
+    "data": [
+        "security/ir.model.access.csv",
+        "views/iot_partner_group.xml",
+        "views/iot_partner.xml",
+        "views/iot_control.xml",
+        "views/iot_device_group.xml",
+    ],
 }
