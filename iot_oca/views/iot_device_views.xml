@@ -30,12 +30,12 @@
                         bg_color="bg-danger"
                         attrs="{'invisible': [('active', '=', True)]}"
                     />
-                    <field
+                    <!-- <field
                         name="image_1920"
                         widget='image'
                         class="oe_avatar"
                         options='{"preview_image": "image_128"}'
-                    />
+                    /> -->
                     <div class="oe_title">
                         <h1>
                             <field name="name" />
@@ -103,7 +103,7 @@
                 <field name="group_id" />
                 <field name="color" />
                 <field name="id" />
-                <field name="image_128" />
+                <!-- <field name="image_128" /> -->
                 <field name="icon" />
                 <templates>
                     <t t-name="kanban-box">
@@ -144,7 +144,7 @@
                                 </div>
                             </div>
                             <div class="oe_kanban_content">
-                                <div class="o_kanban_image">
+                                <!-- <div class="o_kanban_image">
                                     <img
                                         t-att-src="kanban_image('iot.device', 'image_128', record.id.raw_value)"
                                         alt="default_image"
@@ -158,7 +158,7 @@
                                         t-attf-class="fa fa-question fa-6x"
                                         t-if="!record.image_128.raw_value and !record.icon.raw_value"
                                     />
-                                </div>
+                                </div> -->
                                 <div class="o_kanban_details">
                                     <div class="o_kanban_record_top">
                                         <b class="o_kanban_record_title">
