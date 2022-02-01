@@ -3,7 +3,7 @@
 
 {
     "name": "IoT Base",
-    "version": "13.0.1.3.0",
+    "version": "12.0.1.0.0",
     "category": "IoT",
     "author": "Creu Blanca, Odoo Community Association (OCA)",
     "license": "AGPL-3",
