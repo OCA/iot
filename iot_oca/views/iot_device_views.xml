@@ -24,12 +24,12 @@
                 <sheet>
                     <field name="active" invisible="1" />
                     <div class="oe_button_box" name="button_box" />
-                    <widget
+                    <!-- <widget
                         name="web_ribbon"
                         text="Archived"
                         bg_color="bg-danger"
                         attrs="{'invisible': [('active', '=', True)]}"
-                    />
+                    /> -->
                     <!-- <field
                         name="image_1920"
                         widget='image'
