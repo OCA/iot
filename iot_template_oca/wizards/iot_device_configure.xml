@@ -39,7 +39,7 @@ action["target"] = "new"</field>
         sequence="1"
         id="iot_device_configuration_menu"
         action="configure_action"
-        parent="iot_oca.iot_configuration_menu"
-        groups="iot_oca.group_iot_manager"
+        parent="iot.iot_configuration_menu"
+        groups="iot.group_iot_manager"
     />
 </odoo>

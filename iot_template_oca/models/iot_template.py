@@ -4,7 +4,7 @@ from uuid import uuid4
 
 from jinja2.sandbox import SandboxedEnvironment
 
-from odoo import fields, models
+from odoo import api, fields, models, tools
 from odoo.tools.safe_eval import safe_eval
 
 mako_template_env = SandboxedEnvironment(
@@ -23,7 +23,6 @@ mako_template_env = SandboxedEnvironment(
 
 class IotTemplate(models.Model):
     _name = "iot.template"
-    _inherit = "image.mixin"
     _description = "IoT Template for Device"
     _parent_name = "parent_id"
     _parent_store = True
@@ -40,6 +39,36 @@ class IotTemplate(models.Model):
     icon = fields.Selection(
         selection=lambda r: r.env["iot.device"]._fields["icon"].selection
     )
+    image = fields.Binary(
+        attachment=True,
+        help="This field holds the image used as image for the equipment, "
+             "limited to 1024x1024px.",
+    )
+    image_medium = fields.Binary(
+        string="Medium-sized image",
+        attachment=True,
+        help="Medium-sized image of the equipment. It is automatically "
+             "resized as a 128x128px image, with aspect ratio preserved, "
+             "only when the image exceeds one of those sizes. Use this "
+             "field in form views or some kanban views.")
+    image_small = fields.Binary(
+        string="Small-sized image",
+        attachment=True,
+        help="Small-sized image of the equipment. It is automatically "
+             "resized as a 64x64px image, with aspect ratio preserved. "
+             "Use this field anywhere a small image is required.",
+    )
+
+    @api.model_create_multi
+    def create(self, values):
+        for vals in values:
+            tools.image_resize_images(vals, sizes={'image': (1024, None)})
+        return super().create(values)
+
+    @api.multi
+    def write(self, vals):
+        tools.image_resize_images(vals, sizes={'image': (1024, None)})
+        return super().write(vals)
 
     def _get_keys(self, serial):
         if self.parent_id:
@@ -56,8 +85,8 @@ class IotTemplate(models.Model):
             new_vals["group_id"] = self.group_id.id
         if self.tag_ids:
             new_vals["tag_ids"] = [(4, tag_id) for tag_id in self.tag_ids.ids]
-        if self.image_1920 and not device.image_1920:
-            new_vals["image_1920"] = self.image_1920
+        if self.image and not device.image:
+            new_vals["image"] = self.image
         if self.icon and not device.icon:
             new_vals["icon"] = self.icon
         if new_vals:
