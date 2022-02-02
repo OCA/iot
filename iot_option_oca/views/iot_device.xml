@@ -5,7 +5,7 @@
     <record model="ir.ui.view" id="iot_device_form_view">
         <field name="name">iot.device.form (in iot_custom_field_oca)</field>
         <field name="model">iot.device</field>
-        <field name="inherit_id" ref="iot_oca.iot_device_form" />
+        <field name="inherit_id" ref="iot.iot_device_form" />
         <field name="arch" type="xml">
             <xpath expr="//notebook" position="inside">
                 <page name="option" string="Options">

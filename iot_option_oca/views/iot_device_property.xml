@@ -52,7 +52,7 @@
     </record>
     <record model="ir.ui.menu" id="iot_device_property_menu">
         <field name="name">Device Property</field>
-        <field name="parent_id" ref="iot_oca.iot_configuration_menu" />
+        <field name="parent_id" ref="iot.iot_configuration_menu" />
         <field name="action" ref="iot_device_property_act_window" />
         <field name="sequence" eval="16" />
     </record>
