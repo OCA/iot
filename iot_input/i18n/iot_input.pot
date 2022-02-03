@@ -14,6 +14,12 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: iot_input
+#: model_terms:ir.ui.view,arch_db:iot_input.iot_device_kanban
+msgid "<i class=\"fa fa-keyboard-o\"/>\n"
+"                    Inputs"
+msgstr ""
+
+#. module: iot_input
 #: model:ir.model.fields,field_description:iot_input.field_iot_device_input__action_ids
 msgid "Action"
 msgstr ""
@@ -84,7 +90,7 @@ msgid "Device"
 msgstr ""
 
 #. module: iot_input
-#: code:addons/iot_input/models/iot_device_input.py:61
+#: code:addons/iot_input/models/iot_device_input.py:68
 #, python-format
 msgid "Device cannot be found"
 msgstr ""
@@ -101,7 +107,7 @@ msgid "Display Name"
 msgstr ""
 
 #. module: iot_input
-#: code:addons/iot_input/models/iot_device.py:136
+#: code:addons/iot_input/models/iot_device.py:126
 #, python-format
 msgid "Empty values array"
 msgstr ""
@@ -149,6 +155,11 @@ msgid "IoT Inputs"
 msgstr ""
 
 #. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input_action__kwargs
+msgid "Kwargs"
+msgstr ""
+
+#. module: iot_input
 #: model:ir.model.fields,field_description:iot_input.field_iot_device_input__lang
 msgid "Language"
 msgstr ""
@@ -187,7 +198,7 @@ msgid "Passphrase"
 msgstr ""
 
 #. module: iot_input
-#: code:addons/iot_input/controller/iot_input_controller.py:43
+#: code:addons/iot_input/controller/iot_input_controller.py:55
 #, python-format
 msgid "Passphrase is required"
 msgstr ""
@@ -203,47 +214,41 @@ msgid "Serial"
 msgstr ""
 
 #. module: iot_input
-#: code:addons/iot_input/models/iot_device_input.py:47
+#: code:addons/iot_input/models/iot_device_input.py:55
 #, python-format
 msgid "Serial and passphrase are required"
 msgstr ""
 
 #. module: iot_input
-#: code:addons/iot_input/controller/iot_input_controller.py:39
+#: code:addons/iot_input/controller/iot_input_controller.py:51
 #, python-format
 msgid "Server Error"
 msgstr ""
 
 #. module: iot_input
-#: code:addons/iot_input/models/iot_device.py:74
-#: code:addons/iot_input/models/iot_device.py:87
-#: code:addons/iot_input/models/iot_device.py:117
-#: code:addons/iot_input/models/iot_device.py:123
-#: code:addons/iot_input/models/iot_device.py:129
+#: code:addons/iot_input/models/iot_device.py:67
+#: code:addons/iot_input/models/iot_device.py:78
+#: code:addons/iot_input/models/iot_device.py:107
+#: code:addons/iot_input/models/iot_device.py:113
+#: code:addons/iot_input/models/iot_device.py:119
 #, python-format
 msgid "Server Error. Check server logs"
 msgstr ""
 
 #. module: iot_input
-#: code:addons/iot_input/models/iot_device.py:61
-#, python-format
-msgid "Value for Input is required"
-msgstr ""
-
-#. module: iot_input
-#: code:addons/iot_input/controller/iot_input_controller.py:56
+#: code:addons/iot_input/controller/iot_input_controller.py:69
 #, python-format
 msgid "Values is not a valid JSON"
 msgstr ""
 
 #. module: iot_input
-#: code:addons/iot_input/controller/iot_input_controller.py:47
+#: code:addons/iot_input/controller/iot_input_controller.py:59
 #, python-format
 msgid "Values is required"
 msgstr ""
 
 #. module: iot_input
-#: code:addons/iot_input/controller/iot_input_controller.py:61
+#: code:addons/iot_input/controller/iot_input_controller.py:74
 #, python-format
 msgid "Values should be a JSON array of JSON objects"
 msgstr ""
