@@ -45,13 +45,25 @@ msgid "Active"
 msgstr ""
 
 #. module: iot
-#: model:ir.ui.menu,name:iot.iot_config_device_menu
-msgid "Config Devices"
-msgstr "Configurar Dispositivos"
+#: model:ir.model.fields,field_description:iot.field_iot_device__color
+msgid "Color"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device_tag__color
+msgid "Color Index"
+msgstr ""
+
+#. module: iot
+#: model:ir.ui.menu,name:iot.iot_configuration_menu
+msgid "Configuration"
+msgstr ""
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__create_uid
 #: model:ir.model.fields,field_description:iot.field_iot_device_action__create_uid
+#: model:ir.model.fields,field_description:iot.field_iot_device_group__create_uid
+#: model:ir.model.fields,field_description:iot.field_iot_device_tag__create_uid
 #: model:ir.model.fields,field_description:iot.field_iot_system__create_uid
 #: model:ir.model.fields,field_description:iot.field_iot_system_action__create_uid
 msgid "Created by"
@@ -60,10 +72,17 @@ msgstr "Creado por"
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__create_date
 #: model:ir.model.fields,field_description:iot.field_iot_device_action__create_date
+#: model:ir.model.fields,field_description:iot.field_iot_device_group__create_date
+#: model:ir.model.fields,field_description:iot.field_iot_device_tag__create_date
 #: model:ir.model.fields,field_description:iot.field_iot_system__create_date
 #: model:ir.model.fields,field_description:iot.field_iot_system_action__create_date
 msgid "Created on"
 msgstr "Creado en"
+
+#. module: iot
+#: model_terms:ir.ui.view,arch_db:iot.iot_device_kanban
+msgid "Delete"
+msgstr ""
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device_action__device_id
@@ -72,8 +91,21 @@ msgid "Device"
 msgstr "Dispositivo"
 
 #. module: iot
+#: model:ir.actions.act_window,name:iot.iot_device_group_act_window
+#: model:ir.ui.menu,name:iot.iot_device_group_menu
+msgid "Device Group"
+msgstr ""
+
+#. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__device_identification
 msgid "Device Identification"
+msgstr ""
+
+#. module: iot
+#: model:ir.actions.act_window,name:iot.iot_device_tag_act_window
+#: model:ir.model,name:iot.model_iot_device_tag
+#: model:ir.ui.menu,name:iot.iot_device_tag_menu
+msgid "Device Tag"
 msgstr ""
 
 #. module: iot
@@ -91,10 +123,22 @@ msgstr "Dispositivos"
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__display_name
 #: model:ir.model.fields,field_description:iot.field_iot_device_action__display_name
+#: model:ir.model.fields,field_description:iot.field_iot_device_group__display_name
+#: model:ir.model.fields,field_description:iot.field_iot_device_tag__display_name
 #: model:ir.model.fields,field_description:iot.field_iot_system__display_name
 #: model:ir.model.fields,field_description:iot.field_iot_system_action__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
+
+#. module: iot
+#: model_terms:ir.ui.view,arch_db:iot.iot_device_kanban
+msgid "Dropdown menu"
+msgstr ""
+
+#. module: iot
+#: model_terms:ir.ui.view,arch_db:iot.iot_device_kanban
+msgid "Edit..."
+msgstr ""
 
 #. module: iot
 #: selection:iot.device.action,status:0
@@ -102,12 +146,45 @@ msgid "Failed"
 msgstr "Fallado"
 
 #. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__group_id
+#: model_terms:ir.ui.view,arch_db:iot.iot_device_search
+msgid "Group"
+msgstr ""
+
+#. module: iot
+#: model_terms:ir.ui.view,arch_db:iot.iot_device_search
+msgid "Group By"
+msgstr ""
+
+#. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__id
 #: model:ir.model.fields,field_description:iot.field_iot_device_action__id
+#: model:ir.model.fields,field_description:iot.field_iot_device_group__id
+#: model:ir.model.fields,field_description:iot.field_iot_device_tag__id
 #: model:ir.model.fields,field_description:iot.field_iot_system__id
 #: model:ir.model.fields,field_description:iot.field_iot_system_action__id
 msgid "ID"
 msgstr "ID"
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__ip
+msgid "IP"
+msgstr ""
+
+#. module: iot
+#: model_terms:ir.ui.view,arch_db:iot.iot_device_kanban
+msgid "IP:"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__icon
+msgid "Icon"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__image
+msgid "Image"
+msgstr ""
 
 #. module: iot
 #: model_terms:ir.ui.view,arch_db:iot.iot_device_search
@@ -137,7 +214,6 @@ msgstr ""
 
 #. module: iot
 #: model:ir.actions.act_window,name:iot.iot_device_action
-#: model:ir.actions.act_window,name:iot.iot_device_config_action
 msgid "IoT Devices"
 msgstr "Dispositivos IoT"
 
@@ -158,13 +234,20 @@ msgid "IoT User"
 msgstr "Usuario IoT"
 
 #. module: iot
-#: model:ir.model.fields,field_description:iot.field_iot_device__ip
-msgid "Ip"
-msgstr "Ip"
+#: model:ir.model,name:iot.model_iot_device_group
+msgid "Iot Group"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__last_contact_date
+msgid "Last Contact Date"
+msgstr ""
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device____last_update
 #: model:ir.model.fields,field_description:iot.field_iot_device_action____last_update
+#: model:ir.model.fields,field_description:iot.field_iot_device_group____last_update
+#: model:ir.model.fields,field_description:iot.field_iot_device_tag____last_update
 #: model:ir.model.fields,field_description:iot.field_iot_system____last_update
 #: model:ir.model.fields,field_description:iot.field_iot_system_action____last_update
 msgid "Last Modified on"
@@ -173,6 +256,8 @@ msgstr "Última modificación en"
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__write_uid
 #: model:ir.model.fields,field_description:iot.field_iot_device_action__write_uid
+#: model:ir.model.fields,field_description:iot.field_iot_device_group__write_uid
+#: model:ir.model.fields,field_description:iot.field_iot_device_tag__write_uid
 #: model:ir.model.fields,field_description:iot.field_iot_system__write_uid
 #: model:ir.model.fields,field_description:iot.field_iot_system_action__write_uid
 msgid "Last Updated by"
@@ -181,15 +266,35 @@ msgstr "Última actualización por"
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__write_date
 #: model:ir.model.fields,field_description:iot.field_iot_device_action__write_date
+#: model:ir.model.fields,field_description:iot.field_iot_device_group__write_date
+#: model:ir.model.fields,field_description:iot.field_iot_device_tag__write_date
 #: model:ir.model.fields,field_description:iot.field_iot_system__write_date
 #: model:ir.model.fields,field_description:iot.field_iot_system_action__write_date
 msgid "Last Updated on"
 msgstr "Última actualización en"
 
 #. module: iot
+#: model_terms:ir.ui.view,arch_db:iot.iot_device_kanban
+msgid "Last contact:"
+msgstr ""
+
+#. module: iot
 #: model:res.groups,name:iot.group_iot_manager
 msgid "Manager"
 msgstr "Responsable"
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__image_medium
+msgid "Medium-sized image"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,help:iot.field_iot_device__image_medium
+msgid ""
+"Medium-sized image of the equipment. It is automatically resized as a "
+"128x128px image, with aspect ratio preserved, only when the image exceeds "
+"one of those sizes. Use this field in form views or some kanban views."
+msgstr ""
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__model
@@ -208,6 +313,8 @@ msgstr "Usuario del módulo."
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__name
+#: model:ir.model.fields,field_description:iot.field_iot_device_group__name
+#: model:ir.model.fields,field_description:iot.field_iot_device_tag__name
 #: model:ir.model.fields,field_description:iot.field_iot_system__name
 #: model:ir.model.fields,field_description:iot.field_iot_system_action__name
 msgid "Name"
@@ -244,6 +351,19 @@ msgid "Run"
 msgstr "Procesar"
 
 #. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__image_small
+msgid "Small-sized image"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,help:iot.field_iot_device__image_small
+msgid ""
+"Small-sized image of the equipment. It is automatically resized as a 64x64px "
+"image, with aspect ratio preserved. Use this field anywhere a small image is "
+"required."
+msgstr ""
+
+#. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__state
 msgid "State"
 msgstr "Estado"
@@ -269,3 +389,56 @@ msgstr "Acción del Sistema"
 #: model:ir.ui.menu,name:iot.iot_system_menu
 msgid "Systems"
 msgstr "Sistemas"
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__tag_ids
+msgid "Tag"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,help:iot.field_iot_device__image
+msgid ""
+"This field holds the image used as image for the equipment, limited to "
+"1024x1024px."
+msgstr ""
+
+#. module: iot
+#: selection:iot.device,icon:0
+msgid "archive"
+msgstr ""
+
+#. module: iot
+#: model_terms:ir.ui.view,arch_db:iot.iot_device_kanban
+msgid "default_image"
+msgstr ""
+
+#. module: iot
+#: selection:iot.device,icon:0
+msgid "desktop"
+msgstr ""
+
+#. module: iot
+#: selection:iot.device,icon:0
+msgid "laptop"
+msgstr ""
+
+#. module: iot
+#: selection:iot.device,icon:0
+msgid "mobile"
+msgstr ""
+
+#. module: iot
+#: selection:iot.device,icon:0
+msgid "television"
+msgstr ""
+
+#. module: iot
+#: selection:iot.device,icon:0
+msgid "wifi"
+msgstr ""
+
+#~ msgid "Config Devices"
+#~ msgstr "Configurar Dispositivos"
+
+#~ msgid "Ip"
+#~ msgstr "Ip"
