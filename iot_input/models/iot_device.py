@@ -19,25 +19,22 @@ class IotDevice(models.Model):
         for r in self:
             r.input_count = len(r.input_ids)
 
-    @api.multi
     def action_show_input(self):
         self.ensure_one()
-        action = self.env.ref('iot_input.iot_device_input_action')
+        action = self.env.ref("iot_input.iot_device_input_action")
         result = action.read()[0]
 
         result['context'] = {
             'default_device_id': self.id,
         }
-        result['domain'] = "[('device_id', '=', " + \
-                           str(self.id) + ")]"
+        result["domain"] = [("device_id", "=", self.id)]
         if len(self.input_ids) == 1:
             result['views'] = [(False, 'form')]
             result['res_id'] = self.input_ids.id
         return result
 
-    @api.multi
-    def parse_single_input(self, value):
-        '''Handle single input for device
+    def parse_single_input(self, uuid=False, address=False, **kwargs):
+        """Handle single input for device
 
         :param dict value:
             Dict containing at least keys 'address', 'value'
@@ -47,46 +44,39 @@ class IotDevice(models.Model):
             If value contains a value with key 'uuid', it is passed in the return dict
             to identify result for each entry at the iot end
         :rtype: dict
-        '''
-        if 'address' not in value.keys():
-            _logger.warning('Address for Input is required')
-            msg = {'status': 'error',
-                   'message': _('Address for Input is required')}
-            if 'uuid' in value.keys():
-                msg['uuid'] = value['uuid']
+        """
+        msg = {}
+        if uuid:
+            msg["uuid"] = uuid
+        if not address:
+            _logger.warning("Address for Input is required")
+            msg.update(
+                {"status": "error", "message": _("Address for Input is required")}
+            )
             return msg
-        if 'value' not in value.keys():
-            _logger.warning('Value for Input is required')
-            msg = {'status': 'error',
-                   'message': _('Value for Input is required')}
-            if 'uuid' in value.keys():
-                msg['uuid'] = value['uuid']
-            return msg
-
-        device_input = self.input_ids.filtered(
-            lambda i: i.address == str(value['address']))
+        device_input = self.input_ids.filtered(lambda i: i.address == str(address))
         if len(device_input) == 1:
             if not device_input.active:
                 _logger.warning(
-                    'Input with address %s is inactive, no data will be logged',
-                    device_input.address)
-                msg = {'status': 'error',
-                       'message': _('Server Error. Check server logs')}
-                if 'uuid' in value:
-                    msg['uuid'] = value['uuid']
+                    "Input with address %s is inactive, no data will be logged",
+                    device_input.address,
+                )
+                msg.update(
+                    {
+                        "status": "error",
+                        "message": _("Server Error. Check server logs"),
+                    }
+                )
                 return msg
-            res = device_input._call_device(value)
-            self.env['iot.device.input.action'].create(
-                device_input._add_action_vals(value, res))
-            if 'uuid' in value:
-                res['uuid'] = value['uuid']
+            res = device_input.call_device(**kwargs)
+            if uuid:
+                res["uuid"] = uuid
             return res
         else:
-            _logger.warning('Input with address %s not found', value['address'])
-            msg = {'status': 'error',
-                   'message': _('Server Error. Check server logs')}
-            if 'uuid' in value:
-                msg['uuid'] = value['uuid']
+            _logger.warning("Input with address %s not found", address)
+            msg.update(
+                {"status": "error", "message": _("Server Error. Check server logs")}
+            )
             return msg
 
     @api.model
@@ -136,5 +126,5 @@ class IotDevice(models.Model):
                     'message': _('Empty values array')}
         res = []
         for d in values:
-            res.append(device.parse_single_input(d))
+            res.append(device.parse_single_input(**d))
         return res
