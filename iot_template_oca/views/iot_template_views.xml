@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="iot_template_form" model="ir.ui.view">
+        <field name="name">iot.template.form</field>
+        <field name="model">iot.template</field>
+        <field name="arch" type="xml">
+            <form create="0">
+                <header />
+                <sheet>
+                    <div class="oe_button_box" name="button_box" />
+                    <field
+                        name="image"
+                        widget='image'
+                        class="oe_avatar"
+                        options='{"preview_image": "image_small"}'
+                    />
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="group_id" />
+                        <field name="icon" />
+                        <field
+                            name="tag_ids"
+                            widget="many2many_tags"
+                            options="{'color_field': 'color'}"
+                        />
+                    </group>
+                    <notebook>
+                        <page string="Keys" id="key">
+                            <field name="key_ids">
+                                <tree editable="bottom">
+                                    <field name="key" />
+                                </tree>
+                                <form>
+                                    <sheet>
+                                        <group>
+                                            <field name="key" />
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Inputs" id="input">
+                            <field name="input_ids">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="call_model_id" />
+                                    <field name="call_function" />
+                                </tree>
+                                <form>
+                                    <sheet>
+                                        <group>
+                                            <field name="name" />
+                                            <field name="call_model_id" />
+                                            <field name="call_function" />
+                                            <field name="params" />
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Outputs" id="output">
+                            <field name="output_ids">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="system_id" />
+                                </tree>
+                                <form>
+                                    <sheet>
+                                        <group>
+                                            <field name="name" />
+                                            <field name="system_id" />
+                                            <field name="params" />
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="iot_template_tree" model="ir.ui.view">
+        <field name="name">iot.template.form</field>
+        <field name="model">iot.template</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="iot_template_action">
+        <field name="name">IoT Templates</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">iot.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+    </record>
+    <menuitem
+        name="Templates"
+        sequence="90"
+        id="iot_template_menu"
+        action="iot_template_action"
+        parent="iot.iot_configuration_menu"
+    />
+</odoo>

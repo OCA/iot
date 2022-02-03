@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+-->
+<odoo>
+    <record model="ir.ui.view" id="configure_form">
+        <field name="name">iot.device.configure</field>
+        <field name="model">iot.device.configure</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Apply template">
+                <div>
+                    Use this URL on your device configuration
+                </div>
+                <group>
+                    <field
+                        name="url"
+                        widget="CopyClipboardChar"
+                        label="Configuration URL"
+                    />
+                </group>
+                <footer>
+                    <button string="Close" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="configure_action" model="ir.actions.server">
+        <field name="name">Apply Template</field>
+        <field name="model_id" ref="model_iot_device_configure" />
+        <field name="state">code</field>
+        <field name="code">action = model.create({}).get_formview_action()
+action["target"] = "new"</field>
+    </record>
+    <menuitem
+        name="Add a new Device"
+        sequence="1"
+        id="iot_device_configuration_menu"
+        action="configure_action"
+        parent="iot.iot_configuration_menu"
+        groups="iot.group_iot_manager"
+    />
+</odoo>
