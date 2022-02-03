@@ -1,12 +1,12 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* iot_template_oca
+#	* iot_template_oca
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: \n"
+"Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -100,28 +100,8 @@ msgid "Icon"
 msgstr ""
 
 #. module: iot_template_oca
-#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_1920
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image
 msgid "Image"
-msgstr ""
-
-#. module: iot_template_oca
-#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_1024
-msgid "Image 1024"
-msgstr ""
-
-#. module: iot_template_oca
-#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_128
-msgid "Image 128"
-msgstr ""
-
-#. module: iot_template_oca
-#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_256
-msgid "Image 256"
-msgstr ""
-
-#. module: iot_template_oca
-#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_512
-msgid "Image 512"
 msgstr ""
 
 #. module: iot_template_oca
@@ -199,6 +179,16 @@ msgid "Last Updated on"
 msgstr ""
 
 #. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_medium
+msgid "Medium-sized image"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,help:iot_template_oca.field_iot_template__image_medium
+msgid "Medium-sized image of the equipment. It is automatically resized as a 128x128px image, with aspect ratio preserved, only when the image exceeds one of those sizes. Use this field in form views or some kanban views."
+msgstr ""
+
+#. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__name
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__name
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__name
@@ -242,6 +232,16 @@ msgid "Serial"
 msgstr ""
 
 #. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_small
+msgid "Small-sized image"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,help:iot_template_oca.field_iot_template__image_small
+msgid "Small-sized image of the equipment. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
+msgstr ""
+
+#. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__system_id
 msgid "System"
 msgstr ""
@@ -274,6 +274,11 @@ msgid "Templates"
 msgstr ""
 
 #. module: iot_template_oca
+#: model:ir.model.fields,help:iot_template_oca.field_iot_template__image
+msgid "This field holds the image used as image for the equipment, limited to 1024x1024px."
+msgstr ""
+
+#. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__url
 msgid "Url"
 msgstr ""
@@ -282,3 +287,4 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:iot_template_oca.configure_form
 msgid "Use this URL on your device configuration"
 msgstr ""
+
