@@ -11,6 +11,7 @@ setuptools.setup(
         'odoo12-addon-iot',
         'odoo12-addon-iot_amqp',
         'odoo12-addon-iot_input',
+        'odoo12-addon-iot_option_oca',
         'odoo12-addon-iot_output',
         'odoo12-addon-iot_template_oca',
     ],
