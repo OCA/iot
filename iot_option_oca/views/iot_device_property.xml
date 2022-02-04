@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 Creu Blanca
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="iot_device_property_form_view">
+        <field name="name">iot.device.property.form (in iot_option_oca)</field>
+        <field name="model">iot.device.property</field>
+        <field name="arch" type="xml">
+            <form>
+                <header />
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="tech_name" />
+                        <field name="widget" />
+                        <field name="field_type" />
+                        <field
+                            name="is_action"
+                            attrs="{'invisible': [('field_type', '!=', 'bool')]}"
+                        />
+                        <field name="required" />
+                        <field name="default_value" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="iot_device_property_search_view">
+        <field name="name">iot.device.property.search (in iot_option_oca)</field>
+        <field name="model">iot.device.property</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+            </search>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="iot_device_property_tree_view">
+        <field name="name">iot.device.property.tree (in iot_option_oca)</field>
+        <field name="model">iot.device.property</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="iot_device_property_act_window">
+        <field name="name">Device Property</field>
+        <field name="res_model">iot.device.property</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+    <record model="ir.ui.menu" id="iot_device_property_menu">
+        <field name="name">Device Property</field>
+        <field name="parent_id" ref="iot.iot_configuration_menu" />
+        <field name="action" ref="iot_device_property_act_window" />
+        <field name="sequence" eval="16" />
+    </record>
+</odoo>

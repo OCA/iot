@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 Creu Blanca
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="iot_device_form_view">
+        <field name="name">iot.device.form (in iot_custom_field_oca)</field>
+        <field name="model">iot.device</field>
+        <field name="inherit_id" ref="iot.iot_device_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="option" string="Options">
+                    <field
+                        name="option_ids"
+                        colspan="4"
+                        nolabel="1"
+                        mode="iot_option"
+                    />
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record id="iot_device_option_iot_option_view" model="ir.ui.view">
+        <field name="model">iot.device.option</field>
+        <field name="arch" type="xml">
+            <iot_option string="Custom Property Values">
+                <field name="name" />
+                <field name="device_id" />
+                <field name="property_id" force_save="1" readonly="0" />
+                <field name="required" />
+                <field name="widget" />
+                <field name="field_type" />
+                <field name="value_str" />
+                <field name="value_bool" />
+                <field name="value_int" />
+                <field name="value_float" />
+                <field name="value_date" />
+                <field name="value" />
+            </iot_option>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="assets_backend"
+        name="Backend Assets (used in backend interface)"
+        inherit_id="web.assets_backend"
+    >
+        <xpath expr="." position="inside">
+            <script
+                type="text/javascript"
+                src="/iot_option_oca/static/src/js/iot_option_renderer.js"
+            />
+            <script
+                type="text/javascript"
+                src="/iot_option_oca/static/src/js/iot_option_view.js"
+            />
+            <script
+                type="text/javascript"
+                src="/iot_option_oca/static/src/js/relational_fields.js"
+            />
+            <link
+                rel="stylesheet"
+                type="text/scss"
+                href="/iot_option_oca/static/src/scss/iot_option.scss"
+            />
+        </xpath>
+    </template>
+</odoo>
