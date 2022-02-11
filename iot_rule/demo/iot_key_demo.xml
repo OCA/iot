@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="key_101" model="iot.key">
+        <field name="name">Room 101</field>
+        <field name="rule_ids" eval="[(4, ref('iot_rule.rule_room_101'))]" />
+    </record>
+    <record id="key_102" model="iot.key">
+        <field name="name">Room 102</field>
+        <field
+            name="rule_ids"
+            eval="[(4, ref('iot_rule.rule_room_102')), (4, ref('iot_rule.rule_premium'))]"
+        />
+    </record>
+    <record id="key_employee_01" model="iot.key">
+        <field name="name">Admin</field>
+        <field name="rule_ids" eval="[(4, ref('iot_rule.rule_employees'))]" />
+    </record>
+    <record id="key_employee_02" model="iot.key">
+        <field name="name">Demo</field>
+        <field name="rule_ids" eval="[(4, ref('iot_rule.rule_employees'))]" />
+    </record>
+</odoo>
