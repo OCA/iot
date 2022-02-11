@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="lock_101" model="iot.lock">
+        <field name="name">Room 101</field>
+        <field
+            name="rule_ids"
+            eval="[(4, ref('iot_rule.rule_room_101')), (4, ref('iot_rule.rule_employees'))]"
+        />
+    </record>
+    <record id="lock_102" model="iot.lock">
+        <field name="name">Room 102</field>
+        <field
+            name="rule_ids"
+            eval="[(4, ref('iot_rule.rule_room_102')), (4, ref('iot_rule.rule_employees'))]"
+        />
+    </record>
+    <record id="lock_gym" model="iot.lock">
+        <field name="name">Gym</field>
+        <field
+            name="rule_ids"
+            eval="[(4, ref('iot_rule.rule_standard')), (4, ref('iot_rule.rule_employees'))]"
+        />
+    </record>
+    <record id="lock_spa" model="iot.lock">
+        <field name="name">Spa</field>
+        <field
+            name="rule_ids"
+            eval="[(4, ref('iot_rule.rule_premium')), (4, ref('iot_rule.rule_employees'))]"
+        />
+    </record>
+    <record id="lock_janitor" model="iot.lock">
+        <field name="name">Janitor</field>
+        <field name="rule_ids" eval="[(4, ref('iot_rule.rule_employees'))]" />
+    </record>
+</odoo>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 Creu Blanca
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="iot_key_form_view">
+        <field name="name">iot.key.form (in iot_rule)</field>
+        <field name="model">iot.key</field>
+        <field name="arch" type="xml">
+            <form>
+                <header />
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        text="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                    <field name="active" invisible="1" />
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            name="view_actions"
+                            type="object"
+                            icon="fa-bars"
+                            groups="iot_oca.group_iot_user"
+                            string="Usage Log"
+                        />
+                    </div>
+                    <group>
+                        <field name="name" />
+                        <field name="unique_virtual_key" />
+                        <field name="res_id" invisible="1" />
+                        <field name="res_model" invisible="1" />
+                        <field name="expiration_date" />
+                    </group>
+                    <group>
+                        <field
+                            name="rule_ids"
+                            widget="many2many_tags"
+                            string="Authorized Lock Groups"
+                        />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="iot_key_search_view">
+        <field name="name">iot.key.search (in iot_rule)</field>
+        <field name="model">iot.key</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="unique_virtual_key" />
+                <!-- TODO: Add filters for expired not expired and add not expired as default-->
+            </search>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="iot_key_tree_view">
+        <field name="name">iot.key.tree (in iot_rule)</field>
+        <field name="model">iot.key</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="unique_virtual_key" />
+                <field
+                    name="rule_ids"
+                    widget="many2many_tags"
+                    string="Groups of Locks"
+                />
+                <field name="expiration_date" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="iot_key_act_window">
+        <field name="name">Keys (Persons)</field>
+        <field name="res_model">iot.key</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+    <record model="ir.ui.menu" id="iot_key_menu">
+        <field name="name">Keys (Persons)</field>
+        <field name="parent_id" ref="iot_rule.iot_rule_menu" />
+        <field name="action" ref="iot_key_act_window" />
+        <field name="sequence" eval="25" />
+    </record>
+</odoo>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 Creu Blanca
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="iot_key_action_form_view">
+        <field name="name">iot.key.action.form (in iot_rule)</field>
+        <field name="model">iot.key.action</field>
+        <field name="arch" type="xml">
+            <form delete="0" create="0" edit="0">
+                <header />
+                <sheet>
+                    <group>
+                        <field name="lock_id" />
+                        <field name="key_name" />
+                        <field name="key_id" />
+                        <field name="timestamp" />
+                        <field name="result" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="iot_key_action_search_view">
+        <field name="name">iot.key.action.search (in iot_rule)</field>
+        <field name="model">iot.key.action</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="timestamp" />
+                <field name="lock_id" />
+                <field name="key_name" />
+                <field name="key_id" />
+                <field name="result" />
+            </search>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="iot_key_action_tree_view">
+        <field name="name">iot.key.action.tree (in iot_rule)</field>
+        <field name="model">iot.key.action</field>
+        <field name="arch" type="xml">
+            <tree delete="0" create="0">
+                <field name="timestamp" />
+                <field name="lock_id" />
+                <field name="key_name" />
+                <field name="key_id" />
+                <field name="result" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="iot_key_action_act_window">
+        <field name="name">Usage Log</field>
+        <field name="res_model">iot.key.action</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+    <record model="ir.ui.menu" id="iot_key_action_menu">
+        <field name="name">Usage Log</field>
+        <field name="parent_id" ref="iot_rule.iot_rule_menu" />
+        <field name="action" ref="iot_rule.iot_key_action_act_window" />
+        <field name="sequence" eval="90" />
+    </record>
+</odoo>
