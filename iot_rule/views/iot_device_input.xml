@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 Creu Blanca
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="iot_device_input_form_view">
+        <field name="name">iot.device.input.form (in iot_rule)</field>
+        <field name="model">iot.device.input</field>
+        <field name="inherit_id" ref="iot_input_oca.iot_device_input_form" />
+        <field name="arch" type="xml">
+            <field name="call_function" position="after">
+                <button
+                    name="generate_iot_lock"
+                    groups="iot_oca.group_iot_manager"
+                    string="Generate IoT Lock for this Input"
+                    type="object"
+                    attrs="{'invisible': [('lock_id', '!=', False)]}"
+                />
+                <field
+                    name="lock_id"
+                    groups="iot_oca.group_iot_user"
+                    attrs="{'invisible': [('lock_id', '=', False)]}"
+                    string="IoT Lock associated"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>
