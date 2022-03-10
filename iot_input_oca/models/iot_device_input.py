@@ -30,6 +30,7 @@ class IotDeviceInput(models.Model):
     lang = fields.Selection(
         selection=lambda self: self.env["res.lang"].get_installed(), string="Language",
     )
+    verbose_logging = fields.Boolean()
 
     @api.depends("action_ids")
     def _compute_action_count(self):
@@ -83,10 +84,15 @@ class IotDeviceInput(models.Model):
             _logger.error(error)
             res = {"status": "ko"}
         self.device_id.last_contact_date = fields.Datetime.now()
+        self._add_log(res, error, args, new_kwargs)
+        return res
+
+    def _add_log(self, res, error, args, new_kwargs):
+        if not self.verbose_logging:
+            return
         self.env["iot.device.input.action"].create(
             self._add_action_vals(res, error, args, new_kwargs)
         )
-        return res
 
     def _swallable_exceptions(self):
         # TODO: improve this list
@@ -107,6 +113,12 @@ class IotDeviceInput(models.Model):
 
     def test_model_function(self, value):
         return {"status": "ok", "message": value}
+
+    def show_actions(self):
+        self.ensure_one()
+        action = self.env.ref("iot_input_oca.iot_device_input_action_action").read()[0]
+        action["domain"] = [("input_id", "=", self.id)]
+        return action
 
 
 class IoTDeviceAction(models.Model):
