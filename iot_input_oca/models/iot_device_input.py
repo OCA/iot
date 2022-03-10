@@ -15,7 +15,7 @@ class IotDeviceInput(models.Model):
 
     name = fields.Char(required=True)
     device_id = fields.Many2one(
-        "iot.device", required=True, readonly=True, auto_join=True
+        "iot.device", required=True, readonly=True, auto_join=True, ondelete="cascade"
     )
     call_model_id = fields.Many2one("ir.model")
     call_function = fields.Char(required=True)
@@ -113,7 +113,7 @@ class IoTDeviceAction(models.Model):
     _name = "iot.device.input.action"
     _description = "Action of device inputs"
 
-    input_id = fields.Many2one("iot.device.input")
+    input_id = fields.Many2one("iot.device.input", ondelete="cascade")
     args = fields.Char()
     kwargs = fields.Char()
     res = fields.Char()
