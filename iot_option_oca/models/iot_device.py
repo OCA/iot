@@ -145,7 +145,7 @@ class IotDeviceOption(models.Model):
             value = self.env["custom.info.option"].search(
                 [
                     ("property_ids", "in", properties.ids),
-                    ("name", "ilike", u"%{}%".format(value)),
+                    ("name", "ilike", "%{}%".format(value)),
                 ],
                 limit=1,
             )
