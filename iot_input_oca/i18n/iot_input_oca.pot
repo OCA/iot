@@ -146,8 +146,14 @@ msgid "IoT Device"
 msgstr ""
 
 #. module: iot_input_oca
+#: model_terms:ir.ui.view,arch_db:iot_input_oca.iot_device_input_action_search
 #: model_terms:ir.ui.view,arch_db:iot_input_oca.iot_device_input_search
 msgid "IoT Device Input Search"
+msgstr ""
+
+#. module: iot_input_oca
+#: model:ir.actions.act_window,name:iot_input_oca.iot_device_input_action_action
+msgid "IoT Input Actions"
 msgstr ""
 
 #. module: iot_input_oca
@@ -237,6 +243,11 @@ msgid "Server Error. Check server logs"
 msgstr ""
 
 #. module: iot_input_oca
+#: model_terms:ir.ui.view,arch_db:iot_input_oca.iot_device_input_form
+msgid "Show actions"
+msgstr ""
+
+#. module: iot_input_oca
 #: code:addons/iot_input_oca/controller/iot_input_controller.py:0
 #, python-format
 msgid "Values is not a valid JSON"
@@ -252,4 +263,9 @@ msgstr ""
 #: code:addons/iot_input_oca/controller/iot_input_controller.py:0
 #, python-format
 msgid "Values should be a JSON array of JSON objects"
+msgstr ""
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__verbose_logging
+msgid "Verbose Logging"
 msgstr ""
