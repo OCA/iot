@@ -18,6 +18,7 @@ class TestIotIn(SavepointCase):
                 "passphrase": cls.passphrase,
                 "call_model_id": cls.env.ref("iot_input_oca.model_iot_device_input").id,
                 "call_function": "test_input_device",
+                "verbose_logging": True,
             }
         )
         cls.iot = cls.env["iot.device.input"]
@@ -93,3 +94,19 @@ class TestIotIn(SavepointCase):
         self.assertEqual(self.device_input.action_ids.args, str([args]))
         self.assertEqual(self.device_input.action_ids.res, str(res))
         self.assertEqual(1, self.device_input.action_count)
+        action_ref = self.device_input.show_actions()
+        self.assertEqual(
+            self.env[action_ref["res_model"]].search(action_ref["domain"]),
+            self.device_input.action_ids,
+        )
+
+    def test_device_input_calling_no_action(self):
+        iot = self.iot.get_device(serial=self.serial, passphrase=self.passphrase)
+        self.assertEqual(iot, self.device_input)
+        self.assertEqual(0, self.device_input.action_count)
+        self.device_input.verbose_logging = False
+        args = "hello"
+        res = iot.call_device(value=args)
+        self.assertEqual(res, {"status": "ok", "value": args})
+        self.assertFalse(self.device_input.action_ids)
+        self.assertEqual(0, self.device_input.action_count)

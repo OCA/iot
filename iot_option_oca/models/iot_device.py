@@ -26,7 +26,7 @@ class IotDeviceOption(models.Model):
         ),
     ]
 
-    device_id = fields.Many2one("iot.device", required=True)
+    device_id = fields.Many2one("iot.device", required=True, ondelete="cascade")
     property_id = fields.Many2one(
         comodel_name="iot.device.property", required=True, string="Property",
     )
