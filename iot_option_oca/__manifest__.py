@@ -5,7 +5,7 @@
     "name": "Iot Custom Field Oca",
     "summary": """
         Allow to define custom field for IoT""",
-    "version": "13.0.1.0.0",
+    "version": "13.0.2.0.0",
     "license": "AGPL-3",
     "author": "Creu Blanca,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/iot",
