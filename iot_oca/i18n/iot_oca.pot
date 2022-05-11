@@ -1,0 +1,421 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* iot_oca
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__action_ids
+msgid "Action"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__action_count
+msgid "Action Count"
+msgstr ""
+
+#. module: iot_oca
+#: code:addons/iot_oca/models/iot_communication_system_action.py:0
+#, python-format
+msgid "Action cannot be processed"
+msgstr ""
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_form
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_system_form
+msgid "Actions"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__active
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_search
+msgid "Active"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__color
+msgid "Color"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__color
+msgid "Color Index"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system_action__communication_system_id
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__communication_system_id
+msgid "Communication System"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system__communication_system_action_ids
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__communication_system_action_id
+msgid "Communication System Action"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.ui.menu,name:iot_oca.iot_configuration_menu
+msgid "Configuration"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system__create_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system_action__create_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__create_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__create_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_group__create_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system__create_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system_action__create_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__create_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__create_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_group__create_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
+msgid "Delete"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system__device_ids
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__device_id
+msgid "Device"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.actions.act_window,name:iot_oca.iot_device_group_act_window
+#: model:ir.ui.menu,name:iot_oca.iot_device_group_menu
+msgid "Device Group"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.actions.act_window,name:iot_oca.iot_device_tag_act_window
+#: model:ir.model,name:iot_oca.model_iot_device_tag
+#: model:ir.ui.menu,name:iot_oca.iot_device_tag_menu
+msgid "Device Tag"
+msgstr ""
+
+#. module: iot_oca
+#: code:addons/iot_oca/models/iot_device_action.py:0
+#, python-format
+msgid "Device and action must be of the same system"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.ui.menu,name:iot_oca.iot_device_menu
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_system_form
+msgid "Devices"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system__display_name
+#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system_action__display_name
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__display_name
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__display_name
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_group__display_name
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
+msgid "Dropdown menu"
+msgstr ""
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
+msgid "Edit..."
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields.selection,name:iot_oca.selection__iot_device_action__status__failed
+msgid "Failed"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__group_id
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_search
+msgid "Group"
+msgstr ""
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_search
+msgid "Group By"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system__id
+#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system_action__id
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__id
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__id
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_group__id
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__id
+msgid "ID"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__ip
+msgid "IP"
+msgstr ""
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
+msgid "IP:"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__icon
+msgid "Icon"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__image_1920
+msgid "Image"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__image_1024
+msgid "Image 1024"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__image_128
+msgid "Image 128"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__image_256
+msgid "Image 256"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__image_512
+msgid "Image 512"
+msgstr ""
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_search
+msgid "Inactive"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.module.category,name:iot_oca.ir_module_category_iot
+#: model:ir.ui.menu,name:iot_oca.iot_root_menu
+msgid "IoT"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model,name:iot_oca.model_iot_device_action
+msgid "IoT Action"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model,name:iot_oca.model_iot_communication_system
+msgid "IoT Communication System"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model,name:iot_oca.model_iot_communication_system_action
+msgid "IoT Communication System action"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model,name:iot_oca.model_iot_device
+msgid "IoT Device"
+msgstr ""
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_search
+msgid "IoT Device Search"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.actions.act_window,name:iot_oca.iot_device_action
+msgid "IoT Devices"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.actions.act_window,name:iot_oca.iot_system_action
+msgid "IoT System"
+msgstr ""
+
+#. module: iot_oca
+#: model:res.groups,name:iot_oca.group_iot_user
+msgid "IoT User"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model,name:iot_oca.model_iot_device_group
+msgid "Iot Group"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__last_contact_date
+msgid "Last Contact Date"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system____last_update
+#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system_action____last_update
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device____last_update
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action____last_update
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_group____last_update
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system__write_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system_action__write_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__write_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__write_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_group__write_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system__write_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system_action__write_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__write_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__write_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_group__write_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
+msgid "Last contact:"
+msgstr ""
+
+#. module: iot_oca
+#: model:res.groups,name:iot_oca.group_iot_manager
+msgid "Manager"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__model
+msgid "Model"
+msgstr ""
+
+#. module: iot_oca
+#: model:res.groups,comment:iot_oca.group_iot_manager
+msgid "Module administrator, able to modify configuration data."
+msgstr ""
+
+#. module: iot_oca
+#: model:res.groups,comment:iot_oca.group_iot_user
+msgid "Module user."
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system__name
+#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system_action__name
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__name
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_group__name
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__name
+msgid "Name"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields.selection,name:iot_oca.selection__iot_device_action__status__ok
+msgid "Ok"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__date_ok
+msgid "Ok date"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields.selection,name:iot_oca.selection__iot_device_action__status__pending
+msgid "Pending"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__result
+msgid "Result"
+msgstr ""
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_action_tree
+msgid "Run"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__state
+msgid "State"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__status
+msgid "Status"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.ui.menu,name:iot_oca.iot_system_menu
+msgid "Systems"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__tag_ids
+msgid "Tag"
+msgstr ""
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
+msgid "Unknown device"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields.selection,name:iot_oca.selection__iot_device__icon__fa_fa-archive_fa-4x
+msgid "archive"
+msgstr ""
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
+msgid "default_image"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields.selection,name:iot_oca.selection__iot_device__icon__fa_fa-desktop_fa-4x
+msgid "desktop"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields.selection,name:iot_oca.selection__iot_device__icon__fa_fa-laptop_fa-4x
+msgid "laptop"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields.selection,name:iot_oca.selection__iot_device__icon__fa_fa-mobile_fa-6x
+msgid "mobile"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields.selection,name:iot_oca.selection__iot_device__icon__fa_fa-television_fa-4x
+msgid "television"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields.selection,name:iot_oca.selection__iot_device__icon__fa_fa-wifi_fa-4x
+msgid "wifi"
+msgstr ""
