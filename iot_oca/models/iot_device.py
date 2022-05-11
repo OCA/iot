@@ -28,8 +28,7 @@ class IoTDevice(models.Model):
             ("fa fa-desktop fa-4x", "desktop"),
             ("fa fa-archive fa-4x", "archive"),
             ("fa fa-mobile fa-6x", "mobile"),
-        ],
-        "Icon",
+        ]
     )
 
     @api.depends("action_ids")
