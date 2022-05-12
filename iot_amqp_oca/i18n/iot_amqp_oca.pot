@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -67,9 +67,6 @@ msgstr ""
 
 #. module: iot_amqp_oca
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__display_name
-#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_communication_system_action__display_name
-#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output__display_name
-#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output_action__display_name
 msgid "Display Name"
 msgstr ""
 
@@ -87,9 +84,6 @@ msgstr ""
 
 #. module: iot_amqp_oca
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__id
-#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_communication_system_action__id
-#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output__id
-#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output_action__id
 msgid "ID"
 msgstr ""
 
@@ -110,9 +104,6 @@ msgstr ""
 
 #. module: iot_amqp_oca
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host____last_update
-#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_communication_system_action____last_update
-#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output____last_update
-#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output_action____last_update
 msgid "Last Modified on"
 msgstr ""
 
