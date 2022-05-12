@@ -1,0 +1,293 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* iot_template_oca
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: iot_template_oca
+#: model:ir.ui.menu,name:iot_template_oca.iot_device_configuration_menu
+msgid "Add a new Device"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.actions.server,name:iot_template_oca.configure_action
+msgid "Apply Template"
+msgstr ""
+
+#. module: iot_template_oca
+#: model_terms:ir.ui.view,arch_db:iot_template_oca.configure_form
+msgid "Apply template"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__call_function
+msgid "Call Function"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__call_model_id
+msgid "Call Model"
+msgstr ""
+
+#. module: iot_template_oca
+#: model_terms:ir.ui.view,arch_db:iot_template_oca.configure_form
+msgid "Close"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__communication_system_id
+msgid "Communication System"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model,name:iot_template_oca.model_iot_device_configure
+msgid "Configure a IoT device"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__create_uid
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__create_uid
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__create_uid
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__create_uid
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__create_date
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__create_date
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__create_date
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__create_date
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model,name:iot_template_oca.model_iot_device_input
+msgid "Device input"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device__display_name
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__display_name
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_input__display_name
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_output__display_name
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__display_name
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__display_name
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__display_name
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__group_id
+msgid "Group"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device__id
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__id
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_input__id
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_output__id
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__id
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__id
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__id
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__id
+msgid "ID"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__icon
+msgid "Icon"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_1920
+msgid "Image"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_1024
+msgid "Image 1024"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_128
+msgid "Image 128"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_256
+msgid "Image 256"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_512
+msgid "Image 512"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__input_ids
+msgid "Input"
+msgstr ""
+
+#. module: iot_template_oca
+#: model_terms:ir.ui.view,arch_db:iot_template_oca.iot_template_form
+msgid "Inputs"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model,name:iot_template_oca.model_iot_device
+#: model:ir.model,name:iot_template_oca.model_iot_device_output
+msgid "IoT Device"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model,name:iot_template_oca.model_iot_template_input
+msgid "IoT Input for Template"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model,name:iot_template_oca.model_iot_template_key
+msgid "IoT Keys for configuration"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model,name:iot_template_oca.model_iot_template
+msgid "IoT Template for Device"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.actions.act_window,name:iot_template_oca.iot_template_action
+msgid "IoT Templates"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__key_ids
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__key
+msgid "Key"
+msgstr ""
+
+#. module: iot_template_oca
+#: model_terms:ir.ui.view,arch_db:iot_template_oca.iot_template_form
+msgid "Keys"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device____last_update
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure____last_update
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_input____last_update
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_output____last_update
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template____last_update
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input____last_update
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key____last_update
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__write_uid
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__write_uid
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__write_uid
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__write_uid
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__write_date
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__write_date
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__write_date
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__write_date
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__name
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__name
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__name
+msgid "Name"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__output_ids
+msgid "Output"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model,name:iot_template_oca.model_iot_template_output
+msgid "Output templates for IoT"
+msgstr ""
+
+#. module: iot_template_oca
+#: model_terms:ir.ui.view,arch_db:iot_template_oca.iot_template_form
+msgid "Outputs"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__params
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__params
+msgid "Params"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__parent_id
+msgid "Parent"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__parent_path
+msgid "Parent Path"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__serial
+msgid "Serial"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__tag_ids
+msgid "Tag"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__template_id
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__template_id
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__template_id
+msgid "Template"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_input__template_input_id
+msgid "Template Input"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_output__template_output_id
+msgid "Template Output"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.ui.menu,name:iot_template_oca.iot_template_menu
+msgid "Templates"
+msgstr ""
+
+#. module: iot_template_oca
+#: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__url
+msgid "Url"
+msgstr ""
+
+#. module: iot_template_oca
+#: model_terms:ir.ui.view,arch_db:iot_template_oca.configure_form
+msgid "Use this URL on your device configuration"
+msgstr ""
