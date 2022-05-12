@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for oca-iot Odoo addons",
     version=version,
     install_requires=[
+        'odoo-addon-iot_amqp_oca>=15.0dev,<15.1dev',
         'odoo-addon-iot_input_oca>=15.0dev,<15.1dev',
         'odoo-addon-iot_oca>=15.0dev,<15.1dev',
         'odoo-addon-iot_output_oca>=15.0dev,<15.1dev',
