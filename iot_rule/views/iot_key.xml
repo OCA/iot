@@ -25,19 +25,27 @@
                             string="Usage Log"
                         />
                     </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
                     <group>
-                        <field name="name" />
-                        <field name="unique_virtual_key" />
-                        <field name="res_id" invisible="1" />
-                        <field name="res_model" invisible="1" />
-                        <field name="expiration_date" />
+                        <group name="main">
+                            <field name="unique_virtual_key" />
+                            <field name="res_id" invisible="1" />
+                            <field name="res_model" invisible="1" />
+                            <field name="expiration_date" />
+                        </group>
                     </group>
                     <group>
-                        <field
-                            name="rule_ids"
-                            widget="many2many_tags"
-                            string="Authorized Lock Groups"
-                        />
+                        <group name="rules">
+                            <field
+                                name="rule_ids"
+                                widget="many2many_tags"
+                                string="Authorized Lock Groups"
+                            />
+                        </group>
                     </group>
                 </sheet>
             </form>
@@ -50,7 +58,19 @@
             <search>
                 <field name="name" />
                 <field name="unique_virtual_key" />
-                <!-- TODO: Add filters for expired not expired and add not expired as default-->
+                <separator />
+                <filter
+                    string="Expired"
+                    name="expired"
+                    domain="[('expiration_date', '&lt;', datetime.datetime.now())]"
+                    help="Expired Keys"
+                />
+                <filter
+                    string="Not Expired"
+                    name="not_expired"
+                    domain="['|',('expiration_date', '&gt;', datetime.datetime.now()), ('expiration_date', '=', False)]"
+                    help="Not expired Keys"
+                />
             </search>
         </field>
     </record>
