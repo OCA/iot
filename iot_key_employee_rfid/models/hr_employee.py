@@ -22,8 +22,7 @@ class HrEmployee(models.Model):
     @api.depends("iot_key_ids.unique_virtual_key", "iot_key_ids")
     def _compute_rfid_card_code(self):
         for record in self:
-            if record.iot_key_ids:
-                record.rfid_card_code = record.iot_key_ids.unique_virtual_key
+            record.rfid_card_code = record.iot_key_ids[:1].unique_virtual_key
 
     def _inverse_rfid_card_code(self):
         for record in self:
