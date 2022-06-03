@@ -6,68 +6,70 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2022-06-03 11:05+0000\n"
+"Last-Translator: jabelchi <jabelchi@gmail.com>\n"
 "Language-Team: none\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__action_ids
 msgid "Action"
-msgstr ""
+msgstr "Acci??"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__action_count
 msgid "Action Count"
-msgstr ""
+msgstr "Nombre d'accions"
 
 #. module: iot_oca
 #: code:addons/iot_oca/models/iot_communication_system_action.py:0
 #, python-format
 msgid "Action cannot be processed"
-msgstr ""
+msgstr "L'acci?? no pot processar-se"
 
 #. module: iot_oca
 #: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_form
 #: model_terms:ir.ui.view,arch_db:iot_oca.iot_system_form
 msgid "Actions"
-msgstr ""
+msgstr "Accions"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__active
 #: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_search
 msgid "Active"
-msgstr ""
+msgstr "Actiu"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__color
 msgid "Color"
-msgstr ""
+msgstr "Color"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__color
 msgid "Color Index"
-msgstr ""
+msgstr "Index de colors"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system_action__communication_system_id
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__communication_system_id
 msgid "Communication System"
-msgstr ""
+msgstr "Sistema de comunicacions"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system__communication_system_action_ids
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__communication_system_action_id
 msgid "Communication System Action"
-msgstr ""
+msgstr "Acci?? del sistema de comunicacions"
 
 #. module: iot_oca
 #: model:ir.ui.menu,name:iot_oca.iot_configuration_menu
 msgid "Configuration"
-msgstr ""
+msgstr "Configuraci??"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system__create_uid
@@ -77,7 +79,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device_group__create_uid
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creat per"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system__create_date
@@ -87,43 +89,43 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device_group__create_date
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creat el"
 
 #. module: iot_oca
 #: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
 msgid "Delete"
-msgstr ""
+msgstr "Elimina"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system__device_ids
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__device_id
 msgid "Device"
-msgstr ""
+msgstr "Dispositiu"
 
 #. module: iot_oca
 #: model:ir.actions.act_window,name:iot_oca.iot_device_group_act_window
 #: model:ir.ui.menu,name:iot_oca.iot_device_group_menu
 msgid "Device Group"
-msgstr ""
+msgstr "Grup de dispositius"
 
 #. module: iot_oca
 #: model:ir.actions.act_window,name:iot_oca.iot_device_tag_act_window
 #: model:ir.model,name:iot_oca.model_iot_device_tag
 #: model:ir.ui.menu,name:iot_oca.iot_device_tag_menu
 msgid "Device Tag"
-msgstr ""
+msgstr "Etiqueta de dispositiu"
 
 #. module: iot_oca
 #: code:addons/iot_oca/models/iot_device_action.py:0
 #, python-format
 msgid "Device and action must be of the same system"
-msgstr ""
+msgstr "El dispositiu i l'acci?? han d'??sser del mateix sistema"
 
 #. module: iot_oca
 #: model:ir.ui.menu,name:iot_oca.iot_device_menu
 #: model_terms:ir.ui.view,arch_db:iot_oca.iot_system_form
 msgid "Devices"
-msgstr ""
+msgstr "Dispositius"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system__display_name
@@ -133,33 +135,33 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device_group__display_name
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom a mostrar"
 
 #. module: iot_oca
 #: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
 msgid "Dropdown menu"
-msgstr ""
+msgstr "Men?? desplegable"
 
 #. module: iot_oca
 #: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
 msgid "Edit..."
-msgstr ""
+msgstr "Edita..."
 
 #. module: iot_oca
 #: model:ir.model.fields.selection,name:iot_oca.selection__iot_device_action__status__failed
 msgid "Failed"
-msgstr ""
+msgstr "Error"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__group_id
 #: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_search
 msgid "Group"
-msgstr ""
+msgstr "Grup"
 
 #. module: iot_oca
 #: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_search
 msgid "Group By"
-msgstr ""
+msgstr "Agrupa per"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system__id
@@ -169,27 +171,27 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device_group__id
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__ip
 msgid "IP"
-msgstr ""
+msgstr "IP"
 
 #. module: iot_oca
 #: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
 msgid "IP:"
-msgstr ""
+msgstr "IP:"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__icon
 msgid "Icon"
-msgstr ""
+msgstr "Icona"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__image_1920
 msgid "Image"
-msgstr ""
+msgstr "Imatge"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__image_1024
