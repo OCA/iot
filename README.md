@@ -7,9 +7,9 @@
 
 <!-- /!\ do not modify above this line -->
 
-# iot
+# OCA IOT modules
 
-TODO: add repo description.
+This project aims to deal with modules related to IOT
 
 <!-- /!\ do not modify below this line -->
 
