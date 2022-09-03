@@ -51,7 +51,7 @@ class IotDeviceInput(models.Model):
         return getattr(obj, self.call_function)(*args, **kwargs)
 
     def parse_args(self, serial, passphrase):
-        if not serial or not passphrase:
+        if serial is None or passphrase is None:
             raise ValidationError(_('Serial and passphrase are required'))
         return [
             ('serial', '=', serial),

@@ -33,7 +33,7 @@ class IotDevice(models.Model):
             result['res_id'] = self.input_ids.id
         return result
 
-    def parse_single_input(self, uuid=False, address=False, **kwargs):
+    def parse_single_input(self, uuid=None, address=None, **kwargs):
         """Handle single input for device
 
         :param dict value:
@@ -46,9 +46,9 @@ class IotDevice(models.Model):
         :rtype: dict
         """
         msg = {}
-        if uuid:
+        if uuid is not None:
             msg["uuid"] = uuid
-        if not address:
+        if address is None:
             _logger.warning("Address for Input is required")
             msg.update(
                 {"status": "error", "message": _("Address for Input is required")}
@@ -69,7 +69,7 @@ class IotDevice(models.Model):
                 )
                 return msg
             res = device_input.call_device(**kwargs)
-            if uuid:
+            if uuid is not None:
                 res["uuid"] = uuid
             return res
         else:

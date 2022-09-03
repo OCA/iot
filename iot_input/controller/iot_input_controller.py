@@ -16,7 +16,7 @@ class CallIot(http.Controller):
         methods=["POST"],
         csrf=False,
     )
-    def call_unauthorized_iot(self, serial, passphrase=False, *args, **kwargs):
+    def call_unauthorized_iot(self, serial, passphrase=None, *args, **kwargs):
         request = http.request
         if not request.env:
             return json.dumps(False)
@@ -35,7 +35,7 @@ class CallIot(http.Controller):
         csrf=False,
     )
     def call_unauthorized_iot_multi_input(
-        self, device_identification, passphrase=False, values=False, *args, **kwargs
+        self, device_identification, passphrase=None, values=None, *args, **kwargs
     ):
         """Controller to write multiple input data to device inputs
 
@@ -49,12 +49,12 @@ class CallIot(http.Controller):
         if not request.env:
             _logger.warning("env not set")
             return json.dumps({"status": "error", "message": _("Server Error")})
-        if not passphrase:
+        if passphrase is None:
             _logger.warning("Passphrase is required")
             return json.dumps(
                 {"status": "error", "message": _("Passphrase is required")}
             )
-        if not values:
+        if values is None:
             _logger.warning("Values is required")
             return json.dumps({"status": "error", "message": _("Values is required")})
         # Decode JSON object here and use pure python objects in further calls

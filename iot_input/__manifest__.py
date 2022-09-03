@@ -12,8 +12,10 @@
     "website": "https://github.com/OCA/iot",
     'depends': [
         'iot_output',
+        'iot',
         'mail',
     ],
+    # odoo_test_helper is needed for the tests
     'maintainers': ['etobella'],
     'data': [
         'security/ir.model.access.csv',

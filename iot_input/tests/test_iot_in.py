@@ -76,7 +76,7 @@ class TestIotIn(SavepointCase):
 
     def test_device_error_missing_data(self):
         with self.assertRaises(ValidationError):
-            self.iot.get_device(serial=False, passphrase=self.passphrase)
+            self.iot.get_device(serial=None, passphrase=self.passphrase)
 
     def test_error_execution_without_device(self):
         res = self.iot.call_device(value="hello")
