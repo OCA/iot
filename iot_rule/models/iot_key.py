@@ -35,16 +35,16 @@ class IotKey(models.Model):
         ),
     ]
 
-    @api.model
     def _get_unique_virtual_key(self, vals):
         """Hook that can be used to define the key according to needs"""
         return uuid.uuid4()
 
-    @api.model
-    def create(self, vals):
-        if vals.get("unique_virtual_key", "/") == "/":
-            vals["unique_virtual_key"] = self._get_unique_virtual_key(vals)
-        return super().create(vals)
+    @api.model_create_multi
+    def create(self, mvals):
+        for vals in mvals:
+            if vals.get("unique_virtual_key", "/") == "/":
+                vals["unique_virtual_key"] = self._get_unique_virtual_key(vals)
+        return super().create(mvals)
 
     def view_actions(self):
         self.ensure_one()
@@ -70,7 +70,6 @@ class IotKey(models.Model):
             "id": self.id,
         }
 
-    @api.model
     def _get_unique_key_models(self):
         return []
 
@@ -109,7 +108,9 @@ class IotKeyMixin(models.AbstractModel):
 
     def action_view_iot_key(self):
         self.ensure_one()
-        action = self.env.ref("iot.iot_key_act_window").read()[0]
+        action = self.env["ir.actions.act_window"]._for_xml_id(
+            "iot_rule.iot_key_act_window"
+        )
         action["domain"] = [
             ("res_id", "=", self.id),
             ("res_model", "=", self._name),

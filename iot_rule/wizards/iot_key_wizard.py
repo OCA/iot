@@ -31,7 +31,8 @@ class OddoorKeyWizard(models.TransientModel):
         self.ensure_one()
         if not self.iot_key_id:
             self.iot_key_id = self.env["iot.key"].create(self._create_iot_key_vals())
-        return self.update_key(False)
+            return self.update_key(False)
+        return self.update_key()
 
     def _update_key_vals(self):
         record = self.env[self.res_model].browse(self.res_id)

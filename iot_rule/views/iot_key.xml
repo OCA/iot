@@ -81,11 +81,7 @@
             <tree>
                 <field name="name" />
                 <field name="unique_virtual_key" />
-                <field
-                    name="rule_ids"
-                    widget="many2many_tags"
-                    string="Groups of Locks"
-                />
+                <field name="rule_ids" widget="many2many_tags" />
                 <field name="expiration_date" />
             </tree>
         </field>
