@@ -6,7 +6,7 @@
         <field name="name">iot.rule.form (in iot_rule)</field>
         <field name="model">iot.rule</field>
         <field name="arch" type="xml">
-            <form string="Group of Locks">
+            <form>
                 <header />
                 <sheet>
                     <widget
@@ -45,15 +45,14 @@
         </field>
     </record>
     <record model="ir.actions.act_window" id="iot_rule_act_window">
-        <field name="name">Groups of Locks</field>
-        <!-- TODO -->
+        <field name="name">Rules</field>
         <field name="res_model">iot.rule</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
         <field name="context">{}</field>
     </record>
     <record model="ir.actions.act_window" id="iot_rule_action">
-        <field name="name">Groups of Locks</field>
+        <field name="name">Rules</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">iot.rule</field>
         <field name="view_mode">tree,form</field>
@@ -65,7 +64,7 @@
         parent="iot_oca.iot_root_menu"
     />
     <menuitem
-        name="Groups of Locks"
+        name="Rules"
         sequence="10"
         id="iot_define_rules_menu"
         action="iot_rule_action"

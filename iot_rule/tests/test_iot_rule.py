@@ -39,9 +39,9 @@ class TestIotRule(SavepointCase):
             }
         )
         cls.partner = cls.env["res.partner"].create({"name": "Demo partner"})
-        cls.system = cls.env["iot.system"].create({"name": "Testing"})
+        cls.system = cls.env["iot.communication.system"].create({"name": "Testing"})
         cls.device_1 = cls.env["iot.device"].create(
-            {"name": "device 1", "system_id": cls.system.id}
+            {"name": "device 1", "communication_system_id": cls.system.id}
         )
         cls.serial_of_input_1 = "serial 1"
         cls.passphrase_of_input_1 = "password 1"
@@ -59,7 +59,7 @@ class TestIotRule(SavepointCase):
             }
         )
         cls.device_2 = cls.env["iot.device"].create(
-            {"name": "device 2", "system_id": cls.system.id}
+            {"name": "device 2", "communication_system_id": cls.system.id}
         )
         cls.serial_of_input_2 = "serial 2"
         cls.passphrase_of_input_2 = "password 2"
@@ -199,6 +199,7 @@ class TestIotRule(SavepointCase):
         self.assertIn(key.id, ids)
 
     def test_wizard(self):
+        self.assertEqual(0, self.partner.iot_key_count)
         wizard_key = self.env["iot.key.wizard"].create(
             {
                 "res_id": self.partner.id,
@@ -211,6 +212,11 @@ class TestIotRule(SavepointCase):
         key = wizard_key.iot_key_id
         self.assertEqual(key.unique_virtual_key, "Testing Key")
         self.assertEqual(key.rule_ids, self.rule_1)
+        self.partner.refresh()
+        self.assertEqual(1, self.partner.iot_key_count)
+        action = self.partner.action_view_iot_key()
+        self.assertEqual(key, self.env[action["res_model"]].search(action["domain"]))
+        original_key = key
         wizard_key = self.env["iot.key.wizard"].create(
             {
                 "res_id": self.partner.id,
@@ -223,6 +229,19 @@ class TestIotRule(SavepointCase):
         wizard_key.update_key()
         key.refresh()
         self.assertEqual(key.unique_virtual_key, "Testing Key 2")
+        wizard_key = self.env["iot.key.wizard"].create(
+            {
+                "res_id": self.partner.id,
+                "res_model": self.partner._name,
+                "iot_key_id": key.id,
+                "unique_virtual_key": "Testing Key",
+                "rule_ids": [(4, self.rule_1.id)],
+            }
+        )
+        wizard_key.create_key()
+        key.refresh()
+        self.assertEqual(key.unique_virtual_key, "Testing Key")
+        self.assertEqual(key, original_key)
 
     def test_get_iot_keys_from_device_serial_and_type_of_key(self):
         result = self.env["iot.device"].get_iot_keys(
