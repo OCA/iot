@@ -15,7 +15,11 @@ class IotKey(models.Model):
 
     name = fields.Char()
     key_type = fields.Char()
-    unique_virtual_key = fields.Char(readonly=True, default="/", required=True,)
+    unique_virtual_key = fields.Char(
+        readonly=True,
+        default="/",
+        required=True,
+    )
     expiration_date = fields.Datetime()
     rule_ids = fields.Many2many("iot.rule", string="Rules")
     action_ids = fields.One2many("iot.key.action", inverse_name="key_id")

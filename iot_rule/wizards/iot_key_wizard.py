@@ -11,7 +11,9 @@ class OddoorKeyWizard(models.TransientModel):
 
     res_id = fields.Integer(required=True)
     res_model = fields.Char(required=True)
-    iot_key_id = fields.Many2one("iot.key",)
+    iot_key_id = fields.Many2one(
+        "iot.key",
+    )
     unique_virtual_key = fields.Char(required=True)
     rule_ids = fields.Many2many("iot.rule")
 
