@@ -3,7 +3,7 @@
 from openupgradelib import openupgrade
 
 _column_renames = {
-    "iot_template": [("system_id", "communication_system_id")],
+    "iot_template_output": [("system_id", "communication_system_id")],
 }
 
 
