@@ -3,7 +3,7 @@
 
 {
     'name': 'IoT Base',
-    'version': '12.0.1.3.0',
+    'version': '12.0.1.3.1',
     'category': 'IoT',
     'author': "Creu Blanca, "
               "Odoo Community Association (OCA)",
