@@ -245,14 +245,27 @@ class TestIotRule(SavepointCase):
 
     def test_get_iot_keys_from_device_serial_and_type_of_key(self):
         result = self.env["iot.device"].get_iot_keys(
+            self.serial_of_input_2, self.type_of_key_1
+        )
+        self.assertTrue(result.get("error", False))
+        result = self.env["iot.device"].get_iot_keys(
             self.serial_of_input_without_device, self.type_of_key_1
         )
-        self.assertFalse(result.get("keys", False))
+        self.assertTrue(result.get("error", False))
         result = self.env["iot.device"].get_iot_keys(
             self.serial_of_input_1, self.type_of_key_1
         )
         self.assertEqual(len(result["keys"]), 1)
         self.assertEqual(result["keys"][0].get("key_type"), self.type_of_key_1)
+        result = self.env["iot.device"].get_iot_keys(
+            self.serial_of_input_1, self.type_of_key_2
+        )
+        self.assertEqual(len(result["keys"]), 0)
+        result = self.env["iot.device"].get_iot_keys(self.serial_of_input_1, "ALL")
+        self.assertEqual(len(result["keys"]), 1)
+        self.rule_1.write({"parent_ids": [(4, self.rule_2.id)]})
+        result = self.env["iot.device"].get_iot_keys(self.serial_of_input_1, "ALL")
+        self.assertEqual(len(result["keys"]), 2)
 
     def test_get_iot_keys_from_device_input(self):
         result = self.device_input_1.get_iot_keys()
@@ -267,6 +280,8 @@ class TestIotRule(SavepointCase):
         )
 
     def test_generate_iot_lock_for_device_input(self):
+        self.device_2.write({"name": "Changing name"})
+        self.assertFalse(self.device_input_2.lock_id)
         self.device_input_2.generate_iot_lock()
         lock = self.env["iot.lock"].search(
             [("id", "=", self.device_input_2.lock_id.id)], limit=1
@@ -274,6 +289,8 @@ class TestIotRule(SavepointCase):
         self.assertEqual(
             lock.name, self.device_2.name + " / " + self.device_input_2.name
         )
+        self.device_input_2.generate_iot_lock()
+        self.assertEqual(lock, self.device_input_2.lock_id)
 
     def test_change_name_of_lock_if_device_name_changes(self):
         self.device_1_new_name = "some funky cool new name"
