@@ -38,3 +38,18 @@ class IotRule(models.Model):
     def _check_recursion_parent_ids(self):
         if not self._check_m2m_recursion("parent_ids"):
             raise ValidationError(_("A recurssion was found"))
+
+    def _get_virtual_keys(self, domain, limit=0):
+        if not self or limit > 50:
+            return self.env["iot.key"]
+        return self.mapped("parent_ids")._get_virtual_keys(
+            domain, limit + 1
+        ) | self.env["iot.key"].search(
+            domain
+            + [
+                ("rule_ids", "in", self.ids),
+                "|",
+                ("expiration_date", "=", False),
+                ("expiration_date", ">=", fields.Datetime.now()),
+            ]
+        )
