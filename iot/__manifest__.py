@@ -7,6 +7,7 @@
     'category': 'IoT',
     'author': "Creu Blanca, "
               "Odoo Community Association (OCA)",
+    "website": "https://github.com/OCA/iot",
     'license': 'AGPL-3',
     'installable': True,
     'application': True,

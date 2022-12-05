@@ -9,6 +9,7 @@
     'license': 'AGPL-3',
     'installable': True,
     'summary': 'Integrate Iot Outputs with AMQP',
+    "website": "https://github.com/OCA/iot",
     'depends': [
         'iot_output'
     ],

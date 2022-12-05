@@ -9,6 +9,7 @@
     'license': 'AGPL-3',
     'installable': True,
     'summary': 'IoT Input module',
+    "website": "https://github.com/OCA/iot",
     'depends': [
         'iot_output',
         'mail',
