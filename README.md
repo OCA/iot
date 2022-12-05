@@ -17,7 +17,16 @@ None
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[iot](iot/) | 12.0.1.3.0 |  | IoT base module
+[iot_amqp](iot_amqp/) | 12.0.1.1.0 |  | Integrate Iot Outputs with AMQP
+[iot_input](iot_input/) | 12.0.1.4.0 | [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | IoT Input module
+[iot_option_oca](iot_option_oca/) | 12.0.1.0.0 |  | Allow to define custom field for IoT
+[iot_output](iot_output/) | 12.0.1.1.0 |  | IoT allow multiple outputs
+[iot_template_oca](iot_template_oca/) | 12.0.1.0.0 |  | IoT module for managing templates
 
 [//]: # (end addons)
 
