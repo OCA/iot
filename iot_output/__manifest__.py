@@ -11,6 +11,7 @@
     'installable': True,
     'application': True,
     'summary': 'IoT allow multiple outputs',
+    "website": "https://github.com/OCA/iot",
     'depends': [
         'iot',
     ],
