@@ -12,14 +12,10 @@ class IotDevice(models.Model):
         )
         if iot_input:
             if iot_input.lock_id:
-                result = iot_input.lock_id.get_virtual_keys()
+                domain = []
                 if type_of_key != "ALL":
-                    result_filtered = []
-                    for key in result:
-                        if key["key_type"] == type_of_key:
-                            result_filtered.append(key)
-                    result = result_filtered
-                return {"keys": result}
+                    domain.append(("key_type", "=", type_of_key))
+                return {"keys": iot_input.lock_id.get_virtual_keys(domain)}
         return {"error": "no input found"}
 
     def write(self, vals):

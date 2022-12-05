@@ -58,17 +58,9 @@ class IotLock(models.Model):
         action["domain"] = [("lock_id", "=", self.id)]
         return action
 
-    def get_virtual_keys(self):
+    def get_virtual_keys(self, domain=None):
         self.ensure_one()
-        key_obj = self.env["iot.key"]
-        keys = self.env["iot.key"]
-        for rule in self.rule_ids:
-            keys |= key_obj.search(
-                [
-                    ("rule_ids", "=", rule.id),
-                    "|",
-                    ("expiration_date", "=", False),
-                    ("expiration_date", ">=", fields.Datetime.now()),
-                ]
-            )
+        if domain is None:
+            domain = []
+        keys = self.rule_ids._get_virtual_keys(domain)
         return keys.get_iot_rule_values()

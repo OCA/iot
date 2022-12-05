@@ -13,8 +13,10 @@ class IotDeviceInput(models.Model):
         result = self.lock_id.check_access_unique_virtual_key(value)
         return {"access_granted": result}
 
-    def get_iot_keys(self):
-        return {"keys": self.lock_id.get_virtual_keys()}
+    def get_iot_keys(self, domain=None):
+        if domain is None:
+            domain = []
+        return {"keys": self.lock_id.get_virtual_keys(domain)}
 
     def generate_iot_lock(self):
         self.ensure_one()
