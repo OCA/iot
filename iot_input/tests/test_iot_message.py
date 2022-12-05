@@ -6,7 +6,7 @@ from odoo.tests import SavepointCase
 class TestIotInputMessage(SavepointCase):
     @classmethod
     def setUpClass(cls):
-        super().setUpClass()
+        super(TestIotInputMessage, cls).setUpClass()
         cls.loader = FakeModelLoader(cls.env, cls.__module__)
         cls.loader.backup_registry()
 
@@ -34,7 +34,7 @@ class TestIotInputMessage(SavepointCase):
     @classmethod
     def tearDownClass(cls):
         cls.loader.restore_registry()
-        super().tearDownClass()
+        super(TestIotInputMessage, cls).tearDownClass()
 
     def test_message(self):
         original_messages = self.partner.message_ids
