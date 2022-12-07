@@ -19,12 +19,14 @@ class TestEmployeeRfid(TransactionCase):
         self.employee.refresh()
         self.assertTrue(self.employee.iot_key_id)
         self.assertEqual(
-            self.employee.iot_key_id.unique_virtual_key, self.employee.rfid_card_code,
+            self.employee.iot_key_id.unique_virtual_key,
+            self.employee.rfid_card_code,
         )
 
         self.employee.write({"rfid_card_code": "125466"})
         self.assertEqual(
-            self.employee.iot_key_id.unique_virtual_key, self.employee.rfid_card_code,
+            self.employee.iot_key_id.unique_virtual_key,
+            self.employee.rfid_card_code,
         )
 
     def test_unique_constrain(self):

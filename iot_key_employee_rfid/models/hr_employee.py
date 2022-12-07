@@ -11,7 +11,10 @@ class HrEmployee(models.Model):
     iot_key_id = fields.Many2one("iot.key", compute="_compute_iot_key")
     iot_key_ids = fields.One2many(context={"active_test": False}, string="IoT Keys")
     rule_ids = fields.Many2many(
-        "iot.rule", related="iot_key_id.rule_ids", readonly=False, string="IoT Rules",
+        "iot.rule",
+        related="iot_key_id.rule_ids",
+        readonly=False,
+        string="IoT Rules",
     )
     rfid_card_code = fields.Char(
         store=True,
