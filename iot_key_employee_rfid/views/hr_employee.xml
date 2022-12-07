@@ -11,7 +11,7 @@
         <field name="inherit_id" ref="hr_attendance_rfid.view_employee_form_add_rfid" />
         <field name="groups_id" eval="[(4, ref('iot_oca.group_iot_user'))]" />
         <field name="arch" type="xml">
-            <field name="rfid_card_code" position="after">
+            <header position="inside">
                 <button
                     name="generate_iot_key"
                     groups="iot_oca.group_iot_manager"
@@ -19,6 +19,8 @@
                     type="object"
                     attrs="{'invisible': ['|', ('iot_key_id', '!=', False), ('rfid_card_code', '=', False)]}"
                 />
+            </header>
+            <field name="rfid_card_code" position="after">
                 <field
                     name="iot_key_id"
                     groups="iot_oca.group_iot_user"
