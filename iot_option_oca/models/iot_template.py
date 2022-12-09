@@ -10,6 +10,7 @@ class IotTemplate(models.Model):
 
     property_ids = fields.Many2many("iot.device.property")
 
+    # pylint: disable=W8110
     def apply_template(self, device, keys):
         super(IotTemplate, self).apply_template(device, keys)
         for prop in self.property_ids:
