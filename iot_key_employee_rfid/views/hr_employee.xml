@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 Creu Blanca
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="hr_attendance_rfid.view_employee_form_add_rfid">
+        <field name="groups_id" eval="[(4, ref('iot_oca.group_iot_user'))]" />
+    </record>
+    <record model="ir.ui.view" id="hr_employee_form_view">
+        <field name="name">hr.employee.form (in iot_key_employee_rfid)</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_attendance_rfid.view_employee_form_add_rfid" />
+        <field name="groups_id" eval="[(4, ref('iot_oca.group_iot_user'))]" />
+        <field name="arch" type="xml">
+            <header position="inside">
+                <button
+                    name="generate_iot_key"
+                    groups="iot_oca.group_iot_manager"
+                    string="Generate IoT Key for this RFID Card"
+                    type="object"
+                    attrs="{'invisible': ['|', ('iot_key_id', '!=', False), ('rfid_card_code', '=', False)]}"
+                />
+            </header>
+            <field name="rfid_card_code" position="after">
+                <field
+                    name="iot_key_id"
+                    groups="iot_oca.group_iot_user"
+                    attrs="{'invisible': [('iot_key_id', '=', False)]}"
+                    string="IoT Key for the RFID Card"
+                />
+                <field name="iot_key_ids" invisible="1" />
+                <field
+                    name="rule_ids"
+                    widget="many2many_tags"
+                    attrs="{'invisible': [('iot_key_id', '=', False)]}"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>
