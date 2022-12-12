@@ -1,0 +1,364 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* iot_rule
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: iot_rule
+#: code:addons/iot_rule/models/iot_rule.py:0
+#, python-format
+msgid "A recurssion was found"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key__action_ids
+#: model:ir.model.fields,field_description:iot_rule.field_iot_lock__action_ids
+msgid "Action"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key__active
+#: model:ir.model.fields,field_description:iot_rule.field_iot_lock__active
+#: model:ir.model.fields,field_description:iot_rule.field_iot_rule__active
+msgid "Active"
+msgstr ""
+
+#. module: iot_rule
+#: model_terms:ir.ui.view,arch_db:iot_rule.iot_key_form_view
+msgid "Authorized Lock Groups"
+msgstr ""
+
+#. module: iot_rule
+#: model_terms:ir.ui.view,arch_db:iot_rule.iot_key_wizard_form_view
+msgid "Cancel"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model,name:iot_rule.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: iot_rule
+#: model_terms:ir.ui.view,arch_db:iot_rule.iot_key_wizard_form_view
+msgid "Create"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model,name:iot_rule.model_iot_key_wizard
+msgid "Create a Key"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key__create_uid
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_action__create_uid
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_wizard__create_uid
+#: model:ir.model.fields,field_description:iot_rule.field_iot_lock__create_uid
+#: model:ir.model.fields,field_description:iot_rule.field_iot_rule__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key__create_date
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_action__create_date
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_wizard__create_date
+#: model:ir.model.fields,field_description:iot_rule.field_iot_lock__create_date
+#: model:ir.model.fields,field_description:iot_rule.field_iot_rule__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_lock__description
+msgid "Description"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model,name:iot_rule.model_iot_device_input
+msgid "Device input"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_device__display_name
+#: model:ir.model.fields,field_description:iot_rule.field_iot_device_input__display_name
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key__display_name
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_action__display_name
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_mixin__display_name
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_wizard__display_name
+#: model:ir.model.fields,field_description:iot_rule.field_iot_lock__display_name
+#: model:ir.model.fields,field_description:iot_rule.field_iot_rule__display_name
+#: model:ir.model.fields,field_description:iot_rule.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key__expiration_date
+msgid "Expiration Date"
+msgstr ""
+
+#. module: iot_rule
+#: model_terms:ir.ui.view,arch_db:iot_rule.iot_key_search_view
+msgid "Expired"
+msgstr ""
+
+#. module: iot_rule
+#: model_terms:ir.ui.view,arch_db:iot_rule.iot_key_search_view
+msgid "Expired Keys"
+msgstr ""
+
+#. module: iot_rule
+#: model_terms:ir.ui.view,arch_db:iot_rule.iot_device_input_form_view
+msgid "Generate IoT Lock for this Input"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_device__id
+#: model:ir.model.fields,field_description:iot_rule.field_iot_device_input__id
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key__id
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_action__id
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_mixin__id
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_wizard__id
+#: model:ir.model.fields,field_description:iot_rule.field_iot_lock__id
+#: model:ir.model.fields,field_description:iot_rule.field_iot_rule__id
+#: model:ir.model.fields,field_description:iot_rule.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model,name:iot_rule.model_iot_device
+msgid "IoT Device"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model,name:iot_rule.model_iot_key
+msgid "IoT Key"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model,name:iot_rule.model_iot_key_action
+msgid "IoT Key - Actions Log"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.actions.act_window,name:iot_rule.iot_key_wizard_act_window
+#: model_terms:ir.ui.view,arch_db:iot_rule.iot_key_wizard_form_view
+msgid "IoT Key Wizard"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model,name:iot_rule.model_iot_lock
+msgid "IoT Lock"
+msgstr ""
+
+#. module: iot_rule
+#: model_terms:ir.ui.view,arch_db:iot_rule.iot_device_input_form_view
+msgid "IoT Lock associated"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model,name:iot_rule.model_iot_rule
+msgid "IoT Rule (Relation Key-Lock)"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_mixin__iot_key_ids
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_wizard__iot_key_id
+#: model:ir.model.fields,field_description:iot_rule.field_res_partner__iot_key_ids
+#: model:ir.model.fields,field_description:iot_rule.field_res_users__iot_key_ids
+msgid "Iot Key"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_mixin__iot_key_count
+#: model:ir.model.fields,field_description:iot_rule.field_res_partner__iot_key_count
+#: model:ir.model.fields,field_description:iot_rule.field_res_users__iot_key_count
+msgid "Iot Key Count"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_action__key_id
+msgid "Key"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key__key_type
+msgid "Key Type"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.constraint,message:iot_rule.constraint_iot_key_unique_virtual_key_uniq
+msgid "Key must be unique"
+msgstr ""
+
+#. module: iot_rule
+#: code:addons/iot_rule/wizards/iot_key_wizard.py:0
+#: code:addons/iot_rule/wizards/iot_key_wizard.py:0
+#, python-format
+msgid "Key of %s"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_action__key_name
+msgid "Key's Name"
+msgstr ""
+
+#. module: iot_rule
+#: model_terms:ir.ui.view,arch_db:iot_rule.res_partner_form_view
+msgid "Keys"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.actions.act_window,name:iot_rule.iot_key_act_window
+#: model:ir.ui.menu,name:iot_rule.iot_key_menu
+msgid "Keys (Persons)"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_device____last_update
+#: model:ir.model.fields,field_description:iot_rule.field_iot_device_input____last_update
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key____last_update
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_action____last_update
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_mixin____last_update
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_wizard____last_update
+#: model:ir.model.fields,field_description:iot_rule.field_iot_lock____last_update
+#: model:ir.model.fields,field_description:iot_rule.field_iot_rule____last_update
+#: model:ir.model.fields,field_description:iot_rule.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key__write_uid
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_action__write_uid
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_wizard__write_uid
+#: model:ir.model.fields,field_description:iot_rule.field_iot_lock__write_uid
+#: model:ir.model.fields,field_description:iot_rule.field_iot_rule__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key__write_date
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_action__write_date
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_wizard__write_date
+#: model:ir.model.fields,field_description:iot_rule.field_iot_lock__write_date
+#: model:ir.model.fields,field_description:iot_rule.field_iot_rule__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_device_input__lock_id
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_action__lock_id
+msgid "Lock"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_rule__lock_ids
+msgid "Locks"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.actions.act_window,name:iot_rule.iot_lock_act_window
+#: model:ir.ui.menu,name:iot_rule.iot_lock_menu
+msgid "Locks (Devices)"
+msgstr ""
+
+#. module: iot_rule
+#: model_terms:ir.ui.view,arch_db:iot_rule.iot_lock_form_view
+msgid "Member of these Groups of Locks"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model,name:iot_rule.model_iot_key_mixin
+msgid "Mixin for relation between record and Iot Keys"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key__name
+#: model:ir.model.fields,field_description:iot_rule.field_iot_lock__name
+#: model:ir.model.fields,field_description:iot_rule.field_iot_rule__name
+msgid "Name"
+msgstr ""
+
+#. module: iot_rule
+#: model_terms:ir.ui.view,arch_db:iot_rule.iot_key_search_view
+msgid "Not Expired"
+msgstr ""
+
+#. module: iot_rule
+#: model_terms:ir.ui.view,arch_db:iot_rule.iot_key_search_view
+msgid "Not expired Keys"
+msgstr ""
+
+#. module: iot_rule
+#: code:addons/iot_rule/models/iot_key.py:0
+#, python-format
+msgid "Only one key can be assigned to this model"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_rule__parent_ids
+msgid "Parent"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key__res_id
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_wizard__res_id
+msgid "Res"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key__res_model
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_wizard__res_model
+msgid "Res Model"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_action__result
+msgid "Result"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_wizard__rule_ids
+msgid "Rule"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.actions.act_window,name:iot_rule.iot_rule_act_window
+#: model:ir.actions.act_window,name:iot_rule.iot_rule_action
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key__rule_ids
+#: model:ir.model.fields,field_description:iot_rule.field_iot_lock__rule_ids
+#: model:ir.ui.menu,name:iot_rule.iot_define_rules_menu
+#: model:ir.ui.menu,name:iot_rule.iot_rule_menu
+msgid "Rules"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_action__timestamp
+msgid "Time"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key__unique_virtual_key
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_action__unique_virtual_key
+#: model:ir.model.fields,field_description:iot_rule.field_iot_key_wizard__unique_virtual_key
+msgid "Unique Virtual Key"
+msgstr ""
+
+#. module: iot_rule
+#: model_terms:ir.ui.view,arch_db:iot_rule.iot_key_wizard_form_view
+msgid "Update"
+msgstr ""
+
+#. module: iot_rule
+#: model:ir.actions.act_window,name:iot_rule.iot_key_action_act_window
+#: model:ir.ui.menu,name:iot_rule.iot_key_action_menu
+#: model_terms:ir.ui.view,arch_db:iot_rule.iot_key_form_view
+#: model_terms:ir.ui.view,arch_db:iot_rule.iot_lock_form_view
+msgid "Usage Log"
+msgstr ""
