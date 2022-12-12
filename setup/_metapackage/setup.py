@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo14-addon-iot_amqp_oca',
         'odoo14-addon-iot_input_oca',
+        'odoo14-addon-iot_key_employee_rfid',
         'odoo14-addon-iot_oca',
         'odoo14-addon-iot_option_oca',
         'odoo14-addon-iot_output_oca',
