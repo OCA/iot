@@ -13,6 +13,7 @@ setuptools.setup(
         'odoo14-addon-iot_oca',
         'odoo14-addon-iot_option_oca',
         'odoo14-addon-iot_output_oca',
+        'odoo14-addon-iot_rule',
         'odoo14-addon-iot_template_oca',
     ],
     classifiers=[
