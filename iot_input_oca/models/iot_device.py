@@ -18,9 +18,9 @@ class IotDevice(models.Model):
 
     def action_show_input(self):
         self.ensure_one()
-        action = self.env.ref("iot_input_oca.iot_device_input_action")
-        result = action.read()[0]
-
+        result = self.env["ir.actions.act_window"]._for_xml_id(
+            "iot_input_oca.iot_device_input_action"
+        )
         result["context"] = {
             "default_device_id": self.id,
         }

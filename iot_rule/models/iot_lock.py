@@ -54,7 +54,9 @@ class IotLock(models.Model):
 
     def view_actions(self):
         self.ensure_one()
-        action = self.env.ref("iot_rule.iot_key_action_act_window").read()[0]
+        action = self.env["ir.actions.act_window"]._for_xml_id(
+            "iot_rule.iot_key_action_act_window"
+        )
         action["domain"] = [("lock_id", "=", self.id)]
         return action
 
