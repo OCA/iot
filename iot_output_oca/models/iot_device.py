@@ -17,9 +17,9 @@ class IoTDevice(models.Model):
 
     def action_show_output(self):
         self.ensure_one()
-        action = self.env.ref("iot_output_oca.iot_device_output_action")
-        result = action.read()[0]
-
+        result = self.env["ir.actions.act_window"]._for_xml_id(
+            "iot_output_oca.iot_device_output_action"
+        )
         result["context"] = {
             "default_device_id": self.id,
         }
