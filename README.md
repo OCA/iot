@@ -26,7 +26,7 @@ addon | version | maintainers | summary
 [iot_key_employee_rfid](iot_key_employee_rfid/) | 14.0.1.0.0 |  | Use an Employee RFID Card as an IoT Key
 [iot_oca](iot_oca/) | 14.0.1.0.0 |  | IoT base module
 [iot_option_oca](iot_option_oca/) | 14.0.1.0.0 |  | Allow to define custom field for IoT
-[iot_output_oca](iot_output_oca/) | 14.0.1.0.1 |  | IoT allow multiple outputs
+[iot_output_oca](iot_output_oca/) | 14.0.1.0.2 |  | IoT allow multiple outputs
 [iot_rule](iot_rule/) | 14.0.1.0.1 |  | Define IoT Rules (Keys that control Inputs)
 [iot_template_oca](iot_template_oca/) | 14.0.1.0.1 |  | IoT module for managing templates
 
