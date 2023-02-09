@@ -3,7 +3,7 @@
 
 {
     "name": "IoT Output",
-    "version": "14.0.1.0.1",
+    "version": "14.0.1.0.2",
     "category": "IoT",
     "author": "Creu Blanca, " "Odoo Community Association (OCA)",
     "license": "AGPL-3",
