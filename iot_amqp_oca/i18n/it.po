@@ -6,65 +6,67 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2023-03-23 16:34+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. module: iot_amqp_oca
 #: model:ir.ui.menu,name:iot_amqp_oca.iot_amqp_host_menu
 msgid "AMQP Hosts"
-msgstr ""
+msgstr "Host AMQP"
 
 #. module: iot_amqp_oca
 #: model_terms:ir.ui.view,arch_db:iot_amqp_oca.iot_device_output_form
 msgid "AMQP configuration"
-msgstr ""
+msgstr "Configurazione AMQP"
 
 #. module: iot_amqp_oca
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__active
 msgid "Active"
-msgstr ""
+msgstr "Attiva"
 
 #. module: iot_amqp_oca
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output__amqp_exchange
 msgid "Amqp Exchange"
-msgstr ""
+msgstr "Comunicazione AMQP"
 
 #. module: iot_amqp_oca
 #: model:ir.actions.act_window,name:iot_amqp_oca.iot_amqp_host_act_window
 #: model:ir.model,name:iot_amqp_oca.model_iot_amqp_host
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output__amqp_host_id
 msgid "Amqp Host"
-msgstr ""
+msgstr "Host AMQP"
 
 #. module: iot_amqp_oca
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output__amqp_payload
 msgid "Amqp Payload"
-msgstr ""
+msgstr "Contenuto AMQP"
 
 #. module: iot_amqp_oca
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output__amqp_routing_key
 msgid "Amqp Routing Key"
-msgstr ""
+msgstr "Chiave instradamento AMQP"
 
 #. module: iot_amqp_oca
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__connection
 msgid "Connection"
-msgstr ""
+msgstr "Connessione"
 
 #. module: iot_amqp_oca
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creato da"
 
 #. module: iot_amqp_oca
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creato il"
 
 #. module: iot_amqp_oca
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__display_name
@@ -72,19 +74,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output__display_name
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output_action__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. module: iot_amqp_oca
 #: code:addons/iot_amqp_oca/models/iot_device_output.py:0
 #, python-format
 msgid "Exchange is required"
-msgstr ""
+msgstr "Richiesta comunicazione"
 
 #. module: iot_amqp_oca
 #: code:addons/iot_amqp_oca/models/iot_device_output.py:0
 #, python-format
 msgid "Host is required"
-msgstr ""
+msgstr "Richiesto host"
 
 #. module: iot_amqp_oca
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__id
@@ -92,22 +94,22 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output__id
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output_action__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: iot_amqp_oca
 #: model:ir.model,name:iot_amqp_oca.model_iot_device_output_action
 msgid "IoT Action"
-msgstr ""
+msgstr "Azione IoT"
 
 #. module: iot_amqp_oca
 #: model:ir.model,name:iot_amqp_oca.model_iot_communication_system_action
 msgid "IoT Communication System action"
-msgstr ""
+msgstr "Azione sisterma comunicazione IoT"
 
 #. module: iot_amqp_oca
 #: model:ir.model,name:iot_amqp_oca.model_iot_device_output
 msgid "IoT Device"
-msgstr ""
+msgstr "Dispositivo IoT"
 
 #. module: iot_amqp_oca
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host____last_update
@@ -115,35 +117,35 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output____last_update
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output_action____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima modica il"
 
 #. module: iot_amqp_oca
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Ultimo aggiormento di"
 
 #. module: iot_amqp_oca
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Ultimo aggiornamento il"
 
 #. module: iot_amqp_oca
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__name
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #. module: iot_amqp_oca
 #: code:addons/iot_amqp_oca/models/iot_device_output.py:0
 #, python-format
 msgid "Routing Key is required"
-msgstr ""
+msgstr "Richiesta chiave instradamento"
 
 #. module: iot_amqp_oca
 #: model_terms:ir.ui.view,arch_db:iot_amqp_oca.iot_device_output_form
 msgid "Run"
-msgstr ""
+msgstr "Esegui"
 
 #. module: iot_amqp_oca
 #: model_terms:ir.ui.view,arch_db:iot_amqp_oca.iot_amqp_host_form_view
 msgid "amqp://USER:PASS@HOST"
-msgstr ""
+msgstr "amqp://USER:PASS@HOST"
