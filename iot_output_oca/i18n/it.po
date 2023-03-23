@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-03-23 00:19+0000\n"
+"PO-Revision-Date: 2023-03-23 07:44+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -111,24 +111,24 @@ msgstr "Dispositivo IoT"
 #. module: iot_output_oca
 #: model:ir.actions.act_window,name:iot_output_oca.iot_device_output_action
 msgid "IoT Outputs"
-msgstr ""
+msgstr "Output IoT"
 
 #. module: iot_output_oca
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__ip
 msgid "Ip"
-msgstr ""
+msgstr "IP"
 
 #. module: iot_output_oca
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output____last_update
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima modifica il"
 
 #. module: iot_output_oca
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__write_uid
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Ultimo aggiornamento di"
 
 #. module: iot_output_oca
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__write_date
