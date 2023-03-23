@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-03-23 13:23+0000\n"
+"PO-Revision-Date: 2023-03-23 16:34+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -156,7 +156,7 @@ msgstr "Input IoT per modello"
 #. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_template_key
 msgid "IoT Keys for configuration"
-msgstr "Kiavi IoT per configurazione"
+msgstr "Chiavi IoT per configurazione"
 
 #. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_template
@@ -264,12 +264,12 @@ msgstr "Modello"
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_input__template_input_id
 msgid "Template Input"
-msgstr "Input modello"
+msgstr "Modello input"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_output__template_output_id
 msgid "Template Output"
-msgstr "Output modello"
+msgstr "Modello output"
 
 #. module: iot_template_oca
 #: model:ir.ui.menu,name:iot_template_oca.iot_template_menu
