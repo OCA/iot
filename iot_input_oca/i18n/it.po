@@ -6,13 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2023-03-23 13:23+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. module: iot_input_oca
 #: model_terms:ir.ui.view,arch_db:iot_input_oca.iot_device_kanban
@@ -20,217 +22,219 @@ msgid ""
 "<i class=\"fa fa-keyboard-o\"/>\n"
 "                    Inputs"
 msgstr ""
+"<i class=\"fa fa-keyboard-o\"/>\n"
+"                    Input"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__action_ids
 msgid "Action"
-msgstr ""
+msgstr "Azione"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__action_count
 msgid "Action Count"
-msgstr ""
+msgstr "Conteggio azione"
 
 #. module: iot_input_oca
 #: model:ir.model,name:iot_input_oca.model_iot_device_input_action
 msgid "Action of device inputs"
-msgstr ""
+msgstr "Azione degli input dispositivo"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__active
 #: model_terms:ir.ui.view,arch_db:iot_input_oca.iot_device_input_search
 msgid "Active"
-msgstr ""
+msgstr "Attivo"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__address
 msgid "Address"
-msgstr ""
+msgstr "indirizzo"
 
 #. module: iot_input_oca
 #: code:addons/iot_input_oca/models/iot_device.py:0
 #, python-format
 msgid "Address for Input is required"
-msgstr ""
+msgstr "È richiesto un indirizzo per l'input"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__args
 msgid "Args"
-msgstr ""
+msgstr "Argomenti"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__call_function
 msgid "Call Function"
-msgstr ""
+msgstr "Richiama funzione"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__call_model_id
 msgid "Call Model"
-msgstr ""
+msgstr "Richiama modello"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__create_uid
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creato da"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__create_date
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creato il"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__device_id
 msgid "Device"
-msgstr ""
+msgstr "Dispositivo"
 
 #. module: iot_input_oca
 #: code:addons/iot_input_oca/models/iot_device_input.py:0
 #, python-format
 msgid "Device cannot be found"
-msgstr ""
+msgstr "Non si può trovare il dispositivo"
 
 #. module: iot_input_oca
 #: model:ir.model,name:iot_input_oca.model_iot_device_input
 msgid "Device input"
-msgstr ""
+msgstr "Input dispositivo"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__display_name
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__id
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: iot_input_oca
 #: model_terms:ir.ui.view,arch_db:iot_input_oca.iot_device_input_search
 msgid "Inactive"
-msgstr ""
+msgstr "Non attivo"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device__input_ids
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__input_id
 msgid "Input"
-msgstr ""
+msgstr "Input"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device__input_count
 msgid "Input Count"
-msgstr ""
+msgstr "Conteggio input"
 
 #. module: iot_input_oca
 #: model_terms:ir.ui.view,arch_db:iot_input_oca.iot_device_form
 msgid "Inputs"
-msgstr ""
+msgstr "Input"
 
 #. module: iot_input_oca
 #: model:ir.model,name:iot_input_oca.model_iot_device
 msgid "IoT Device"
-msgstr ""
+msgstr "Dispositivo IoT"
 
 #. module: iot_input_oca
 #: model_terms:ir.ui.view,arch_db:iot_input_oca.iot_device_input_search
 msgid "IoT Device Input Search"
-msgstr ""
+msgstr "Ricerca input dispositivo IoT"
 
 #. module: iot_input_oca
 #: model:ir.actions.act_window,name:iot_input_oca.iot_device_input_action
 msgid "IoT Inputs"
-msgstr ""
+msgstr "Input IoT"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__kwargs
 msgid "Kwargs"
-msgstr ""
+msgstr "Kwargs"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__lang
 msgid "Language"
-msgstr ""
+msgstr "Lingua"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input____last_update
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima modica il"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__write_uid
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Ultimo aggiornamento di"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__write_date
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Ultimo aggiornamento il"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__name
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__passphrase
 msgid "Passphrase"
-msgstr ""
+msgstr "Passphrase"
 
 #. module: iot_input_oca
 #: code:addons/iot_input_oca/controller/iot_input_controller.py:0
 #, python-format
 msgid "Passphrase is required"
-msgstr ""
+msgstr "Richiesta passphrase"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__res
 msgid "Res"
-msgstr ""
+msgstr "Res"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__serial
 msgid "Serial"
-msgstr ""
+msgstr "Seriale"
 
 #. module: iot_input_oca
 #: code:addons/iot_input_oca/models/iot_device_input.py:0
 #, python-format
 msgid "Serial and passphrase are required"
-msgstr ""
+msgstr "Richiesti seriale e passphrase"
 
 #. module: iot_input_oca
 #: code:addons/iot_input_oca/controller/iot_input_controller.py:0
 #, python-format
 msgid "Server Error"
-msgstr ""
+msgstr "Errore server"
 
 #. module: iot_input_oca
 #: code:addons/iot_input_oca/models/iot_device.py:0
 #: code:addons/iot_input_oca/models/iot_device.py:0
 #, python-format
 msgid "Server Error. Check server logs"
-msgstr ""
+msgstr "Errore server: Controllare i log del server"
 
 #. module: iot_input_oca
 #: code:addons/iot_input_oca/controller/iot_input_controller.py:0
 #, python-format
 msgid "Values is not a valid JSON"
-msgstr ""
+msgstr "I valori non sono in formato JSON"
 
 #. module: iot_input_oca
 #: code:addons/iot_input_oca/controller/iot_input_controller.py:0
 #, python-format
 msgid "Values is required"
-msgstr ""
+msgstr "Richiesti valori"
 
 #. module: iot_input_oca
 #: code:addons/iot_input_oca/controller/iot_input_controller.py:0
 #, python-format
 msgid "Values should be a JSON array of JSON objects"
-msgstr ""
+msgstr "I valori devono essere una matrice o un oggetto JSON"
