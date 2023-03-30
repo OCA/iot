@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-03-24 00:33+0000\n"
+"PO-Revision-Date: 2023-03-30 15:22+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -282,7 +282,7 @@ msgstr "Ultima data contatto"
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device_group____last_update
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag____last_update
 msgid "Last Modified on"
-msgstr "Ultima modica il"
+msgstr "Ultima modifica il"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system__write_uid
