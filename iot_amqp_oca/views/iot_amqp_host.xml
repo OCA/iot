@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 Creu Blanca
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="iot_amqp_host_form_view">
+        <field name="name">iot.amqp.host.form (in iot_amqp)</field>
+        <field name="model">iot.amqp.host</field>
+        <field name="arch" type="xml">
+            <form>
+                <header />
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="connection" placeholder="amqp://USER:PASS@HOST" />
+                    </group>
+                </sheet>
+                <div class="oe_chatter" />
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="iot_amqp_host_search_view">
+        <field name="name">iot.amqp.host.search (in iot_amqp)</field>
+        <field name="model">iot.amqp.host</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+            </search>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="iot_amqp_host_tree_view">
+        <field name="name">iot.amqp.host.tree (in iot_amqp)</field>
+        <field name="model">iot.amqp.host</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="iot_amqp_host_act_window">
+        <field name="name">Amqp Host</field>
+        <field name="res_model">iot.amqp.host</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+    <menuitem
+        name="AMQP Hosts"
+        sequence="80"
+        id="iot_amqp_host_menu"
+        action="iot_amqp_host_act_window"
+        parent="iot_oca.iot_configuration_menu"
+    />
+</odoo>

@@ -1,0 +1,363 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* iot
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2018-08-28 12:39+0000\n"
+"Last-Translator: Enric Tobella <etobella@creublanca.es>\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.1.1\n"
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__action_ids
+msgid "Action"
+msgstr "Acción"
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__action_count
+msgid "Action Count"
+msgstr "# Acciones"
+
+#. module: iot_oca
+#: code:addons/iot_oca/models/iot_system_action.py:0
+#, python-format
+msgid "Action cannot be processed"
+msgstr "La acción no puede ser procesada"
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_form
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_system_form
+msgid "Actions"
+msgstr "Acciones"
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__active
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_search
+msgid "Active"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__color
+msgid "Color"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__color
+msgid "Color Index"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.ui.menu,name:iot_oca.iot_configuration_menu
+msgid "Configuration"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__create_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__create_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_group__create_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__create_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_system__create_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_system_action__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__create_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__create_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_group__create_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__create_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_system__create_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_system_action__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
+msgid "Delete"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__device_id
+#: model:ir.model.fields,field_description:iot_oca.field_iot_system__device_ids
+msgid "Device"
+msgstr "Dispositivo"
+
+#. module: iot_oca
+#: model:ir.actions.act_window,name:iot_oca.iot_device_group_act_window
+#: model:ir.ui.menu,name:iot_oca.iot_device_group_menu
+msgid "Device Group"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__device_identification
+msgid "Device Identification"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.actions.act_window,name:iot_oca.iot_device_tag_act_window
+#: model:ir.model,name:iot_oca.model_iot_device_tag
+#: model:ir.ui.menu,name:iot_oca.iot_device_tag_menu
+msgid "Device Tag"
+msgstr ""
+
+#. module: iot_oca
+#: code:addons/iot_oca/models/iot_device_action.py:0
+#, python-format
+msgid "Device and action must be of the same system"
+msgstr "El dispositivo y la acción deben ser del mismo sistema"
+
+#. module: iot_oca
+#: model:ir.ui.menu,name:iot_oca.iot_device_menu
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_system_form
+msgid "Devices"
+msgstr "Dispositivos"
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__display_name
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__display_name
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_group__display_name
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__display_name
+#: model:ir.model.fields,field_description:iot_oca.field_iot_system__display_name
+#: model:ir.model.fields,field_description:iot_oca.field_iot_system_action__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
+msgid "Dropdown menu"
+msgstr ""
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
+msgid "Edit..."
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields.selection,name:iot_oca.selection__iot_device_action__status__failed
+msgid "Failed"
+msgstr "Fallado"
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__group_id
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_search
+msgid "Group"
+msgstr ""
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_search
+msgid "Group By"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__id
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__id
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_group__id
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__id
+#: model:ir.model.fields,field_description:iot_oca.field_iot_system__id
+#: model:ir.model.fields,field_description:iot_oca.field_iot_system_action__id
+msgid "ID"
+msgstr "ID"
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
+msgid "IP:"
+msgstr ""
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_search
+msgid "Inactive"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.module.category,name:iot_oca.ir_module_category_iot
+#: model:ir.ui.menu,name:iot_oca.iot_root_menu
+msgid "IoT"
+msgstr "IoT"
+
+#. module: iot_oca
+#: model:ir.model,name:iot_oca.model_iot_device_action
+msgid "IoT Action"
+msgstr "Acción IoT"
+
+#. module: iot_oca
+#: model:ir.model,name:iot_oca.model_iot_device
+msgid "IoT Device"
+msgstr "Dispositivo IoT"
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_search
+msgid "IoT Device Search"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.actions.act_window,name:iot_oca.iot_device_action
+msgid "IoT Devices"
+msgstr "Dispositivos IoT"
+
+#. module: iot_oca
+#: model:ir.actions.act_window,name:iot_oca.iot_system_action
+#: model:ir.model,name:iot_oca.model_iot_system
+msgid "IoT System"
+msgstr "Sistema IoT"
+
+#. module: iot_oca
+#: model:ir.model,name:iot_oca.model_iot_system_action
+msgid "IoT System.action"
+msgstr "Acción de Sistema IoT"
+
+#. module: iot_oca
+#: model:res.groups,name:iot_oca.group_iot_user
+msgid "IoT User"
+msgstr "Usuario IoT"
+
+#. module: iot_oca
+#: model:ir.model,name:iot_oca.model_iot_device_group
+msgid "Iot Group"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__ip
+msgid "Ip"
+msgstr "Ip"
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__last_contact_date
+msgid "Last Contact Date"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device____last_update
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action____last_update
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_group____last_update
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag____last_update
+#: model:ir.model.fields,field_description:iot_oca.field_iot_system____last_update
+#: model:ir.model.fields,field_description:iot_oca.field_iot_system_action____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__write_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__write_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_group__write_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__write_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_system__write_uid
+#: model:ir.model.fields,field_description:iot_oca.field_iot_system_action__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__write_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__write_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_group__write_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__write_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_system__write_date
+#: model:ir.model.fields,field_description:iot_oca.field_iot_system_action__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
+msgid "Last contact:"
+msgstr ""
+
+#. module: iot_oca
+#: model:res.groups,name:iot_oca.group_iot_manager
+msgid "Manager"
+msgstr "Responsable"
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__model
+msgid "Model"
+msgstr "Modelo"
+
+#. module: iot_oca
+#: model:res.groups,comment:iot_oca.group_iot_manager
+msgid "Module administrator, able to modify configuration data."
+msgstr "Administrador del módulo, puede modificar los datos de configuración."
+
+#. module: iot_oca
+#: model:res.groups,comment:iot_oca.group_iot_user
+msgid "Module user."
+msgstr "Usuario del módulo."
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__name
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_group__name
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag__name
+#: model:ir.model.fields,field_description:iot_oca.field_iot_system__name
+#: model:ir.model.fields,field_description:iot_oca.field_iot_system_action__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: iot_oca
+#: model:ir.model.fields.selection,name:iot_oca.selection__iot_device_action__status__ok
+msgid "Ok"
+msgstr "Ok"
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__date_ok
+msgid "Ok date"
+msgstr "Fecha de aceptación"
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__passphrase
+msgid "Passphrase"
+msgstr ""
+
+#. module: iot_oca
+#: model:ir.model.fields.selection,name:iot_oca.selection__iot_device_action__status__pending
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__result
+msgid "Result"
+msgstr "Resultado"
+
+#. module: iot_oca
+#: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_action_tree
+msgid "Run"
+msgstr "Procesar"
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__state
+msgid "State"
+msgstr "Estado"
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__status
+msgid "Status"
+msgstr "Estados"
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__system_id
+#: model:ir.model.fields,field_description:iot_oca.field_iot_system_action__system_id
+msgid "System"
+msgstr "Sistema"
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__system_action_id
+#: model:ir.model.fields,field_description:iot_oca.field_iot_system__system_action_ids
+msgid "System Action"
+msgstr "Acción del Sistema"
+
+#. module: iot_oca
+#: model:ir.ui.menu,name:iot_oca.iot_system_menu
+msgid "Systems"
+msgstr "Sistemas"
+
+#. module: iot_oca
+#: model:ir.model.fields,field_description:iot_oca.field_iot_device__tag_ids
+msgid "Tag"
+msgstr ""
+
+#~ msgid "Config Devices"
+#~ msgstr "Configurar Dispositivos"

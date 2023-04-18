@@ -1,0 +1,238 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* iot_input_oca
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2022-06-03 11:05+0000\n"
+"Last-Translator: jabelchi <jabelchi@gmail.com>\n"
+"Language-Team: none\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.2\n"
+
+#. module: iot_input_oca
+#: model_terms:ir.ui.view,arch_db:iot_input_oca.iot_device_kanban
+msgid ""
+"<i class=\"fa fa-keyboard-o\"/>\n"
+"                    Inputs"
+msgstr ""
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__action_ids
+msgid "Action"
+msgstr "Acció"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__action_count
+msgid "Action Count"
+msgstr "Nombre d'accions"
+
+#. module: iot_input_oca
+#: model:ir.model,name:iot_input_oca.model_iot_device_input_action
+msgid "Action of device inputs"
+msgstr "Acció d'entrades de dispositiu"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__active
+#: model_terms:ir.ui.view,arch_db:iot_input_oca.iot_device_input_search
+msgid "Active"
+msgstr "Actiu"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__address
+msgid "Address"
+msgstr "Adreça"
+
+#. module: iot_input_oca
+#: code:addons/iot_input_oca/models/iot_device.py:0
+#, python-format
+msgid "Address for Input is required"
+msgstr "L'adreça d'entrada és necessària"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__args
+msgid "Args"
+msgstr "Args"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__call_function
+msgid "Call Function"
+msgstr "Crida a la funció"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__call_model_id
+msgid "Call Model"
+msgstr ""
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__create_uid
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__create_uid
+msgid "Created by"
+msgstr "Creat per"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__create_date
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__create_date
+msgid "Created on"
+msgstr "Creat el"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__device_id
+msgid "Device"
+msgstr "Dispositiu"
+
+#. module: iot_input_oca
+#: code:addons/iot_input_oca/models/iot_device_input.py:0
+#, python-format
+msgid "Device cannot be found"
+msgstr "No es troba el dispositiu"
+
+#. module: iot_input_oca
+#: model:ir.model,name:iot_input_oca.model_iot_device_input
+msgid "Device input"
+msgstr "Entrada de dispositiu"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__display_name
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__display_name
+msgid "Display Name"
+msgstr "Nom a mostrar"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__id
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__id
+msgid "ID"
+msgstr "ID"
+
+#. module: iot_input_oca
+#: model_terms:ir.ui.view,arch_db:iot_input_oca.iot_device_input_search
+msgid "Inactive"
+msgstr "Inactiu"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device__input_ids
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__input_id
+msgid "Input"
+msgstr "Entrada"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device__input_count
+msgid "Input Count"
+msgstr "Nombre d'entrades"
+
+#. module: iot_input_oca
+#: model_terms:ir.ui.view,arch_db:iot_input_oca.iot_device_form
+msgid "Inputs"
+msgstr "Entrades"
+
+#. module: iot_input_oca
+#: model:ir.model,name:iot_input_oca.model_iot_device
+msgid "IoT Device"
+msgstr "Dispositiu IoT"
+
+#. module: iot_input_oca
+#: model_terms:ir.ui.view,arch_db:iot_input_oca.iot_device_input_search
+msgid "IoT Device Input Search"
+msgstr "Cerca de dispositius IoT"
+
+#. module: iot_input_oca
+#: model:ir.actions.act_window,name:iot_input_oca.iot_device_input_action
+msgid "IoT Inputs"
+msgstr "Entrades IoT"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__kwargs
+msgid "Kwargs"
+msgstr "Kwargs"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__lang
+msgid "Language"
+msgstr "Idioma"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input____last_update
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action____last_update
+msgid "Last Modified on"
+msgstr "Darrera modificació el"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__write_uid
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__write_uid
+msgid "Last Updated by"
+msgstr "Darrera actualització per"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__write_date
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__write_date
+msgid "Last Updated on"
+msgstr "Darrera actualització el"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__passphrase
+msgid "Passphrase"
+msgstr "Contrasenya"
+
+#. module: iot_input_oca
+#: code:addons/iot_input_oca/controller/iot_input_controller.py:0
+#, python-format
+msgid "Passphrase is required"
+msgstr "Es requereix contrasenya"
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__res
+msgid "Res"
+msgstr ""
+
+#. module: iot_input_oca
+#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__serial
+msgid "Serial"
+msgstr "Número de sèrie"
+
+#. module: iot_input_oca
+#: code:addons/iot_input_oca/models/iot_device_input.py:0
+#, python-format
+msgid "Serial and passphrase are required"
+msgstr "Es requereix número de sèrie i contrasenya"
+
+#. module: iot_input_oca
+#: code:addons/iot_input_oca/controller/iot_input_controller.py:0
+#, python-format
+msgid "Server Error"
+msgstr "Error de servidor"
+
+#. module: iot_input_oca
+#: code:addons/iot_input_oca/models/iot_device.py:0
+#: code:addons/iot_input_oca/models/iot_device.py:0
+#, python-format
+msgid "Server Error. Check server logs"
+msgstr "Error de servidor. Comproveu els registres del servidor"
+
+#. module: iot_input_oca
+#: code:addons/iot_input_oca/controller/iot_input_controller.py:0
+#, python-format
+msgid "Values is not a valid JSON"
+msgstr "El valor no és un JSON vàlid"
+
+#. module: iot_input_oca
+#: code:addons/iot_input_oca/controller/iot_input_controller.py:0
+#, python-format
+msgid "Values is required"
+msgstr ""
+
+#. module: iot_input_oca
+#: code:addons/iot_input_oca/controller/iot_input_controller.py:0
+#, python-format
+msgid "Values should be a JSON array of JSON objects"
+msgstr ""
