@@ -3,7 +3,7 @@
 
 try:
     from mock import patch
-except:
+except ImportError:
     import os
 
     os.system("pip install mock")
