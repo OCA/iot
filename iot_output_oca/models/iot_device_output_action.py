@@ -9,14 +9,9 @@ class IoTDeviceOutputAction(models.Model):
     _description = "IoT Action"
     _order = "date_ok desc"
 
-    output_id = fields.Many2one(
-        "iot.device.output", 
-        required=True, 
-        readonly=True
-    )
+    output_id = fields.Many2one("iot.device.output", required=True, readonly=True)
     communication_system_action_id = fields.Many2one(
-        "iot.communication.system.action", 
-        required=True
+        "iot.communication.system.action", required=True
     )
     status = fields.Selection(
         [("ok", "Ok"), ("pending", "Pending"), ("failed", "Failed")],

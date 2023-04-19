@@ -9,19 +9,10 @@ class IoTDevice(models.Model):
 
     name = fields.Char(required=True)
     device_id = fields.Many2one(
-        "iot.device",
-        required=True,
-        readonly=True,
-        auto_join=True
+        "iot.device", required=True, readonly=True, auto_join=True
     )
-    communication_system_id = fields.Many2one(
-        "iot.communication.system",
-        required=True
-    )
-    action_ids = fields.One2many(
-        "iot.device.output.action",
-        inverse_name="output_id"
-    )
+    communication_system_id = fields.Many2one("iot.communication.system", required=True)
+    action_ids = fields.One2many("iot.device.output.action", inverse_name="output_id")
     state = fields.Selection([], readonly=True)
     model = fields.Char()
     ip = fields.Char()

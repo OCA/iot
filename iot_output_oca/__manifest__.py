@@ -3,7 +3,7 @@
 
 {
     "name": "IoT Output",
-    "version": "16etobella.0.1.0.0",
+    "version": "16.0.1.0.0",
     "author": "Creu Blanca, " "Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "category": "IoT/iot_output_oca",

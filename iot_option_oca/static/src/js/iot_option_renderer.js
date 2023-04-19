@@ -8,14 +8,14 @@ odoo.define("iot_option.IotOptionRenderer", function (require) {
 
     var IotOptionRenderer = BasicRenderer.extend({
         init: function (parent, state, params) {
-            params = _.defaults({}, params, {
+            var safeParam = _.defaults({}, params, {
                 viewType: "iot_option",
             });
-            this._super(parent, state, params);
+            this._super(parent, state, safeParam);
             if (
                 parent !== undefined &&
                 parent.mode === "edit" &&
-                params.mode === undefined
+                safeParam.mode === undefined
             ) {
                 this.mode = "edit";
             }
@@ -97,8 +97,10 @@ odoo.define("iot_option.IotOptionRenderer", function (require) {
             }
         },
         _activateNextIotOptionWidget: function (currentIndex) {
-            currentIndex = (currentIndex + 1) % (this.recordWidgets || []).length;
-            var activatedIndex = this._activateIotOptionWidget(currentIndex, {inc: 1});
+            var activatedIndex = this._activateIotOptionWidget(
+                (currentIndex + 1) % (this.recordWidgets || []).length,
+                {inc: 1}
+            );
             if (activatedIndex === -1) {
                 // No widget have been activated, we should go to the edit/save buttons
                 this.trigger_up("focus_control_button");
@@ -109,35 +111,36 @@ odoo.define("iot_option.IotOptionRenderer", function (require) {
             return this.lastActivatedFieldIndex;
         },
         _activatePreviousIotOptionWidget: function (currentIndex) {
-            currentIndex = currentIndex
+            var safeCurrentIndex = currentIndex
                 ? currentIndex - 1
                 : (this.recordWidgets || []).length - 1;
-            return this._activateIotOptionWidget(currentIndex, {inc: -1});
+            return this._activateIotOptionWidget(safeCurrentIndex, {inc: -1});
         },
         _activateIotOptionWidget: function (currentIndex, options) {
-            options = options || {};
-            _.defaults(options, {inc: 1, wrap: false});
-            currentIndex = Math.max(0, currentIndex); // Do not allow negative currentIndex
+            var safeOptions = options || {};
+            _.defaults(safeOptions, {inc: 1, wrap: false});
+            // Do not allow negative currentIndex
+            var index = Math.max(0, currentIndex);
 
             for (var i = 0; i < this.recordWidgets.length; i++) {
-                var activated = this.recordWidgets[currentIndex].activate({
-                    event: options.event,
-                    noAutomaticCreate: options.noAutomaticCreate || false,
+                var activated = this.recordWidgets[index].activate({
+                    event: safeOptions.event,
+                    noAutomaticCreate: safeOptions.noAutomaticCreate || false,
                 });
                 if (activated) {
-                    return currentIndex;
+                    return index;
                 }
 
-                currentIndex += options.inc;
-                if (currentIndex >= this.recordWidgets.length) {
-                    if (options.wrap) {
-                        currentIndex -= this.recordWidgets.length;
+                index += safeOptions.inc;
+                if (index >= this.recordWidgets.length) {
+                    if (safeOptions.wrap) {
+                        index -= this.recordWidgets.length;
                     } else {
                         return -1;
                     }
-                } else if (currentIndex < 0) {
-                    if (options.wrap) {
-                        currentIndex += this.recordWidgets.length;
+                } else if (index < 0) {
+                    if (safeOptions.wrap) {
+                        index += this.recordWidgets.length;
                     } else {
                         return -1;
                     }
