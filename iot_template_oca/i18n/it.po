@@ -6,48 +6,50 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2023-04-19 14:34+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. module: iot_template_oca
 #: model:ir.ui.menu,name:iot_template_oca.iot_device_configuration_menu
 msgid "Add a new Device"
-msgstr ""
+msgstr "Aggiungi nuovo dispositivo"
 
 #. module: iot_template_oca
 #: model:ir.actions.server,name:iot_template_oca.configure_action
 msgid "Apply Template"
-msgstr ""
+msgstr "Applica modello"
 
 #. module: iot_template_oca
 #: model_terms:ir.ui.view,arch_db:iot_template_oca.configure_form
 msgid "Apply template"
-msgstr ""
+msgstr "Applica modello"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__call_function
 msgid "Call Function"
-msgstr ""
+msgstr "Richiama funzione"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__call_model_id
 msgid "Call Model"
-msgstr ""
+msgstr "Richiama modello"
 
 #. module: iot_template_oca
 #: model_terms:ir.ui.view,arch_db:iot_template_oca.configure_form
 msgid "Close"
-msgstr ""
+msgstr "Chiudi"
 
 #. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_device_configure
 msgid "Configure a IoT device"
-msgstr ""
+msgstr "Configura un dispositivo IoT"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__create_uid
@@ -56,7 +58,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__create_uid
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creato da"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__create_date
@@ -65,12 +67,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__create_date
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creato il"
 
 #. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_device_input
 msgid "Device input"
-msgstr ""
+msgstr "Input dispositivo"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__display_name
@@ -79,12 +81,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__display_name
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__group_id
 msgid "Group"
-msgstr ""
+msgstr "Gruppo"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__id
@@ -93,64 +95,64 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__id
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__icon
 msgid "Icon"
-msgstr ""
+msgstr "Icona"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image
 msgid "Image"
-msgstr ""
+msgstr "Immagine"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__input_ids
 msgid "Input"
-msgstr ""
+msgstr "Input"
 
 #. module: iot_template_oca
 #: model_terms:ir.ui.view,arch_db:iot_template_oca.iot_template_form
 msgid "Inputs"
-msgstr ""
+msgstr "Input"
 
 #. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_device
 #: model:ir.model,name:iot_template_oca.model_iot_device_output
 msgid "IoT Device"
-msgstr ""
+msgstr "Dispositivo IoT"
 
 #. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_template_input
 msgid "IoT Input for Template"
-msgstr ""
+msgstr "Input IoT per modello"
 
 #. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_template_key
 msgid "IoT Keys for configuration"
-msgstr ""
+msgstr "Chiavi IoT per configurazione"
 
 #. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_template
 msgid "IoT Template for Device"
-msgstr ""
+msgstr "Modello IoT per dispositivo"
 
 #. module: iot_template_oca
 #: model:ir.actions.act_window,name:iot_template_oca.iot_template_action
 msgid "IoT Templates"
-msgstr ""
+msgstr "Modelli IoT"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__key_ids
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__key
 msgid "Key"
-msgstr ""
+msgstr "Chiave"
 
 #. module: iot_template_oca
 #: model_terms:ir.ui.view,arch_db:iot_template_oca.iot_template_form
 msgid "Keys"
-msgstr ""
+msgstr "Chiavi"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure____last_update
@@ -159,7 +161,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key____last_update
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima modifica il"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__write_uid
@@ -168,7 +170,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__write_uid
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Ultimo aggiornamento di"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__write_date
@@ -177,114 +179,123 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__write_date
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Ultimo aggiornamento il"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_medium
 msgid "Medium-sized image"
-msgstr ""
+msgstr "Immagine media dimensione"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,help:iot_template_oca.field_iot_template__image_medium
 msgid "Medium-sized image of the equipment. It is automatically resized as a 128x128px image, with aspect ratio preserved, only when the image exceeds one of those sizes. Use this field in form views or some kanban views."
 msgstr ""
+"Immagine dell'attrezzatura a dimensione media . Viene ridimensionata "
+"automaticamente ad una immagine 128x128px, con il rapporto dei lati "
+"rispettato, solo quando l'immagine supera questa dimensione. Utilizzare "
+"questo campo nei moduli e nelle viste kanban."
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__name
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__name
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__name
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__output_ids
 msgid "Output"
-msgstr ""
+msgstr "Output"
 
 #. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_template_output
 msgid "Output templates for IoT"
-msgstr ""
+msgstr "Modello output per IoT"
 
 #. module: iot_template_oca
 #: model_terms:ir.ui.view,arch_db:iot_template_oca.iot_template_form
 msgid "Outputs"
-msgstr ""
+msgstr "Output"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__params
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__params
 msgid "Params"
-msgstr ""
+msgstr "Parametri"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__parent_id
 msgid "Parent"
-msgstr ""
+msgstr "Padre"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__parent_path
 msgid "Parent Path"
-msgstr ""
+msgstr "Percorso padre"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__serial
 msgid "Serial"
-msgstr ""
+msgstr "Seriale"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_small
 msgid "Small-sized image"
-msgstr ""
+msgstr "Immagine dimensione piccola"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,help:iot_template_oca.field_iot_template__image_small
 msgid "Small-sized image of the equipment. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
 msgstr ""
+"Immagine dell'attrezzatura a dimensione piccola. Viene ridimensionata "
+"automaticamente ad una immagine 64x64px, con il rapporto dei lati "
+"rispettato. Utilizzare ovunque è richiesta un'immagine piccola."
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__system_id
 msgid "System"
-msgstr ""
+msgstr "Sistema"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__tag_ids
 msgid "Tag"
-msgstr ""
+msgstr "Etichetta"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__template_id
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__template_id
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__template_id
 msgid "Template"
-msgstr ""
+msgstr "Modello"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_input__template_input_id
 msgid "Template Input"
-msgstr ""
+msgstr "Modello input"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_output__template_output_id
 msgid "Template Output"
-msgstr ""
+msgstr "Output modello"
 
 #. module: iot_template_oca
 #: model:ir.ui.menu,name:iot_template_oca.iot_template_menu
 msgid "Templates"
-msgstr ""
+msgstr "Modelli"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,help:iot_template_oca.field_iot_template__image
 msgid "This field holds the image used as image for the equipment, limited to 1024x1024px."
 msgstr ""
+"Questo campo contiene l'immagine utilizzata per l'attrezzatura, limitata a "
+"1024x1024px."
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__url
 msgid "Url"
-msgstr ""
+msgstr "URL"
 
 #. module: iot_template_oca
 #: model_terms:ir.ui.view,arch_db:iot_template_oca.configure_form
 msgid "Use this URL on your device configuration"
-msgstr ""
+msgstr "Utilizzare questo URLnella configurazione del dispositivo"
