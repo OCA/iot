@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-04-10 16:31+0000\n"
+"PO-Revision-Date: 2023-04-19 14:34+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -218,7 +218,7 @@ msgstr "Proprietà"
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__required
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_property__required
 msgid "Required"
-msgstr "Richiesta"
+msgstr "Obbligatorio"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__sequence
@@ -249,7 +249,7 @@ msgstr "Nome tecnico del campo dove è salvato il valore."
 #. module: iot_option_oca
 #: model:ir.model.fields.selection,name:iot_option_oca.selection__iot_device_property__field_type__str
 msgid "Text"
-msgstr "Text"
+msgstr "Testo"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__value_str
@@ -270,7 +270,7 @@ msgstr "Valore"
 #. module: iot_option_oca
 #: model:ir.model.fields,help:iot_option_oca.field_iot_device_option__value
 msgid "Value, always converted to/from the typed field."
-msgstr "Valore, sempre convertito da/dal campo digitato."
+msgstr "Valore, sempre convertito al/dal campo digitato."
 
 #. module: iot_option_oca
 #: model:ir.model,name:iot_option_oca.model_ir_ui_view
