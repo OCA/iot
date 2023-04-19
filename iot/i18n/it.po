@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-03-24 09:46+0000\n"
+"PO-Revision-Date: 2023-04-19 14:34+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -210,38 +210,38 @@ msgstr "Dispositivo IoT"
 #. module: iot
 #: model_terms:ir.ui.view,arch_db:iot.iot_device_search
 msgid "IoT Device Search"
-msgstr ""
+msgstr "Ricerca dispositivo IoT"
 
 #. module: iot
 #: model:ir.actions.act_window,name:iot.iot_device_action
 msgid "IoT Devices"
-msgstr ""
+msgstr "Dispositivi IoT"
 
 #. module: iot
 #: model:ir.actions.act_window,name:iot.iot_system_action
 #: model:ir.model,name:iot.model_iot_system
 msgid "IoT System"
-msgstr ""
+msgstr "Sistema IoT"
 
 #. module: iot
 #: model:ir.model,name:iot.model_iot_system_action
 msgid "IoT System.action"
-msgstr ""
+msgstr "System.action IoT"
 
 #. module: iot
 #: model:res.groups,name:iot.group_iot_user
 msgid "IoT User"
-msgstr ""
+msgstr "Utente IoT"
 
 #. module: iot
 #: model:ir.model,name:iot.model_iot_device_group
 msgid "Iot Group"
-msgstr ""
+msgstr "Gruppo IoT"
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__last_contact_date
 msgid "Last Contact Date"
-msgstr ""
+msgstr "Ultima data contatto"
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device____last_update
@@ -251,7 +251,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot.field_iot_system____last_update
 #: model:ir.model.fields,field_description:iot.field_iot_system_action____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima modifica il"
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__write_uid
@@ -261,7 +261,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot.field_iot_system__write_uid
 #: model:ir.model.fields,field_description:iot.field_iot_system_action__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Ultimo aggiornamento di"
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__write_date
@@ -271,42 +271,48 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot.field_iot_system__write_date
 #: model:ir.model.fields,field_description:iot.field_iot_system_action__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Ultimo aggiornamento il"
 
 #. module: iot
 #: model_terms:ir.ui.view,arch_db:iot.iot_device_kanban
 msgid "Last contact:"
-msgstr ""
+msgstr "Ultimo contatto:"
 
 #. module: iot
 #: model:res.groups,name:iot.group_iot_manager
 msgid "Manager"
-msgstr ""
+msgstr "Responsabile"
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__image_medium
 msgid "Medium-sized image"
-msgstr ""
+msgstr "Immagine dimensione media"
 
 #. module: iot
 #: model:ir.model.fields,help:iot.field_iot_device__image_medium
 msgid "Medium-sized image of the equipment. It is automatically resized as a 128x128px image, with aspect ratio preserved, only when the image exceeds one of those sizes. Use this field in form views or some kanban views."
 msgstr ""
+"Immagine dell'attrezzatura a dimensione media . Viene ridimensionata "
+"automaticamente ad una immagine 128x128px, con il rapporto dei lati "
+"rispettato, solo quando l'immagine supera questa dimensione. Utilizzare "
+"questo campo nei moduli e nelle viste kanban."
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__model
 msgid "Model"
-msgstr ""
+msgstr "Modello"
 
 #. module: iot
 #: model:res.groups,comment:iot.group_iot_manager
 msgid "Module administrator, able to modify configuration data."
 msgstr ""
+"Amministratore del modulo, abilitato alla modifica dei dati di "
+"configurazione."
 
 #. module: iot
 #: model:res.groups,comment:iot.group_iot_user
 msgid "Module user."
-msgstr ""
+msgstr "Utente modulo."
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__name
@@ -315,116 +321,121 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot.field_iot_system__name
 #: model:ir.model.fields,field_description:iot.field_iot_system_action__name
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #. module: iot
 #: selection:iot.device.action,status:0
 msgid "Ok"
-msgstr ""
+msgstr "Ok"
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device_action__date_ok
 msgid "Ok date"
-msgstr ""
+msgstr "Data ok"
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__passphrase
 msgid "Passphrase"
-msgstr ""
+msgstr "Passphrase"
 
 #. module: iot
 #: selection:iot.device.action,status:0
 msgid "Pending"
-msgstr ""
+msgstr "In sospeso"
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device_action__result
 msgid "Result"
-msgstr ""
+msgstr "Risultato"
 
 #. module: iot
 #: model_terms:ir.ui.view,arch_db:iot.iot_device_action_tree
 msgid "Run"
-msgstr ""
+msgstr "Esegui"
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__image_small
 msgid "Small-sized image"
-msgstr ""
+msgstr "Immagine dimensione piccola"
 
 #. module: iot
 #: model:ir.model.fields,help:iot.field_iot_device__image_small
 msgid "Small-sized image of the equipment. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
 msgstr ""
+"Immagine dell'attrezzatura a dimensione piccola. Viene ridimensionata "
+"automaticamente ad una immagine 64x64px, con il rapporto dei lati "
+"rispettato. Utilizzare ovunque è richiesta un'immagine piccola."
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__state
 msgid "State"
-msgstr ""
+msgstr "Stato"
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device_action__status
 msgid "Status"
-msgstr ""
+msgstr "Stato"
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__system_id
 #: model:ir.model.fields,field_description:iot.field_iot_system_action__system_id
 msgid "System"
-msgstr ""
+msgstr "Sistema"
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device_action__system_action_id
 #: model:ir.model.fields,field_description:iot.field_iot_system__system_action_ids
 msgid "System Action"
-msgstr ""
+msgstr "Azione sistema"
 
 #. module: iot
 #: model:ir.ui.menu,name:iot.iot_system_menu
 msgid "Systems"
-msgstr ""
+msgstr "Sistemi"
 
 #. module: iot
 #: model:ir.model.fields,field_description:iot.field_iot_device__tag_ids
 msgid "Tag"
-msgstr ""
+msgstr "Etichetta"
 
 #. module: iot
 #: model:ir.model.fields,help:iot.field_iot_device__image
 msgid "This field holds the image used as image for the equipment, limited to 1024x1024px."
 msgstr ""
+"Questo campo contiene l'immagine utilizzata per l'attrezzatura, limitata a "
+"1024x1024px."
 
 #. module: iot
 #: selection:iot.device,icon:0
 msgid "archive"
-msgstr ""
+msgstr "archivia"
 
 #. module: iot
 #: model_terms:ir.ui.view,arch_db:iot.iot_device_kanban
 msgid "default_image"
-msgstr ""
+msgstr "default_image"
 
 #. module: iot
 #: selection:iot.device,icon:0
 msgid "desktop"
-msgstr ""
+msgstr "desktop"
 
 #. module: iot
 #: selection:iot.device,icon:0
 msgid "laptop"
-msgstr ""
+msgstr "laptop"
 
 #. module: iot
 #: selection:iot.device,icon:0
 msgid "mobile"
-msgstr ""
+msgstr "cellulare"
 
 #. module: iot
 #: selection:iot.device,icon:0
 msgid "television"
-msgstr ""
+msgstr "televisione"
 
 #. module: iot
 #: selection:iot.device,icon:0
 msgid "wifi"
-msgstr ""
+msgstr "wifi"
