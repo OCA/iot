@@ -2,11 +2,12 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 try:
-  from mock import patch
+    from mock import patch
 except:
-  import os
-  os.system("pip install mock")
-  from mock import patch
+    import os
+
+    os.system("pip install mock")
+    from mock import patch
 
 from odoo.exceptions import ValidationError
 from odoo.tests.common import TransactionCase
