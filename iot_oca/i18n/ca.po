@@ -19,7 +19,7 @@ msgstr ""
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__action_ids
 msgid "Action"
-msgstr "Acci??"
+msgstr "Acció"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__action_count
@@ -30,7 +30,7 @@ msgstr "Nombre d'accions"
 #: code:addons/iot_oca/models/iot_communication_system_action.py:0
 #, python-format
 msgid "Action cannot be processed"
-msgstr "L'acci?? no pot processar-se"
+msgstr "L'acció no pot processar-se"
 
 #. module: iot_oca
 #: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_form
@@ -64,12 +64,12 @@ msgstr "Sistema de comunicacions"
 #: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system__communication_system_action_ids
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__communication_system_action_id
 msgid "Communication System Action"
-msgstr "Acci?? del sistema de comunicacions"
+msgstr "Acció del sistema de comunicacions"
 
 #. module: iot_oca
 #: model:ir.ui.menu,name:iot_oca.iot_configuration_menu
 msgid "Configuration"
-msgstr "Configuraci??"
+msgstr "Configuració"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system__create_uid
@@ -119,7 +119,7 @@ msgstr "Etiqueta de dispositiu"
 #: code:addons/iot_oca/models/iot_device_action.py:0
 #, python-format
 msgid "Device and action must be of the same system"
-msgstr "El dispositiu i l'acci?? han d'??sser del mateix sistema"
+msgstr "El dispositiu i l'acció han d'ésser del mateix sistema"
 
 #. module: iot_oca
 #: model:ir.ui.menu,name:iot_oca.iot_device_menu
@@ -140,7 +140,7 @@ msgstr "Nom a mostrar"
 #. module: iot_oca
 #: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
 msgid "Dropdown menu"
-msgstr "Men?? desplegable"
+msgstr "Menú desplegable"
 
 #. module: iot_oca
 #: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban

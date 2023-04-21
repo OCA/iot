@@ -30,7 +30,7 @@ msgstr "Conteggio azione"
 #: code:addons/iot_oca/models/iot_communication_system_action.py:0
 #, python-format
 msgid "Action cannot be processed"
-msgstr "L'azione non pu?? essere elaborata"
+msgstr "L'azione non può essere elaborata"
 
 #. module: iot_oca
 #: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_form

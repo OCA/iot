@@ -19,7 +19,7 @@ msgstr ""
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__action_ids
 msgid "Action"
-msgstr "Acci??n"
+msgstr "Acción"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__action_count
@@ -30,7 +30,7 @@ msgstr "# Acciones"
 #: code:addons/iot_oca/models/iot_system_action.py:0
 #, python-format
 msgid "Action cannot be processed"
-msgstr "La acci??n no puede ser procesada"
+msgstr "La acción no puede ser procesada"
 
 #. module: iot_oca
 #: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_form
@@ -112,7 +112,7 @@ msgstr ""
 #: code:addons/iot_oca/models/iot_device_action.py:0
 #, python-format
 msgid "Device and action must be of the same system"
-msgstr "El dispositivo y la acci??n deben ser del mismo sistema"
+msgstr "El dispositivo y la acción deben ser del mismo sistema"
 
 #. module: iot_oca
 #: model:ir.ui.menu,name:iot_oca.iot_device_menu
@@ -185,7 +185,7 @@ msgstr "IoT"
 #. module: iot_oca
 #: model:ir.model,name:iot_oca.model_iot_device_action
 msgid "IoT Action"
-msgstr "Acci??n IoT"
+msgstr "Acción IoT"
 
 #. module: iot_oca
 #: model:ir.model,name:iot_oca.model_iot_device
@@ -211,7 +211,7 @@ msgstr "Sistema IoT"
 #. module: iot_oca
 #: model:ir.model,name:iot_oca.model_iot_system_action
 msgid "IoT System.action"
-msgstr "Acci??n de Sistema IoT"
+msgstr "Acción de Sistema IoT"
 
 #. module: iot_oca
 #: model:res.groups,name:iot_oca.group_iot_user
@@ -241,7 +241,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_oca.field_iot_system____last_update
 #: model:ir.model.fields,field_description:iot_oca.field_iot_system_action____last_update
 msgid "Last Modified on"
-msgstr "??ltima modificaci??n en"
+msgstr "Última modificación en"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__write_uid
@@ -251,7 +251,7 @@ msgstr "??ltima modificaci??n en"
 #: model:ir.model.fields,field_description:iot_oca.field_iot_system__write_uid
 #: model:ir.model.fields,field_description:iot_oca.field_iot_system_action__write_uid
 msgid "Last Updated by"
-msgstr "??ltima actualizaci??n por"
+msgstr "Última actualización por"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__write_date
@@ -261,7 +261,7 @@ msgstr "??ltima actualizaci??n por"
 #: model:ir.model.fields,field_description:iot_oca.field_iot_system__write_date
 #: model:ir.model.fields,field_description:iot_oca.field_iot_system_action__write_date
 msgid "Last Updated on"
-msgstr "??ltima actualizaci??n en"
+msgstr "Última actualización en"
 
 #. module: iot_oca
 #: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_kanban
@@ -281,12 +281,12 @@ msgstr "Modelo"
 #. module: iot_oca
 #: model:res.groups,comment:iot_oca.group_iot_manager
 msgid "Module administrator, able to modify configuration data."
-msgstr "Administrador del m??dulo, puede modificar los datos de configuraci??n."
+msgstr "Administrador del módulo, puede modificar los datos de configuración."
 
 #. module: iot_oca
 #: model:res.groups,comment:iot_oca.group_iot_user
 msgid "Module user."
-msgstr "Usuario del m??dulo."
+msgstr "Usuario del módulo."
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__name
@@ -305,7 +305,7 @@ msgstr "Ok"
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__date_ok
 msgid "Ok date"
-msgstr "Fecha de aceptaci??n"
+msgstr "Fecha de aceptación"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__passphrase
@@ -347,7 +347,7 @@ msgstr "Sistema"
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device_action__system_action_id
 #: model:ir.model.fields,field_description:iot_oca.field_iot_system__system_action_ids
 msgid "System Action"
-msgstr "Acci??n del Sistema"
+msgstr "Acción del Sistema"
 
 #. module: iot_oca
 #: model:ir.ui.menu,name:iot_oca.iot_system_menu
