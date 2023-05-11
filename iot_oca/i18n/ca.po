@@ -27,6 +27,7 @@ msgid "Action Count"
 msgstr "Nombre d'accions"
 
 #. module: iot_oca
+#. odoo-python
 #: code:addons/iot_oca/models/iot_communication_system_action.py:0
 #, python-format
 msgid "Action cannot be processed"
@@ -116,6 +117,7 @@ msgid "Device Tag"
 msgstr "Etiqueta de dispositiu"
 
 #. module: iot_oca
+#. odoo-python
 #: code:addons/iot_oca/models/iot_device_action.py:0
 #, python-format
 msgid "Device and action must be of the same system"
