@@ -82,6 +82,14 @@ class TestIotController(HttpCase):
         )
         self.assertEqual(res.json()["status"], "error")
 
+    def test_multi_controller_archived_device(self):
+        self.device.write({"active": False})
+        res = self.url_open(
+            "/iot/%s/multi_input" % self.serial,
+            data={"passphrase": self.input_passphrase, "values": self.values},
+        )
+        self.assertEqual(res.json()["status"], "error")
+
     def test_multi_input_controller_error_passphrase(self):
         res = self.url_open(
             "/iot/%s/multi_input" % self.device_identification,

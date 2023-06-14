@@ -48,14 +48,15 @@ class TestIotIn(SavepointCase):
         cls.single_input_values = [{"input": cls.address_1, "value": "test"}]
         cls.iot = cls.env["iot.device.input"]
 
-    def remove_test_multi_input_error_wrong_identification(self):
+    def test_multi_input_error_wrong_identification(self):
         iot = self.iot.get_device(
             serial=self.device_identification + self.device_identification,
             passphrase=self.passphrase,
         )
+        # device not found -> result is error
         self.assertEqual(
             iot.call_device(values=self.single_input_values)["status"],
-            "ko",
+            "error",
         )
 
     def test_multi_input_error_no_inputs(self):

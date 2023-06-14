@@ -2,9 +2,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
     "name": "IoT Input",
-    "version": "15.0.1.0.0",
-    "category": "IoT",
+    "version": "16.0.1.0.0",
     "author": "Creu Blanca, Odoo Community Association (OCA)",
+    "category": "IoT",
     "license": "AGPL-3",
     "installable": True,
     "summary": "IoT Input module",

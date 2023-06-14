@@ -96,3 +96,27 @@ class TestIotIn(SavepointCase):
         self.assertEqual(self.device_input.action_ids.args, str([args]))
         self.assertEqual(self.device_input.action_ids.res, str(res))
         self.assertEqual(1, self.device_input.action_count)
+
+    def test_device_input_calling_with_lang(self):
+        devices = self._get_devices()
+        self.assertEqual(devices, self.device_input)
+        device_input_lang = self.env["iot.device.input"].create(
+            {
+                "name": "Input",
+                "lang": "en_US",
+                "device_id": self.device.id,
+                "active": True,
+                "serial": self.serial + self.serial,
+                "passphrase": self.passphrase,
+                "call_model_id": self.env.ref(
+                    "iot_input_oca.model_iot_device_input"
+                ).id,
+                "call_function": "test_input_device",
+            }
+        )
+        devices = self._get_devices()
+        self.assertIn(self.device_input, devices)
+        self.assertIn(device_input_lang, devices)
+        args = "hello"
+        res = device_input_lang.call_device(value=args)
+        self.assertEqual(res, {"status": "ok", "value": args})
