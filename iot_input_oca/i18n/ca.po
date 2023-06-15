@@ -50,6 +50,7 @@ msgid "Address"
 msgstr "Adreça"
 
 #. module: iot_input_oca
+#. odoo-python
 #: code:addons/iot_input_oca/models/iot_device.py:0
 #, python-format
 msgid "Address for Input is required"
@@ -88,6 +89,7 @@ msgid "Device"
 msgstr "Dispositiu"
 
 #. module: iot_input_oca
+#. odoo-python
 #: code:addons/iot_input_oca/models/iot_device_input.py:0
 #, python-format
 msgid "Device cannot be found"
@@ -185,6 +187,7 @@ msgid "Passphrase"
 msgstr "Contrasenya"
 
 #. module: iot_input_oca
+#. odoo-python
 #: code:addons/iot_input_oca/controller/iot_input_controller.py:0
 #, python-format
 msgid "Passphrase is required"
@@ -201,37 +204,42 @@ msgid "Serial"
 msgstr "Número de sèrie"
 
 #. module: iot_input_oca
+#. odoo-python
 #: code:addons/iot_input_oca/models/iot_device_input.py:0
 #, python-format
 msgid "Serial and passphrase are required"
 msgstr "Es requereix número de sèrie i contrasenya"
 
 #. module: iot_input_oca
+#. odoo-python
 #: code:addons/iot_input_oca/controller/iot_input_controller.py:0
 #, python-format
 msgid "Server Error"
 msgstr "Error de servidor"
 
 #. module: iot_input_oca
-#: code:addons/iot_input_oca/models/iot_device.py:0
+#. odoo-python
 #: code:addons/iot_input_oca/models/iot_device.py:0
 #, python-format
 msgid "Server Error. Check server logs"
 msgstr "Error de servidor. Comproveu els registres del servidor"
 
 #. module: iot_input_oca
+#. odoo-python
 #: code:addons/iot_input_oca/controller/iot_input_controller.py:0
 #, python-format
 msgid "Values is not a valid JSON"
 msgstr "El valor no és un JSON vàlid"
 
 #. module: iot_input_oca
+#. odoo-python
 #: code:addons/iot_input_oca/controller/iot_input_controller.py:0
 #, python-format
 msgid "Values is required"
 msgstr ""
 
 #. module: iot_input_oca
+#. odoo-python
 #: code:addons/iot_input_oca/controller/iot_input_controller.py:0
 #, python-format
 msgid "Values should be a JSON array of JSON objects"
