@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -47,6 +47,7 @@ msgid "Address"
 msgstr ""
 
 #. module: iot_input_oca
+#. odoo-python
 #: code:addons/iot_input_oca/models/iot_device.py:0
 #, python-format
 msgid "Address for Input is required"
@@ -85,6 +86,7 @@ msgid "Device"
 msgstr ""
 
 #. module: iot_input_oca
+#. odoo-python
 #: code:addons/iot_input_oca/models/iot_device_input.py:0
 #, python-format
 msgid "Device cannot be found"
@@ -182,6 +184,7 @@ msgid "Passphrase"
 msgstr ""
 
 #. module: iot_input_oca
+#. odoo-python
 #: code:addons/iot_input_oca/controller/iot_input_controller.py:0
 #, python-format
 msgid "Passphrase is required"
@@ -198,18 +201,21 @@ msgid "Serial"
 msgstr ""
 
 #. module: iot_input_oca
+#. odoo-python
 #: code:addons/iot_input_oca/models/iot_device_input.py:0
 #, python-format
 msgid "Serial and passphrase are required"
 msgstr ""
 
 #. module: iot_input_oca
+#. odoo-python
 #: code:addons/iot_input_oca/controller/iot_input_controller.py:0
 #, python-format
 msgid "Server Error"
 msgstr ""
 
 #. module: iot_input_oca
+#. odoo-python
 #: code:addons/iot_input_oca/models/iot_device.py:0
 #: code:addons/iot_input_oca/models/iot_device.py:0
 #, python-format
@@ -217,18 +223,21 @@ msgid "Server Error. Check server logs"
 msgstr ""
 
 #. module: iot_input_oca
+#. odoo-python
 #: code:addons/iot_input_oca/controller/iot_input_controller.py:0
 #, python-format
 msgid "Values is not a valid JSON"
 msgstr ""
 
 #. module: iot_input_oca
+#. odoo-python
 #: code:addons/iot_input_oca/controller/iot_input_controller.py:0
 #, python-format
 msgid "Values is required"
 msgstr ""
 
 #. module: iot_input_oca
+#. odoo-python
 #: code:addons/iot_input_oca/controller/iot_input_controller.py:0
 #, python-format
 msgid "Values should be a JSON array of JSON objects"
