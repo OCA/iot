@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 Creu Blanca
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="iot_rule_form_view">
+        <field name="name">iot.rule.form (in iot_rule)</field>
+        <field name="model">iot.rule</field>
+        <field name="arch" type="xml">
+            <form>
+                <header />
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        text="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                    <field name="active" invisible="1" />
+                    <div class="oe_button_box" name="button_box" />
+                    <group>
+                        <field name="name" />
+                        <field name="lock_ids" widget="many2many_tags" />
+                        <field name="parent_ids" widget="many2many_tags" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="iot_rule_search_view">
+        <field name="name">iot.rule.search (in iot_rule)</field>
+        <field name="model">iot.rule</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+            </search>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="iot_rule_tree_view">
+        <field name="name">iot.rule.tree (in iot_rule)</field>
+        <field name="model">iot.rule</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="iot_rule_act_window">
+        <field name="name">Rules</field>
+        <field name="res_model">iot.rule</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+    <record model="ir.actions.act_window" id="iot_rule_action">
+        <field name="name">Rules</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">iot.rule</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        name="Rules"
+        sequence="15"
+        id="iot_rule_menu"
+        parent="iot_oca.iot_root_menu"
+    />
+    <menuitem
+        name="Rules"
+        sequence="10"
+        id="iot_define_rules_menu"
+        action="iot_rule_action"
+        parent="iot_rule.iot_rule_menu"
+    />
+</odoo>
