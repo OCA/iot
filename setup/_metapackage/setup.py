@@ -13,6 +13,7 @@ setuptools.setup(
         'odoo-addon-iot_oca>=15.0dev,<15.1dev',
         'odoo-addon-iot_option_oca>=15.0dev,<15.1dev',
         'odoo-addon-iot_output_oca>=15.0dev,<15.1dev',
+        'odoo-addon-iot_rule>=15.0dev,<15.1dev',
         'odoo-addon-iot_template_oca>=15.0dev,<15.1dev',
     ],
     classifiers=[
