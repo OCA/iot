@@ -23,6 +23,7 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [iot_input_oca](iot_input_oca/) | 16.0.1.0.0 | [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | IoT Input module
 [iot_oca](iot_oca/) | 16.0.1.0.0 |  | IoT base module
+[iot_output_oca](iot_output_oca/) | 16.0.1.0.0 |  | IoT allow multiple outputs
 
 [//]: # (end addons)
 
