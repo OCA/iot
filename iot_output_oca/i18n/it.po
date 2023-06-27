@@ -70,6 +70,7 @@ msgid "Device"
 msgstr "Dispositivo"
 
 #. module: iot_output_oca
+#. odoo-python
 #: code:addons/iot_output_oca/models/iot_device_output_action.py:0
 #, python-format
 msgid "Device and action must be of the same system"
