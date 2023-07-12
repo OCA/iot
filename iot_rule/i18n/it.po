@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-07-04 09:10+0000\n"
-"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"PO-Revision-Date: 2023-07-12 12:13+0000\n"
+"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgstr "Azione"
 #: model:ir.model.fields,field_description:iot_rule.field_iot_lock__active
 #: model:ir.model.fields,field_description:iot_rule.field_iot_rule__active
 msgid "Active"
-msgstr "Attiva"
+msgstr "Attivo"
 
 #. module: iot_rule
 #: model_terms:ir.ui.view,arch_db:iot_rule.iot_key_form_view
