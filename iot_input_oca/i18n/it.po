@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-03-30 15:22+0000\n"
-"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"PO-Revision-Date: 2023-07-12 12:09+0000\n"
+"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: iot_input_oca
 #: model_terms:ir.ui.view,arch_db:iot_input_oca.iot_device_kanban
@@ -44,7 +44,7 @@ msgstr "Azione degli input dispositivo"
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__active
 #: model_terms:ir.ui.view,arch_db:iot_input_oca.iot_device_input_search
 msgid "Active"
-msgstr "Attiva"
+msgstr "Attivo"
 
 #. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__address
