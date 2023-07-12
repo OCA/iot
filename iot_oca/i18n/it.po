@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-05-22 15:09+0000\n"
-"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"PO-Revision-Date: 2023-07-12 12:13+0000\n"
+"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr "Azioni"
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__active
 #: model_terms:ir.ui.view,arch_db:iot_oca.iot_device_search
 msgid "Active"
-msgstr "Attiva"
+msgstr "Attivo"
 
 #. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__color
