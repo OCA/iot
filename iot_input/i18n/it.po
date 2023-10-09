@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* iot_input
+# 	* iot_input
 #
 msgid ""
 msgstr ""
@@ -18,7 +18,8 @@ msgstr ""
 
 #. module: iot_input
 #: model_terms:ir.ui.view,arch_db:iot_input.iot_device_kanban
-msgid "<i class=\"fa fa-keyboard-o\"/>\n"
+msgid ""
+"<i class=\"fa fa-keyboard-o\"/>\n"
 "                    Inputs"
 msgstr ""
 "<i class=\"fa fa-keyboard-o\"/>\n"
