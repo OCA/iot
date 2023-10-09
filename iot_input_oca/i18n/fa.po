@@ -222,7 +222,6 @@ msgstr "خطای سرور"
 #. module: iot_input_oca
 #. odoo-python
 #: code:addons/iot_input_oca/models/iot_device.py:0
-#: code:addons/iot_input_oca/models/iot_device.py:0
 #, python-format
 msgid "Server Error. Check server logs"
 msgstr "خطای سرور. لاگ‌های سرور را چک کنید"

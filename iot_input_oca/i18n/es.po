@@ -222,7 +222,6 @@ msgstr "Error del servidor"
 #. module: iot_input_oca
 #. odoo-python
 #: code:addons/iot_input_oca/models/iot_device.py:0
-#: code:addons/iot_input_oca/models/iot_device.py:0
 #, python-format
 msgid "Server Error. Check server logs"
 msgstr "Error del servidor. Compruebe los registros del servidor"
