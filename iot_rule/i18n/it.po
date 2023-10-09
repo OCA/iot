@@ -194,7 +194,6 @@ msgstr "La chiave deve essere univoca"
 
 #. module: iot_rule
 #: code:addons/iot_rule/wizards/iot_key_wizard.py:0
-#: code:addons/iot_rule/wizards/iot_key_wizard.py:0
 #, python-format
 msgid "Key of %s"
 msgstr "Chiave di %s"
