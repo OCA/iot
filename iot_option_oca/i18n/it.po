@@ -193,7 +193,6 @@ msgstr "Nome"
 
 #. module: iot_option_oca
 #: code:addons/iot_option_oca/models/iot_device.py:0
-#: code:addons/iot_option_oca/models/iot_device.py:0
 #, python-format
 msgid "No"
 msgstr "No"
