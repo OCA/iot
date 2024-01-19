@@ -11,6 +11,7 @@ setuptools.setup(
         'odoo-addon-iot_input_oca>=16.0dev,<16.1dev',
         'odoo-addon-iot_oca>=16.0dev,<16.1dev',
         'odoo-addon-iot_output_oca>=16.0dev,<16.1dev',
+        'odoo-addon-iot_template_oca>=16.0dev,<16.1dev',
     ],
     classifiers=[
         'Programming Language :: Python',
