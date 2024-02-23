@@ -6,53 +6,55 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2024-02-24 00:10+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: none\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: iot_template_oca
 #: model:ir.ui.menu,name:iot_template_oca.iot_device_configuration_menu
 msgid "Add a new Device"
-msgstr ""
+msgstr "Añadir un nuevo Dispositivo"
 
 #. module: iot_template_oca
 #: model:ir.actions.server,name:iot_template_oca.configure_action
 msgid "Apply Template"
-msgstr ""
+msgstr "Aplicar Plantilla"
 
 #. module: iot_template_oca
 #: model_terms:ir.ui.view,arch_db:iot_template_oca.configure_form
 msgid "Apply template"
-msgstr ""
+msgstr "Aplicar plantilla"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__call_function
 msgid "Call Function"
-msgstr ""
+msgstr "Función de Llamada"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__call_model_id
 msgid "Call Model"
-msgstr ""
+msgstr "Modelo de Llamada"
 
 #. module: iot_template_oca
 #: model_terms:ir.ui.view,arch_db:iot_template_oca.configure_form
 msgid "Close"
-msgstr ""
+msgstr "Cerrado"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__communication_system_id
 msgid "Communication System"
-msgstr ""
+msgstr "Sistema de Comunicación"
 
 #. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_device_configure
 msgid "Configure a IoT device"
-msgstr ""
+msgstr "Configurar un dispositivo IoT"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__create_uid
@@ -61,7 +63,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__create_uid
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creado por"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__create_date
@@ -70,12 +72,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__create_date
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creado el"
 
 #. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_device_input
 msgid "Device input"
-msgstr ""
+msgstr "Entrada del dispositivo"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device__display_name
@@ -87,12 +89,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__display_name
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Mostrar Nombre"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__group_id
 msgid "Group"
-msgstr ""
+msgstr "Grupo"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device__id
@@ -104,84 +106,84 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__id
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__icon
 msgid "Icon"
-msgstr ""
+msgstr "Icono"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_1920
 msgid "Image"
-msgstr ""
+msgstr "Imagen"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_1024
 msgid "Image 1024"
-msgstr ""
+msgstr "Imagen 1024"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_128
 msgid "Image 128"
-msgstr ""
+msgstr "Imagen 128"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_256
 msgid "Image 256"
-msgstr ""
+msgstr "Imagen 256"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__image_512
 msgid "Image 512"
-msgstr ""
+msgstr "Imagen 512"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__input_ids
 msgid "Input"
-msgstr ""
+msgstr "Entrada"
 
 #. module: iot_template_oca
 #: model_terms:ir.ui.view,arch_db:iot_template_oca.iot_template_form
 msgid "Inputs"
-msgstr ""
+msgstr "Entradas"
 
 #. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_device
 #: model:ir.model,name:iot_template_oca.model_iot_device_output
 msgid "IoT Device"
-msgstr ""
+msgstr "Dispositivo IoT"
 
 #. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_template_input
 msgid "IoT Input for Template"
-msgstr ""
+msgstr "Entrada IoT para Plantilla"
 
 #. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_template_key
 msgid "IoT Keys for configuration"
-msgstr ""
+msgstr "Claves IoT para la configuración"
 
 #. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_template
 msgid "IoT Template for Device"
-msgstr ""
+msgstr "Plantilla IoT para Dispositivos"
 
 #. module: iot_template_oca
 #: model:ir.actions.act_window,name:iot_template_oca.iot_template_action
 msgid "IoT Templates"
-msgstr ""
+msgstr "Plantillas IoT"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__key_ids
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__key
 msgid "Key"
-msgstr ""
+msgstr "Clave"
 
 #. module: iot_template_oca
 #: model_terms:ir.ui.view,arch_db:iot_template_oca.iot_template_form
 msgid "Keys"
-msgstr ""
+msgstr "Llaves"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device____last_update
@@ -193,7 +195,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key____last_update
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última Modificación el"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__write_uid
@@ -202,7 +204,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__write_uid
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Última Actualización realizada por"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__write_date
@@ -211,84 +213,84 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__write_date
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Última Actualización el"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__name
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__name
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__name
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__output_ids
 msgid "Output"
-msgstr ""
+msgstr "Salida"
 
 #. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_template_output
 msgid "Output templates for IoT"
-msgstr ""
+msgstr "Plantillas de salida para IoT"
 
 #. module: iot_template_oca
 #: model_terms:ir.ui.view,arch_db:iot_template_oca.iot_template_form
 msgid "Outputs"
-msgstr ""
+msgstr "Salidas"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__params
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__params
 msgid "Params"
-msgstr ""
+msgstr "Parámetros"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__parent_id
 msgid "Parent"
-msgstr ""
+msgstr "Parental"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__parent_path
 msgid "Parent Path"
-msgstr ""
+msgstr "Ruta parental"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__serial
 msgid "Serial"
-msgstr ""
+msgstr "Serie"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template__tag_ids
 msgid "Tag"
-msgstr ""
+msgstr "Etiqueta"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_input__template_id
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_key__template_id
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_template_output__template_id
 msgid "Template"
-msgstr ""
+msgstr "Plantilla"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_input__template_input_id
 msgid "Template Input"
-msgstr ""
+msgstr "Entrada de Plantilla"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_output__template_output_id
 msgid "Template Output"
-msgstr ""
+msgstr "Salida de Plantilla"
 
 #. module: iot_template_oca
 #: model:ir.ui.menu,name:iot_template_oca.iot_template_menu
 msgid "Templates"
-msgstr ""
+msgstr "Plantillas"
 
 #. module: iot_template_oca
 #: model:ir.model.fields,field_description:iot_template_oca.field_iot_device_configure__url
 msgid "Url"
-msgstr ""
+msgstr "Url"
 
 #. module: iot_template_oca
 #: model_terms:ir.ui.view,arch_db:iot_template_oca.configure_form
 msgid "Use this URL on your device configuration"
-msgstr ""
+msgstr "Utilice esta URL en la configuración de su dispositivo"
