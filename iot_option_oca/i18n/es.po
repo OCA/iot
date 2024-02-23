@@ -6,103 +6,105 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2024-02-24 00:10+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: none\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: iot_option_oca
 #: model:ir.model,name:iot_option_oca.model_ir_actions_act_window_view
 msgid "Action Window View"
-msgstr ""
+msgstr "Vista de ventana de acción"
 
 #. module: iot_option_oca
 #: model:ir.model.constraint,message:iot_option_oca.constraint_iot_device_option_property_device
 msgid "Another property with that name exists for that device."
-msgstr ""
+msgstr "Existe otra propiedad con ese nombre para ese dispositivo."
 
 #. module: iot_option_oca
 #: model:ir.model.fields.selection,name:iot_option_oca.selection__iot_device_property__widget__boolean
 msgid "Boolean"
-msgstr ""
+msgstr "Booleano"
 
 #. module: iot_option_oca
 #: model:ir.model.fields.selection,name:iot_option_oca.selection__iot_device_property__widget__html
 msgid "Complex text"
-msgstr ""
+msgstr "Texto complejo"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__create_uid
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_property__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creado por"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__create_date
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_property__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creado el"
 
 #. module: iot_option_oca
 #: model_terms:ir.ui.view,arch_db:iot_option_oca.iot_device_option_iot_option_view
 msgid "Custom Property Values"
-msgstr ""
+msgstr "Valores de las Propiedades Personalizadas"
 
 #. module: iot_option_oca
 #: model:ir.model.fields.selection,name:iot_option_oca.selection__iot_device_property__field_type__date
 #: model:ir.model.fields.selection,name:iot_option_oca.selection__iot_device_property__widget__date
 msgid "Date"
-msgstr ""
+msgstr "Fecha"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__value_date
 msgid "Date value"
-msgstr ""
+msgstr "Valor de la fecha"
 
 #. module: iot_option_oca
 #: model:ir.model.fields.selection,name:iot_option_oca.selection__iot_device_property__widget__float
 msgid "Decimal"
-msgstr ""
+msgstr "Decimal"
 
 #. module: iot_option_oca
 #: model:ir.model.fields.selection,name:iot_option_oca.selection__iot_device_property__field_type__float
 msgid "Decimal number"
-msgstr ""
+msgstr "Número decimal"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__value_float
 msgid "Decimal number value"
-msgstr ""
+msgstr "Valor del número decimal"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_property__default_value
 msgid "Default Value"
-msgstr ""
+msgstr "Valor Predeterminado"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__device_id
 msgid "Device"
-msgstr ""
+msgstr "Dispositivo"
 
 #. module: iot_option_oca
 #: model:ir.model,name:iot_option_oca.model_iot_device_option
 msgid "Device Option"
-msgstr ""
+msgstr "Opción de Dispositivo"
 
 #. module: iot_option_oca
 #: model:ir.actions.act_window,name:iot_option_oca.iot_device_property_act_window
 #: model:ir.model,name:iot_option_oca.model_iot_device_property
 #: model:ir.ui.menu,name:iot_option_oca.iot_device_property_menu
 msgid "Device Property"
-msgstr ""
+msgstr "Propiedad del Dispositivo"
 
 #. module: iot_option_oca
 #: model:ir.model,name:iot_option_oca.model_iot_device_input
 msgid "Device input"
-msgstr ""
+msgstr "Entrada del dispositivo"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device__display_name
@@ -113,18 +115,18 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_option_oca.field_ir_actions_act_window_view__display_name
 #: model:ir.model.fields,field_description:iot_option_oca.field_ir_ui_view__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre para Mostrar"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__field_name
 msgid "Field Name"
-msgstr ""
+msgstr "Nombre de Campo"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__field_type
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_property__field_type
 msgid "Field Type"
-msgstr ""
+msgstr "Tipo de Campo"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device__id
@@ -135,40 +137,40 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_option_oca.field_ir_actions_act_window_view__id
 #: model:ir.model.fields,field_description:iot_option_oca.field_ir_ui_view__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: iot_option_oca
 #: model:ir.model.fields.selection,name:iot_option_oca.selection__iot_device_property__widget__integer
 msgid "Integer"
-msgstr ""
+msgstr "Íntegro"
 
 #. module: iot_option_oca
 #: model:ir.model,name:iot_option_oca.model_iot_device
 msgid "IoT Device"
-msgstr ""
+msgstr "Dispositivo IoT"
 
 #. module: iot_option_oca
 #: model:ir.model.fields.selection,name:iot_option_oca.selection__ir_actions_act_window_view__view_mode__iot_option
 #: model:ir.model.fields.selection,name:iot_option_oca.selection__ir_ui_view__type__iot_option
 msgid "IoT Option"
-msgstr ""
+msgstr "Opción IoT"
 
 #. module: iot_option_oca
 #: model:ir.model,name:iot_option_oca.model_iot_template
 msgid "IoT Template for Device"
-msgstr ""
+msgstr "Plantilla IoT para Dispositivos"
 
 #. module: iot_option_oca
 #. openerp-web
 #: code:addons/iot_option_oca/static/src/js/iot_option_view.js:0
 #, python-format
 msgid "Iot Option"
-msgstr ""
+msgstr "Opción IoT"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_property__is_action
 msgid "Is Action"
-msgstr ""
+msgstr "Es Acción"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device____last_update
@@ -179,138 +181,138 @@ msgstr ""
 #: model:ir.model.fields,field_description:iot_option_oca.field_ir_actions_act_window_view____last_update
 #: model:ir.model.fields,field_description:iot_option_oca.field_ir_ui_view____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última Modificación el"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__write_uid
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_property__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Última Actualización por"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__write_date
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_property__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Última Actualización el"
 
 #. module: iot_option_oca
 #: model:ir.model.fields.selection,name:iot_option_oca.selection__iot_device_property__widget__text
 msgid "Multi line Text"
-msgstr ""
+msgstr "Texto multi-línea"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__name
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_property__name
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #. module: iot_option_oca
 #: code:addons/iot_option_oca/models/iot_device.py:0
 #: code:addons/iot_option_oca/models/iot_device.py:0
 #, python-format
 msgid "No"
-msgstr ""
+msgstr "No"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device__option_ids
 msgid "Option"
-msgstr ""
+msgstr "Opción"
 
 #. module: iot_option_oca
 #: model_terms:ir.ui.view,arch_db:iot_option_oca.iot_device_form_view
 msgid "Options"
-msgstr ""
+msgstr "Opciones"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__property_id
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_template__property_ids
 msgid "Property"
-msgstr ""
+msgstr "Propiedad"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__required
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_property__required
 msgid "Required"
-msgstr ""
+msgstr "Obligatorio"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "Secuencia"
 
 #. module: iot_option_oca
 #: model:ir.model.fields.selection,name:iot_option_oca.selection__iot_device_property__widget__char
 msgid "Single line text"
-msgstr ""
+msgstr "Texto de una línea"
 
 #. module: iot_option_oca
 #: code:addons/iot_option_oca/models/iot_device.py:0
 #, python-format
 msgid "Some required elements have not been fulfilled"
-msgstr ""
+msgstr "No se han cumplido algunos de los requisitos"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_property__tech_name
 msgid "Tech Name"
-msgstr ""
+msgstr "Nombre Técnico"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,help:iot_option_oca.field_iot_device_option__field_name
 msgid "Technical name of the field where the value is stored."
-msgstr ""
+msgstr "Nombre técnico del campo donde se guarda este valor."
 
 #. module: iot_option_oca
 #: model:ir.model.fields.selection,name:iot_option_oca.selection__iot_device_property__field_type__str
 msgid "Text"
-msgstr ""
+msgstr "Texto"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__value_str
 msgid "Text value"
-msgstr ""
+msgstr "Valor de texto"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,help:iot_option_oca.field_iot_device_option__widget
 #: model:ir.model.fields,help:iot_option_oca.field_iot_device_property__widget
 msgid "Type of information that can be stored in the property."
-msgstr ""
+msgstr "Tipo de información que se puede almacenar en esta propiedad."
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__value
 msgid "Value"
-msgstr ""
+msgstr "Valor"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,help:iot_option_oca.field_iot_device_option__value
 msgid "Value, always converted to/from the typed field."
-msgstr ""
+msgstr "Valor, siempre convertido del/al campo tipado."
 
 #. module: iot_option_oca
 #: model:ir.model,name:iot_option_oca.model_ir_ui_view
 msgid "View"
-msgstr ""
+msgstr "Vista"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_ir_actions_act_window_view__view_mode
 #: model:ir.model.fields,field_description:iot_option_oca.field_ir_ui_view__type
 msgid "View Type"
-msgstr ""
+msgstr "Tipo de Vista"
 
 #. module: iot_option_oca
 #: model:ir.model.fields.selection,name:iot_option_oca.selection__iot_device_property__field_type__int
 msgid "Whole number"
-msgstr ""
+msgstr "Número entero"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__value_int
 msgid "Whole number value"
-msgstr ""
+msgstr "Valor del número entero"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__widget
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_property__widget
 msgid "Widget"
-msgstr ""
+msgstr "Acceso Directo"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,help:iot_option_oca.field_iot_device_property__default_value
@@ -319,19 +321,22 @@ msgid ""
 "char field, so you have to enter some value that can be converted to the "
 "field type you choose."
 msgstr ""
+"Se aplicará por defecto a todos los valores personalizados de esta "
+"propiedad. Este campo es de texto, así que tiene que introducir un valor que "
+"se pueda convertir al tipo de campo que ha escogido."
 
 #. module: iot_option_oca
 #: code:addons/iot_option_oca/models/iot_device.py:0
 #, python-format
 msgid "Yes"
-msgstr ""
+msgstr "Sí"
 
 #. module: iot_option_oca
 #: model:ir.model.fields.selection,name:iot_option_oca.selection__iot_device_property__field_type__bool
 msgid "Yes/No"
-msgstr ""
+msgstr "Sí/No"
 
 #. module: iot_option_oca
 #: model:ir.model.fields,field_description:iot_option_oca.field_iot_device_option__value_bool
 msgid "Yes/No value"
-msgstr ""
+msgstr "Valor sí/no"
