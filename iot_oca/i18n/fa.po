@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-10-09 08:13+0000\n"
+"PO-Revision-Date: 2024-04-03 19:37+0000\n"
 "Last-Translator: Mostafa Barmshory <mostafa.barmshory@gmail.com>\n"
 "Language-Team: none\n"
 "Language: fa\n"
@@ -418,7 +418,7 @@ msgstr ""
 #. module: iot_oca
 #: model:ir.model.fields.selection,name:iot_oca.selection__iot_device__icon__fa_fa-television_fa-4x
 msgid "television"
-msgstr ""
+msgstr "تلویزیون"
 
 #. module: iot_oca
 #: model:ir.model.fields.selection,name:iot_oca.selection__iot_device__icon__fa_fa-wifi_fa-4x
