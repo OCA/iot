@@ -52,6 +52,11 @@ msgid "Communication System"
 msgstr "Sistema de Comunicación"
 
 #. module: iot_template_oca
+#: model_terms:ir.ui.view,arch_db:iot_template_oca.configure_form
+msgid "Configuration URL"
+msgstr ""
+
+#. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_device_configure
 msgid "Configure a IoT device"
 msgstr "Configurar un dispositivo IoT"
