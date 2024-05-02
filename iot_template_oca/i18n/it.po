@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-06-08 09:08+0000\n"
+"PO-Revision-Date: 2024-05-02 16:37+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -54,7 +54,7 @@ msgstr "Sistema di comunicazione"
 #. module: iot_template_oca
 #: model_terms:ir.ui.view,arch_db:iot_template_oca.configure_form
 msgid "Configuration URL"
-msgstr ""
+msgstr "URL configurazione"
 
 #. module: iot_template_oca
 #: model:ir.model,name:iot_template_oca.model_iot_device_configure
