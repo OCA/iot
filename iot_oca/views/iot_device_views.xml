@@ -27,7 +27,7 @@
                         name="web_ribbon"
                         text="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active"
                     />
                     <field
                         name="image_1920"
@@ -51,7 +51,7 @@
                             <field name="icon" />
                             <field
                                 name="communication_system_id"
-                                attrs="{'readonly': [('action_count','>', 0)]}"
+                                readonly="action_count"
                                 widget="selection"
                             />
                             <field name="action_count" invisible="1" />
@@ -84,7 +84,7 @@
                     name="run"
                     type="object"
                     string="Run"
-                    attrs="{'invisible': [('status', '=', 'ok')]}"
+                    invisible="status == 'ok'"
                 />
             </tree>
         </field>
