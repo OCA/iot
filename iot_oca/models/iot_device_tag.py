@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class IotDeviceTag(models.Model):
-
     _name = "iot.device.tag"
     _description = "Device Tag"
 
