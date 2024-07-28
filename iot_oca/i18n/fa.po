@@ -277,16 +277,6 @@ msgid "Last Contact Date"
 msgstr "آخرین تاریخ اتصال"
 
 #. module: iot_oca
-#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system____last_update
-#: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system_action____last_update
-#: model:ir.model.fields,field_description:iot_oca.field_iot_device____last_update
-#: model:ir.model.fields,field_description:iot_oca.field_iot_device_action____last_update
-#: model:ir.model.fields,field_description:iot_oca.field_iot_device_group____last_update
-#: model:ir.model.fields,field_description:iot_oca.field_iot_device_tag____last_update
-msgid "Last Modified on"
-msgstr "آخرین نگارش در"
-
-#. module: iot_oca
 #: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system__write_uid
 #: model:ir.model.fields,field_description:iot_oca.field_iot_communication_system_action__write_uid
 #: model:ir.model.fields,field_description:iot_oca.field_iot_device__write_uid
@@ -424,3 +414,6 @@ msgstr "تلویزیون"
 #: model:ir.model.fields.selection,name:iot_oca.selection__iot_device__icon__fa_fa-wifi_fa-4x
 msgid "wifi"
 msgstr ""
+
+#~ msgid "Last Modified on"
+#~ msgstr "آخرین نگارش در"
