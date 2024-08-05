@@ -88,7 +88,6 @@ class TestIotIn(SavepointCase):
 
     @mute_logger("odoo.addons.iot_input_oca.models.iot_device_input")
     def test_error_with_extra_args(self):
-
         iot = self.iot.get_device(
             serial=self.device_identification, passphrase=self.passphrase
         )

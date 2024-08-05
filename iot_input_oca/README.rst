@@ -17,31 +17,32 @@ IoT Input
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fiot-lightgray.png?logo=github
-    :target: https://github.com/OCA/iot/tree/16.0/iot_input_oca
+    :target: https://github.com/OCA/iot/tree/17.0/iot_input_oca
     :alt: OCA/iot
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/iot-16-0/iot-16-0-iot_input_oca
+    :target: https://translation.odoo-community.org/projects/iot-17-0/iot-17-0-iot_input_oca
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/iot&target_branch=16.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/iot&target_branch=17.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This addon allows to use a device in order to input data to odoo automatically.
+This addon allows to use a device in order to input data to odoo
+automatically.
 
-It opens a URL that a device can use to connect (with a password) that can only
-execute an specific action.
+It opens a URL that a device can use to connect (with a password) that
+can only execute an specific action.
 
-Inputs are useful when a device wants to communicate to odoo for a single
-and simple action.
-This way, the device does not need to be configured with a odoo user and
-password, it is handled by odoo devices.
+Inputs are useful when a device wants to communicate to odoo for a
+single and simple action. This way, the device does not need to be
+configured with a odoo user and password, it is handled by odoo devices.
 
 Examples:
 
-* Sending the temperature every three minutes.
-* Sending the RFID that the device has received in order to perform some action
+-  Sending the temperature every three minutes.
+-  Sending the RFID that the device has received in order to perform
+   some action
 
 **Table of contents**
 
@@ -51,61 +52,68 @@ Examples:
 Usage
 =====
 
-There are two endpoints you can use:
-Endpoint 1: /iot/<serial>/action
+There are two endpoints you can use: Endpoint 1: /iot/<serial>/action
 
-Takes `application/x-www-form-urlencoded` parameters:
-passphase, value (where value is a JSON object)
+Takes application/x-www-form-urlencoded parameters: passphase, value
+(where value is a JSON object)
 
-1. Create a Device on `IoT > Config Devices`
+1. Create a Device on IoT > Config Devices
 2. Access the Inputs section of the device
-3. Create an input. You must define a serial, passphrase, function and model
+3. Create an input. You must define a serial, passphrase, function and
+   model
 
-The function that the system will call must be of the following kind::
+The function that the system will call must be of the following kind:
 
-    @api.model
-        def call_function(self, key):
-        return {}
+::
 
-Where `key` is the input string send by the device and the result must be a dictionary
-that will be responded to the device as a JSON.
+   @api.model
+       def call_function(self, key):
+       return {}
 
-Endpoint 2: /iot/<device_identification>/multi_input
-It can be used to send values with multiple data in one POST request such as:
-- Values for inputs of the same device with different address (multi input)
-- Values for inputs of the same device with same address, different values (multi event)
-- Mix of the above (multi input, multi event)
+Where key is the input string send by the device and the result must be
+a dictionary that will be responded to the device as a JSON.
 
-Takes `application/x-www-form-urlencoded` parameters:
-passphase, values (a JSON array of JSON objects)
+Endpoint 2: /iot/<device_identification>/multi_input It can be used to
+send values with multiple data in one POST request such as: - Values for
+inputs of the same device with different address (multi input) - Values
+for inputs of the same device with same address, different values (multi
+event) - Mix of the above (multi input, multi event)
 
-It is called using device_identification and passing two POST parameters: device passphrase and
-a JSON string containing an array of values for input
-- The value for the `address` key can be a string or a numeric (to conserve bytes in memory
-restricted devices when creating the JSON object) and is converted to string when parsing.
-- The value for the `value` key can either be string, number or boolean according to
-JSON specs.
-You can see an example of a valid JSON input object in the examples folder, using a few
-combinations.
+Takes application/x-www-form-urlencoded parameters: passphase, values (a
+JSON array of JSON objects)
 
-It requires the function that the system will call must be of the following kind::
+It is called using device_identification and passing two POST
+parameters: device passphrase and a JSON string containing an array of
+values for input - The value for the address key can be a string or a
+numeric (to conserve bytes in memory restricted devices when creating
+the JSON object) and is converted to string when parsing. - The value
+for the value key can either be string, number or boolean according to
+JSON specs. You can see an example of a valid JSON input object in the
+examples folder, using a few combinations.
 
-    @api.model
-        def call_function(self, key):
-        'do something
-        if err:
-            return {'status': 'error', 'message': 'The error message you want to send to the device'}
-        return {'status': 'ok', 'message': 'Optional success message'}
+It requires the function that the system will call must be of the
+following kind:
 
-Where `key` is a dict send by the device having at least value for keys: 'address', 'value'
+::
 
-The function must always return a JSON with status and message. If value contains a value
-with 'uuid' as key, it is returned along with the object for the IoT device to identify
-success/failure per record.
+   @api.model
+       def call_function(self, key):
+       'do something
+       if err:
+           return {'status': 'error', 'message': 'The error message you want to send to the device'}
+       return {'status': 'ok', 'message': 'Optional success message'}
 
-It has full error reporting and the return value is a JSON array of dicts containing at
-least status and message. Error message respose is at some points generic, though
-extended logging is done in Odoo server logs.
+Where key is a dict send by the device having at least value for keys:
+'address', 'value'
+
+The function must always return a JSON with status and message. If value
+contains a value with 'uuid' as key, it is returned along with the
+object for the IoT device to identify success/failure per record.
+
+It has full error reporting and the return value is a JSON array of
+dicts containing at least status and message. Error message respose is
+at some points generic, though extended logging is done in Odoo server
+logs.
 
 Bug Tracker
 ===========
@@ -113,7 +121,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/iot/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/iot/issues/new?body=module:%20iot_input_oca%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/iot/issues/new?body=module:%20iot_input_oca%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -121,18 +129,18 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Creu Blanca
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Enric Tobella <etobella@creublanca.es>
-* Dimitrios Tanis <dtanis@tanisfood.gr>
+-  Enric Tobella <etobella@creublanca.es>
+-  Dimitrios Tanis <dtanis@tanisfood.gr>
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -152,6 +160,6 @@ Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-etobella| 
 
-This module is part of the `OCA/iot <https://github.com/OCA/iot/tree/16.0/iot_input_oca>`_ project on GitHub.
+This module is part of the `OCA/iot <https://github.com/OCA/iot/tree/17.0/iot_input_oca>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
