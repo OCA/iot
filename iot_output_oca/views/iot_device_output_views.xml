@@ -53,7 +53,7 @@
                     name="run"
                     type="object"
                     string="Run"
-                    attrs="{'invisible': [('status', '=', 'ok')]}"
+                    invisible="status == 'ok'"
                 />
             </tree>
         </field>
