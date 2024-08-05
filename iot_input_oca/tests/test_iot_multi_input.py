@@ -1,8 +1,8 @@
-from odoo.tests.common import SavepointCase
+from odoo.tests.common import TransactionCase
 from odoo.tools import mute_logger
 
 
-class TestIotIn(SavepointCase):
+class TestIotIn(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
