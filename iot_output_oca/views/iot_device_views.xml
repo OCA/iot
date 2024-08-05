@@ -19,9 +19,7 @@
                 <attribute name="domain">[('applies_to', '=', 'device')]</attribute>
             </field>
             <page id="actions" position="attributes">
-                <attribute
-                    name="attrs"
-                >{'invisible': [('communication_system_id', '=', False)]}</attribute>
+                <attribute name="invisible">not communication_system_id</attribute>
             </page>
         </field>
     </record>
