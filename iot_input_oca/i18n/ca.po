@@ -159,12 +159,6 @@ msgid "Language"
 msgstr "Idioma"
 
 #. module: iot_input_oca
-#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input____last_update
-#: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action____last_update
-msgid "Last Modified on"
-msgstr "Darrera modificació el"
-
-#. module: iot_input_oca
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input__write_uid
 #: model:ir.model.fields,field_description:iot_input_oca.field_iot_device_input_action__write_uid
 msgid "Last Updated by"
@@ -244,3 +238,6 @@ msgstr ""
 #, python-format
 msgid "Values should be a JSON array of JSON objects"
 msgstr ""
+
+#~ msgid "Last Modified on"
+#~ msgstr "Darrera modificació el"
