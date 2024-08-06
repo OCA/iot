@@ -5,7 +5,6 @@ from odoo import _, fields, models
 
 
 class OddoorKeyWizard(models.TransientModel):
-
     _name = "iot.key.wizard"
     _description = "Create a Key"
 

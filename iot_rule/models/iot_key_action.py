@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class IotKeyAction(models.Model):
-
     _name = "iot.key.action"
     _description = "IoT Key - Actions Log"
     _order = "timestamp DESC"

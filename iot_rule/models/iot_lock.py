@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class IotLock(models.Model):
-
     _name = "iot.lock"
     _description = "IoT Lock"
 

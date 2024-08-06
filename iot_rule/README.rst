@@ -17,13 +17,13 @@ IoT Rule
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fiot-lightgray.png?logo=github
-    :target: https://github.com/OCA/iot/tree/15.0/iot_rule
+    :target: https://github.com/OCA/iot/tree/17.0/iot_rule
     :alt: OCA/iot
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/iot-15-0/iot-15-0-iot_rule
+    :target: https://translation.odoo-community.org/projects/iot-17-0/iot-17-0-iot_rule
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/iot&target_branch=15.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/iot&target_branch=17.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
@@ -31,11 +31,12 @@ IoT Rule
 This addon allows to define IoT Rules.
 
 A Rule specifies which Inputs that can be controlled by a certain Key.
-The Key is owned by an Agent (Employee, Partner or anonymous).
-The Input is a request from an IoT Device that executes a certain function in Odoo.
-This function will check if the Key (= the Agent) is allowed by any Rule to "control" the Device.
-If Odoo answers positively the Agent will be allowed the to execute some Function on the Device
-(for example open a door or switch on a relay).
+The Key is owned by an Agent (Employee, Partner or anonymous). The Input
+is a request from an IoT Device that executes a certain function in
+Odoo. This function will check if the Key (= the Agent) is allowed by
+any Rule to "control" the Device. If Odoo answers positively the Agent
+will be allowed the to execute some Function on the Device (for example
+open a door or switch on a relay).
 
 **Table of contents**
 
@@ -48,7 +49,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/iot/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/iot/issues/new?body=module:%20iot_rule%0Aversion:%2015.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/iot/issues/new?body=module:%20iot_rule%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -56,20 +57,20 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * CreuBlanca
 * ForgeFlow
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Enric Tobella <etobella@creublanca.es>
-* Luis Burrel <lu.bu.sax@gmail.com>
-* Aaron Henriquez <ahforgeflow@forgeflow.com>
+-  Enric Tobella <etobella@creublanca.es>
+-  Luis Burrel <lu.bu.sax@gmail.com>
+-  Aaron Henriquez <ahforgeflow@forgeflow.com>
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -81,6 +82,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/iot <https://github.com/OCA/iot/tree/15.0/iot_rule>`_ project on GitHub.
+This module is part of the `OCA/iot <https://github.com/OCA/iot/tree/17.0/iot_rule>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.

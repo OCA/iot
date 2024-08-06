@@ -6,7 +6,6 @@ from odoo.exceptions import ValidationError
 
 
 class IotRule(models.Model):
-
     _name = "iot.rule"
     _description = "IoT Rule (Relation Key-Lock)"
 
