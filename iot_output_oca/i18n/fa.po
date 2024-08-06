@@ -120,12 +120,6 @@ msgid "Ip"
 msgstr "آدرس"
 
 #. module: iot_output_oca
-#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output____last_update
-#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action____last_update
-msgid "Last Modified on"
-msgstr "آخرین نگارش در"
-
-#. module: iot_output_oca
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__write_uid
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__write_uid
 msgid "Last Updated by"
@@ -199,3 +193,6 @@ msgstr "حالت"
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__status
 msgid "Status"
 msgstr "حالت‌ها"
+
+#~ msgid "Last Modified on"
+#~ msgstr "آخرین نگارش در"
