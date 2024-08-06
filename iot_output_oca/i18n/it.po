@@ -120,12 +120,6 @@ msgid "Ip"
 msgstr "IP"
 
 #. module: iot_output_oca
-#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output____last_update
-#: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action____last_update
-msgid "Last Modified on"
-msgstr "Ultima modifica il"
-
-#. module: iot_output_oca
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output__write_uid
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__write_uid
 msgid "Last Updated by"
@@ -199,3 +193,6 @@ msgstr "Stato"
 #: model:ir.model.fields,field_description:iot_output_oca.field_iot_device_output_action__status
 msgid "Status"
 msgstr "Stato"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
