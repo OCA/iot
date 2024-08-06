@@ -19,14 +19,14 @@
                         name="create_key"
                         string="Create"
                         class="btn-primary"
-                        attrs="{'invisible': [('iot_key_id', '!=', False)]}"
+                        invisible="iot_key_id"
                         type="object"
                     />
                     <button
                         name="update_key"
                         string="Update"
                         class="btn-primary"
-                        attrs="{'invisible': [('iot_key_id', '=', False)]}"
+                        invisible="not iot_key_id"
                         type="object"
                     />
                     <button string="Cancel" class="btn-default" special="cancel" />

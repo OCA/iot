@@ -6,15 +6,15 @@ from unittest.mock import patch
 
 from odoo.exceptions import ValidationError
 from odoo.fields import Datetime
-from odoo.tests.common import SavepointCase
+from odoo.tests.common import TransactionCase
 
 from ..models.iot_key import IotKey
 
 
-class TestIotRule(SavepointCase):
+class TestIotRule(TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(TestIotRule, cls).setUpClass()
+        super().setUpClass()
 
         cls.rule_1 = cls.env["iot.rule"].create({"name": "rule 1"})
         cls.rule_2 = cls.env["iot.rule"].create({"name": "rule 2"})
@@ -211,7 +211,7 @@ class TestIotRule(SavepointCase):
         key = wizard_key.iot_key_id
         self.assertEqual(key.unique_virtual_key, "Testing Key")
         self.assertEqual(key.rule_ids, self.rule_1)
-        self.partner.refresh()
+        self.partner.invalidate_model()
         self.assertEqual(1, self.partner.iot_key_count)
         action = self.partner.action_view_iot_key()
         self.assertEqual(key, self.env[action["res_model"]].search(action["domain"]))
@@ -226,7 +226,7 @@ class TestIotRule(SavepointCase):
             }
         )
         wizard_key.update_key()
-        key.refresh()
+        key.invalidate_model()
         self.assertEqual(key.unique_virtual_key, "Testing Key 2")
         wizard_key = self.env["iot.key.wizard"].create(
             {
@@ -238,7 +238,7 @@ class TestIotRule(SavepointCase):
             }
         )
         wizard_key.create_key()
-        key.refresh()
+        key.invalidate_model()
         self.assertEqual(key.unique_virtual_key, "Testing Key")
         self.assertEqual(key, original_key)
 

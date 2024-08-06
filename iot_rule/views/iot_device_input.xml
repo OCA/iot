@@ -13,12 +13,12 @@
                     groups="iot_oca.group_iot_manager"
                     string="Generate IoT Lock for this Input"
                     type="object"
-                    attrs="{'invisible': [('lock_id', '!=', False)]}"
+                    invisible="lock_id"
                 />
                 <field
                     name="lock_id"
                     groups="iot_oca.group_iot_user"
-                    attrs="{'invisible': [('lock_id', '=', False)]}"
+                    invisible="not lock_id"
                     string="IoT Lock associated"
                 />
             </field>

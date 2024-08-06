@@ -27,4 +27,4 @@ class IotDevice(models.Model):
                         device_input.lock_id.write(
                             {"name": vals.get("name") + " / " + input_name}
                         )
-        return super(IotDevice, self).write(vals)
+        return super().write(vals)
