@@ -1,7 +1,8 @@
 [project]
 name = "odoo-addons-oca-iot"
-version = "17.0.20240806.0"
+version = "17.0.20240806.1"
 dependencies = [
+    "odoo-addon-iot_input_oca>=17.0dev,<17.1dev",
     "odoo-addon-iot_oca>=17.0dev,<17.1dev",
     "odoo-addon-iot_output_oca>=17.0dev,<17.1dev",
 ]
