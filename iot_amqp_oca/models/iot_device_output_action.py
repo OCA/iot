@@ -8,7 +8,7 @@ from odoo import models
 _logger = logging.getLogger(__name__)
 try:
     from pika import BlockingConnection, URLParameters, spec
-except (ImportError, IOError) as err:
+except (OSError, ImportError) as err:
     _logger.debug(err)
 
 
