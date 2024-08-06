@@ -7,7 +7,7 @@ from odoo.tests.common import HttpCase
 
 class TestIotTemplate(HttpCase):
     def setUp(self):
-        super(TestIotTemplate, self).setUp()
+        super().setUp()
         self.system = self.env["iot.communication.system"].create({"name": "Testing"})
         self.system_2 = self.env["iot.communication.system"].create(
             {"name": "Testing 2"}
