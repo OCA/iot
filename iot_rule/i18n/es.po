@@ -17,6 +17,7 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 
 #. module: iot_rule
+#. odoo-python
 #: code:addons/iot_rule/models/iot_rule.py:0
 #, python-format
 msgid "A recurssion was found"
@@ -193,7 +194,7 @@ msgid "Key must be unique"
 msgstr "La clave debe ser única"
 
 #. module: iot_rule
-#: code:addons/iot_rule/wizards/iot_key_wizard.py:0
+#. odoo-python
 #: code:addons/iot_rule/wizards/iot_key_wizard.py:0
 #, python-format
 msgid "Key of %s"
@@ -214,15 +215,6 @@ msgstr "Llaves"
 #: model:ir.ui.menu,name:iot_rule.iot_key_menu
 msgid "Keys (Persons)"
 msgstr "Llaves (Personas)"
-
-#. module: iot_rule
-#: model:ir.model.fields,field_description:iot_rule.field_iot_key____last_update
-#: model:ir.model.fields,field_description:iot_rule.field_iot_key_action____last_update
-#: model:ir.model.fields,field_description:iot_rule.field_iot_key_wizard____last_update
-#: model:ir.model.fields,field_description:iot_rule.field_iot_lock____last_update
-#: model:ir.model.fields,field_description:iot_rule.field_iot_rule____last_update
-msgid "Last Modified on"
-msgstr "Última Modificación el"
 
 #. module: iot_rule
 #: model:ir.model.fields,field_description:iot_rule.field_iot_key__write_uid
@@ -287,6 +279,7 @@ msgid "Not expired Keys"
 msgstr "Claves no expiradas"
 
 #. module: iot_rule
+#. odoo-python
 #: code:addons/iot_rule/models/iot_key.py:0
 #, python-format
 msgid "Only one key can be assigned to this model"
@@ -353,3 +346,6 @@ msgstr "Actualización"
 #: model_terms:ir.ui.view,arch_db:iot_rule.iot_lock_form_view
 msgid "Usage Log"
 msgstr "Registro de Utilización"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última Modificación el"
