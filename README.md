@@ -24,6 +24,7 @@ addon | version | maintainers | summary
 [iot_input_oca](iot_input_oca/) | 17.0.1.0.0 | [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | IoT Input module
 [iot_oca](iot_oca/) | 17.0.1.0.0 |  | IoT base module
 [iot_output_oca](iot_output_oca/) | 17.0.1.0.0 |  | IoT allow multiple outputs
+[iot_rule](iot_rule/) | 17.0.1.0.0 |  | Define IoT Rules (Keys that control Inputs)
 [iot_template_oca](iot_template_oca/) | 17.0.1.0.0 |  | IoT module for managing templates
 
 [//]: # (end addons)
