@@ -1,0 +1,142 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* iot_amqp_oca
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2022-06-03 11:05+0000\n"
+"Last-Translator: jabelchi <jabelchi@gmail.com>\n"
+"Language-Team: none\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.2\n"
+
+#. module: iot_amqp_oca
+#: model:ir.ui.menu,name:iot_amqp_oca.iot_amqp_host_menu
+msgid "AMQP Hosts"
+msgstr "Hosts AMQP"
+
+#. module: iot_amqp_oca
+#: model_terms:ir.ui.view,arch_db:iot_amqp_oca.iot_device_output_form
+msgid "AMQP configuration"
+msgstr "Configuració AMQP"
+
+#. module: iot_amqp_oca
+#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__active
+msgid "Active"
+msgstr "Actiu"
+
+#. module: iot_amqp_oca
+#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output__amqp_exchange
+msgid "Amqp Exchange"
+msgstr "Intercanvi AMQP"
+
+#. module: iot_amqp_oca
+#: model:ir.actions.act_window,name:iot_amqp_oca.iot_amqp_host_act_window
+#: model:ir.model,name:iot_amqp_oca.model_iot_amqp_host
+#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output__amqp_host_id
+msgid "Amqp Host"
+msgstr "Host AMQP"
+
+#. module: iot_amqp_oca
+#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output__amqp_payload
+msgid "Amqp Payload"
+msgstr "Càrrega AMQP"
+
+#. module: iot_amqp_oca
+#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_device_output__amqp_routing_key
+msgid "Amqp Routing Key"
+msgstr "Clau d'encaminament AMQP"
+
+#. module: iot_amqp_oca
+#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__connection
+msgid "Connection"
+msgstr "Connexió"
+
+#. module: iot_amqp_oca
+#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__create_uid
+msgid "Created by"
+msgstr "Creat per"
+
+#. module: iot_amqp_oca
+#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__create_date
+msgid "Created on"
+msgstr "Creat el"
+
+#. module: iot_amqp_oca
+#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__display_name
+msgid "Display Name"
+msgstr "Nom a mostrar"
+
+#. module: iot_amqp_oca
+#: code:addons/iot_amqp_oca/models/iot_device_output.py:0
+#, python-format
+msgid "Exchange is required"
+msgstr "Es requereix intercanvi"
+
+#. module: iot_amqp_oca
+#: code:addons/iot_amqp_oca/models/iot_device_output.py:0
+#, python-format
+msgid "Host is required"
+msgstr "Es requereix host"
+
+#. module: iot_amqp_oca
+#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__id
+msgid "ID"
+msgstr "ID"
+
+#. module: iot_amqp_oca
+#: model:ir.model,name:iot_amqp_oca.model_iot_device_output_action
+msgid "IoT Action"
+msgstr "Acció IoT"
+
+#. module: iot_amqp_oca
+#: model:ir.model,name:iot_amqp_oca.model_iot_communication_system_action
+msgid "IoT Communication System action"
+msgstr "Acció del sistema de comunicacions IoT"
+
+#. module: iot_amqp_oca
+#: model:ir.model,name:iot_amqp_oca.model_iot_device_output
+msgid "IoT Device"
+msgstr "Dispositiu IoT"
+
+#. module: iot_amqp_oca
+#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host____last_update
+msgid "Last Modified on"
+msgstr "Darrera modificació el"
+
+#. module: iot_amqp_oca
+#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__write_uid
+msgid "Last Updated by"
+msgstr "Darrera actualització el"
+
+#. module: iot_amqp_oca
+#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__write_date
+msgid "Last Updated on"
+msgstr "Darrera actualització el"
+
+#. module: iot_amqp_oca
+#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: iot_amqp_oca
+#: code:addons/iot_amqp_oca/models/iot_device_output.py:0
+#, python-format
+msgid "Routing Key is required"
+msgstr "La clau d'encaminament és necessària"
+
+#. module: iot_amqp_oca
+#: model_terms:ir.ui.view,arch_db:iot_amqp_oca.iot_device_output_form
+msgid "Run"
+msgstr "Executa"
+
+#. module: iot_amqp_oca
+#: model_terms:ir.ui.view,arch_db:iot_amqp_oca.iot_amqp_host_form_view
+msgid "amqp://USER:PASS@HOST"
+msgstr "amqp://USER:PASS@HOST"
