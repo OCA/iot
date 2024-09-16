@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -71,12 +71,14 @@ msgid "Display Name"
 msgstr ""
 
 #. module: iot_amqp_oca
+#. odoo-python
 #: code:addons/iot_amqp_oca/models/iot_device_output.py:0
 #, python-format
 msgid "Exchange is required"
 msgstr ""
 
 #. module: iot_amqp_oca
+#. odoo-python
 #: code:addons/iot_amqp_oca/models/iot_device_output.py:0
 #, python-format
 msgid "Host is required"
@@ -103,11 +105,6 @@ msgid "IoT Device"
 msgstr ""
 
 #. module: iot_amqp_oca
-#: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host____last_update
-msgid "Last Modified on"
-msgstr ""
-
-#. module: iot_amqp_oca
 #: model:ir.model.fields,field_description:iot_amqp_oca.field_iot_amqp_host__write_uid
 msgid "Last Updated by"
 msgstr ""
@@ -123,6 +120,7 @@ msgid "Name"
 msgstr ""
 
 #. module: iot_amqp_oca
+#. odoo-python
 #: code:addons/iot_amqp_oca/models/iot_device_output.py:0
 #, python-format
 msgid "Routing Key is required"
