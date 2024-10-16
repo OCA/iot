@@ -69,7 +69,7 @@ class TestIotController(HttpCase):
 
     def test_single_controller(self):
         res = self.url_open(
-            "/iot/%s/action" % self.serial,
+            f"/iot/{self.serial}/action",
             data={"passphrase": self.input_passphrase, "value": "123"},
         )
         self.assertEqual(res.json()["status"], "ok")
@@ -77,7 +77,7 @@ class TestIotController(HttpCase):
     def test_single_controller_archived_device(self):
         self.device.write({"active": False})
         res = self.url_open(
-            "/iot/%s/action" % self.serial,
+            f"/iot/{self.serial}/action",
             data={"passphrase": self.input_passphrase, "value": "123"},
         )
         self.assertEqual(res.json()["status"], "error")
@@ -85,42 +85,42 @@ class TestIotController(HttpCase):
     def test_multi_controller_archived_device(self):
         self.device.write({"active": False})
         res = self.url_open(
-            "/iot/%s/multi_input" % self.serial,
+            f"/iot/{self.serial}/multi_input",
             data={"passphrase": self.input_passphrase, "values": self.values},
         )
         self.assertEqual(res.json()["status"], "error")
 
     def test_multi_input_controller_error_passphrase(self):
         res = self.url_open(
-            "/iot/%s/multi_input" % self.device_identification,
+            f"/iot/{self.device_identification}/multi_input",
             data={"values": self.values},
         ).json()
         self.assertEqual(res["status"], "error")
 
     def test_multi_input_controller_error_values(self):
         res = self.url_open(
-            "/iot/%s/multi_input" % self.device_identification,
+            f"/iot/{self.device_identification}/multi_input",
             data={"passphrase": self.passphrase},
         ).json()
         self.assertEqual(res["status"], "error")
 
     def test_multi_input_controller_syntax_error(self):
         res = self.url_open(
-            "/iot/%s/multi_input" % self.device_identification,
+            f"/iot/{self.device_identification}/multi_input",
             data={"passphrase": self.passphrase, "values": "{}"},
         ).json()
         self.assertEqual(res["status"], "error")
 
     def test_multi_input_controller_malformed_error(self):
         res = self.url_open(
-            "/iot/%s/multi_input" % self.device_identification,
+            f"/iot/{self.device_identification}/multi_input",
             data={"passphrase": self.passphrase, "values": "{1234}"},
         ).json()
         self.assertEqual(res["status"], "error")
 
     def test_multi_input_controller(self):
         res = self.url_open(
-            "/iot/%s/multi_input" % self.device_identification,
+            f"/iot/{self.device_identification}/multi_input",
             data={"passphrase": self.passphrase, "values": self.values},
         )
         result = res.json()
@@ -129,13 +129,13 @@ class TestIotController(HttpCase):
 
     def test_multi_input_controller_unauthorized_iot_exists(self):
         res = self.url_open(
-            "/iot/%s/check" % self.serial, data={"passphrase": self.input_passphrase}
+            f"/iot/{self.serial}/check", data={"passphrase": self.input_passphrase}
         ).json()
         self.assertEqual(res["state"], True)
 
     def test_multi_input_controller_unauthorized_iot_no_exists(self):
         res = self.url_open(
-            "/iot/%s/check" % self.passphrase,
+            f"/iot/{self.passphrase}/check",
             data={"passphrase": self.input_passphrase},
         ).json()
         self.assertEqual(res["state"], False)
