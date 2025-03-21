@@ -29,7 +29,7 @@ class IotTemplate(models.Model):
     _parent_store = True
     _parent_order = "name"
 
-    parent_path = fields.Char(index=True)
+    parent_path = fields.Char(index=True, unaccent=False)
     name = fields.Char(required=True)
     input_ids = fields.One2many(
         "iot.template.input",
