@@ -27,7 +27,7 @@ addon | version | maintainers | summary
 [iot_oca](iot_oca/) | 16.0.1.0.1 |  | IoT base module
 [iot_output_oca](iot_output_oca/) | 16.0.1.0.1 |  | IoT allow multiple outputs
 [iot_rule](iot_rule/) | 16.0.1.0.0 |  | Define IoT Rules (Keys that control Inputs)
-[iot_template_oca](iot_template_oca/) | 16.0.1.0.0 |  | IoT module for managing templates
+[iot_template_oca](iot_template_oca/) | 16.0.1.0.1 |  | IoT module for managing templates
 
 [//]: # (end addons)
 
