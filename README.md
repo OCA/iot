@@ -22,7 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [iot_amqp_oca](iot_amqp_oca/) | 13.0.1.1.0 |  | Integrate Iot Outputs with AMQP
-[iot_input_oca](iot_input_oca/) | 13.0.2.0.0 | [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | IoT Input module
+[iot_input_oca](iot_input_oca/) | 13.0.2.0.0 | <a href='https://github.com/etobella'><img src='https://github.com/etobella.png' width='32' height='32' style='border-radius:50%;' alt='etobella'/></a> | IoT Input module
 [iot_oca](iot_oca/) | 13.0.2.0.0 |  | IoT base module
 [iot_option_oca](iot_option_oca/) | 13.0.2.0.0 |  | Allow to define custom field for IoT
 [iot_output_oca](iot_output_oca/) | 13.0.2.0.0 |  | IoT allow multiple outputs
