@@ -22,7 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [iot_amqp_oca](iot_amqp_oca/) | 16.0.1.0.0 |  | Integrate Iot Outputs with AMQP
-[iot_input_oca](iot_input_oca/) | 16.0.1.0.1 | [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | IoT Input module
+[iot_input_oca](iot_input_oca/) | 16.0.1.0.1 | <a href='https://github.com/etobella'><img src='https://github.com/etobella.png' width='32' height='32' style='border-radius:50%;' alt='etobella'/></a> | IoT Input module
 [iot_key_employee_rfid](iot_key_employee_rfid/) | 16.0.1.0.0 |  | Use an Employee RFID Card as an IoT Key
 [iot_oca](iot_oca/) | 16.0.1.0.1 |  | IoT base module
 [iot_output_oca](iot_output_oca/) | 16.0.1.0.1 |  | IoT allow multiple outputs
