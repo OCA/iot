@@ -31,9 +31,9 @@
                     <notebook>
                         <page string="Keys" id="key">
                             <field name="key_ids">
-                                <tree editable="bottom">
+                                <list editable="bottom">
                                     <field name="key" />
-                                </tree>
+                                </list>
                                 <form>
                                     <sheet>
                                         <group>
@@ -45,11 +45,11 @@
                         </page>
                         <page string="Inputs" id="input">
                             <field name="input_ids">
-                                <tree>
+                                <list>
                                     <field name="name" />
                                     <field name="call_model_id" />
                                     <field name="call_function" />
-                                </tree>
+                                </list>
                                 <form>
                                     <sheet>
                                         <group>
@@ -64,10 +64,10 @@
                         </page>
                         <page string="Outputs" id="output">
                             <field name="output_ids">
-                                <tree>
+                                <list>
                                     <field name="name" />
                                     <field name="communication_system_id" />
-                                </tree>
+                                </list>
                                 <form>
                                     <sheet>
                                         <group>
@@ -84,20 +84,20 @@
             </form>
         </field>
     </record>
-    <record id="iot_template_tree" model="ir.ui.view">
+    <record id="iot_template_list" model="ir.ui.view">
         <field name="name">iot.template.form</field>
         <field name="model">iot.template</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
-            </tree>
+            </list>
         </field>
     </record>
     <record model="ir.actions.act_window" id="iot_template_action">
         <field name="name">IoT Templates</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">iot.template</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
     <menuitem
         name="Templates"
