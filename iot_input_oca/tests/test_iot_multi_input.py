@@ -59,6 +59,7 @@ class TestIotIn(TransactionCase):
             "error",
         )
 
+    @mute_logger("odoo.addons.iot_input_oca.models.iot_device_input")
     def test_multi_input_error_no_inputs(self):
         iot = self.iot.get_device(
             serial=self.device_identification, passphrase=self.passphrase
@@ -68,6 +69,7 @@ class TestIotIn(TransactionCase):
             "ko",
         )
 
+    @mute_logger("odoo.addons.iot_input_oca.models.iot_device")
     def test_multi_input_non_existing_address(self):
         non_existing_address = "I3"
         iot = self.iot.get_device(
@@ -97,6 +99,7 @@ class TestIotIn(TransactionCase):
             self.assertEqual(response["status"], "ko")
             self.assertTrue("uuid" in response)
 
+    @mute_logger("odoo.addons.iot_input_oca.models.iot_device")
     def test_error_no_address_with_extra_args(self):
         iot = self.iot.get_device(
             serial=self.device_identification, passphrase=self.passphrase
@@ -105,6 +108,7 @@ class TestIotIn(TransactionCase):
             self.assertEqual(response["status"], "error")
             self.assertTrue("uuid" in response)
 
+    @mute_logger("odoo.addons.iot_input_oca.models.iot_device")
     def test_error_no_address(self):
         iot = self.iot.get_device(
             serial=self.device_identification, passphrase=self.passphrase
@@ -167,6 +171,7 @@ class TestIotIn(TransactionCase):
             "error",
         )
 
+    @mute_logger("odoo.addons.iot_input_oca.models.iot_device")
     def test_error_archived_device_input(self):
         self.device_input_1.active = False
         iot = self.iot.get_device(
@@ -180,6 +185,7 @@ class TestIotIn(TransactionCase):
                 "error",
             )
 
+    @mute_logger("odoo.addons.iot_input_oca.models.iot_device")
     def test_error_archived_device_input_extra_args(self):
         self.device_input_1.active = False
         iot = self.iot.get_device(
