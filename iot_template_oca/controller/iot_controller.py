@@ -10,7 +10,7 @@ class CallIot(http.Controller):
     @http.route(
         ["/iot/<serial>/configure"],
         type="http",
-        auth="none",
+        auth="public",
         methods=["POST"],
         csrf=False,
     )
