@@ -1,6 +1,7 @@
 import json
 
 from odoo.tests.common import HttpCase, tagged
+from odoo.tools import mute_logger
 
 
 @tagged("post_install", "-at_install")
@@ -92,6 +93,7 @@ class TestIotController(HttpCase):
         )
         self.assertEqual(res.json()["status"], "error")
 
+    @mute_logger("odoo.addons.iot_input_oca.controller.iot_input_controller")
     def test_multi_input_controller_error_passphrase(self):
         res = self.url_open(
             f"/iot/{self.device_identification}/multi_input",
@@ -99,6 +101,7 @@ class TestIotController(HttpCase):
         ).json()
         self.assertEqual(res["status"], "error")
 
+    @mute_logger("odoo.addons.iot_input_oca.controller.iot_input_controller")
     def test_multi_input_controller_error_values(self):
         res = self.url_open(
             f"/iot/{self.device_identification}/multi_input",
@@ -106,6 +109,7 @@ class TestIotController(HttpCase):
         ).json()
         self.assertEqual(res["status"], "error")
 
+    @mute_logger("odoo.addons.iot_input_oca.controller.iot_input_controller")
     def test_multi_input_controller_syntax_error(self):
         res = self.url_open(
             f"/iot/{self.device_identification}/multi_input",
@@ -113,6 +117,7 @@ class TestIotController(HttpCase):
         ).json()
         self.assertEqual(res["status"], "error")
 
+    @mute_logger("odoo.addons.iot_input_oca.controller.iot_input_controller")
     def test_multi_input_controller_malformed_error(self):
         res = self.url_open(
             f"/iot/{self.device_identification}/multi_input",
