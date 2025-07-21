@@ -5,6 +5,8 @@ from odoo.tests.common import HttpCase, tagged
 
 @tagged("post_install", "-at_install")
 class TestIotController(HttpCase):
+    readonly_enabled = False
+
     def setUp(self):
         super().setUp()
         self.device_identification = "test_device_name"
