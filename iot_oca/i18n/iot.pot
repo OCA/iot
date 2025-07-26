@@ -1,0 +1,269 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* iot
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__action_ids
+msgid "Action"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__action_count
+msgid "Action Count"
+msgstr ""
+
+#. module: iot
+#: code:addons/iot/models/iot_system_action.py:20
+#, python-format
+msgid "Action cannot be processed"
+msgstr ""
+
+#. module: iot
+#: model_terms:ir.ui.view,arch_db:iot.iot_device_form
+#: model_terms:ir.ui.view,arch_db:iot.iot_system_form
+msgid "Actions"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__active
+#: model_terms:ir.ui.view,arch_db:iot.iot_device_search
+msgid "Active"
+msgstr ""
+
+#. module: iot
+#: model:ir.ui.menu,name:iot.iot_config_device_menu
+msgid "Config Devices"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__create_uid
+#: model:ir.model.fields,field_description:iot.field_iot_device_action__create_uid
+#: model:ir.model.fields,field_description:iot.field_iot_system__create_uid
+#: model:ir.model.fields,field_description:iot.field_iot_system_action__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__create_date
+#: model:ir.model.fields,field_description:iot.field_iot_device_action__create_date
+#: model:ir.model.fields,field_description:iot.field_iot_system__create_date
+#: model:ir.model.fields,field_description:iot.field_iot_system_action__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device_action__device_id
+#: model:ir.model.fields,field_description:iot.field_iot_system__device_ids
+msgid "Device"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__device_identification
+msgid "Device Identification"
+msgstr ""
+
+#. module: iot
+#: code:addons/iot/models/iot_device_action.py:28
+#, python-format
+msgid "Device and action must be of the same system"
+msgstr ""
+
+#. module: iot
+#: model:ir.ui.menu,name:iot.iot_device_menu
+#: model_terms:ir.ui.view,arch_db:iot.iot_system_form
+msgid "Devices"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__display_name
+#: model:ir.model.fields,field_description:iot.field_iot_device_action__display_name
+#: model:ir.model.fields,field_description:iot.field_iot_system__display_name
+#: model:ir.model.fields,field_description:iot.field_iot_system_action__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: iot
+#: selection:iot.device.action,status:0
+msgid "Failed"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__id
+#: model:ir.model.fields,field_description:iot.field_iot_device_action__id
+#: model:ir.model.fields,field_description:iot.field_iot_system__id
+#: model:ir.model.fields,field_description:iot.field_iot_system_action__id
+msgid "ID"
+msgstr ""
+
+#. module: iot
+#: model_terms:ir.ui.view,arch_db:iot.iot_device_search
+msgid "Inactive"
+msgstr ""
+
+#. module: iot
+#: model:ir.module.category,name:iot.ir_module_category_iot
+#: model:ir.ui.menu,name:iot.iot_root_menu
+msgid "IoT"
+msgstr ""
+
+#. module: iot
+#: model:ir.model,name:iot.model_iot_device_action
+msgid "IoT Action"
+msgstr ""
+
+#. module: iot
+#: model:ir.model,name:iot.model_iot_device
+msgid "IoT Device"
+msgstr ""
+
+#. module: iot
+#: model_terms:ir.ui.view,arch_db:iot.iot_device_search
+msgid "IoT Device Search"
+msgstr ""
+
+#. module: iot
+#: model:ir.actions.act_window,name:iot.iot_device_action
+#: model:ir.actions.act_window,name:iot.iot_device_config_action
+msgid "IoT Devices"
+msgstr ""
+
+#. module: iot
+#: model:ir.actions.act_window,name:iot.iot_system_action
+#: model:ir.model,name:iot.model_iot_system
+msgid "IoT System"
+msgstr ""
+
+#. module: iot
+#: model:ir.model,name:iot.model_iot_system_action
+msgid "IoT System.action"
+msgstr ""
+
+#. module: iot
+#: model:res.groups,name:iot.group_iot_user
+msgid "IoT User"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__ip
+msgid "Ip"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device____last_update
+#: model:ir.model.fields,field_description:iot.field_iot_device_action____last_update
+#: model:ir.model.fields,field_description:iot.field_iot_system____last_update
+#: model:ir.model.fields,field_description:iot.field_iot_system_action____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__write_uid
+#: model:ir.model.fields,field_description:iot.field_iot_device_action__write_uid
+#: model:ir.model.fields,field_description:iot.field_iot_system__write_uid
+#: model:ir.model.fields,field_description:iot.field_iot_system_action__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__write_date
+#: model:ir.model.fields,field_description:iot.field_iot_device_action__write_date
+#: model:ir.model.fields,field_description:iot.field_iot_system__write_date
+#: model:ir.model.fields,field_description:iot.field_iot_system_action__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: iot
+#: model:res.groups,name:iot.group_iot_manager
+msgid "Manager"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__model
+msgid "Model"
+msgstr ""
+
+#. module: iot
+#: model:res.groups,comment:iot.group_iot_manager
+msgid "Module administrator, able to modify configuration data."
+msgstr ""
+
+#. module: iot
+#: model:res.groups,comment:iot.group_iot_user
+msgid "Module user."
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__name
+#: model:ir.model.fields,field_description:iot.field_iot_system__name
+#: model:ir.model.fields,field_description:iot.field_iot_system_action__name
+msgid "Name"
+msgstr ""
+
+#. module: iot
+#: selection:iot.device.action,status:0
+msgid "Ok"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device_action__date_ok
+msgid "Ok date"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__passphrase
+msgid "Passphrase"
+msgstr ""
+
+#. module: iot
+#: selection:iot.device.action,status:0
+msgid "Pending"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device_action__result
+msgid "Result"
+msgstr ""
+
+#. module: iot
+#: model_terms:ir.ui.view,arch_db:iot.iot_device_action_tree
+msgid "Run"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__state
+msgid "State"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device_action__status
+msgid "Status"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device__system_id
+#: model:ir.model.fields,field_description:iot.field_iot_system_action__system_id
+msgid "System"
+msgstr ""
+
+#. module: iot
+#: model:ir.model.fields,field_description:iot.field_iot_device_action__system_action_id
+#: model:ir.model.fields,field_description:iot.field_iot_system__system_action_ids
+msgid "System Action"
+msgstr ""
+
+#. module: iot
+#: model:ir.ui.menu,name:iot.iot_system_menu
+msgid "Systems"
+msgstr ""
+
