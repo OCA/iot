@@ -21,7 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[iot_oca](iot_oca/) | 18.0.1.0.0 |  | IoT base module
+[iot_oca](iot_oca/) | 18.0.1.0.1 |  | IoT base module
 
 [//]: # (end addons)
 
