@@ -23,7 +23,7 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [iot_amqp_oca](iot_amqp_oca/) | 17.0.1.0.0 |  | Integrate Iot Outputs with AMQP
 [iot_input_oca](iot_input_oca/) | 17.0.1.0.0 | <a href='https://github.com/etobella'><img src='https://github.com/etobella.png' width='32' height='32' style='border-radius:50%;' alt='etobella'/></a> | IoT Input module
-[iot_oca](iot_oca/) | 17.0.1.0.0 |  | IoT base module
+[iot_oca](iot_oca/) | 17.0.1.0.1 |  | IoT base module
 [iot_output_oca](iot_output_oca/) | 17.0.1.0.0 |  | IoT allow multiple outputs
 [iot_rule](iot_rule/) | 17.0.1.0.0 |  | Define IoT Rules (Keys that control Inputs)
 [iot_template_oca](iot_template_oca/) | 17.0.1.0.0 |  | IoT module for managing templates
