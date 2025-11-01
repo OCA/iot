@@ -1,0 +1,3 @@
+odoo-addon-iot_oca@git+https://github.com/OCA/iot.git@refs/pull/109/head#subdirectory=iot_oca
+odoo-addon-iot_output_oca@git+https://github.com/OCA/iot.git@refs/pull/110/head#subdirectory=iot_output_oca
+odoo-addon-iot_input_oca@git+https://github.com/OCA/iot.git@refs/pull/111/head#subdirectory=iot_input_oca
