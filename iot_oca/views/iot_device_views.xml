@@ -94,16 +94,12 @@
         <field name="model">iot.device</field>
         <field name="arch" type="xml">
             <kanban highlight_color="color" class="o_kanban_small_column" sample="1">
-                <field name="name" />
-                <field name="state" />
                 <field name="communication_system_id" />
                 <field name="group_id" />
-                <field name="color" />
-                <field name="id" />
                 <field name="image_128" />
                 <field name="icon" />
-                <field name="tag_ids" />
                 <field name="last_contact_date" />
+                <field name="ip" />
                 <templates>
                     <t t-name="menu">
                         <t t-if="widget.editable">
@@ -122,90 +118,83 @@
                         </t>
                         <field name="color" widget="kanban_color_picker" />
                     </t>
-                    <t t-name="card">
-                        <div
-                            class="o_kanban_record_top d-flex justify-content-between align-items-center mb-2"
-                        >
-                            <div class="o_kanban_record_headings overflow-hidden">
-                                <strong
-                                    class="o_kanban_record_title fs-5 text-truncate d-block mb-0"
-                                >
-                                    <field name="name" />
-                                </strong>
-                            </div>
-                        </div>
-                        <div class="o_kanban_record_body flex-grow-1">
+                    <t t-name="card" class="row g-0">
+                        <main class="col-9 pe-3">
+                            <field
+                                name="name"
+                                class="fw-bold fs-5 text-truncate d-block"
+                            />
                             <div
                                 t-if="record.group_id.raw_value"
-                                class="text-muted small mb-1"
+                                class="text-muted small text-truncate"
                             >
                                 <i class="fa fa-folder-open-o me-1" title="Group" />
                                 <field name="group_id" />
                             </div>
                             <div
+                                t-if="record.communication_system_id.raw_value"
+                                class="text-muted small text-truncate"
+                            >
+                                <i
+                                class="fa fa-exchange me-1"
+                                title="Communication System"
+                            />
+                                System: <field name="communication_system_id" />
+                            </div>
+                            <div
                                 t-if="record.ip.raw_value"
-                                class="text-primary small fw-bold mb-1"
+                                class="text-primary small fw-bold mt-1"
                             >
                                 <i class="fa fa-plug me-1" title="IP Address" />
                                 IP: <field name="ip" />
                             </div>
                             <div
                                 t-if="record.last_contact_date.raw_value"
-                                class="text-muted small mb-2"
+                                class="text-muted small"
                             >
                                 <i class="fa fa-clock-o me-1" title="Last Contact" />
                                 Last contact: <field name="last_contact_date" />
                             </div>
-                            <div class="o_kanban_tags_section mt-2">
-                                <field
-                                    name="tag_ids"
-                                    widget="many2many_tags"
-                                    options="{'color_field': 'color'}"
-                                />
-                            </div>
-                        </div>
-                        <div
-                            class="o_kanban_record_bottom d-flex justify-content-between align-items-center mt-3 pt-2 border-top border-light"
+                            <field
+                                name="tag_ids"
+                                widget="many2many_tags"
+                                options="{'color_field': 'color'}"
+                                class="d-block mt-2"
+                            />
+                            <field
+                                name="state"
+                                widget="label_selection"
+                                options="{'classes': {'connected': 'success', 'error': 'danger'}}"
+                                class="d-inline-block mt-2"
+                            />
+                        </main>
+                        <aside
+                            class="col-3 d-flex justify-content-end align-items-start"
                         >
-                            <div
-                                class="oe_kanban_bottom_left d-flex align-items-center"
+                            <field
+                                t-if="record.image_128.raw_value"
+                                name="image_128"
+                                widget="image"
+                                options="{'preview_image': 'image_128', 'img_class': 'object-fit-contain shadow-sm rounded bg-white border'}"
+                            />
+                            <span
+                                t-elif="record.icon.raw_value"
+                                class="d-flex align-items-center justify-content-center bg-light rounded text-muted border shadow-sm"
+                                style="width: 60px; height: 60px;"
                             >
-                                <field
-                                    name="state"
-                                    widget="label_selection"
-                                    options="{'classes': {'connected': 'success', 'error': 'danger'}}"
+                                <i
+                                    t-attf-class="{{record.icon.raw_value}} fs-2"
+                                    title="Device Type Icon"
                                 />
-                            </div>
-                            <div
-                                class="oe_kanban_bottom_right d-flex align-items-center text-truncate"
+                            </span>
+                            <span
+                                t-else=""
+                                class="d-flex align-items-center justify-content-center bg-light rounded text-muted border shadow-sm"
+                                style="width: 60px; height: 60px;"
                             >
-                                <span
-                                    class="badge rounded-pill bg-light border text-muted px-2 py-1 me-2 shadow-sm"
-                                    t-if="record.communication_system_id.raw_value"
-                                >
-                                    <field name="communication_system_id" />
-                                </span>
-                                <img
-                                    t-if="record.image_128.raw_value"
-                                    t-attf-src="/web/image/iot.device/#{record.id.raw_value}/image_128"
-                                    class="o_avatar rounded border bg-white"
-                                    style="width: 26px; height: 26px;"
-                                    alt="Device"
-                                />
-                                <t t-else="">
-                                    <i
-                                        t-if="record.icon.raw_value"
-                                        t-attf-class="{{record.icon.raw_value}} text-muted fs-5"
-                                        title="Device Type Icon"
-                                    />
-                                    <i
-                                        t-else=""
-                                        class="fa fa-question text-muted fs-5"
-                                        title="Unknown device"
-                                    />
-                                </t>
-                            </div>
-                        </div>
+                                <i class="fa fa-question fs-2" title="Unknown device" />
+                            </span>
+                        </aside>
                     </t>
                 </templates>
             </kanban>
