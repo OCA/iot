@@ -25,8 +25,8 @@
                     <div class="oe_button_box" name="button_box" />
                     <widget
                         name="web_ribbon"
-                        text="Archived"
-                        bg_color="bg-danger"
+                        title="Archived"
+                        bg_color="text-bg-danger"
                         invisible="active"
                     />
                     <field
@@ -227,7 +227,6 @@
                     <filter
                         name="group_group"
                         string="Group"
-                        domain="[]"
                         context="{'group_by':'group_id'}"
                     />
                 </group>
