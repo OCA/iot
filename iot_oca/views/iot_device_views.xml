@@ -25,8 +25,8 @@
                     <div class="oe_button_box" name="button_box" />
                     <widget
                         name="web_ribbon"
-                        text="Archived"
-                        bg_color="bg-danger"
+                        title="Archived"
+                        bg_color="text-bg-danger"
                         invisible="active"
                     />
                     <field
@@ -93,106 +93,108 @@
         <field name="name">iot.device.kanban</field>
         <field name="model">iot.device</field>
         <field name="arch" type="xml">
-            <kanban class="o_kanban_dashboard">
-                <field name="name" />
-                <field name="state" />
+            <kanban highlight_color="color" class="o_kanban_small_column" sample="1">
                 <field name="communication_system_id" />
                 <field name="group_id" />
-                <field name="color" />
-                <field name="id" />
                 <field name="image_128" />
                 <field name="icon" />
+                <field name="last_contact_date" />
+                <field name="ip" />
                 <templates>
-                    <t t-name="card">
-                        <div
-                            t-attf-class="{{!selection_mode ? 'oe_kanban_color_' + kanban_getcolor(record.color.raw_value) : ''}} oe_kanban_global_click"
+                    <t t-name="menu">
+                        <t t-if="widget.editable">
+                            <a
+                                role="menuitem"
+                                type="edit"
+                                class="dropdown-item"
+                            >Edit</a>
+                        </t>
+                        <t t-if="widget.deletable">
+                            <a
+                                role="menuitem"
+                                type="delete"
+                                class="dropdown-item"
+                            >Delete</a>
+                        </t>
+                        <field name="color" widget="kanban_color_picker" />
+                    </t>
+                    <t t-name="card" class="row g-0">
+                        <main class="col-9 pe-3">
+                            <field
+                                name="name"
+                                class="fw-bold fs-5 text-truncate d-block"
+                            />
+                            <div
+                                t-if="record.group_id.raw_value"
+                                class="text-muted small text-truncate"
+                            >
+                                <i class="fa fa-folder-open-o me-1" title="Group" />
+                                <field name="group_id" />
+                            </div>
+                            <div
+                                t-if="record.communication_system_id.raw_value"
+                                class="text-muted small text-truncate"
+                            >
+                                <i
+                                class="fa fa-exchange me-1"
+                                title="Communication System"
+                            />
+                                System: <field name="communication_system_id" />
+                            </div>
+                            <div
+                                t-if="record.ip.raw_value"
+                                class="text-primary small fw-bold mt-1"
+                            >
+                                <i class="fa fa-plug me-1" title="IP Address" />
+                                IP: <field name="ip" />
+                            </div>
+                            <div
+                                t-if="record.last_contact_date.raw_value"
+                                class="text-muted small"
+                            >
+                                <i class="fa fa-clock-o me-1" title="Last Contact" />
+                                Last contact: <field name="last_contact_date" />
+                            </div>
+                            <field
+                                name="tag_ids"
+                                widget="many2many_tags"
+                                options="{'color_field': 'color'}"
+                                class="d-block mt-2"
+                            />
+                            <field
+                                name="state"
+                                widget="label_selection"
+                                options="{'classes': {'connected': 'success', 'error': 'danger'}}"
+                                class="d-inline-block mt-2"
+                            />
+                        </main>
+                        <aside
+                            class="col-3 d-flex justify-content-end align-items-start"
                         >
-                            <div class="o_dropdown_kanban dropdown">
-                                <a
-                                    role="button"
-                                    class="dropdown-toggle o-no-caret btn"
-                                    data-toggle="dropdown"
-                                    data-display="static"
-                                    href="#"
-                                    aria-label="Dropdown menu"
-                                    title="Dropdown menu"
-                                >
-                                    <span class="fa fa-ellipsis-v" />
-                                </a>
-                                <div class="dropdown-menu" role="menu">
-                                    <t t-if="widget.editable">
-                                        <a
-                                            role="menuitem"
-                                            type="edit"
-                                            class="dropdown-item"
-                                        >Edit...</a>
-                                    </t>
-                                    <t t-if="widget.deletable">
-                                        <a
-                                            role="menuitem"
-                                            type="delete"
-                                            class="dropdown-item"
-                                        >Delete</a>
-                                    </t>
-                                    <ul
-                                        class="oe_kanban_colorpicker"
-                                        data-field="color"
-                                    />
-                                </div>
-                            </div>
-                            <div class="oe_kanban_content">
-                                <div class="o_kanban_image">
-                                    <img
-                                        t-att-src="kanban_image('iot.device', 'image_128', record.id.raw_value)"
-                                        alt="default_image"
-                                        t-if="record.image_128.raw_value"
-                                    />
-                                    <i
-                                        t-attf-class="{{record.icon.raw_value}}"
-                                        t-if="!record.image_128.raw_value and record.icon.raw_value"
-                                    />
-                                    <i
-                                        t-attf-class="fa fa-question fa-6x"
-                                        title="Unknown device"
-                                        t-if="!record.image_128.raw_value and !record.icon.raw_value"
-                                    />
-                                </div>
-                                <div class="o_kanban_details">
-                                    <div class="o_kanban_record_top">
-                                        <b class="o_kanban_record_title">
-                                            <field name="name" />
-                                        </b>
-                                    </div>
-                                    <div class="o_kanban_record_body">
-                                        <div t-if="record.group_id.raw_value">
-                                            <field name="group_id" />
-                                        </div>
-                                        <div t-if="record.ip">IP: <field
-                                            name="ip"
-                                        /></div>
-                                        <div
-                                            t-if="record.last_contact_date"
-                                        >Last contact: <field
-                                            name="last_contact_date"
-                                        /></div>
-                                        <field
-                                            name="tag_ids"
-                                            widget="many2many_tags"
-                                            options="{'color_field': 'color'}"
-                                        />
-                                        <div class="row">
-                                            <div
-                                                class="col-xs-6 o_kanban_primary_left"
-                                                id="actions"
-                                            >
-                                                <!-- TODO: Delete this on 14, actions should go to dropdown menu -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="o_kanban_record_bottom" />
-                                </div>
-                            </div>
-                        </div>
+                            <field
+                                t-if="record.image_128.raw_value"
+                                name="image_128"
+                                widget="image"
+                                options="{'preview_image': 'image_128', 'img_class': 'object-fit-contain shadow-sm rounded bg-white border'}"
+                            />
+                            <span
+                                t-elif="record.icon.raw_value"
+                                class="d-flex align-items-center justify-content-center bg-light rounded text-muted border shadow-sm"
+                                style="width: 60px; height: 60px;"
+                            >
+                                <i
+                                    t-attf-class="{{record.icon.raw_value}} fs-2"
+                                    title="Device Type Icon"
+                                />
+                            </span>
+                            <span
+                                t-else=""
+                                class="d-flex align-items-center justify-content-center bg-light rounded text-muted border shadow-sm"
+                                style="width: 60px; height: 60px;"
+                            >
+                                <i class="fa fa-question fs-2" title="Unknown device" />
+                            </span>
+                        </aside>
                     </t>
                 </templates>
             </kanban>
@@ -225,7 +227,6 @@
                     <filter
                         name="group_group"
                         string="Group"
-                        domain="[]"
                         context="{'group_by':'group_id'}"
                     />
                 </group>
