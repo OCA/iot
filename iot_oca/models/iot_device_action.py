@@ -1,6 +1,6 @@
 # Copyright (C) 2018 Creu Blanca
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -27,7 +27,9 @@ class IoTDeviceAction(models.Model):
             lambda r: r.device_id.communication_system_id
             != r.communication_system_action_id.communication_system_id
         ):
-            raise ValidationError(_("Device and action must be of the same system"))
+            raise ValidationError(
+                self.env._("Device and action must be of the same system")
+            )
 
     def run_extra_actions(self, status, result):
         return

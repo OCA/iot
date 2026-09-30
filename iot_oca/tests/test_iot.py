@@ -9,20 +9,22 @@ from odoo.tools import mute_logger
 
 
 class TestIoT(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.system = self.env["iot.communication.system"].create({"name": "Testing"})
-        self.system_2 = self.env["iot.communication.system"].create(
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        cls.system = cls.env["iot.communication.system"].create({"name": "Testing"})
+        cls.system_2 = cls.env["iot.communication.system"].create(
             {"name": "Testing 02"}
         )
-        self.action = self.env["iot.communication.system.action"].create(
-            {"name": "test", "communication_system_id": self.system.id}
+        cls.action = cls.env["iot.communication.system.action"].create(
+            {"name": "test", "communication_system_id": cls.system.id}
         )
-        self.action_2 = self.env["iot.communication.system.action"].create(
-            {"name": "test 02", "communication_system_id": self.system_2.id}
+        cls.action_2 = cls.env["iot.communication.system.action"].create(
+            {"name": "test 02", "communication_system_id": cls.system_2.id}
         )
-        self.device = self.env["iot.device"].create(
-            {"name": "Device", "communication_system_id": self.system.id}
+        cls.device = cls.env["iot.device"].create(
+            {"name": "Device", "communication_system_id": cls.system.id}
         )
 
     def test_action(self):
@@ -52,3 +54,21 @@ class TestIoT(TransactionCase):
             self.device.with_context(
                 iot_communication_system_action_id=self.action_2.id
             ).device_run_action()
+
+    def test_rerun_failed_action(self):
+        with mute_logger("odoo.addons.iot_oca.models.iot_communication_system_action"):
+            self.device.with_context(
+                iot_communication_system_action_id=self.action.id
+            ).device_run_action()
+        device_action = self.device.action_ids
+        self.assertEqual(device_action.status, "failed")
+        self.assertFalse(device_action.date_ok)
+        with patch(
+            "odoo.addons.iot_oca.models.iot_communication_system_action."
+            "IoTSystemAction._run",
+            return_value="done",
+        ):
+            device_action.run()
+        self.assertEqual(device_action.status, "ok")
+        self.assertEqual(device_action.result, "done")
+        self.assertTrue(device_action.date_ok)

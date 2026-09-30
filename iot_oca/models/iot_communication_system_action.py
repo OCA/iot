@@ -4,7 +4,7 @@ import logging
 import traceback
 from io import StringIO
 
-from odoo import _, fields, models
+from odoo import fields, models
 from odoo.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
@@ -18,7 +18,7 @@ class IoTSystemAction(models.Model):
     communication_system_id = fields.Many2one("iot.communication.system", required=True)
 
     def _run(self, device_action):
-        raise ValidationError(_("Action cannot be processed"))
+        raise ValidationError(self.env._("Action cannot be processed"))
 
     def run(self, device_action):
         try:
