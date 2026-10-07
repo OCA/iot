@@ -1,10 +1,11 @@
 [project]
 name = "odoo-addons-oca-iot"
-version = "18.0.20261007.1"
+version = "18.0.20261007.2"
 dependencies = [
     "odoo-addon-iot_input_oca==18.0.*",
     "odoo-addon-iot_oca==18.0.*",
     "odoo-addon-iot_output_oca==18.0.*",
+    "odoo-addon-iot_template_oca==18.0.*",
 ]
 classifiers=[
     "Programming Language :: Python",
