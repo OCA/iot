@@ -1,2 +1,3 @@
-- Enric Tobella \<<etobella@creublanca.es>\>
-- ViraWeb123 \<<info@viraweb123.ir>\>
+- Enric Tobella <etobella@creublanca.es>
+- ViraWeb123 <info@viraweb123.ir>
+- Ghostdev9410 <riccardoluzi52@gmail.com>
