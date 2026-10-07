@@ -1,0 +1,250 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* iot_input
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input__action_ids
+msgid "Action"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input__action_count
+msgid "Action Count"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model,name:iot_input.model_iot_device_input_action
+msgid "Action of device inputs"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input__active
+#: model_terms:ir.ui.view,arch_db:iot_input.iot_device_input_search
+msgid "Active"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input__address
+msgid "Address"
+msgstr ""
+
+#. module: iot_input
+#: code:addons/iot_input/models/iot_device.py:54
+#, python-format
+msgid "Address for Input is required"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input_action__args
+msgid "Args"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input__call_function
+msgid "Call Function"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input__call_model_id
+msgid "Call Model"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input__create_uid
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input_action__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input__create_date
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input_action__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: iot_input
+#: code:addons/iot_input/models/mail_message.py:15
+#, python-format
+msgid "Detected automatically by %s"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input__device_id
+msgid "Device"
+msgstr ""
+
+#. module: iot_input
+#: code:addons/iot_input/models/iot_device_input.py:61
+#, python-format
+msgid "Device cannot be found"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model,name:iot_input.model_iot_device_input
+msgid "Device input"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input__display_name
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input_action__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: iot_input
+#: code:addons/iot_input/models/iot_device.py:136
+#, python-format
+msgid "Empty values array"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input__id
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input_action__id
+msgid "ID"
+msgstr ""
+
+#. module: iot_input
+#: model_terms:ir.ui.view,arch_db:iot_input.iot_device_input_search
+msgid "Inactive"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device__input_ids
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input_action__input_id
+msgid "Input"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device__input_count
+msgid "Input Count"
+msgstr ""
+
+#. module: iot_input
+#: model_terms:ir.ui.view,arch_db:iot_input.iot_device_form
+msgid "Inputs"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model,name:iot_input.model_iot_device
+msgid "IoT Device"
+msgstr ""
+
+#. module: iot_input
+#: model_terms:ir.ui.view,arch_db:iot_input.iot_device_input_search
+msgid "IoT Device Input Search"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.actions.act_window,name:iot_input.iot_device_input_action
+msgid "IoT Inputs"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input__lang
+msgid "Language"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input____last_update
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input_action____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input__write_uid
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input_action__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input__write_date
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input_action__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model,name:iot_input.model_mail_message
+msgid "Message"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input__name
+msgid "Name"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input__passphrase
+msgid "Passphrase"
+msgstr ""
+
+#. module: iot_input
+#: code:addons/iot_input/controller/iot_input_controller.py:43
+#, python-format
+msgid "Passphrase is required"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input_action__res
+msgid "Res"
+msgstr ""
+
+#. module: iot_input
+#: model:ir.model.fields,field_description:iot_input.field_iot_device_input__serial
+msgid "Serial"
+msgstr ""
+
+#. module: iot_input
+#: code:addons/iot_input/models/iot_device_input.py:47
+#, python-format
+msgid "Serial and passphrase are required"
+msgstr ""
+
+#. module: iot_input
+#: code:addons/iot_input/controller/iot_input_controller.py:39
+#, python-format
+msgid "Server Error"
+msgstr ""
+
+#. module: iot_input
+#: code:addons/iot_input/models/iot_device.py:74
+#: code:addons/iot_input/models/iot_device.py:87
+#: code:addons/iot_input/models/iot_device.py:117
+#: code:addons/iot_input/models/iot_device.py:123
+#: code:addons/iot_input/models/iot_device.py:129
+#, python-format
+msgid "Server Error. Check server logs"
+msgstr ""
+
+#. module: iot_input
+#: code:addons/iot_input/models/iot_device.py:61
+#, python-format
+msgid "Value for Input is required"
+msgstr ""
+
+#. module: iot_input
+#: code:addons/iot_input/controller/iot_input_controller.py:56
+#, python-format
+msgid "Values is not a valid JSON"
+msgstr ""
+
+#. module: iot_input
+#: code:addons/iot_input/controller/iot_input_controller.py:47
+#, python-format
+msgid "Values is required"
+msgstr ""
+
+#. module: iot_input
+#: code:addons/iot_input/controller/iot_input_controller.py:61
+#, python-format
+msgid "Values should be a JSON array of JSON objects"
+msgstr ""
+
