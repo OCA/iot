@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="demo_template" model="iot.template">
+        <field name="name">demo_template</field>
+    </record>
+    <record id="demo_template_serial" model="iot.template.key">
+        <field name="template_id" ref="demo_template" />
+        <field name="key">serial</field>
+    </record>
+    <record id="demo_template_input" model="iot.template.input">
+        <field name="template_id" ref="demo_template" />
+        <field name="name">demo_input</field>
+        <field name="call_model_id" eval="False" />
+        <field name="call_function">test_input_device</field>
+        <field name="params">{}</field>
+    </record>
+</odoo>
